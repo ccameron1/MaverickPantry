@@ -14,6 +14,8 @@
 		7A067DD222BA98FA00FDC2B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A067DD122BA98FA00FDC2B2 /* Assets.xcassets */; };
 		7A067DD522BA98FA00FDC2B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A067DD322BA98FA00FDC2B2 /* LaunchScreen.storyboard */; };
 		7A067DDD22BA992900FDC2B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A067DDC22BA992900FDC2B2 /* GoogleService-Info.plist */; };
+		7A067DDF22BA9E0400FDC2B2 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A067DDE22BA9E0400FDC2B2 /* FirebaseManager.swift */; };
+		7A067DE122BA9E2F00FDC2B2 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A067DE022BA9E2F00FDC2B2 /* Users.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		7A067DD422BA98FA00FDC2B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A067DD622BA98FA00FDC2B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A067DDC22BA992900FDC2B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7A067DDE22BA9E0400FDC2B2 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; usesTabs = 1; };
+		7A067DE022BA9E2F00FDC2B2 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		CBD73E0B5AF308E47A83E05A /* Pods-MaverickPantry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaverickPantry.release.xcconfig"; path = "Target Support Files/Pods-MaverickPantry/Pods-MaverickPantry.release.xcconfig"; sourceTree = "<group>"; };
 		DE81BE6CE415D4ED5A9F1981 /* Pods_MaverickPantry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaverickPantry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -72,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				7A067DCA22BA98F700FDC2B2 /* AppDelegate.swift */,
+				7A067DDE22BA9E0400FDC2B2 /* FirebaseManager.swift */,
+				7A067DE022BA9E2F00FDC2B2 /* Users.swift */,
 				7A067DCC22BA98F700FDC2B2 /* ViewController.swift */,
 				7A067DCE22BA98F700FDC2B2 /* Main.storyboard */,
 				7A067DD122BA98FA00FDC2B2 /* Assets.xcassets */,
@@ -103,6 +109,7 @@
 				7A067DC422BA98F700FDC2B2 /* Frameworks */,
 				7A067DC522BA98F700FDC2B2 /* Resources */,
 				A1979AA0BC13A84C964CA08E /* [CP] Embed Pods Frameworks */,
+				EF2671ED8269D96CB9382C21 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -200,6 +207,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MaverickPantry/Pods-MaverickPantry-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EF2671ED8269D96CB9382C21 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MaverickPantry/Pods-MaverickPantry-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MaverickPantry/Pods-MaverickPantry-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MaverickPantry/Pods-MaverickPantry-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -207,6 +231,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A067DE122BA9E2F00FDC2B2 /* Users.swift in Sources */,
+				7A067DDF22BA9E0400FDC2B2 /* FirebaseManager.swift in Sources */,
 				7A067DCD22BA98F700FDC2B2 /* ViewController.swift in Sources */,
 				7A067DCB22BA98F700FDC2B2 /* AppDelegate.swift in Sources */,
 			);

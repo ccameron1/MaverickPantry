@@ -22,6 +22,12 @@
 		D58BE6CA22BAB9A900324972 /* Recipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6C922BAB9A900324972 /* Recipe.storyboard */; };
 		D58BE6CC22BAB9E500324972 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6CB22BAB9E500324972 /* Login.storyboard */; };
 		D58BE6CE22BAB9FC00324972 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6CD22BAB9FC00324972 /* Welcome.storyboard */; };
+		E0B3064A22BABCE2007A2E85 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3064922BABCE2007A2E85 /* AboutViewController.swift */; };
+		E0B3064C22BABD24007A2E85 /* RequestPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3064B22BABD24007A2E85 /* RequestPageViewController.swift */; };
+		E0B3064E22BABD67007A2E85 /* VolunteersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3064D22BABD67007A2E85 /* VolunteersViewController.swift */; };
+		E0B3065022BABDAD007A2E85 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3064F22BABDAD007A2E85 /* RecipeViewController.swift */; };
+		E0B3065222BABDDD007A2E85 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3065122BABDDD007A2E85 /* LoginViewController.swift */; };
+		E0B3065422BABE3F007A2E85 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3065322BABE3F007A2E85 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +50,12 @@
 		D58BE6CB22BAB9E500324972 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		D58BE6CD22BAB9FC00324972 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		DE81BE6CE415D4ED5A9F1981 /* Pods_MaverickPantry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaverickPantry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0B3064922BABCE2007A2E85 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		E0B3064B22BABD24007A2E85 /* RequestPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPageViewController.swift; sourceTree = "<group>"; };
+		E0B3064D22BABD67007A2E85 /* VolunteersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteersViewController.swift; sourceTree = "<group>"; };
+		E0B3064F22BABDAD007A2E85 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		E0B3065122BABDDD007A2E85 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E0B3065322BABE3F007A2E85 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,11 +100,17 @@
 			isa = PBXGroup;
 			children = (
 				D58BE6CD22BAB9FC00324972 /* Welcome.storyboard */,
+				E0B3065322BABE3F007A2E85 /* WelcomeViewController.swift */,
 				D58BE6CB22BAB9E500324972 /* Login.storyboard */,
+				E0B3065122BABDDD007A2E85 /* LoginViewController.swift */,
 				D58BE6C922BAB9A900324972 /* Recipe.storyboard */,
+				E0B3064F22BABDAD007A2E85 /* RecipeViewController.swift */,
 				D58BE6C722BAB99300324972 /* Volunteers.storyboard */,
+				E0B3064D22BABD67007A2E85 /* VolunteersViewController.swift */,
 				D58BE6C522BAB97A00324972 /* RequestPage.storyboard */,
+				E0B3064B22BABD24007A2E85 /* RequestPageViewController.swift */,
 				D58BE6C322BAB95800324972 /* About.storyboard */,
+				E0B3064922BABCE2007A2E85 /* AboutViewController.swift */,
 				7A067DCA22BA98F700FDC2B2 /* AppDelegate.swift */,
 				7A067DDE22BA9E0400FDC2B2 /* FirebaseManager.swift */,
 				7A067DE022BA9E2F00FDC2B2 /* Users.swift */,
@@ -255,9 +273,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0B3065222BABDDD007A2E85 /* LoginViewController.swift in Sources */,
+				E0B3065422BABE3F007A2E85 /* WelcomeViewController.swift in Sources */,
 				7A067DE122BA9E2F00FDC2B2 /* Users.swift in Sources */,
+				E0B3064C22BABD24007A2E85 /* RequestPageViewController.swift in Sources */,
 				7A067DDF22BA9E0400FDC2B2 /* FirebaseManager.swift in Sources */,
 				7A067DCD22BA98F700FDC2B2 /* ViewController.swift in Sources */,
+				E0B3065022BABDAD007A2E85 /* RecipeViewController.swift in Sources */,
+				E0B3064E22BABD67007A2E85 /* VolunteersViewController.swift in Sources */,
+				E0B3064A22BABCE2007A2E85 /* AboutViewController.swift in Sources */,
 				7A067DCB22BA98F700FDC2B2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

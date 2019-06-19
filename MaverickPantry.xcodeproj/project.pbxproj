@@ -26,7 +26,6 @@
 		E0B3064C22BABD24007A2E85 /* RequestPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3064B22BABD24007A2E85 /* RequestPageViewController.swift */; };
 		E0B3064E22BABD67007A2E85 /* VolunteersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3064D22BABD67007A2E85 /* VolunteersViewController.swift */; };
 		E0B3065022BABDAD007A2E85 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3064F22BABDAD007A2E85 /* RecipeViewController.swift */; };
-		E0B3065222BABDDD007A2E85 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3065122BABDDD007A2E85 /* LoginViewController.swift */; };
 		E0B3065422BABE3F007A2E85 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3065322BABE3F007A2E85 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +53,6 @@
 		E0B3064B22BABD24007A2E85 /* RequestPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPageViewController.swift; sourceTree = "<group>"; };
 		E0B3064D22BABD67007A2E85 /* VolunteersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteersViewController.swift; sourceTree = "<group>"; };
 		E0B3064F22BABDAD007A2E85 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
-		E0B3065122BABDDD007A2E85 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E0B3065322BABE3F007A2E85 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,7 +100,6 @@
 				D58BE6CD22BAB9FC00324972 /* Welcome.storyboard */,
 				E0B3065322BABE3F007A2E85 /* WelcomeViewController.swift */,
 				D58BE6CB22BAB9E500324972 /* Login.storyboard */,
-				E0B3065122BABDDD007A2E85 /* LoginViewController.swift */,
 				D58BE6C922BAB9A900324972 /* Recipe.storyboard */,
 				E0B3064F22BABDAD007A2E85 /* RecipeViewController.swift */,
 				D58BE6C722BAB99300324972 /* Volunteers.storyboard */,
@@ -273,7 +270,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0B3065222BABDDD007A2E85 /* LoginViewController.swift in Sources */,
 				E0B3065422BABE3F007A2E85 /* WelcomeViewController.swift in Sources */,
 				7A067DE122BA9E2F00FDC2B2 /* Users.swift in Sources */,
 				E0B3064C22BABD24007A2E85 /* RequestPageViewController.swift in Sources */,

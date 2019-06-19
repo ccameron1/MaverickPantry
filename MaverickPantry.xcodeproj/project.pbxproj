@@ -16,6 +16,12 @@
 		7A067DDD22BA992900FDC2B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A067DDC22BA992900FDC2B2 /* GoogleService-Info.plist */; };
 		7A067DDF22BA9E0400FDC2B2 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A067DDE22BA9E0400FDC2B2 /* FirebaseManager.swift */; };
 		7A067DE122BA9E2F00FDC2B2 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A067DE022BA9E2F00FDC2B2 /* Users.swift */; };
+		D58BE6C422BAB95800324972 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6C322BAB95800324972 /* About.storyboard */; };
+		D58BE6C622BAB97A00324972 /* RequestPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6C522BAB97A00324972 /* RequestPage.storyboard */; };
+		D58BE6C822BAB99300324972 /* Volunteers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6C722BAB99300324972 /* Volunteers.storyboard */; };
+		D58BE6CA22BAB9A900324972 /* Recipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6C922BAB9A900324972 /* Recipe.storyboard */; };
+		D58BE6CC22BAB9E500324972 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6CB22BAB9E500324972 /* Login.storyboard */; };
+		D58BE6CE22BAB9FC00324972 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6CD22BAB9FC00324972 /* Welcome.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +37,12 @@
 		7A067DDE22BA9E0400FDC2B2 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; usesTabs = 1; };
 		7A067DE022BA9E2F00FDC2B2 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		CBD73E0B5AF308E47A83E05A /* Pods-MaverickPantry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaverickPantry.release.xcconfig"; path = "Target Support Files/Pods-MaverickPantry/Pods-MaverickPantry.release.xcconfig"; sourceTree = "<group>"; };
+		D58BE6C322BAB95800324972 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		D58BE6C522BAB97A00324972 /* RequestPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RequestPage.storyboard; sourceTree = "<group>"; };
+		D58BE6C722BAB99300324972 /* Volunteers.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Volunteers.storyboard; sourceTree = "<group>"; };
+		D58BE6C922BAB9A900324972 /* Recipe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Recipe.storyboard; sourceTree = "<group>"; };
+		D58BE6CB22BAB9E500324972 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		D58BE6CD22BAB9FC00324972 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		DE81BE6CE415D4ED5A9F1981 /* Pods_MaverickPantry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaverickPantry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -75,6 +87,12 @@
 		7A067DC922BA98F700FDC2B2 /* MaverickPantry */ = {
 			isa = PBXGroup;
 			children = (
+				D58BE6CD22BAB9FC00324972 /* Welcome.storyboard */,
+				D58BE6CB22BAB9E500324972 /* Login.storyboard */,
+				D58BE6C922BAB9A900324972 /* Recipe.storyboard */,
+				D58BE6C722BAB99300324972 /* Volunteers.storyboard */,
+				D58BE6C522BAB97A00324972 /* RequestPage.storyboard */,
+				D58BE6C322BAB95800324972 /* About.storyboard */,
 				7A067DCA22BA98F700FDC2B2 /* AppDelegate.swift */,
 				7A067DDE22BA9E0400FDC2B2 /* FirebaseManager.swift */,
 				7A067DE022BA9E2F00FDC2B2 /* Users.swift */,
@@ -158,10 +176,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D58BE6CA22BAB9A900324972 /* Recipe.storyboard in Resources */,
 				7A067DD522BA98FA00FDC2B2 /* LaunchScreen.storyboard in Resources */,
+				D58BE6C422BAB95800324972 /* About.storyboard in Resources */,
 				7A067DD222BA98FA00FDC2B2 /* Assets.xcassets in Resources */,
 				7A067DD022BA98F700FDC2B2 /* Main.storyboard in Resources */,
+				D58BE6CE22BAB9FC00324972 /* Welcome.storyboard in Resources */,
 				7A067DDD22BA992900FDC2B2 /* GoogleService-Info.plist in Resources */,
+				D58BE6C622BAB97A00324972 /* RequestPage.storyboard in Resources */,
+				D58BE6C822BAB99300324972 /* Volunteers.storyboard in Resources */,
+				D58BE6CC22BAB9E500324972 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

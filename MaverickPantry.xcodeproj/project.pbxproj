@@ -27,6 +27,7 @@
 		E0B3064E22BABD67007A2E85 /* VolunteersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3064D22BABD67007A2E85 /* VolunteersViewController.swift */; };
 		E0B3065022BABDAD007A2E85 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3064F22BABDAD007A2E85 /* RecipeViewController.swift */; };
 		E0B3065422BABE3F007A2E85 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3065322BABE3F007A2E85 /* WelcomeViewController.swift */; };
+		D58BE6D022BABB8600324972 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6CF22BABB8600324972 /* Admin.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		D58BE6C922BAB9A900324972 /* Recipe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Recipe.storyboard; sourceTree = "<group>"; };
 		D58BE6CB22BAB9E500324972 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		D58BE6CD22BAB9FC00324972 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		D58BE6CF22BABB8600324972 /* Admin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
 		DE81BE6CE415D4ED5A9F1981 /* Pods_MaverickPantry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaverickPantry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B3064922BABCE2007A2E85 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E0B3064B22BABD24007A2E85 /* RequestPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPageViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				E0B3064B22BABD24007A2E85 /* RequestPageViewController.swift */,
 				D58BE6C322BAB95800324972 /* About.storyboard */,
 				E0B3064922BABCE2007A2E85 /* AboutViewController.swift */,
+				D58BE6CF22BABB8600324972 /* Admin.storyboard */,
 				7A067DCA22BA98F700FDC2B2 /* AppDelegate.swift */,
 				7A067DDE22BA9E0400FDC2B2 /* FirebaseManager.swift */,
 				7A067DE022BA9E2F00FDC2B2 /* Users.swift */,
@@ -199,6 +202,7 @@
 				D58BE6CE22BAB9FC00324972 /* Welcome.storyboard in Resources */,
 				7A067DDD22BA992900FDC2B2 /* GoogleService-Info.plist in Resources */,
 				D58BE6C622BAB97A00324972 /* RequestPage.storyboard in Resources */,
+				D58BE6D022BABB8600324972 /* Admin.storyboard in Resources */,
 				D58BE6C822BAB99300324972 /* Volunteers.storyboard in Resources */,
 				D58BE6CC22BAB9E500324972 /* Login.storyboard in Resources */,
 			);

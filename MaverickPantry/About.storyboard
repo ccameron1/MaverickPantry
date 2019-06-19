@@ -22,6 +22,9 @@
                                 <rect key="frame" x="301" y="104" width="93" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Administrator"/>
+                                <connections>
+                                    <segue destination="Bu6-Rr-I9j" kind="show" id="wOv-Is-lTV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -31,7 +34,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHf-bP-iSB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2690" y="-978"/>
+            <point key="canvasLocation" x="2689.8550724637685" y="-978.34821428571422"/>
+        </scene>
+        <!--Admin-->
+        <scene sceneID="7Lh-EF-8TH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Admin" id="Bu6-Rr-I9j" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BLa-tQ-vNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3681" y="-978"/>
         </scene>
     </scenes>
 </document>

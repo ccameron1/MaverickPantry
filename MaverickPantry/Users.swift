@@ -14,11 +14,16 @@ class Users {
     var email: String
     var initials: String
     var yearOfBirth: Int
+    var NUID : String
+    var uid : String
     
-    init(isAdmin: Bool, email: String, initials: String, yearOfBirth: Int) {
+    
+    init(isAdmin: Bool, email: String, initials: String, yearOfBirth: Int, NUID: String, uid : String) {
         self.isAdmin = isAdmin
         self.email = email
         self.initials = initials
         self.yearOfBirth = yearOfBirth
+        self.NUID = NUID
+        self.uid = uid
     }
 }

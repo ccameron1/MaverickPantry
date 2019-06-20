@@ -12,14 +12,21 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
     
     var foodTypes : [[String]] = []
     var foodTypeNames = ["Protein", "Vegetable", "Fruit", "Grain", "Additional Food", "Miscellaneous", "Personal Hygiene"]
-    var foodNames = [""]
-    var proteins = [""]
-    var vegetables = [""]
-    var fruits = [""]
-    var grains = [""]
-    var additional = [""]
-    var miscellaneous = [""]
-    var personalHygiene = [""]
+    
+    var foodNames = ["Natural Creamy Peanut Butter", "Solid White Albacore Tuna", "White Premium Chunk Chicken Breast", "Organic Black Beans", "Garbanzo Beans", "Whole Kernel Sweet Corn", "Diced Tomatoes", "Cut Green Beans", "Sliced Yellow Peaches", "Mandarin Oranges", "Cinnamon and Raisin Granola", "Organic Shells and White Cheddar", "Toasted Whole Grain Oats Cereal", "Oats and Flax Instant Oatmeal", "Organic Whole Wheat Spaghetti", "Brown Basmati Rice", "White Rice", "Ground Black Pepper", "Organic Marinara Sauce", "Organic Alfredo Pasta Sauce", "Organic Tomato Soup", "Organic Lentil Soup", "Organic Chicken Noodle Soup", "Toilet Paper", "Paper Towel", "Menstruation Tampons", "Menstruation Pads", "Soap Bar", "Shampoo", "Conditioner", "Toothpaste"]
+    
+    var proteins = ["Natural Creamy Peanut Butter", "Solid White Albacore Tuna", "White Premium Chunk Chicken Breast", "Organic Black Beans", "Garbanzo Beans"]
+    
+    var vegetables = ["Whole Kernel Sweet Corn", "Diced Tomatoes", "Cut Green Beans"]
+    
+    var fruits = ["Sliced Yellow Peaches", "Mandarin Oranges"]
+    var grains = ["Cinnamon and Raisin Granola", "Organic Shells and White Cheddar", "Toasted Whole Grain Oats Cereal", "Oats and Flax Instant Oatmeal", "Organic Whole Wheat Spaghetti", "Brown Basmati Rice", "White Rice"
+    ]
+    var additional = ["Ground Black Pepper", "Organic Marinara Sauce", "Organic Alfredo Pasta Sauce", "Organic Tomato Soup", "Organic Lentil Soup", "Organic Chicken Noodle Soup"]
+    
+    var miscellaneous = ["Toilet Paper", "Paper Towel"]
+    
+    var personalHygiene = ["Menstruation Tampons", "Menstruation Pads", "Soap Bar", "Shampoo", "Conditioner", "Toothpaste"]
 
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -28,7 +35,7 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return foodNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,6 +44,7 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func submitButtonPressed(_ sender: Any) {
+        
     }
     
 }

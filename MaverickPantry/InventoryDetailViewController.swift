@@ -15,6 +15,8 @@ class InventoryDetailViewController: UIViewController {
     @IBOutlet weak var givenOutLabel: UILabel!
     @IBOutlet weak var updateButton: UIButton!
     
+    var updateBool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +25,13 @@ class InventoryDetailViewController: UIViewController {
     
     
     @IBAction func whenUpdateAmountPressed(_ sender: UIButton) {
-        newAmountTextField.isHidden = !newAmountTextField.isHidden
+       newAmountTextField.isHidden = !newAmountTextField.isHidden
+        if !updateBool{
+            while newAmountTextField.text == nil {
+                updateButton.isEnabled = false
+            }
+        }
+        
         
         
     }

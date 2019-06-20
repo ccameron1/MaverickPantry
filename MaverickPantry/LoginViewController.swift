@@ -11,8 +11,8 @@ import UIKit
 class LoginViewController: UIViewController {
 
 
+    
     let loginToAboutSegueIdentifier = "loginGood"
-
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -27,9 +27,7 @@ class LoginViewController: UIViewController {
         FirebaseManager.Login(email: emailTextField.text!, password: passwordTextField.text!) { (success) in
             if success {
                 print("yay")
-
                 self.performSegue(withIdentifier: self.loginToAboutSegueIdentifier, sender: nil)
-
             }
         }
     }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		05EDE73BE5AF15C83359F2E7 /* Pods_MaverickPantry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE81BE6CE415D4ED5A9F1981 /* Pods_MaverickPantry.framework */; };
+		73306A1822BBCFC800E5FB78 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73306A1722BBCFC800E5FB78 /* InventoryViewController.swift */; };
+		73306A1A22BBD93300E5FB78 /* InventoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73306A1922BBD93300E5FB78 /* InventoryDetailViewController.swift */; };
 		7A067DCB22BA98F700FDC2B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A067DCA22BA98F700FDC2B2 /* AppDelegate.swift */; };
 		7A067DCD22BA98F700FDC2B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A067DCC22BA98F700FDC2B2 /* ViewController.swift */; };
 		7A067DD022BA98F700FDC2B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A067DCE22BA98F700FDC2B2 /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		1759176685074EB312FB6B83 /* Pods-MaverickPantry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaverickPantry.debug.xcconfig"; path = "Target Support Files/Pods-MaverickPantry/Pods-MaverickPantry.debug.xcconfig"; sourceTree = "<group>"; };
+		73306A1722BBCFC800E5FB78 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
+		73306A1922BBD93300E5FB78 /* InventoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryDetailViewController.swift; sourceTree = "<group>"; };
 		7A067DC722BA98F700FDC2B2 /* MaverickPantry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaverickPantry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A067DCA22BA98F700FDC2B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A067DCC22BA98F700FDC2B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 				E0B3064922BABCE2007A2E85 /* AboutViewController.swift */,
 				D58BE6CF22BABB8600324972 /* Admin.storyboard */,
 				D5AFCE2A22BBC44900FD3CD4 /* Inventory.storyboard */,
+				73306A1922BBD93300E5FB78 /* InventoryDetailViewController.swift */,
+				73306A1722BBCFC800E5FB78 /* InventoryViewController.swift */,
 				D5AFCE2822BBBE7C00FD3CD4 /* CurrentOrdersViewController.swift */,
 				7A067DCA22BA98F700FDC2B2 /* AppDelegate.swift */,
 				7A067DDE22BA9E0400FDC2B2 /* FirebaseManager.swift */,
@@ -291,6 +297,7 @@
 				7A067DE122BA9E2F00FDC2B2 /* Users.swift in Sources */,
 				E0B3064C22BABD24007A2E85 /* RequestPageViewController.swift in Sources */,
 				7A067DDF22BA9E0400FDC2B2 /* FirebaseManager.swift in Sources */,
+				73306A1822BBCFC800E5FB78 /* InventoryViewController.swift in Sources */,
 				7A067DCD22BA98F700FDC2B2 /* ViewController.swift in Sources */,
 				7A55A72822BACCCE0075441B /* NewAccountViewController.swift in Sources */,
 				E0B3065022BABDAD007A2E85 /* RecipeViewController.swift in Sources */,
@@ -298,6 +305,7 @@
 				E0B3064A22BABCE2007A2E85 /* AboutViewController.swift in Sources */,
 				7A55A72622BACCB60075441B /* LoginViewController.swift in Sources */,
 				7A067DCB22BA98F700FDC2B2 /* AppDelegate.swift in Sources */,
+				73306A1A22BBD93300E5FB78 /* InventoryDetailViewController.swift in Sources */,
 				D5AFCE2922BBBE7C00FD3CD4 /* CurrentOrdersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

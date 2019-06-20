@@ -10,6 +10,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    let loginSegueIdentifier = "loginSuccessful"
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
@@ -23,6 +25,7 @@ class LoginViewController: UIViewController {
         FirebaseManager.Login(email: emailTextField.text!, password: passwordTextField.text!) { (success) in
             if success {
                 print("yay")
+                self.performSegue(withIdentifier: self.loginSegueIdentifier, sender: nil)
             }
         }
     }

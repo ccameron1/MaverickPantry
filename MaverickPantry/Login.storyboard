@@ -55,6 +55,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="DT6-D2-1xn" id="FZa-nx-T2t"/>
                         <outlet property="passwordTextField" destination="bF1-dy-TOb" id="E0P-cJ-JqR"/>
+                        <segue destination="a1r-Cw-741" kind="show" identifier="loginSuccessful" id="v0O-Yk-myx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -127,6 +128,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNO-UO-hAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="957" y="121"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="Ygx-vj-mue">
+            <objects>
+                <viewControllerPlaceholder storyboardName="About" id="a1r-Cw-741" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S0w-n4-EhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="522" y="509"/>
         </scene>
     </scenes>
 </document>

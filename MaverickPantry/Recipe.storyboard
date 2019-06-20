@@ -10,21 +10,46 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Recipe View Controller-->
         <scene sceneID="n6g-Vy-gbJ">
             <objects>
                 <viewController id="ypA-hy-vBR" customClass="RecipeViewController" customModule="MaverickPantry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Z8-6P-Lfx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4iZ-8K-AGw">
+                                <rect key="frame" x="20" y="139" width="374" height="597"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" id="cEN-P9-vY1">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cEN-P9-vY1" id="4qU-OU-6rx">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vIX-S3-UW5" firstAttribute="bottom" secondItem="4iZ-8K-AGw" secondAttribute="bottom" constant="126" id="5u4-3x-VPk"/>
+                            <constraint firstItem="vIX-S3-UW5" firstAttribute="trailing" secondItem="4iZ-8K-AGw" secondAttribute="trailing" constant="20" id="V4x-Zu-fTp"/>
+                            <constraint firstItem="4iZ-8K-AGw" firstAttribute="leading" secondItem="vIX-S3-UW5" secondAttribute="leading" constant="20" id="n67-rM-FXX"/>
+                            <constraint firstItem="4iZ-8K-AGw" firstAttribute="top" secondItem="vIX-S3-UW5" secondAttribute="top" constant="95" id="rjc-iR-Lsp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vIX-S3-UW5"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="WmA-8R-lth"/>
+                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="WmA-8R-lth"/>
+                    <connections>
+                        <outlet property="recipeTableView" destination="4iZ-8K-AGw" id="clO-4a-35l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ane-HV-UnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2690" y="1077"/>
+            <point key="canvasLocation" x="2689.8550724637685" y="1076.7857142857142"/>
         </scene>
     </scenes>
 </document>

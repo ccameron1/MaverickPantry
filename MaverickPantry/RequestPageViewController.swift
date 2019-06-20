@@ -37,6 +37,16 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func submitButtonPressed(_ sender: Any) {
+        
+        //connect this request with specfic firebase user
+        
+        //if none update the "request1" field and add Timestamp
+        
+        //else update the "request2" field and add Timestamp
+        print(FirebaseManager.currentUserId)
+        
+        
+        
     }
     
 }

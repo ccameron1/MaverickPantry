@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseFirestore
 
 class Users {
     
@@ -30,5 +32,17 @@ class Users {
         request1 = ["", ""]
         request2 = ["", ""]
     }
+    
+    
+    func setRequests(request1: [String], request2: [String]) {
+        FirebaseManager.globalUser.request1 = request1
+        FirebaseManager.globalUser.request2 = request2
+
+        
+        let db = Firestore.firestore()
+        db.collection("Users").document("\(FirebaseManager.globalUser.uid)").setData([ "request1": request1 ], merge: true)
+        
+    }
+    
     
 }

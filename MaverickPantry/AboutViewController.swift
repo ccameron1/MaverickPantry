@@ -14,6 +14,9 @@ class AboutViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let request1 = ["hi", "bye"]
+        let request2 = ["cheese", "fruit"]
+        FirebaseManager.globalUser.setRequests(request1: request1, request2: request2)
     }
     
 

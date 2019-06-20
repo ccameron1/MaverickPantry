@@ -16,6 +16,7 @@ class FirebaseManager {
     static let databaseRef = Firestore.firestore()
     static var currentUserId: String = ""
     static var currentUser : User?
+	static var globalUser : Users!
     
     static func Login(email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
         
@@ -76,6 +77,11 @@ class FirebaseManager {
 			"NUID" : NUID,
 			"uid" : uid])
 		}
+		databaseRef.collection("Users").document(uid!).getDocument { (document, error) in
+			globalUser = Users.init(isAdmin: isAdmin, email: document?.get("email") as! String, initials: document?.get("initials") as! String, yearOfBirth: document?.get("yearOfBirth") as! Int, NUID: document?.get("NUID") as! String, uid: document?.get("uid") as! String)
+		}
+		
+		
     }
     
 }

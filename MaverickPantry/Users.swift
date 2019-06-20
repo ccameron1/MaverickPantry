@@ -16,6 +16,8 @@ class Users {
     var yearOfBirth: Int
     var NUID : String
     var uid : String
+    var request1 : [String]
+    var request2 : [String]
     
     
     init(isAdmin: Bool, email: String, initials: String, yearOfBirth: Int, NUID: String, uid : String) {
@@ -25,5 +27,8 @@ class Users {
         self.yearOfBirth = yearOfBirth
         self.NUID = NUID
         self.uid = uid
+        request1 = ["", ""]
+        request2 = ["", ""]
     }
+    
 }

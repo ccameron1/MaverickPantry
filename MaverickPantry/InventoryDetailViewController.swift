@@ -10,11 +10,28 @@ import UIKit
 
 class InventoryDetailViewController: UIViewController {
 
+    @IBOutlet weak var amountLeftLabel: UILabel!
+    @IBOutlet weak var newAmountTextField: UITextField!
+    @IBOutlet weak var givenOutLabel: UILabel!
+    @IBOutlet weak var updateButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        newAmountTextField.isHidden = true
     }
+    
+    
+    @IBAction func whenUpdateAmountPressed(_ sender: UIButton) {
+        newAmountTextField.isHidden = !newAmountTextField.isHidden
+        
+        
+    }
+    
+    @IBAction func whenClearButtonPressed(_ sender: UIButton) {
+        givenOutLabel.text = "0"
+    }
+    
     
 
     /*

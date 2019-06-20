@@ -10,13 +10,30 @@ import UIKit
 
 class RecipeViewController: UIViewController {
 
+    var recipes = ["Cake", "Pie", "Cheese"]
+    
+    @IBOutlet weak var recipeTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
     
-
+    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
+    {
+        let cellIdentifier = "cellID"
+        
+        var cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! UITableViewCell
+        
+        cell.textLabel!.text = self.recipes[indexPath.row]
+        
+        var image : UIImage = UIImage(named: "foodpantrybanner")!
+        print("The loaded image: \(image)")
+        cell.imageView!.image = image
+        
+        return cell
+    }
     /*
     // MARK: - Navigation
 

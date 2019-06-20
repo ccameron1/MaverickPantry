@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LMT-Uu-VPy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p6K-ly-vMt">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 1-->
+        <!--About View Controller-->
         <scene sceneID="nLZ-m2-t5B">
             <objects>
                 <viewController id="LMT-Uu-VPy" customClass="AboutViewController" customModule="MaverickPantry" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,11 +30,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cn7-f1-sdZ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="xnv-oA-9sp"/>
+                    <navigationItem key="navigationItem" id="96R-dz-yPv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHf-bP-iSB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2689.8550724637685" y="-978.34821428571422"/>
+            <point key="canvasLocation" x="3600.0000000000005" y="-978.34821428571422"/>
         </scene>
         <!--Admin-->
         <scene sceneID="7Lh-EF-8TH">
@@ -42,7 +42,26 @@
                 <viewControllerPlaceholder storyboardName="Admin" id="Bu6-Rr-I9j" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BLa-tQ-vNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3681" y="-978"/>
+            <point key="canvasLocation" x="4590.579710144928" y="-978.34821428571422"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="Jb9-Ox-B6q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p6K-ly-vMt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 1" id="xnv-oA-9sp"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L0z-uW-kl8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LMT-Uu-VPy" kind="relationship" relationship="rootViewController" id="b0Q-BS-12K"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P0m-mc-mgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2689.8550724637685" y="-978.34821428571422"/>
         </scene>
     </scenes>
 </document>

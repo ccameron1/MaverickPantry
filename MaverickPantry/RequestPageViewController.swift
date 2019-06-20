@@ -31,7 +31,8 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        foodTypes = [proteins, vegetables, fruits, grains, additional, miscellaneous, personalHygiene]
+        tableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,6 +41,16 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID") as! StepperTableViewCell
+        cell.foodNameLabel.text = foodNames[indexPath.row]
+        print("cell")
+        for item in foodTypes{
+            let itemIndex = foodTypes.firstIndex(of: item)!
+            for stuff in item{
+                if cell.foodNameLabel.text == stuff{
+                    cell.foodTypeLabel.text = foodTypeNames[itemIndex]
+                }
+            }
+        }
         return cell
     }
     

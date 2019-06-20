@@ -26,13 +26,13 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
 //tableView Functions
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foodGroup.count
+        return 16
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RcellID")
-        let foodType = foodGroup[indexPath.row]
-        cell?.textLabel!.text = foodType
+//        let foodType = foodGroup[indexPath.row]
+        cell?.textLabel!.text = "food"
         return cell!
     }
     
@@ -41,7 +41,7 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
+        return 40
     }
     
     @IBAction func filledButtonPressed(_ sender: UIButton) {

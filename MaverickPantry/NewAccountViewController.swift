@@ -22,7 +22,7 @@ class NewAccountViewController: UIViewController {
     }
     
     @IBAction func createAccountButton(_ sender: Any) {
-        FirebaseManager.CreateAccount(email: emailTextField.text!, password: passwordTextField.text!, initials: initialsTextField.text!, yearOfBirth: Int(yearOfBirthTextField.text!)!, isAdmin: false) { (success) in
+        FirebaseManager.CreateAccount(email: emailTextField.text!, password: passwordTextField.text!, initials: initialsTextField.text!, yearOfBirth: Int(yearOfBirthTextField.text!)!, isAdmin: false, NUID : NUIDTextField.text!) { (success) in
             if success {
                 print("new acount homies")
             }

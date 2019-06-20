@@ -21,11 +21,11 @@ class ViewController: UIViewController {
         //            }
         //        }
         
-        FirebaseManager.CreateAccount(email: "hello@unopaha.edu", password: "password", initials: "CMC", yearOfBirth: 2000, isAdmin: false) { (success) in
-            if success {
-                print("success")
-            }
-        }
+//        FirebaseManager.CreateAccount(email: "hello@unopaha.edu", password: "password", initials: "CMC", yearOfBirth: 2000, isAdmin: false) { (success) in
+//            if success {
+//                print("success")
+//            }
+//        }
     }
     
     

@@ -59,9 +59,7 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func submitButtonPressed(_ sender: Any) {
-<<<<<<< HEAD
-        
-<<<<<<< HEAD
+
         //connect this request with specfic firebase user
         
         //if none update the "request1" field and add Timestamp
@@ -69,11 +67,6 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
         //else update the "request2" field and add Timestamp
         print(FirebaseManager.currentUserId)
         
-        
-        
-=======
->>>>>>> 977bccbbf8fad00a0efba703fa6ca55580649d05
-=======
         var totalItems = 0.0
         var requestedItems = [""]
         for item in cells{
@@ -98,7 +91,6 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
             alertController.addAction(action)
             self.present(alertController, animated: true)
         }
->>>>>>> a8558741b3a1822fb69d7a1c08586840d9c2acec
     }
     
 }

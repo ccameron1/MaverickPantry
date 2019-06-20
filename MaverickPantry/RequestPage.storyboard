@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="PNI-ZK-Y1Y">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" rowHeight="75" id="PNI-ZK-Y1Y" customClass="StepperTableViewCell" customModule="MaverickPantry" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PNI-ZK-Y1Y" id="mKn-U4-JuB">
@@ -47,6 +47,9 @@
                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="u2j-PS-EU2">
                                                     <rect key="frame" x="308" y="7" width="94" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="stepperDidIncrement:" destination="PNI-ZK-Y1Y" eventType="valueChanged" id="VTb-2x-snf"/>
+                                                    </connections>
                                                 </stepper>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCo-a9-C6d">
                                                     <rect key="frame" x="334" y="44" width="42" height="21"/>
@@ -57,6 +60,12 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="foodAmountLabel" destination="lCo-a9-C6d" id="k5J-I5-u1b"/>
+                                            <outlet property="foodNameLabel" destination="eOc-qt-H09" id="vqC-Dv-bD7"/>
+                                            <outlet property="foodTypeLabel" destination="2Rk-cY-XPm" id="75O-mI-SFh"/>
+                                            <outlet property="stepper" destination="u2j-PS-EU2" id="pEQ-Bh-bhf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -64,12 +73,18 @@
                                 <rect key="frame" x="183" y="749" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="cnv-Oi-h7w" eventType="touchUpInside" id="aqO-AA-w9q"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xXT-Cq-iWH"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="jO0-ii-bxM"/>
+                    <connections>
+                        <outlet property="tableView" destination="WBN-hQ-OFQ" id="9a2-Ja-LUi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvU-mn-Ge8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

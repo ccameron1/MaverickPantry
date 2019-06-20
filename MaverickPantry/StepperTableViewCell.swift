@@ -10,6 +10,10 @@ import UIKit
 
 class StepperTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var foodTypeLabel: UILabel!
+    @IBOutlet weak var foodNameLabel: UILabel!
+    @IBOutlet weak var foodAmountLabel: UILabel!
+    @IBOutlet weak var stepper: UIStepper!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +24,8 @@ class StepperTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    @IBAction func stepperDidIncrement(_ sender: UIStepper) {
+        
+    }
+    
 }

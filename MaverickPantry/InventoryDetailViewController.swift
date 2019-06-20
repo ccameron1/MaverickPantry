@@ -25,14 +25,20 @@ class InventoryDetailViewController: UIViewController {
     
     
     @IBAction func whenUpdateAmountPressed(_ sender: UIButton) {
-       newAmountTextField.isHidden = !newAmountTextField.isHidden
-        if !updateBool{
-            while newAmountTextField.text == nil {
-                updateButton.isEnabled = false
-            }
+        //when hitting done
+        if updateBool{
+//            //let newAmount = Double(newAmountTextField.t)
+//           // if newAmountTextField.text == nil || newAmountTextField.text < 0{
+//                let alertController = UIAlertController(title: "Invalid Amount", message: <#T##String?#>, preferredStyle: <#T##UIAlertController.Style#>)
+//            }
+            
         }
-        
-        
+        // when hitting update
+        if !updateBool{
+            newAmountTextField.isHidden = !newAmountTextField.isHidden
+            updateButton.setTitle("Done", for: .normal)
+            updateBool = !updateBool
+        }
         
     }
     

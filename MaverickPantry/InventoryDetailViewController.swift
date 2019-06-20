@@ -27,11 +27,20 @@ class InventoryDetailViewController: UIViewController {
     @IBAction func whenUpdateAmountPressed(_ sender: UIButton) {
         //when hitting done
         if updateBool{
-//            //let newAmount = Double(newAmountTextField.t)
-//           // if newAmountTextField.text == nil || newAmountTextField.text < 0{
-//                let alertController = UIAlertController(title: "Invalid Amount", message: <#T##String?#>, preferredStyle: <#T##UIAlertController.Style#>)
-//            }
-            
+            let newAmount = Int(newAmountTextField.text!)
+            if newAmount == nil || newAmount! < 0{
+                let alertController = UIAlertController(title: "Invalid Amount", message: "Please enter a valid amount", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alertController.addAction(action)
+                present(alertController, animated: true, completion: nil)
+            } else{
+                amountLeftLabel.text = "\(newAmount!)"
+                updateBool = !updateBool
+                newAmountTextField.text = ""
+                newAmountTextField.isHidden = true
+                updateButton.setTitle("Update", for: .normal)
+            }
+        
         }
         // when hitting update
         if !updateBool{

@@ -45,6 +45,7 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID") as! StepperTableViewCell
         cell.foodNameLabel.text = foodNames[indexPath.row]
+        cell.cellID = indexPath.row
         print("cell")
         for item in foodTypes{
             let itemIndex = foodTypes.firstIndex(of: item)!
@@ -54,23 +55,24 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
                 }
             }
         }
+        cells.append(cell)
         return cell
     }
     
     @IBAction func submitButtonPressed(_ sender: Any) {
         var totalItems = 0.0
         var requestedItems = [""]
-//        for item in cells{
-//            let itemValue = Double(item.foodAmountLabel.text!)
-//            let intItemValue = Int(itemValue!)
-//            for int in 0...intItemValue{
-//                requestedItems.append(item.foodNameLabel.text!)
-//                print(int)
-//            }
-//            if item.foodTypeLabel.text != "Personal Hygiene"{
-//                totalItems += itemValue!
-//            }
-//        }
+        for item in cells{
+            let itemValue = Double(item.foodAmountLabel.text!)
+            let intItemValue = Int(itemValue!)
+            for int in 0...intItemValue{
+                requestedItems.append(item.foodNameLabel.text!)
+                print(int)
+            }
+            if item.foodTypeLabel.text != "Personal Hygiene"{
+                totalItems += itemValue!
+            }
+        }
         if totalItems > 10.0{
             let alertController = UIAlertController(title: "Too many items", message: "There is a limit of 10 for items outside of the personal hygiene category", preferredStyle: .alert)
             let action = UIAlertAction(title: "Ok", style: .default, handler: nil)

@@ -14,8 +14,10 @@ class StepperTableViewCell: UITableViewCell {
     @IBOutlet weak var foodNameLabel: UILabel!
     @IBOutlet weak var foodAmountLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper!
+    var cellID : Int?
     override func awakeFromNib() {
         super.awakeFromNib()
+        stepper.value = 0
         foodAmountLabel.text = "\(stepper.value)"
     }
 

@@ -14,35 +14,39 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
     
     //var items : [] = []
     
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Request Form"
+        nameLabel.text = "Order For: "
 
     }
 
 //tableView Functions
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foodGroup.count
+        return 16
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RcellID")
-        let foodType = foodGroup[indexPath.row]
-        cell?.textLabel!.text = foodType
+//        let foodType = foodGroup[indexPath.row]
+        cell?.textLabel!.text = "food"
         return cell!
     }
     
-//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        return nil
-//    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
+        return 40
     }
     
     @IBAction func filledButtonPressed(_ sender: UIButton) {
         perform("")
     }
+    
+    
 }

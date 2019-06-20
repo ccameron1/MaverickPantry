@@ -16,17 +16,29 @@ class InventoryDetailViewController: UIViewController {
     @IBOutlet weak var updateButton: UIButton!
     
     var updateBool = false
+    var amountLeft = 0
+    var amountGiven = 0
+    var foodName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = foodName
+        amountLeftLabel.text = "\(amountLeft)"
+        givenOutLabel.text = "\(amountGiven)"
         newAmountTextField.isHidden = true
     }
     
     
     @IBAction func whenUpdateAmountPressed(_ sender: UIButton) {
+        // when hitting update
+        if !updateBool{
+            newAmountTextField.isHidden = !newAmountTextField.isHidden
+            updateButton.setTitle("Done", for: .normal)
+            updateBool = !updateBool
+        }
         //when hitting done
-        if updateBool{
+        else{
             let newAmount = Int(newAmountTextField.text!)
             if newAmount == nil || newAmount! < 0{
                 let alertController = UIAlertController(title: "Invalid Amount", message: "Please enter a valid amount", preferredStyle: .alert)
@@ -41,12 +53,6 @@ class InventoryDetailViewController: UIViewController {
                 updateButton.setTitle("Update", for: .normal)
             }
         
-        }
-        // when hitting update
-        if !updateBool{
-            newAmountTextField.isHidden = !newAmountTextField.isHidden
-            updateButton.setTitle("Done", for: .normal)
-            updateBool = !updateBool
         }
         
     }

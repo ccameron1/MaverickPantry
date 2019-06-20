@@ -14,10 +14,12 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
     
     //var items : [] = []
     
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Request Form"
+        nameLabel.text = "Order For: "
 
     }
 
@@ -34,15 +36,17 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
         return cell!
     }
     
-//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        return nil
-//    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
+        return 75
     }
     
     @IBAction func filledButtonPressed(_ sender: UIButton) {
         perform("")
     }
+    
+    
 }

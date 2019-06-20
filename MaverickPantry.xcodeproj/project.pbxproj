@@ -25,6 +25,7 @@
 		D58BE6CC22BAB9E500324972 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6CB22BAB9E500324972 /* Login.storyboard */; };
 		D58BE6CE22BAB9FC00324972 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6CD22BAB9FC00324972 /* Welcome.storyboard */; };
 		D58BE6D022BABB8600324972 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6CF22BABB8600324972 /* Admin.storyboard */; };
+		D5AFCE2922BBBE7C00FD3CD4 /* CurrentOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFCE2822BBBE7C00FD3CD4 /* CurrentOrdersViewController.swift */; };
 		E0B3064A22BABCE2007A2E85 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3064922BABCE2007A2E85 /* AboutViewController.swift */; };
 		E0B3064C22BABD24007A2E85 /* RequestPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3064B22BABD24007A2E85 /* RequestPageViewController.swift */; };
 		E0B3064E22BABD67007A2E85 /* VolunteersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3064D22BABD67007A2E85 /* VolunteersViewController.swift */; };
@@ -54,6 +55,7 @@
 		D58BE6CB22BAB9E500324972 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		D58BE6CD22BAB9FC00324972 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		D58BE6CF22BABB8600324972 /* Admin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
+		D5AFCE2822BBBE7C00FD3CD4 /* CurrentOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentOrdersViewController.swift; sourceTree = "<group>"; };
 		DE81BE6CE415D4ED5A9F1981 /* Pods_MaverickPantry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaverickPantry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B3064922BABCE2007A2E85 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E0B3064B22BABD24007A2E85 /* RequestPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPageViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				D58BE6C322BAB95800324972 /* About.storyboard */,
 				E0B3064922BABCE2007A2E85 /* AboutViewController.swift */,
 				D58BE6CF22BABB8600324972 /* Admin.storyboard */,
+				D5AFCE2822BBBE7C00FD3CD4 /* CurrentOrdersViewController.swift */,
 				7A067DCA22BA98F700FDC2B2 /* AppDelegate.swift */,
 				7A067DDE22BA9E0400FDC2B2 /* FirebaseManager.swift */,
 				7A067DE022BA9E2F00FDC2B2 /* Users.swift */,
@@ -151,7 +154,7 @@
 				7A067DC422BA98F700FDC2B2 /* Frameworks */,
 				7A067DC522BA98F700FDC2B2 /* Resources */,
 				A1979AA0BC13A84C964CA08E /* [CP] Embed Pods Frameworks */,
-				EF2671ED8269D96CB9382C21 /* [CP] Copy Pods Resources */,
+				F1EF9761ED27DCDB51BF3A8B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,7 +259,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MaverickPantry/Pods-MaverickPantry-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EF2671ED8269D96CB9382C21 /* [CP] Copy Pods Resources */ = {
+		F1EF9761ED27DCDB51BF3A8B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -291,6 +294,7 @@
 				E0B3064A22BABCE2007A2E85 /* AboutViewController.swift in Sources */,
 				7A55A72622BACCB60075441B /* LoginViewController.swift in Sources */,
 				7A067DCB22BA98F700FDC2B2 /* AppDelegate.swift in Sources */,
+				D5AFCE2922BBBE7C00FD3CD4 /* CurrentOrdersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

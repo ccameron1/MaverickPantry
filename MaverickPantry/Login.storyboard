@@ -137,13 +137,5 @@
             </objects>
             <point key="canvasLocation" x="957" y="121"/>
         </scene>
-        <!--About-->
-        <scene sceneID="Ygx-vj-mue">
-            <objects>
-                <viewControllerPlaceholder storyboardName="About" id="a1r-Cw-741" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S0w-n4-EhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="522" y="509"/>
-        </scene>
     </scenes>
 </document>

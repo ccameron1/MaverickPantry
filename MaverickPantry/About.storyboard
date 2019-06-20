@@ -13,6 +13,7 @@
         <!--About View Controller-->
         <scene sceneID="nLZ-m2-t5B">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HHf-bP-iSB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="LMT-Uu-VPy" customClass="AboutViewController" customModule="MaverickPantry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Gn-G4-CQM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -30,9 +31,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cn7-f1-sdZ"/>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="xnv-oA-9sp">
+                        <color key="badgeColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="96R-dz-yPv"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="z9M-Hc-wUP" kind="show" identifier="loginToAbout" id="aaa-ga-BR6"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HHf-bP-iSB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3600.0000000000005" y="-978.34821428571422"/>
         </scene>
@@ -44,11 +51,18 @@
             </objects>
             <point key="canvasLocation" x="4590.579710144928" y="-978.34821428571422"/>
         </scene>
-        <!--Item 1-->
+        <!--Login-->
+        <scene sceneID="wmd-Xq-ekD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="z9M-Hc-wUP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I95-0h-tel" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4391" y="-877"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="Jb9-Ox-B6q">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p6K-ly-vMt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="xnv-oA-9sp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L0z-uW-kl8">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

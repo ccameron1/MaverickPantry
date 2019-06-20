@@ -10,10 +10,17 @@ import UIKit
 
 class AboutViewController: UIViewController {
 
+    var loggedIn = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+//        if loggedIn == false {
+//
+//            performSegue(withIdentifier: "loginToAbout", sender: nil)
+//            loggedIn = true
+//        }
+//        // Do any additional setup after loading the view.
     }
     
 

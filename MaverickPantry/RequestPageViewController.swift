@@ -59,9 +59,6 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func submitButtonPressed(_ sender: Any) {
-<<<<<<< HEAD
-        
-=======
         var totalItems = 0.0
         var requestedItems = [""]
         for item in cells{
@@ -86,7 +83,6 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
             alertController.addAction(action)
             self.present(alertController, animated: true)
         }
->>>>>>> 6da96f89e69380731c7e8b14c6dd97ac2e396bc6
     }
     
 }

@@ -14,7 +14,6 @@ class StepperTableViewCell: UITableViewCell {
     @IBOutlet weak var foodNameLabel: UILabel!
     @IBOutlet weak var foodAmountLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper!
-    var cellID : Int?
     override func awakeFromNib() {
         super.awakeFromNib()
         stepper.value = 0
@@ -27,6 +26,12 @@ class StepperTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func stepperDidIncrement(_ sender: UIStepper) {
+        foodAmountLabel.text = "\(stepper.value)"
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        stepper.value = 0
         foodAmountLabel.text = "\(stepper.value)"
     }
     

@@ -45,7 +45,7 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID") as! StepperTableViewCell
         cell.foodNameLabel.text = foodNames[indexPath.row]
-        print("cell")
+        cell.cellID = indexPath.row
         for item in foodTypes{
             let itemIndex = foodTypes.firstIndex(of: item)!
             for stuff in item{

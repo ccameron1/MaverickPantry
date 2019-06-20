@@ -34,20 +34,20 @@
                                     <segue destination="b2J-cZ-eS4" kind="show" id="pFc-CS-ngQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAI-vv-PC9">
-                                <rect key="frame" x="156" y="612" width="103" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Current Orders"/>
-                                <connections>
-                                    <segue destination="LOn-yX-esV" kind="show" id="Tj7-kD-Tzc"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cT-iv-erw">
                                 <rect key="frame" x="175" y="203" width="64" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Inventory"/>
                                 <connections>
                                     <segue destination="x64-pg-huc" kind="show" id="W45-Ek-DAV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAI-vv-PC9">
+                                <rect key="frame" x="156" y="609" width="103" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Current Orders"/>
+                                <connections>
+                                    <segue destination="LOn-yX-esV" kind="show" id="Tj7-kD-Tzc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -141,8 +141,6 @@
         <!--Current Order Request View Controller-->
         <scene sceneID="8sX-3y-Zzd">
             <objects>
-                <exit id="dpF-dG-smh" userLabel="Exit" sceneMemberID="exit"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BSL-VA-Sge" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="FBT-XD-89L" customClass="CurrentOrderRequestViewController" customModule="MaverickPantry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P6B-hV-WLL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -209,6 +207,8 @@
                         <outlet property="tableView" destination="imL-yw-yan" id="ddJ-R7-x78"/>
                     </connections>
                 </viewController>
+                <exit id="dpF-dG-smh" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BSL-VA-Sge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5447.826086956522" y="396.42857142857139"/>
         </scene>

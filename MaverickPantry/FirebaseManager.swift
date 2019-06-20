@@ -75,7 +75,7 @@ class FirebaseManager {
             "email": email,
             "isAdmin": isAdmin,
 			"NUID" : NUID,
-			"uid" : uid])
+			"uid" : uid!])
 		}
 		databaseRef.collection("Users").document(uid!).getDocument { (document, error) in
 			globalUser = Users.init(isAdmin: isAdmin, email: document?.get("email") as! String, initials: document?.get("initials") as! String, yearOfBirth: document?.get("yearOfBirth") as! Int, NUID: document?.get("NUID") as! String, uid: document?.get("uid") as! String)

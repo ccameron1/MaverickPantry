@@ -47,7 +47,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Inventory"/>
                                 <connections>
-                                    <segue destination="F8b-FP-1GK" kind="show" id="W45-Ek-DAV"/>
+                                    <segue destination="x64-pg-huc" kind="show" id="W45-Ek-DAV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -146,21 +146,6 @@
             </objects>
             <point key="canvasLocation" x="5534.7826086956529" y="-1276.3392857142856"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="S26-yw-xMB">
-            <objects>
-                <viewController id="F8b-FP-1GK" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="06O-V5-fww">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="1mm-v8-52V"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L4I-oR-Zmd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4590" y="-1973"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="bJB-Ij-oIf">
             <objects>
@@ -178,6 +163,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Phf-eH-lh1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3679.7101449275365" y="-978.34821428571422"/>
+        </scene>
+        <!--Inventory-->
+        <scene sceneID="2Uw-Pq-pXa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Inventory" id="x64-pg-huc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2bc-8a-Yrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4590" y="-1973"/>
         </scene>
     </scenes>
 </document>

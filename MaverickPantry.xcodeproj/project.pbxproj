@@ -27,6 +27,7 @@
 		D58BE6D022BABB8600324972 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6CF22BABB8600324972 /* Admin.storyboard */; };
 		D5AFCE2922BBBE7C00FD3CD4 /* CurrentOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFCE2822BBBE7C00FD3CD4 /* CurrentOrdersViewController.swift */; };
 		D5AFCE2B22BBC44900FD3CD4 /* Inventory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5AFCE2A22BBC44900FD3CD4 /* Inventory.storyboard */; };
+		D5AFCE2D22BBD04600FD3CD4 /* CurrentOrderRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFCE2C22BBD04600FD3CD4 /* CurrentOrderRequestViewController.swift */; };
 		E0B3064A22BABCE2007A2E85 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3064922BABCE2007A2E85 /* AboutViewController.swift */; };
 		E0B3064C22BABD24007A2E85 /* RequestPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3064B22BABD24007A2E85 /* RequestPageViewController.swift */; };
 		E0B3064E22BABD67007A2E85 /* VolunteersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3064D22BABD67007A2E85 /* VolunteersViewController.swift */; };
@@ -58,6 +59,7 @@
 		D58BE6CF22BABB8600324972 /* Admin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
 		D5AFCE2822BBBE7C00FD3CD4 /* CurrentOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentOrdersViewController.swift; sourceTree = "<group>"; };
 		D5AFCE2A22BBC44900FD3CD4 /* Inventory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Inventory.storyboard; sourceTree = "<group>"; };
+		D5AFCE2C22BBD04600FD3CD4 /* CurrentOrderRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentOrderRequestViewController.swift; sourceTree = "<group>"; };
 		DE81BE6CE415D4ED5A9F1981 /* Pods_MaverickPantry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaverickPantry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B3064922BABCE2007A2E85 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E0B3064B22BABD24007A2E85 /* RequestPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPageViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				D58BE6C322BAB95800324972 /* About.storyboard */,
 				E0B3064922BABCE2007A2E85 /* AboutViewController.swift */,
 				D58BE6CF22BABB8600324972 /* Admin.storyboard */,
+				D5AFCE2C22BBD04600FD3CD4 /* CurrentOrderRequestViewController.swift */,
 				D5AFCE2A22BBC44900FD3CD4 /* Inventory.storyboard */,
 				D5AFCE2822BBBE7C00FD3CD4 /* CurrentOrdersViewController.swift */,
 				7A067DCA22BA98F700FDC2B2 /* AppDelegate.swift */,
@@ -294,6 +297,7 @@
 				7A067DCD22BA98F700FDC2B2 /* ViewController.swift in Sources */,
 				7A55A72822BACCCE0075441B /* NewAccountViewController.swift in Sources */,
 				E0B3065022BABDAD007A2E85 /* RecipeViewController.swift in Sources */,
+				D5AFCE2D22BBD04600FD3CD4 /* CurrentOrderRequestViewController.swift in Sources */,
 				E0B3064E22BABD67007A2E85 /* VolunteersViewController.swift in Sources */,
 				E0B3064A22BABCE2007A2E85 /* AboutViewController.swift in Sources */,
 				7A55A72622BACCB60075441B /* LoginViewController.swift in Sources */,

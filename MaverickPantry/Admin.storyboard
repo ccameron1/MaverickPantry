@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Admin View Controller-->
         <scene sceneID="6I3-LT-B9w">
             <objects>
-                <viewController id="PBt-g5-V0i" sceneMemberID="viewController">
+                <viewController id="PBt-g5-V0i" customClass="AdminViewController" customModule="MaverickPantry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d4d-MQ-Bud">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,7 +111,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="FBT-XD-89L" kind="show" id="vE7-bk-2Jg"/>
+                                            <segue destination="FBT-XD-89L" kind="show" id="zJZ-hr-E07"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -141,6 +141,7 @@
         <!--Current Order Request View Controller-->
         <scene sceneID="8sX-3y-Zzd">
             <objects>
+                <exit id="dpF-dG-smh" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSL-VA-Sge" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="FBT-XD-89L" customClass="CurrentOrderRequestViewController" customModule="MaverickPantry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P6B-hV-WLL">
@@ -189,6 +190,9 @@
                                 <rect key="frame" x="137" y="761" width="140" height="71"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Filled Order"/>
+                                <connections>
+                                    <segue destination="dpF-dG-smh" kind="unwind" unwindAction="unwindToRootViewControllerWithSegue:" id="miF-CE-D9v"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

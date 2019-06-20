@@ -10,7 +10,10 @@ import UIKit
 
 class RequestPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var cells : [StepperTableViewCell] = []
+    
     var foodTypes : [[String]] = []
+    
     var foodTypeNames = ["Protein", "Vegetable", "Fruit", "Grain", "Additional Food", "Miscellaneous", "Personal Hygiene"]
     
     var foodNames = ["Natural Creamy Peanut Butter", "Solid White Albacore Tuna", "White Premium Chunk Chicken Breast", "Organic Black Beans", "Garbanzo Beans", "Whole Kernel Sweet Corn", "Diced Tomatoes", "Cut Green Beans", "Sliced Yellow Peaches", "Mandarin Oranges", "Cinnamon and Raisin Granola", "Organic Shells and White Cheddar", "Toasted Whole Grain Oats Cereal", "Oats and Flax Instant Oatmeal", "Organic Whole Wheat Spaghetti", "Brown Basmati Rice", "White Rice", "Ground Black Pepper", "Organic Marinara Sauce", "Organic Alfredo Pasta Sauce", "Organic Tomato Soup", "Organic Lentil Soup", "Organic Chicken Noodle Soup", "Toilet Paper", "Paper Towel", "Menstruation Tampons", "Menstruation Pads", "Soap Bar", "Shampoo", "Conditioner", "Toothpaste"]
@@ -55,7 +58,30 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func submitButtonPressed(_ sender: Any) {
-        
+        var totalItems = 0.0
+        var requestedItems = [""]
+//        for item in cells{
+//            let itemValue = Double(item.foodAmountLabel.text!)
+//            let intItemValue = Int(itemValue!)
+//            for int in 0...intItemValue{
+//                requestedItems.append(item.foodNameLabel.text!)
+//                print(int)
+//            }
+//            if item.foodTypeLabel.text != "Personal Hygiene"{
+//                totalItems += itemValue!
+//            }
+//        }
+        if totalItems > 10.0{
+            let alertController = UIAlertController(title: "Too many items", message: "There is a limit of 10 for items outside of the personal hygiene category", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alertController.addAction(action)
+            self.present(alertController, animated: true)
+        }else{
+            let alertController = UIAlertController(title: "Request Submitted", message: "Your request was successfully submitted", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alertController.addAction(action)
+            self.present(alertController, animated: true)
+        }
     }
     
 }

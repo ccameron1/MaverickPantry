@@ -6,6 +6,8 @@
 //  Copyright © 2019 Carly Cameron. All rights reserved.
 //
 
+//Cell style for the custom cell class is missing, that must be fixed
+
 import UIKit
 
 class RequestPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {

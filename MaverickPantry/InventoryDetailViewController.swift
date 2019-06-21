@@ -20,14 +20,22 @@ class InventoryDetailViewController: UIViewController {
     var amountGiven = 0
     var foodName = ""
     
+    var food = [String: Any]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = foodName
-        amountLeftLabel.text = "\(amountLeft)"
-        givenOutLabel.text = "\(amountGiven)"
+//        self.title = foodName
+//        amountLeftLabel.text = "\(amountLeft)"
+//        givenOutLabel.text = "\(amountGiven)"
+        
         newAmountTextField.isHidden = true
+        self.title = "\(food["Food"]!)"
+        amountLeftLabel.text = "\(food["amountLeft"]!)"
+        givenOutLabel.text = "\(food["amountGiven"]!)"
+        
     }
+    
     
     
     @IBAction func whenUpdateAmountPressed(_ sender: UIButton) {
@@ -46,11 +54,13 @@ class InventoryDetailViewController: UIViewController {
                 alertController.addAction(action)
                 present(alertController, animated: true, completion: nil)
             } else{
-                amountLeftLabel.text = "\(newAmount!)"
+//                amountLeftLabel.text = "\(newAmount!)"
+                food["amountLeft"] = newAmount
                 updateBool = !updateBool
                 newAmountTextField.text = ""
                 newAmountTextField.isHidden = true
                 updateButton.setTitle("Update", for: .normal)
+                amountLeftLabel.text = "\(food["amountLeft"]!)"
             }
         
         }
@@ -58,7 +68,9 @@ class InventoryDetailViewController: UIViewController {
     }
     
     @IBAction func whenClearButtonPressed(_ sender: UIButton) {
-        givenOutLabel.text = "0"
+        food["amountGiven"] = 0
+        givenOutLabel.text = "\(food["amountGiven"]!)"
+        //        givenOutLabel.text = "0"
     }
 
 }

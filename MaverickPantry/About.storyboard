@@ -18,14 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="2500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iF-nT-gMW">
-                                <rect key="frame" x="301" y="104" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Administrator"/>
-                                <connections>
-                                    <segue destination="Bu6-Rr-I9j" kind="show" id="wOv-Is-lTV"/>
-                                </connections>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32T-EB-cKZ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="2329"/>
                                 <subviews>
@@ -93,7 +85,7 @@
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hep-sE-YV3">
                                                 <rect key="frame" x="25" y="287" width="365" height="308"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <mutableString key="text">      Food insecurity is becoming more evident on college campuses, and UNO is no exception. A growing concern about food insecurity among our fellow Mavs has promptedaction.                                                                                         .    UNO’s Maverick Food Pantry aims to contribute to UNO’s culture of caring by providing resources to those in immediate need and connecting them with additional resources in the greater Omaha area for long-term support. The Maverick Food Pantry offers food and personal hygiene products to UNO faculty, staff members, and currently-enrolled students by providing healthy, organic, and culturally sensitive items. Requests for food packages can be submitted through an easy online form twice a week.</mutableString>
+                                                <string key="text">      Food insecurity is becoming more evident on college campuses, and UNO is no exception. A growing concern about food insecurity among our fellow Mavs has promptedaction.                                                                                         .    UNO’s Maverick Food Pantry aims to contribute to UNO’s culture of caring by providing resources to those in immediate need and connecting them with additional resources in the greater Omaha area for long-term support. The Maverick Food Pantry offers food and personal hygiene products to UNO faculty, staff members, and currently-enrolled students by providing healthy, organic, and culturally sensitive items. Requests for food packages can be submitted through an easy online form twice a week.</string>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -257,16 +249,6 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMk-zS-jzi">
-                                                <rect key="frame" x="364" y="33" width="38" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Login">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="z9M-Hc-wUP" kind="show" id="vMi-oK-FOf"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -301,7 +283,20 @@
                     <toolbarItems>
                         <barButtonItem title="Login" id="Dcl-pQ-cQ6"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" id="96R-dz-yPv"/>
+                    <navigationItem key="navigationItem" id="96R-dz-yPv">
+                        <barButtonItem key="leftBarButtonItem" title="Administrator" id="FMU-SP-2JD">
+                            <color key="tintColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="Bu6-Rr-I9j" kind="show" id="Eml-V0-Qpj"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="tep-z7-Ngm">
+                            <color key="tintColor" red="0.83236390352249146" green="0.22160029411315918" blue="0.18024101853370667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="z9M-Hc-wUP" kind="show" id="kp3-2A-e12"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="414" height="2500"/>
                     <connections>

@@ -16,9 +16,17 @@ class InventoryViewController: UIViewController, UITableViewDelegate, UITableVie
     var amountGiven = 0
     var foodName = "Applesauce"
     
+    var foods = [[String : Any]]()
+        
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let applesauceDict = ["Food": "Applesauce", "amountLeft": 10, "amountGiven": 50] as [String : Any]
+        let pizzaDict = ["Food": "Pizza", "amountLeft": 43, "amountGiven": 98] as [String : Any]
+        let kaleDict = ["Food": "Kale", "amountLeft": 7, "amountGiven": 3] as [String : Any]
+        
+        foods = [applesauceDict,pizzaDict,kaleDict]
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -26,13 +34,14 @@ class InventoryViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return foods.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellID") as! UITableViewCell
-        cell.textLabel?.text = foodName
-        cell.detailTextLabel?.text = "Left: \(amountLeft)\nGiven Out: \(amountGiven)"
+        let food = foods[indexPath.row]
+        cell.textLabel?.text = "\(food["Food"]!)"
+        cell.detailTextLabel?.text = "Left: \(food["amountLeft"]!)\nGiven Out: \(food["amountGiven"]!)"
         return cell
     }
     
@@ -41,10 +50,10 @@ class InventoryViewController: UIViewController, UITableViewDelegate, UITableVie
 
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let indexPath = tableView.indexPathForSelectedRow!
+        let food = foods[indexPath.row]
         let dvc = segue.destination as! InventoryDetailViewController
-        dvc.amountLeft = amountLeft
-        dvc.amountGiven = amountGiven
-        dvc.foodName = foodName
+        dvc.food = food
     }
     
     

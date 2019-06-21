@@ -14,7 +14,6 @@ class StepperTableViewCell: UITableViewCell {
     @IBOutlet weak var foodNameLabel: UILabel!
     @IBOutlet weak var foodAmountLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper!
-    var cellID = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,12 +30,6 @@ class StepperTableViewCell: UITableViewCell {
         foodAmountLabel.text = "\(stepper.value)"
     }
     
-    override func prepareForReuse() {
-        let originalValue = stepper.value
-        super.prepareForReuse()
-        print(stepper.value)
-        stepper.value = originalValue
-    }
     
     func returnStepperValue() -> Double{
         return stepper.value

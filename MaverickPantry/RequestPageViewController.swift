@@ -14,7 +14,7 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
     
     var foodTypes : [[String]] = []
     
-    var acceptedStepperValues : [Double] = []
+    var totalItems = 0.0
     
     var foodTypeNames = ["Protein", "Vegetable", "Fruit", "Grain", "Additional Food", "Miscellaneous", "Personal Hygiene"]
     
@@ -45,11 +45,10 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID") as! StepperTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID\(indexPath.row)") as! StepperTableViewCell
         cell.foodNameLabel.text = foodNames[indexPath.row]
         cell.stepper.value = cell.returnStepperValue()
         cell.foodAmountLabel.text = "\(cell.stepper.value)"
-        cell.cellID = foodNames.firstIndex(of: cell.foodNameLabel.text!)!
         for item in foodTypes{
             let itemIndex = foodTypes.firstIndex(of: item)!
             for stuff in item{
@@ -72,7 +71,7 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
         //else update the "request2" field and add Timestamp
         print(FirebaseManager.currentUserId)
         
-        var totalItems = 0.0
+        totalItems = 0.0
         var requestedItems = [""]
         for item in cells{
             let itemValue = Double(item.foodAmountLabel.text!)
@@ -96,15 +95,8 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
             alertController.addAction(action)
             self.present(alertController, animated: true)
         }
-
+        
+        //if the user pushes the button too many time the memory gets weird and starts ignoring the if statement, so they should probably be booted off the page
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        for item in cells{
-            acceptedStepperValues.append(item.returnStepperValue())
-        }
-        let stepperCell = cell as! StepperTableViewCell
-        stepperCell.stepper.value = acceptedStepperValues[stepperCell.cellID]
-        stepperCell.foodAmountLabel.text = "\(stepperCell.stepper.value)"
-    }
 }

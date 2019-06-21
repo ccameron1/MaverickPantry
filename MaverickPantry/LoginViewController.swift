@@ -23,6 +23,7 @@ class LoginViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
         // Do any additional setup after loading the view.
         backgroundImage.addShadow()
+        
     }
     
 

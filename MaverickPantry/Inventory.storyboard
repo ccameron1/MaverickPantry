@@ -145,14 +145,14 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8mS-3r-M3V" userLabel="Image View2">
-                                <rect key="frame" x="15" y="405" width="384" height="275"/>
+                                <rect key="frame" x="15" y="527" width="384" height="275"/>
                                 <color key="backgroundColor" red="0.2303233496" green="0.2303233496" blue="0.2303233496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="275" id="7r7-5f-XPQ"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="rGM-D2-BbT">
-                                <rect key="frame" x="0.0" y="475" width="414" height="136.5"/>
+                                <rect key="frame" x="0.0" y="606.5" width="414" height="136.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Given Out:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6i-eh-cSL">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="25"/>
@@ -188,8 +188,15 @@
                                     <constraint firstItem="caM-pF-rpK" firstAttribute="leading" secondItem="rGM-D2-BbT" secondAttribute="leading" id="tuV-FK-Edo"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHv-Gl-SLe">
+                                <rect key="frame" x="15" y="395" width="384" height="132"/>
+                                <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.2303233496" green="0.2303233496" blue="0.2303233496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9OR-a9-ZeO" firstAttribute="leading" secondItem="1DW-tC-PGk" secondAttribute="leading" id="0Ka-1b-bb8"/>
                             <constraint firstItem="1DW-tC-PGk" firstAttribute="trailing" secondItem="8mS-3r-M3V" secondAttribute="trailing" constant="15" id="0Sc-0O-tca"/>
@@ -198,17 +205,23 @@
                             <constraint firstItem="1DW-tC-PGk" firstAttribute="trailing" secondItem="POo-N5-AH4" secondAttribute="trailing" constant="15" id="6UM-3s-a5Z"/>
                             <constraint firstItem="POo-N5-AH4" firstAttribute="top" secondItem="1DW-tC-PGk" secondAttribute="top" constant="10" id="ABd-DI-lPS"/>
                             <constraint firstItem="8mS-3r-M3V" firstAttribute="leading" secondItem="1DW-tC-PGk" secondAttribute="leading" constant="15" id="Ceu-pa-xof"/>
-                            <constraint firstItem="rGM-D2-BbT" firstAttribute="top" secondItem="POo-N5-AH4" secondAttribute="bottom" constant="80" id="gQZ-bE-fuq"/>
+                            <constraint firstItem="8mS-3r-M3V" firstAttribute="top" secondItem="uHv-Gl-SLe" secondAttribute="bottom" id="YcD-7n-rY0"/>
+                            <constraint firstItem="uHv-Gl-SLe" firstAttribute="leading" secondItem="1DW-tC-PGk" secondAttribute="leading" constant="15" id="fLs-E4-DsP"/>
+                            <constraint firstItem="1DW-tC-PGk" firstAttribute="bottom" secondItem="8mS-3r-M3V" secondAttribute="bottom" constant="11" id="fhA-7t-zy3"/>
                             <constraint firstItem="9OR-a9-ZeO" firstAttribute="top" secondItem="1DW-tC-PGk" secondAttribute="top" constant="70" id="inY-pt-hK8"/>
                             <constraint firstItem="POo-N5-AH4" firstAttribute="leading" secondItem="1DW-tC-PGk" secondAttribute="leading" constant="15" id="pfY-l3-gqA"/>
+                            <constraint firstItem="1DW-tC-PGk" firstAttribute="bottom" secondItem="rGM-D2-BbT" secondAttribute="bottom" constant="70" id="seQ-GV-NKC"/>
                             <constraint firstItem="1DW-tC-PGk" firstAttribute="trailing" secondItem="rGM-D2-BbT" secondAttribute="trailing" id="vyb-N4-GKK"/>
-                            <constraint firstItem="8mS-3r-M3V" firstAttribute="top" secondItem="POo-N5-AH4" secondAttribute="bottom" constant="10" id="xCJ-4y-oKx"/>
+                            <constraint firstItem="uHv-Gl-SLe" firstAttribute="top" secondItem="POo-N5-AH4" secondAttribute="bottom" id="wqR-zR-mcR"/>
+                            <constraint firstItem="1DW-tC-PGk" firstAttribute="trailing" secondItem="uHv-Gl-SLe" secondAttribute="trailing" constant="15" id="xA9-mH-RJY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1DW-tC-PGk"/>
                     </view>
                     <connections>
                         <outlet property="amountLeftLabel" destination="074-4m-UpR" id="iWQ-Qw-RyB"/>
                         <outlet property="givenOutLabel" destination="caM-pF-rpK" id="Wzc-28-1lc"/>
+                        <outlet property="imageView1" destination="POo-N5-AH4" id="lgj-yg-kHb"/>
+                        <outlet property="imageView2" destination="8mS-3r-M3V" id="Oob-Ze-0dQ"/>
                         <outlet property="newAmountTextField" destination="MR9-VV-8Cs" id="TGw-F5-Xse"/>
                         <outlet property="updateButton" destination="Iho-cu-xhF" id="cZq-1L-F4o"/>
                     </connections>

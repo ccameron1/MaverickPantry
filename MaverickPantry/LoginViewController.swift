@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
         FirebaseManager.Login(email: emailTextField.text!, password: passwordTextField.text!) { (success) in
             if success {
                 print("yay")
-
+            
                 self.performSegue(withIdentifier: self.loginToAboutSegueIdentifier, sender: nil)
 
             }

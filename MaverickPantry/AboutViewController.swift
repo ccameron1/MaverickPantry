@@ -9,11 +9,9 @@
 import UIKit
 
 class AboutViewController: UIViewController {
-
-    var loggedIn = false
     
+    @IBOutlet weak var loginButton: UIBarButtonItem!
     @IBOutlet weak var imageTest2: UIImageView!
-   
     @IBOutlet weak var imageTest4: UIImageView!
     @IBOutlet weak var imageTest: UIImageView!
     @IBOutlet weak var imageTest3: UIImageView!
@@ -27,6 +25,7 @@ class AboutViewController: UIViewController {
         
         if FirebaseManager.currentUserId.count > 0 {
             self.tabBarController?.tabBar.isHidden = false
+            
         }
             
         else {
@@ -50,6 +49,7 @@ class AboutViewController: UIViewController {
     @IBAction func unwindToAbout(segue:UIStoryboardSegue) {
         if FirebaseManager.currentUserId.count > 0 {
             self.tabBarController?.tabBar.isHidden = false
+            loginButton.isEnabled = false
         }
             
         else {

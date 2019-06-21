@@ -53,13 +53,13 @@ class FirebaseManager {
 		}
 		else
 		{
-<<<<<<< HEAD
+
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
-			addUser(isAdmin: false, email: email, initials: initials, yearOfBirth: yearOfBirth, NUID: NUID)
+			addUser(isAdmin: false, email: email, initials: initials, yearOfBirth: yearOfBirth, NUID: NUID, request1: [String], request2: [String], timestamp1: NSDate, timestamp2: NSDate)
             Login(email: email, password: password, completion: { (success) in
                 if success {
                     print("Login successful after account creation.")
@@ -70,7 +70,7 @@ class FirebaseManager {
             })
 			completion(true)
         }
-=======
+
 			Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
 				if let error = error {
 					print(error.localizedDescription)
@@ -98,7 +98,7 @@ class FirebaseManager {
 					}
 				})
 			}
->>>>>>> 569d476f28bc0d472bfcf1f77a449acc2d98dc79
+
 		}
 	}
 	

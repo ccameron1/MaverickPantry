@@ -46,7 +46,8 @@ class AboutViewController: UIViewController {
 
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    
+    @IBAction func unwindToAbout(segue:UIStoryboardSegue) {
         if FirebaseManager.currentUserId.count > 0 {
             self.tabBarController?.tabBar.isHidden = false
         }
@@ -56,11 +57,6 @@ class AboutViewController: UIViewController {
         }
     }
     
-    @IBAction func unwindToAbout(segue:UIStoryboardSegue) {
-        
-        
-        
-    }
     /*
     // MARK: - Navigation
 

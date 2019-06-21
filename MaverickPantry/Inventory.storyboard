@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F8b-FP-1GK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cti-FU-ZLh">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zji-LK-Id5">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" textLabel="Eoh-61-qXA" detailTextLabel="fa0-bF-Mzy" style="IBUITableViewCellStyleSubtitle" id="J6d-0d-PgI">
@@ -65,10 +65,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1mm-v8-52V"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem systemItem="add" id="H4i-60-fAl"/>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" id="Zky-Yf-TmH"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Zky-Yf-TmH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="H4i-60-fAl">
+                            <connections>
+                                <action selector="onAddButtonPressed:" destination="F8b-FP-1GK" id="Aec-3G-JxN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="zji-LK-Id5" id="neY-5L-FXH"/>
@@ -76,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4I-oR-Zmd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6408.6956521739139" y="-1973.4375"/>
+            <point key="canvasLocation" x="7318.8405797101459" y="-1973.4375"/>
         </scene>
         <!--Inventory Detail View Controller-->
         <scene sceneID="sDl-Ue-Cu7">
@@ -87,25 +91,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Left:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dov-B8-UTh">
-                                <rect key="frame" x="137" y="119" width="140" height="25"/>
+                                <rect key="frame" x="137" y="163" width="140" height="25"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="074-4m-UpR">
-                                <rect key="frame" x="0.0" y="174" width="414" height="22.5"/>
+                                <rect key="frame" x="0.0" y="218" width="414" height="22.5"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter New Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MR9-VV-8Cs">
-                                <rect key="frame" x="116" y="226.5" width="183" height="30"/>
+                                <rect key="frame" x="116" y="270.5" width="183" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iho-cu-xhF">
-                                <rect key="frame" x="172" y="281.5" width="70" height="35"/>
+                                <rect key="frame" x="172" y="325.5" width="70" height="35"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <state key="normal" title="Update"/>
                                 <connections>
@@ -113,19 +117,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Given Out:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6i-eh-cSL">
-                                <rect key="frame" x="104" y="491.5" width="206" height="25"/>
+                                <rect key="frame" x="104" y="535.5" width="206" height="25"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caM-pF-rpK">
-                                <rect key="frame" x="0.0" y="541.5" width="414" height="22.5"/>
+                                <rect key="frame" x="0.0" y="585.5" width="414" height="22.5"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSO-P6-bQv">
-                                <rect key="frame" x="182" y="594" width="51" height="35"/>
+                                <rect key="frame" x="182" y="638" width="51" height="35"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                 <state key="normal" title="Clear"/>
                                 <connections>
@@ -169,7 +173,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WqP-aF-km0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7239.130434782609" y="-1973.4375"/>
+            <point key="canvasLocation" x="8149.275362318841" y="-1973.4375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="axt-1g-rhC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cti-FU-ZLh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5H7-lo-Tiy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="F8b-FP-1GK" kind="relationship" relationship="rootViewController" id="F39-WZ-xN5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tJh-Fd-q9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6408.6956521739139" y="-1973.4375"/>
         </scene>
     </scenes>
 </document>

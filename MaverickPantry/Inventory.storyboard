@@ -92,14 +92,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="POo-N5-AH4">
-                                <rect key="frame" x="15" y="108" width="384" height="297"/>
+                                <rect key="frame" x="15" y="98" width="384" height="297"/>
                                 <color key="backgroundColor" red="0.2303233496" green="0.2303233496" blue="0.2303233496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="297" id="8nn-Eb-HRY"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="9OR-a9-ZeO">
-                                <rect key="frame" x="0.0" y="138" width="414" height="196.5"/>
+                                <rect key="frame" x="0.0" y="158" width="414" height="196.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Left:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dov-B8-UTh">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="25"/>
@@ -145,14 +145,14 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8mS-3r-M3V" userLabel="Image View2">
-                                <rect key="frame" x="15" y="435" width="384" height="275"/>
+                                <rect key="frame" x="15" y="405" width="384" height="275"/>
                                 <color key="backgroundColor" red="0.2303233496" green="0.2303233496" blue="0.2303233496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="275" id="7r7-5f-XPQ"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="rGM-D2-BbT">
-                                <rect key="frame" x="0.0" y="505" width="414" height="136.5"/>
+                                <rect key="frame" x="0.0" y="475" width="414" height="136.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Given Out:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6i-eh-cSL">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="25"/>
@@ -196,13 +196,13 @@
                             <constraint firstItem="rGM-D2-BbT" firstAttribute="leading" secondItem="1DW-tC-PGk" secondAttribute="leading" id="3Xu-8t-38g"/>
                             <constraint firstItem="1DW-tC-PGk" firstAttribute="trailing" secondItem="9OR-a9-ZeO" secondAttribute="trailing" id="3f6-8I-Rcl"/>
                             <constraint firstItem="1DW-tC-PGk" firstAttribute="trailing" secondItem="POo-N5-AH4" secondAttribute="trailing" constant="15" id="6UM-3s-a5Z"/>
-                            <constraint firstItem="POo-N5-AH4" firstAttribute="top" secondItem="1DW-tC-PGk" secondAttribute="top" constant="20" id="ABd-DI-lPS"/>
+                            <constraint firstItem="POo-N5-AH4" firstAttribute="top" secondItem="1DW-tC-PGk" secondAttribute="top" constant="10" id="ABd-DI-lPS"/>
                             <constraint firstItem="8mS-3r-M3V" firstAttribute="leading" secondItem="1DW-tC-PGk" secondAttribute="leading" constant="15" id="Ceu-pa-xof"/>
-                            <constraint firstItem="rGM-D2-BbT" firstAttribute="top" secondItem="POo-N5-AH4" secondAttribute="bottom" constant="100" id="gQZ-bE-fuq"/>
-                            <constraint firstItem="9OR-a9-ZeO" firstAttribute="top" secondItem="1DW-tC-PGk" secondAttribute="top" constant="50" id="inY-pt-hK8"/>
+                            <constraint firstItem="rGM-D2-BbT" firstAttribute="top" secondItem="POo-N5-AH4" secondAttribute="bottom" constant="80" id="gQZ-bE-fuq"/>
+                            <constraint firstItem="9OR-a9-ZeO" firstAttribute="top" secondItem="1DW-tC-PGk" secondAttribute="top" constant="70" id="inY-pt-hK8"/>
                             <constraint firstItem="POo-N5-AH4" firstAttribute="leading" secondItem="1DW-tC-PGk" secondAttribute="leading" constant="15" id="pfY-l3-gqA"/>
                             <constraint firstItem="1DW-tC-PGk" firstAttribute="trailing" secondItem="rGM-D2-BbT" secondAttribute="trailing" id="vyb-N4-GKK"/>
-                            <constraint firstItem="8mS-3r-M3V" firstAttribute="top" secondItem="POo-N5-AH4" secondAttribute="bottom" constant="30" id="xCJ-4y-oKx"/>
+                            <constraint firstItem="8mS-3r-M3V" firstAttribute="top" secondItem="POo-N5-AH4" secondAttribute="bottom" constant="10" id="xCJ-4y-oKx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1DW-tC-PGk"/>
                     </view>

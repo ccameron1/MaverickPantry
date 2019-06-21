@@ -24,9 +24,9 @@ class NewAccountViewController: UIViewController {
         
         let request1 = ["chicken", "cookief", "saladssssssss", "pizzazzzzzzz"]
 ////        FirebaseManager.globalUser.request1 = []
-//        FirebaseManager.clearOldRequests()
-//        FirebaseManager.addRequestsToUser(requests: request1)
-//        
+        
+        
+        
 //
         self.tabBarController?.tabBar.isHidden = true
         backgroundImage.addShadow()

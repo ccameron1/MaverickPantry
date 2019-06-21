@@ -10,6 +10,7 @@ import UIKit
 
 class NewAccountViewController: UIViewController {
 
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var yearOfBirthTextField: UITextField!
     @IBOutlet weak var initialsTextField: UITextField!
     @IBOutlet weak var NUIDTextField: UITextField!
@@ -19,6 +20,7 @@ class NewAccountViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        backgroundImage.addShadow()
     }
     
     @IBAction func createAccountButton(_ sender: Any) {

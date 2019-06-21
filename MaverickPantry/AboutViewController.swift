@@ -12,22 +12,30 @@ class AboutViewController: UIViewController {
 
     var loggedIn = false
     
+    @IBOutlet weak var imageTest2: UIImageView!
+   
+    @IBOutlet weak var imageTest4: UIImageView!
+    @IBOutlet weak var imageTest: UIImageView!
+    @IBOutlet weak var imageTest3: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-<<<<<<< HEAD
+        imageTest.addShadow()
+        imageTest2.addShadow()
+        imageTest3.addShadow()
+        imageTest4.addShadow()
         // Do any additional setup after loading the view.
-        let request1 = ["hi", "bye"]
-        let request2 = ["cheese", "fruit"]
-        FirebaseManager.globalUser.setRequests(request1: request1, request2: request2)
-=======
+//        let request1 = ["hi", "bye"]
+//        let request2 = ["cheese", "fruit"]
+//        FirebaseManager.globalUser.setRequests(request1: request1, request2: request2)
+
 //        if loggedIn == false {
 //
 //            performSegue(withIdentifier: "loginToAbout", sender: nil)
 //            loggedIn = true
 //        }
 //        // Do any additional setup after loading the view.
->>>>>>> 5915d66d1d9b765449d8d3fed5952cbb800006d9
+
     }
     
 

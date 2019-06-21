@@ -59,8 +59,7 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func submitButtonPressed(_ sender: Any) {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
 
         //connect this request with specfic firebase user
         
@@ -93,16 +92,7 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
             alertController.addAction(action)
             self.present(alertController, animated: true)
         }
-=======
-        
-        
 
->>>>>>> Stashed changes
-=======
-        
-        
-
->>>>>>> Stashed changes
     }
     
 }

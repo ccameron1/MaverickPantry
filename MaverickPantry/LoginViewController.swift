@@ -14,16 +14,22 @@ class LoginViewController: UIViewController {
     let loginToAboutSegueIdentifier = "loginGood"
 
     
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        backgroundImage.addShadow()
     }
     
 
     @IBAction func loginButtonPressed(_ sender: Any) {
+//        backgroundImage.addShadow()
+        
+//        backgroundImage.clipsToBounds = true
+        
         FirebaseManager.Login(email: emailTextField.text!, password: passwordTextField.text!) { (success) in
             if success {
                 print("yay")
@@ -31,7 +37,7 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: self.loginToAboutSegueIdentifier, sender: nil)
 
             }
-        }
+            }
         
     }
     /*
@@ -44,4 +50,15 @@ class LoginViewController: UIViewController {
     }
     */
 
+}
+
+extension UIView {
+    
+    func addShadow() {
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        layer.shadowOpacity = 0.5
+        layer.shadowRadius = 6
+        clipsToBounds = false
+    }
 }

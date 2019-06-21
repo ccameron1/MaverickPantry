@@ -18,11 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="xnO-9z-jmu">
-                                <rect key="frame" x="119" y="219" width="175" height="365"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="xnO-9z-jmu">
+                                <rect key="frame" x="132" y="266" width="150" height="365"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cT-iv-erw">
-                                        <rect key="frame" x="0.0" y="0.0" width="175" height="35"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="35"/>
                                         <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="4lM-bI-i2z"/>
@@ -36,7 +37,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1L-Mt-nbF">
-                                        <rect key="frame" x="0.0" y="110" width="175" height="35"/>
+                                        <rect key="frame" x="0.0" y="110" width="150" height="35"/>
                                         <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="6dU-wZ-ioq"/>
@@ -50,7 +51,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1l-lE-ein">
-                                        <rect key="frame" x="0.0" y="220" width="175" height="35"/>
+                                        <rect key="frame" x="0.0" y="220" width="150" height="35"/>
                                         <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="GkX-g1-H6l"/>
@@ -64,7 +65,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAI-vv-PC9">
-                                        <rect key="frame" x="0.0" y="330" width="175" height="35"/>
+                                        <rect key="frame" x="0.0" y="330" width="150" height="35"/>
                                         <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="IUp-GY-5W3"/>
@@ -78,17 +79,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="uAO-q1-IFC"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="sv7-cB-9SA" firstAttribute="trailing" secondItem="xnO-9z-jmu" secondAttribute="trailing" constant="120" id="Vl0-N6-SZ3"/>
-                            <constraint firstItem="xnO-9z-jmu" firstAttribute="top" secondItem="sv7-cB-9SA" secondAttribute="top" constant="175" id="fd3-fn-C7C"/>
-                            <constraint firstItem="xnO-9z-jmu" firstAttribute="leading" secondItem="sv7-cB-9SA" secondAttribute="leading" constant="119" id="rZA-56-tE7"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="sv7-cB-9SA"/>
                     </view>
                     <navigationItem key="navigationItem" id="82n-6x-9zw"/>

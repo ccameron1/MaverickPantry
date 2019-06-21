@@ -11,6 +11,7 @@ import UIKit
 class InventoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+ 
     
     var amountLeft = 0
     var amountGiven = 0

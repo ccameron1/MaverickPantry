@@ -10,10 +10,20 @@ import UIKit
 
 class AdminViewController: UIViewController {
 
+    @IBOutlet weak var inventoryButton: UIButton!
+    @IBOutlet weak var pushNotifButton: UIButton!
+    @IBOutlet weak var foodEventButton: UIButton!
+    @IBOutlet weak var currentOrdersButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = "Admin Options"
+        inventoryButton.addShadow()
+        pushNotifButton.addShadow()
+        foodEventButton.addShadow()
+        currentOrdersButton.addShadow()
+        
     }
     
 

@@ -15,7 +15,6 @@ class StepperTableViewCell: UITableViewCell {
     @IBOutlet weak var foodAmountLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     var cellID = 0
-    var savedStepperValues : [Double] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,14 +28,18 @@ class StepperTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func stepperDidIncrement(_ sender: UIStepper) {
-        savedStepperValues[cellID] = stepper.value
         foodAmountLabel.text = "\(stepper.value)"
     }
     
     override func prepareForReuse() {
+        let originalValue = stepper.value
         super.prepareForReuse()
-        stepper.value = savedStepperValues[cellID]
-        foodAmountLabel.text = "\(stepper.value)"
+        print(stepper.value)
+        stepper.value = originalValue
+    }
+    
+    func returnStepperValue() -> Double{
+        return stepper.value
     }
     
 }

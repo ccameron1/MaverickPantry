@@ -14,6 +14,8 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
     
     var foodTypes : [[String]] = []
     
+    var acceptedStepperValues : [Double] = []
+    
     var foodTypeNames = ["Protein", "Vegetable", "Fruit", "Grain", "Additional Food", "Miscellaneous", "Personal Hygiene"]
     
     var foodNames = ["Natural Creamy Peanut Butter", "Solid White Albacore Tuna", "White Premium Chunk Chicken Breast", "Organic Black Beans", "Garbanzo Beans", "Whole Kernel Sweet Corn", "Diced Tomatoes", "Cut Green Beans", "Sliced Yellow Peaches", "Mandarin Oranges", "Cinnamon and Raisin Granola", "Organic Shells and White Cheddar", "Toasted Whole Grain Oats Cereal", "Oats and Flax Instant Oatmeal", "Organic Whole Wheat Spaghetti", "Brown Basmati Rice", "White Rice", "Ground Black Pepper", "Organic Marinara Sauce", "Organic Alfredo Pasta Sauce", "Organic Tomato Soup", "Organic Lentil Soup", "Organic Chicken Noodle Soup", "Toilet Paper", "Paper Towel", "Menstruation Tampons", "Menstruation Pads", "Soap Bar", "Shampoo", "Conditioner", "Toothpaste"]
@@ -45,8 +47,9 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID") as! StepperTableViewCell
         cell.foodNameLabel.text = foodNames[indexPath.row]
-        cell.cellID = indexPath.row
-        cell.stepper.value = 0
+        cell.stepper.value = cell.returnStepperValue()
+        cell.foodAmountLabel.text = "\(cell.stepper.value)"
+        cell.cellID = foodNames.firstIndex(of: cell.foodNameLabel.text!)!
         for item in foodTypes{
             let itemIndex = foodTypes.firstIndex(of: item)!
             for stuff in item{
@@ -96,4 +99,12 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
 
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        for item in cells{
+            acceptedStepperValues.append(item.returnStepperValue())
+        }
+        let stepperCell = cell as! StepperTableViewCell
+        stepperCell.stepper.value = acceptedStepperValues[stepperCell.cellID]
+        stepperCell.foodAmountLabel.text = "\(stepperCell.stepper.value)"
+    }
 }

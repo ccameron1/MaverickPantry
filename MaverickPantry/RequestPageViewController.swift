@@ -16,6 +16,8 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
     
     var totalItems = 0.0
     
+    let styleRawValue = StepperTableViewCell.CellStyle.RawValue()
+    
     var foodTypeNames = ["Protein", "Vegetable", "Fruit", "Grain", "Additional Food", "Miscellaneous", "Personal Hygiene"]
     
     var foodNames = ["Natural Creamy Peanut Butter", "Solid White Albacore Tuna", "White Premium Chunk Chicken Breast", "Organic Black Beans", "Garbanzo Beans", "Whole Kernel Sweet Corn", "Diced Tomatoes", "Cut Green Beans", "Sliced Yellow Peaches", "Mandarin Oranges", "Cinnamon and Raisin Granola", "Organic Shells and White Cheddar", "Toasted Whole Grain Oats Cereal", "Oats and Flax Instant Oatmeal", "Organic Whole Wheat Spaghetti", "Brown Basmati Rice", "White Rice", "Ground Black Pepper", "Organic Marinara Sauce", "Organic Alfredo Pasta Sauce", "Organic Tomato Soup", "Organic Lentil Soup", "Organic Chicken Noodle Soup", "Toilet Paper", "Paper Towel", "Menstruation Tampons", "Menstruation Pads", "Soap Bar", "Shampoo", "Conditioner", "Toothpaste"]
@@ -37,6 +39,11 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         foodTypes = [proteins, vegetables, fruits, grains, additional, miscellaneous, personalHygiene]
+        let style = UITableViewCell.CellStyle.init(rawValue: styleRawValue)
+        for item in foodNames{
+            let cell = StepperTableViewCell(style: style!, reuseIdentifier: "cellID\(foodNames.firstIndex(of: item)!)")
+            cells.append(cell)
+        }
         tableView.reloadData()
     }
 
@@ -45,7 +52,7 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID\(indexPath.row)") as! StepperTableViewCell
+        let cell = cells[indexPath.row]
         cell.foodNameLabel.text = foodNames[indexPath.row]
         cell.stepper.value = cell.returnStepperValue()
         cell.foodAmountLabel.text = "\(cell.stepper.value)"

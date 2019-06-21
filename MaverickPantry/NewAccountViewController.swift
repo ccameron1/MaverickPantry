@@ -21,7 +21,7 @@ class NewAccountViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        let request1 = ["chicken", "cookiessssss", "salad", "pizza"]
+        let request1 = ["chicken", "cookief", "saladssssssss", "pizzazzzzzzz"]
 //        FirebaseManager.globalUser.request1 = []
         FirebaseManager.addRequestsToUser(requests: request1)
         

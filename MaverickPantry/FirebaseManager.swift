@@ -33,7 +33,9 @@ class FirebaseManager {
 				completion(true)
 				//we need to go into database and retrieve the info about the user and set them as the global here.
 				databaseRef.collection("Users").document(currentUserId).getDocument { (document, error) in
-					globalUser = Users.init(isAdmin: ((document?.get("isAdmin")) != nil), email: document?.get("email") as! String, initials: document?.get("initials") as! String, yearOfBirth: document?.get("yearOfBirth") as! Int, NUID: document?.get("NUID") as! String, uid: document?.get("uid") as! String)
+					globalUser = Users.init(isAdmin: ((document?.get("isAdmin")) != nil), email: document?.get("email") as! String, initials: document?.get("initials") as! String, yearOfBirth: document?.get("yearOfBirth") as! Int, NUID: document?.get("NUID") as! String, uid: document?.get("uid") as! String, request1: document?.get("request1") as! [String], request2: document?.get("request2") as! [String])
+					
+					
 				}
 			}
 		}
@@ -50,7 +52,7 @@ class FirebaseManager {
 					print(error.localizedDescription)
 					return
 				}
-				addUser(isAdmin: false, email: email, initials: initials, yearOfBirth: yearOfBirth, NUID: NUID)
+				addUser(isAdmin: false, email: email, initials: initials, yearOfBirth: yearOfBirth, NUID: NUID, request1: [], request2: [])
 				Login(email: email, password: password, completion: { (success) in
 					if success {
 						print("Login successful after account creation.")
@@ -64,14 +66,14 @@ class FirebaseManager {
 	}
 	
 	
-	static func addUser(isAdmin: Bool, email: String, initials: String, yearOfBirth: Int, NUID: String) {
+	static func addUser(isAdmin: Bool, email: String, initials: String, yearOfBirth: Int, NUID: String, request1: [String], request2: [String]) {
 		let uid = Auth.auth().currentUser?.uid
 		if !email.contains("@unomaha.edu") {
 			print("bad email AAAAAAAAAAAAAAAAAAAAAA")
 		}
 		else
 		{
-			Users.init(isAdmin: isAdmin, email: email, initials: initials, yearOfBirth: yearOfBirth, NUID: NUID, uid: uid!)
+			Users.init(isAdmin: isAdmin, email: email, initials: initials, yearOfBirth: yearOfBirth, NUID: NUID, uid: uid!, request1: request1, request2: request2)
 			
 			//        databaseRef.child("users").child(uid!).setValue(post)
 			databaseRef.collection("Users").document(uid!).setData([
@@ -80,7 +82,9 @@ class FirebaseManager {
 				"email": email,
 				"isAdmin": isAdmin,
 				"NUID" : NUID,
-				"uid" : uid!])
+				"uid" : uid!,
+				"request1": request1,
+				"request2": request2])
 		}
 		//		databaseRef.collection("Users").document(uid!).getDocument { (document, error) in
 		//			globalUser = Users.init(isAdmin: isAdmin, email: document?.get("email") as! String, initials: document?.get("initials") as! String, yearOfBirth: document?.get("yearOfBirth") as! Int, NUID: document?.get("NUID") as! String, uid: document?.get("uid") as! String)

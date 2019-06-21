@@ -22,15 +22,15 @@ class Users {
     var request2 : [String]
     
     
-    init(isAdmin: Bool, email: String, initials: String, yearOfBirth: Int, NUID: String, uid : String) {
+    init(isAdmin: Bool, email: String, initials: String, yearOfBirth: Int, NUID: String, uid : String, request1: [String], request2: [String]) {
         self.isAdmin = isAdmin
         self.email = email
         self.initials = initials
         self.yearOfBirth = yearOfBirth
         self.NUID = NUID
         self.uid = uid
-        request1 = ["", ""]
-        request2 = ["", ""]
+        self.request1 = request1
+        self.request2 = request2
     }
     
     

@@ -304,6 +304,7 @@
                         <outlet property="imageTest2" destination="af4-Dt-czM" id="ypr-Ky-egr"/>
                         <outlet property="imageTest3" destination="8lX-dg-QPo" id="nmt-9Y-8lM"/>
                         <outlet property="imageTest4" destination="G8w-sQ-2rK" id="sj1-VU-xeW"/>
+                        <outlet property="loginButton" destination="tep-z7-Ngm" id="t5v-zH-tso"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHf-bP-iSB" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,7 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
 
 
-    let loginToAboutSegueIdentifier = "loginGood"
+    let loginToAboutSegueIdentifier = "unwindToAbout"
 
     
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -19,12 +19,16 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.tabBarController?.tabBar.isHidden = true
         // Do any additional setup after loading the view.
         backgroundImage.addShadow()
     }
     
 
+    
+     
+    
     @IBAction func loginButtonPressed(_ sender: Any) {
 //        backgroundImage.addShadow()
         

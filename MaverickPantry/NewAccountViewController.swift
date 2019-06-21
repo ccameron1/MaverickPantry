@@ -21,8 +21,7 @@ class NewAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-<<<<<<< HEAD
-=======
+
         
         let request1 = ["chicken", "cookief", "saladssssssss", "pizzazzzzzzz"]
 ////        FirebaseManager.globalUser.request1 = []
@@ -30,7 +29,6 @@ class NewAccountViewController: UIViewController {
 //        FirebaseManager.addRequestsToUser(requests: request1)
 //        
 //
->>>>>>> 569d476f28bc0d472bfcf1f77a449acc2d98dc79
         self.tabBarController?.tabBar.isHidden = true
         backgroundImage.addShadow()
     }

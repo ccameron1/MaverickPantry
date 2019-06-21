@@ -76,9 +76,11 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
         for item in cells{
             let itemValue = Double(item.foodAmountLabel.text!)
             let intItemValue = Int(itemValue!)
-            for int in 0...intItemValue{
+            var int = 0
+            while int < intItemValue{
                 requestedItems.append(item.foodNameLabel.text!)
                 print(int)
+                int += 1
             }
             if item.foodTypeLabel.text != "Personal Hygiene"{
                 totalItems += itemValue!

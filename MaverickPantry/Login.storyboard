@@ -246,9 +246,11 @@
                         <outlet property="initialsTextField" destination="pSK-a4-KAy" id="dJm-g8-fQM"/>
                         <outlet property="passwordTextField" destination="Wsy-OX-T34" id="s5K-2u-Rez"/>
                         <outlet property="yearOfBirthTextField" destination="hH9-3m-VQD" id="4hD-T5-cRD"/>
+                        <segue destination="N0R-Dn-T0P" kind="unwind" identifier="unwindToAbout2" unwindAction="unwindToAboutWithSegue:" id="eQ4-hJ-PxX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNO-UO-hAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="N0R-Dn-T0P" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="956.52173913043487" y="120.53571428571428"/>
         </scene>

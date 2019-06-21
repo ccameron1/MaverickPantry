@@ -55,6 +55,7 @@ class FirebaseManager {
                     print("Login not successful after account creation")
                 }
             })
+			completion(true)
         }
 		}
     }

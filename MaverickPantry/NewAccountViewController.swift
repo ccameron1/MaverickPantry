@@ -10,6 +10,8 @@ import UIKit
 
 class NewAccountViewController: UIViewController {
 
+    let loginToAboutSegueIdentifier = "unwindToAbout2"
+    
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var yearOfBirthTextField: UITextField!
     @IBOutlet weak var initialsTextField: UITextField!
@@ -18,8 +20,8 @@ class NewAccountViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        self.tabBarController?.tabBar.isHidden = true
         backgroundImage.addShadow()
     }
     
@@ -27,6 +29,7 @@ class NewAccountViewController: UIViewController {
         FirebaseManager.CreateAccount(email: emailTextField.text!, password: passwordTextField.text!, initials: initialsTextField.text!, yearOfBirth: Int(yearOfBirthTextField.text!)!, isAdmin: false, NUID : NUIDTextField.text!) { (success) in
             if success {
                 print("new acount homies")
+                self.performSegue(withIdentifier: self.loginToAboutSegueIdentifier, sender: nil)
             }
         }
     }

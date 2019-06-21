@@ -20,6 +20,12 @@ class NewAccountViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        let request1 = ["chicken", "cookiessssss", "salad", "pizza"]
+//        FirebaseManager.globalUser.request1 = []
+        FirebaseManager.addRequestsToUser(requests: request1)
+        
+        
         backgroundImage.addShadow()
     }
     

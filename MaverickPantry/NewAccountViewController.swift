@@ -24,9 +24,7 @@ class NewAccountViewController: UIViewController {
         
         let request1 = ["chicken", "cookief", "saladssssssss", "pizzazzzzzzz"]
 ////        FirebaseManager.globalUser.request1 = []
-        FirebaseManager.clearOldRequests { (success) in
-            FirebaseManager.addRequestsToUser(requests: request1)
-        }
+        
         
         
 //

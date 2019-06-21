@@ -9,7 +9,7 @@
 import UIKit
 
 class InventoryDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var amountLeftLabel: UILabel!
     @IBOutlet weak var newAmountTextField: UITextField!
     @IBOutlet weak var givenOutLabel: UILabel!
@@ -20,14 +20,25 @@ class InventoryDetailViewController: UIViewController {
     var amountGiven = 0
     var foodName = ""
     
+    var food : DummyFood!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = foodName
-        amountLeftLabel.text = "\(amountLeft)"
-        givenOutLabel.text = "\(amountGiven)"
+        
+        //        self.title = foodName
+        //        amountLeftLabel.text = "\(amountLeft)"
+        //        givenOutLabel.text = "\(amountGiven)"
+        
         newAmountTextField.isHidden = true
+        //        self.title = "\(food["Food"]!)"
+        //        amountLeftLabel.text = "\(food["amountLeft"]!)"
+        //        givenOutLabel.text = "\(food["amountGiven"]!)"
+        self.title = food.name
+        amountLeftLabel.text = "\(food.amountLeft!)"
+        givenOutLabel.text = "\(food.amountGiven!)"
+        
     }
+    
     
     
     @IBAction func whenUpdateAmountPressed(_ sender: UIButton) {
@@ -37,7 +48,7 @@ class InventoryDetailViewController: UIViewController {
             updateButton.setTitle("Done", for: .normal)
             updateBool = !updateBool
         }
-        //when hitting done
+            //when hitting done
         else{
             let newAmount = Int(newAmountTextField.text!)
             if newAmount == nil || newAmount! < 0{
@@ -46,19 +57,24 @@ class InventoryDetailViewController: UIViewController {
                 alertController.addAction(action)
                 present(alertController, animated: true, completion: nil)
             } else{
-                amountLeftLabel.text = "\(newAmount!)"
+                //                amountLeftLabel.text = "\(newAmount!)"
+                food.setAmountLeft(amountLeft: newAmount!)
                 updateBool = !updateBool
                 newAmountTextField.text = ""
                 newAmountTextField.isHidden = true
                 updateButton.setTitle("Update", for: .normal)
+                amountLeftLabel.text = "\(food.amountLeft!)"
+                
             }
-        
+            
         }
         
     }
     
     @IBAction func whenClearButtonPressed(_ sender: UIButton) {
-        givenOutLabel.text = "0"
+        food.setAmountGiven(amountGiven: 0)
+        givenOutLabel.text = "\(food.amountGiven!)"
+        //        givenOutLabel.text = "0"
     }
-
+    
 }

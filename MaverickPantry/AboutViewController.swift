@@ -24,6 +24,14 @@ class AboutViewController: UIViewController {
         imageTest2.addShadow()
         imageTest3.addShadow()
         imageTest4.addShadow()
+        
+        if FirebaseManager.currentUserId.count > 0 {
+            self.tabBarController?.tabBar.isHidden = false
+        }
+            
+        else {
+            self.tabBarController?.tabBar.isHidden = true
+        }
         // Do any additional setup after loading the view.
 //        let request1 = ["hi", "bye"]
 //        let request2 = ["cheese", "fruit"]
@@ -38,7 +46,21 @@ class AboutViewController: UIViewController {
 
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        if FirebaseManager.currentUserId.count > 0 {
+            self.tabBarController?.tabBar.isHidden = false
+        }
+            
+        else {
+            self.tabBarController?.tabBar.isHidden = true
+        }
+    }
+    
+    @IBAction func unwindToAbout(segue:UIStoryboardSegue) {
+        
+        
+        
+    }
     /*
     // MARK: - Navigation
 

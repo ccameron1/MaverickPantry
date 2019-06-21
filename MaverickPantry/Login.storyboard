@@ -112,10 +112,11 @@
                         <outlet property="backgroundImage" destination="u97-54-1UA" id="efa-oP-5CG"/>
                         <outlet property="emailTextField" destination="DT6-D2-1xn" id="FZa-nx-T2t"/>
                         <outlet property="passwordTextField" destination="bF1-dy-TOb" id="E0P-cJ-JqR"/>
-                        <segue destination="hRk-Ss-5Gx" kind="show" identifier="loginGood" id="aVe-hT-PoJ"/>
+                        <segue destination="Z0O-M3-gxd" kind="unwind" identifier="unwindToAbout" unwindAction="unwindToAboutWithSegue:" id="OHM-Gs-VwK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="Z0O-M3-gxd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="76.811594202898561" y="120.53571428571428"/>
         </scene>
@@ -125,7 +126,7 @@
                 <viewControllerPlaceholder storyboardName="About" id="hRk-Ss-5Gx" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEx-L5-tdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="328" y="537"/>
+            <point key="canvasLocation" x="328" y="468"/>
         </scene>
         <!--New Account View Controller-->
         <scene sceneID="iZE-0O-svV">

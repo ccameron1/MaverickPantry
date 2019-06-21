@@ -34,10 +34,16 @@ class FirebaseManager {
 				//we need to go into database and retrieve the info about the user and set them as the global here.
 				databaseRef.collection("Users").document(currentUserId).getDocument { (document, error) in
 					
+<<<<<<< HEAD
 					let time = document?.get("timestamp1") as! Timestamp
 					//					time.dateValue()
+=======
+				let time = document?.get("timestamp1") as! Timestamp
+				let time2 = document?.get("timestamp2") as! Timestamp
+//					time.dateValue()
+>>>>>>> b862e0c1d3339c0e3c557cebfe0e45ff4e85f75d
 					
-					globalUser = Users.init(isAdmin: ((document?.get("isAdmin")) != nil), email: document?.get("email") as! String, initials: document?.get("initials") as! String, yearOfBirth: document?.get("yearOfBirth") as! Int, NUID: document?.get("NUID") as! String, uid: document?.get("uid") as! String, request1: document?.get("request1") as! [String], request2: document?.get("request2") as! [String], timestamp1: time.dateValue() as NSDate, timestamp2: time.dateValue() as NSDate)
+					globalUser = Users.init(isAdmin: ((document?.get("isAdmin")) != nil), email: document?.get("email") as! String, initials: document?.get("initials") as! String, yearOfBirth: document?.get("yearOfBirth") as! Int, NUID: document?.get("NUID") as! String, uid: document?.get("uid") as! String, request1: document?.get("request1") as! [String], request2: document?.get("request2") as! [String], timestamp1: time.dateValue() as NSDate, timestamp2: time2.dateValue() as NSDate)
 					
 					
 					
@@ -58,17 +64,12 @@ class FirebaseManager {
 					print(error.localizedDescription)
 					return
 				}
-				
-				
 				var c = NSDateComponents()
 				c.year = 2000
 				c.month = 1
 				c.day = 1
-				
 				// Get NSDate given the above date components
 				var date = NSCalendar(identifier: NSCalendar.Identifier.gregorian)?.date(from: c as DateComponents)
-				
-				
 				
 				addUser(isAdmin: false, email: email, initials: initials, yearOfBirth: yearOfBirth, NUID: NUID, request1: [], request2: [], timestamp1: date as! NSDate, timestamp2: date as! NSDate)
 				Login(email: email, password: password, completion: { (success) in
@@ -144,30 +145,41 @@ class FirebaseManager {
 	}
 	
 	
+<<<<<<< HEAD
 	static func clearOldRequests() {
 		
 		
 		
 		
 		
+=======
+	static func clearOldRequests(completion: @escaping (Bool) -> Void) {
+				
+>>>>>>> b862e0c1d3339c0e3c557cebfe0e45ff4e85f75d
 		let calendar = Calendar.current
 		
-		if calendar.component(.weekOfYear, from: globalUser.timestamp1 as Date) != 0
+		if calendar.component(.weekOfYear, from: globalUser.timestamp1 as Date) != calendar.component(.weekOfYear, from: Date())
 		{
 			let requests: [String] = []
+			globalUser.request1 = requests
 			databaseRef.collection("Users").document(globalUser.uid).setData([ "request1": requests ], merge: true)
-			
+			print("clear 1")
 		}
-		if calendar.component(.weekOfYear, from: globalUser.timestamp2 as Date) != 0
+		if calendar.component(.weekOfYear, from: globalUser.timestamp2 as Date) != calendar.component(.weekOfYear, from: Date())
 		{
 			let requests: [String] = []
+			globalUser.request2 = requests
 			databaseRef.collection("Users").document(globalUser.uid).setData([ "request2": requests ], merge: true)
-			
+			print("clear 2")
 		}
+<<<<<<< HEAD
 		
 		
 		
 		
+=======
+		completion(true)
+>>>>>>> b862e0c1d3339c0e3c557cebfe0e45ff4e85f75d
 	}
 	
 	

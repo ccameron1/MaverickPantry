@@ -103,8 +103,6 @@ class RequestPageViewController: UIViewController, UITableViewDelegate, UITableV
             alertController.addAction(action)
             self.present(alertController, animated: true)
         }
-        
-        //if the user pushes the button too many time the memory gets weird and starts ignoring the if statement, so they should probably be booted off the page
     }
     
 }

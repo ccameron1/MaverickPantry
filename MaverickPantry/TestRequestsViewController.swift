@@ -219,16 +219,10 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 //add order
                 FirebaseManager.addOrder(order: self.makeOrder(), completion: { (success) in
                     if success {
-                        
                         FirebaseManager.getOrders(completion: { (orders, error) in
                             if error == nil {
                                 FirebaseManager.globalOrders = orders
                                 print(FirebaseManager.globalOrders?.count)
-                                
-                                let alertController = UIAlertController(title: "Order Submitted!", message: "Your order has been successfully recorded.", preferredStyle: .alert)
-                                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                                alertController.addAction(okAction)
-                                self.present(alertController, animated: true)
                             }
                         })
                     }
@@ -246,6 +240,10 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
         tab5Lables = ["0", "0", "0", "0", "0", "0"]
         tabLables = [tab1Lables, tab2Lables, tab3Lables, tab4Lables, tab5Lables]
         collectionViewB.reloadData()
+        let alertController = UIAlertController(title: "Order Submitted!", message: "Your order has been successfully recorded.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true)
     }
     
     func makeOrder() -> Order{

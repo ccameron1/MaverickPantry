@@ -448,6 +448,7 @@
                     <size key="freeformSize" width="414" height="2500"/>
                     <connections>
                         <outlet property="loginButton" destination="tep-z7-Ngm" id="t5v-zH-tso"/>
+                        <outlet property="textView" destination="Hep-sE-YV3" id="l5q-Av-ye5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHf-bP-iSB" userLabel="First Responder" sceneMemberID="firstResponder"/>

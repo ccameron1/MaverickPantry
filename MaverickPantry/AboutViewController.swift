@@ -21,16 +21,11 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
     let foodDonations = "https://www.unomaha.edu/student-life/_img/civic-and-social/mfp-item-list.pdf"
 
     @IBOutlet weak var loginButton: UIBarButtonItem!
-    @IBOutlet weak var imageTest2: UIImageView!
-    @IBOutlet weak var imageTest4: UIImageView!
-    @IBOutlet weak var imageTest: UIImageView!
-    @IBOutlet weak var imageTest3: UIImageView!
+    @IBOutlet weak var textView: UITextView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-       
         
         if FirebaseManager.currentUserId.count > 0 {
             self.tabBarController?.tabBar.isHidden = false
@@ -52,6 +47,11 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
 //        }
 //        // Do any additional setup after loading the view.
 
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        textView.setContentOffset(CGPoint.zero, animated: false)
     }
     
     

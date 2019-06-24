@@ -23,7 +23,14 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     
     var foodTypeNames = ["Protein", "Vegetable", "Fruit", "Grain", "Additional Food", "Miscellaneous", "Personal Hygiene"]
     
-    let imageArray : [UIImage] = [UIImage.init(named: "eggs")!]
+    var imageArray : [[UIImage]] = []
+    var selectedItemImages : [UIImage] = []
+    
+    var tab1Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!]
+    var tab2Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!]
+    var tab3Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!]
+    var tab4Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!]
+    var tab5Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!]
     
     var selectedItems: [String] = []
     var globalFoodArr: [String] = []
@@ -46,6 +53,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
         // Initialize the collection views, set the desired frames
         globalFoodArr = proteins
         tabLables = [tab1Lables, tab2Lables, tab3Lables, tab4Lables, tab5Lables]
+        imageArray = [tab1Images, tab2Images, tab3Images, tab4Images, tab5Images]
     }
     
     
@@ -57,7 +65,8 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             
             cellA.myLabel.text = selectedItems[indexPath.item]
             cellA.imageView.setRounded()
-            cellA.imageView.image = imageArray.first
+            cellA.imageView.image = selectedItemImages[indexPath.item]
+            
             return cellA
             
         } else if collectionView == collectionViewB {
@@ -71,8 +80,9 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             }
             
             cellB.itemNumberLable.text = tabLables[tabSelected][indexPath.item]
+            cellB.imageView.image = imageArray[tabSelected][indexPath.item]
             cellB.imageView.setRounded()
-            cellB.imageView.image = imageArray.first
+            //cellB.imageView.image = imageArray.first
             
             
             cellB.btnTapAction = {
@@ -94,6 +104,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 if self.selectedItems.count < 10 {
                     self.selectedItems.append(self.globalFoodArr[indexPath.row])
                     self.totalItemsSelectedLabel.text = "\(self.selectedItems.count)"
+                    self.selectedItemImages.append(cellB.imageView.image!)
                     self.collectionViewA.reloadData()
                 } else {
                     
@@ -129,6 +140,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                     let index = self.selectedItems.firstIndex(of: "\(self.globalFoodArr[indexPath.row])")
                     self.selectedItems.remove(at: index!)
                     self.totalItemsSelectedLabel.text = "\(self.selectedItems.count)"
+                    self.selectedItemImages.remove(at: index!)
                     self.collectionViewA.reloadData()
                     
                 } else if self.selectedItems.count == 0 {

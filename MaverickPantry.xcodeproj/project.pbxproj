@@ -56,6 +56,7 @@
 		7A55A72722BACCCE0075441B /* NewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountViewController.swift; sourceTree = "<group>"; };
 		7ACA1B6B22BC8A3D00EDE502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBD73E0B5AF308E47A83E05A /* Pods-MaverickPantry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaverickPantry.release.xcconfig"; path = "Target Support Files/Pods-MaverickPantry/Pods-MaverickPantry.release.xcconfig"; sourceTree = "<group>"; };
+		D5431D0222C102B700CEFC7E /* MaverickPantry.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MaverickPantry.entitlements; sourceTree = "<group>"; };
 		D58BE6C322BAB95800324972 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		D58BE6C522BAB97A00324972 /* RequestPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RequestPage.storyboard; sourceTree = "<group>"; };
 		D58BE6C722BAB99300324972 /* Volunteers.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Volunteers.storyboard; sourceTree = "<group>"; };
@@ -115,6 +116,7 @@
 		7A067DC922BA98F700FDC2B2 /* MaverickPantry */ = {
 			isa = PBXGroup;
 			children = (
+				D5431D0222C102B700CEFC7E /* MaverickPantry.entitlements */,
 				D58BE6CB22BAB9E500324972 /* Login.storyboard */,
 				7A55A72722BACCCE0075441B /* NewAccountViewController.swift */,
 				7A55A72522BACCB60075441B /* LoginViewController.swift */,
@@ -192,6 +194,11 @@
 				TargetAttributes = {
 					7A067DC622BA98F700FDC2B2 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -461,8 +468,9 @@
 			baseConfigurationReference = 1759176685074EB312FB6B83 /* Pods-MaverickPantry.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MaverickPantry/MaverickPantry.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AQM9F67FCR;
 				INFOPLIST_FILE = MaverickPantry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -480,8 +488,9 @@
 			baseConfigurationReference = CBD73E0B5AF308E47A83E05A /* Pods-MaverickPantry.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MaverickPantry/MaverickPantry.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AQM9F67FCR;
 				INFOPLIST_FILE = MaverickPantry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -39,7 +39,6 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     
     @IBOutlet weak var totalItemsSelectedLabel: UILabel!
     @IBOutlet weak var collectionViewA: UICollectionView!
-    
     @IBOutlet weak var collectionViewB: UICollectionView!
     @IBOutlet weak var collectionViewC: UICollectionView!
     
@@ -215,16 +214,6 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     
     
     @IBAction func sendRequestButton(_ sender: Any) {
-        selectedItems = []
-        collectionViewA.reloadData()
-        totalItemsSelectedLabel.text = ""
-        tab1Lables = ["0", "0", "0", "0", "0",]
-        tab2Lables = ["0", "0", "0"]
-        tab3Lables = ["0", "0"]
-        tab4Lables = ["0", "0", "0", "0", "0", "0", "0"]
-        tab5Lables = ["0", "0", "0", "0", "0", "0"]
-        tabLables = [tab1Lables, tab2Lables, tab3Lables, tab4Lables, tab5Lables]
-        collectionViewB.reloadData()
         FirebaseManager.clearOldRequests { (success) in
             if success {
                 FirebaseManager.addRequestsToUser(requests: self.selectedItems)
@@ -236,6 +225,11 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                             if error == nil {
                                 FirebaseManager.globalOrders = orders
                                 print(FirebaseManager.globalOrders?.count)
+                                
+                                let alertController = UIAlertController(title: "Order Submitted!", message: "Your order has been successfully recorded.", preferredStyle: .alert)
+                                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                                alertController.addAction(okAction)
+                                self.present(alertController, animated: true)
                             }
                         })
                     }
@@ -243,6 +237,16 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 
             }
         }
+        selectedItems = []
+        collectionViewA.reloadData()
+        totalItemsSelectedLabel.text = ""
+        tab1Lables = ["0", "0", "0", "0", "0",]
+        tab2Lables = ["0", "0", "0"]
+        tab3Lables = ["0", "0"]
+        tab4Lables = ["0", "0", "0", "0", "0", "0", "0"]
+        tab5Lables = ["0", "0", "0", "0", "0", "0"]
+        tabLables = [tab1Lables, tab2Lables, tab3Lables, tab4Lables, tab5Lables]
+        collectionViewB.reloadData()
     }
     
     func makeOrder() -> Order{

@@ -59,9 +59,9 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             return cellA
             
         } else if collectionView == collectionViewB {
-           
+            
             let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
-    
+            
             cellB.myLabel.text = globalFoodArr[indexPath.item]
             
             if Int(cellB.itemNumberLable.text!)! > 0 {
@@ -158,7 +158,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             
             cellC.myLabel.text = foodTypeNames[indexPath.item]
             cellC.myLabel.textColor = .lightGray
-
+            
             if indexPath.row == tabSelected {
                 cellC.myLabel.textColor = UIColor.black
             }
@@ -184,7 +184,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.item)
         if collectionView == collectionViewC {
-           
+            
             tabSelected = indexPath.item
             collectionViewB.reloadData()
             
@@ -214,11 +214,30 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
         FirebaseManager.clearOldRequests { (success) in
             if success {
                 FirebaseManager.addRequestsToUser(requests: self.selectedItems)
+                //add order
+                FirebaseManager.addOrder(order: self.makeOrder(), completion: { (success) in
+                    if success {
+                        
+                        FirebaseManager.getOrders(completion: { (orders, error) in
+                            if error == nil {
+                                FirebaseManager.globalOrders = orders
+                                print(FirebaseManager.globalOrders?.count)
+                            }
+                        })
+                    }
+                })
+                
             }
         }
     }
     
-    
+    func makeOrder() -> Order{
+        let requests = selectedItems
+        let initials = FirebaseManager.globalUser.initials
+        let yearOfBirth = FirebaseManager.globalUser.yearOfBirth
+        
+        return Order(requests: requests, intitials: initials, yearOfBirth: yearOfBirth)
+    }
     
 }
 

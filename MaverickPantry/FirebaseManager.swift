@@ -163,9 +163,9 @@ class FirebaseManager {
 	}
 	
 	static func addOrder(order: Order, completion: @escaping (Bool) -> Void) {
-		databaseRef.collection("Orders").document().setData(["requests": order.requests,
-															 "initials": order.initials,
-															 "yearOfBirth": order.yearOfBirth])
+		databaseRef.collection("Orders").document("Order: \(order.initials!) \(order.yearOfBirth!)").setData(["requests": order.requests!,
+																											  "initials": order.initials!,
+																											  "yearOfBirth": order.yearOfBirth!])
 		print("add order")
 	}
 	
@@ -195,6 +195,19 @@ class FirebaseManager {
 				}
 			}
 		}
+	}
+	static func deleteFromOrders(orderName: String, completion: @escaping (Bool) -> Void) {
+		print(orderName)
+		databaseRef.collection("Orders").document(orderName).delete() { err in
+			if let err = err {
+				print("Error removing document: \(err)")
+				completion(false)
+			} else {
+				print("Document successfully removed!")
+				completion(true)
+			}
+		}
+
 	}
 }
 

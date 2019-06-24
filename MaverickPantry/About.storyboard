@@ -428,9 +428,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cn7-f1-sdZ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="topRated" id="xnv-oA-9sp">
-                        <color key="badgeColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="XQq-tx-B54"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="96R-dz-yPv">
                         <barButtonItem key="leftBarButtonItem" title="Administrator" id="FMU-SP-2JD">
@@ -446,7 +444,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="414" height="2500"/>
                     <connections>
                         <outlet property="loginButton" destination="tep-z7-Ngm" id="t5v-zH-tso"/>

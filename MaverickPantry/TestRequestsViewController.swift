@@ -24,6 +24,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     var foodTypeNames = ["Protein", "Vegetable", "Fruit", "Grain", "Additional Food", "Miscellaneous", "Personal Hygiene"]
     
     var imageArray : [[UIImage]] = []
+    var selectedItemImages : [UIImage] = []
     
     var tab1Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!]
     var tab2Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!]
@@ -64,8 +65,8 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             
             cellA.myLabel.text = selectedItems[indexPath.item]
             cellA.imageView.setRounded()
-            cellA.imageView.image = imageArray.first?.first
-            //cellA.imageView.image = imageArray.first
+            cellA.imageView.image = selectedItemImages[indexPath.item]
+            
             return cellA
             
         } else if collectionView == collectionViewB {
@@ -103,6 +104,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 if self.selectedItems.count < 10 {
                     self.selectedItems.append(self.globalFoodArr[indexPath.row])
                     self.totalItemsSelectedLabel.text = "\(self.selectedItems.count)"
+                    self.selectedItemImages.append(cellB.imageView.image!)
                     self.collectionViewA.reloadData()
                 } else {
                     
@@ -138,6 +140,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                     let index = self.selectedItems.firstIndex(of: "\(self.globalFoodArr[indexPath.row])")
                     self.selectedItems.remove(at: index!)
                     self.totalItemsSelectedLabel.text = "\(self.selectedItems.count)"
+                    self.selectedItemImages.remove(at: index!)
                     self.collectionViewA.reloadData()
                     
                 } else if self.selectedItems.count == 0 {

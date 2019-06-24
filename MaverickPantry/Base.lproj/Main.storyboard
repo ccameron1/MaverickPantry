@@ -53,7 +53,9 @@
         <scene sceneID="lKN-g5-BDW">
             <objects>
                 <viewControllerPlaceholder storyboardName="TestRequest" id="B6j-GD-psr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="wJF-3G-3rK"/>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="wJF-3G-3rK">
+                        <color key="badgeColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HA2-li-ttf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -23,6 +23,8 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     
     var foodTypeNames = ["Protein", "Vegetable", "Fruit", "Grain", "Additional Food", "Miscellaneous", "Personal Hygiene"]
     
+    let imageArray : [UIImage] = [UIImage.init(named: "eggs")!]
+    
     var selectedItems: [String] = []
     var globalFoodArr: [String] = []
     var tabSelected = 0
@@ -55,7 +57,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             
             cellA.myLabel.text = selectedItems[indexPath.item]
             cellA.imageView.setRounded()
-            cellA.imageView.image = UIImage(named: "MisoEggplant")
+            cellA.imageView.image = imageArray.first
             return cellA
             
         } else if collectionView == collectionViewB {
@@ -70,7 +72,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             
             cellB.itemNumberLable.text = tabLables[tabSelected][indexPath.item]
             cellB.imageView.setRounded()
-            cellB.imageView.image = UIImage(named: "MisoEggplant")
+            cellB.imageView.image = imageArray.first
             
             
             cellB.btnTapAction = {

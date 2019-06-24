@@ -17,6 +17,7 @@ class FirebaseManager {
 	static var currentUserId: String = ""
 	static var currentUser : User?
 	static var globalUser : Users!
+	static var globalOrders : [Order]? = []
 	
 	static func Login(email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
 		
@@ -34,9 +35,9 @@ class FirebaseManager {
 				//we need to go into database and retrieve the info about the user and set them as the global here.
 				databaseRef.collection("Users").document(currentUserId).getDocument { (document, error) in
 					
-				let time = document?.get("timestamp1") as! Timestamp
-				let time2 = document?.get("timestamp2") as! Timestamp
-//					time.dateValue()
+					let time = document?.get("timestamp1") as! Timestamp
+					let time2 = document?.get("timestamp2") as! Timestamp
+					//					time.dateValue()
 					
 					globalUser = Users.init(isAdmin: ((document?.get("isAdmin")) != nil), email: document?.get("email") as! String, initials: document?.get("initials") as! String, yearOfBirth: document?.get("yearOfBirth") as! Int, NUID: document?.get("NUID") as! String, uid: document?.get("uid") as! String, request1: document?.get("request1") as! [String], request2: document?.get("request2") as! [String], timestamp1: time.dateValue() as NSDate, timestamp2: time2.dateValue() as NSDate)
 					
@@ -121,7 +122,7 @@ class FirebaseManager {
 			let time = NSDate(timeIntervalSince1970: TimeInterval(myTimeInterval))
 			
 			databaseRef.collection("Users").document(globalUser.uid).setData([ "timestamp1": time ], merge: true)
-
+			
 			databaseRef.collection("Users").document(globalUser.uid).setData([ "request1": requests ], merge: true)
 		} else if globalUser.request2.count == 0 {
 			
@@ -130,7 +131,7 @@ class FirebaseManager {
 			let time = NSDate(timeIntervalSince1970: TimeInterval(myTimeInterval))
 			
 			databaseRef.collection("Users").document(globalUser.uid).setData([ "timestamp2": time ], merge: true)
-
+			
 			globalUser.request2 = requests
 			databaseRef.collection("Users").document(globalUser.uid).setData([ "request2": requests ], merge: true)
 		} else {
@@ -141,7 +142,7 @@ class FirebaseManager {
 	
 	
 	static func clearOldRequests(completion: @escaping (Bool) -> Void) {
-				
+		
 		let calendar = Calendar.current
 		
 		if calendar.component(.weekOfYear, from: globalUser.timestamp1 as Date) != calendar.component(.weekOfYear, from: Date())
@@ -161,6 +162,40 @@ class FirebaseManager {
 		completion(true)
 	}
 	
+	static func addOrder(order: Order, completion: @escaping (Bool) -> Void) {
+		databaseRef.collection("Orders").document().setData(["requests": order.requests,
+															 "initials": order.initials,
+															 "yearOfBirth": order.yearOfBirth])
+		print("add order")
+	}
 	
 	
+	static func getOrders(completion: @escaping ([Order], Error?) -> Void ){
+		var orders = [Order]()
+		
+		databaseRef.collection("Orders").getDocuments() { (querySnapshot, err) in
+			if let err = err {
+				print("Error getting documents: \(err)")
+				completion([Order](), err)
+			} else {
+				for document in querySnapshot!.documents {
+//					let data = document.data()
+					
+					let requests = document.get("requests")! as! [String]
+					let initials = document.get("initials")! as! String
+					let YOB = document.get("yearOfBirth")! as! Int
+					
+					let order = Order(requests: requests, intitials: initials, yearOfBirth: YOB)
+					
+					orders.append(order)
+					if orders.count == querySnapshot!.documents.count {
+						completion(orders, nil)
+					}
+					print("Order: \(order.initials)")
+				}
+			}
+		}
+	}
 }
+
+

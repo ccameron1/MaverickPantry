@@ -10,6 +10,8 @@ import UIKit
 
 class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var selectedOrder : Order?
+    
     var foodGroup : [String] = ["Protein", "Vegetables", "Fruits", "Grain", "Additional Food Products", "Miscellaneous Products", "Personal Hygiene Products"]
     
     //var items : [] = []
@@ -26,13 +28,15 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
 //tableView Functions
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 16
+        let requests = selectedOrder!.requests as! [String]
+        let count = requests.count
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RcellID")
 //        let foodType = foodGroup[indexPath.row]
-        cell?.textLabel!.text = "food"
+        cell?.textLabel!.text = selectedOrder?.requests[indexPath.row]
         return cell!
     }
     

@@ -55,6 +55,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             
             cellA.myLabel.text = selectedItems[indexPath.item]
             cellA.imageView.setRounded()
+            cellA.imageView.image = UIImage(named: "MisoEggplant")
             return cellA
             
         } else if collectionView == collectionViewB {
@@ -69,17 +70,20 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             
             cellB.itemNumberLable.text = tabLables[tabSelected][indexPath.item]
             cellB.imageView.setRounded()
+            cellB.imageView.image = UIImage(named: "MisoEggplant")
             
             
             cellB.btnTapAction = {
                 () in
                 print("Edit tapped in cell", indexPath)
                 // update lable and add to correct lable array
-                var num = Int(cellB.itemNumberLable!.text!)
-                cellB.itemNumberLable.text = "\(num! + 1)"
+                 var num = Int(cellB.itemNumberLable!.text!)
+                if num! >= 0 && num! < 10 && self.selectedItems.count < 10 {
+                   
+                    cellB.itemNumberLable.text = "\(num! + 1)"
+                    self.tabLables[self.tabSelected][indexPath.row] = cellB.itemNumberLable.text!
                 
-                
-                self.tabLables[self.tabSelected][indexPath.row] = cellB.itemNumberLable.text!
+                }
                 
                 if Int(cellB.itemNumberLable.text!)! > 0 {
                     cellB.imageView.layer.borderColor = UIColor.red.cgColor
@@ -90,30 +94,58 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                     self.totalItemsSelectedLabel.text = "\(self.selectedItems.count)"
                     self.collectionViewA.reloadData()
                 } else {
+                    
+                    let alertController = UIAlertController.init(title: "Max Items Reached", message: "You have reached the maximum number of items.  Please remove an item before adding more.", preferredStyle: .alert)
+                    let alertAction = UIAlertAction.init(title: "Okay", style: .default, handler: nil)
+                    alertController.addAction(alertAction)
+                    self.present(alertController, animated: false)
+//                    cellB.itemNumberLable.text = "\(num!)"
                     print("Already have 10 items")
                 }
             }
             
             cellB.subBtnTapAction = {
                 () in
-                print("subract", indexPath)
+                print("subtract", indexPath)
                 var num = Int(cellB.itemNumberLable!.text!)
-                cellB.itemNumberLable.text = "\(num! - 1)"
+                if num! > 0 && num! <= 10 {
+                    
+                    cellB.itemNumberLable.text = "\(num! - 1)"
+                    self.tabLables[self.tabSelected][indexPath.row] = cellB.itemNumberLable.text!
+
+                }
                 
-                self.tabLables[self.tabSelected][indexPath.row] = cellB.itemNumberLable.text!
+                
                 
                 if Int(cellB.itemNumberLable.text!)! == 0 {
                     cellB.imageView.layer.borderColor = UIColor.lightGray.cgColor
                     
                 }
                 
-                if self.selectedItems.count > 0 {
+                if self.selectedItems.count > 0 && num! != 0 {
+                    
                     let index = self.selectedItems.firstIndex(of: "\(self.globalFoodArr[indexPath.row])")
                     self.selectedItems.remove(at: index!)
                     self.totalItemsSelectedLabel.text = "\(self.selectedItems.count)"
                     self.collectionViewA.reloadData()
                     
-                } else {
+                } else if self.selectedItems.count == 0 {
+                    
+                    let alertController = UIAlertController.init(title: "Cannot Remove Item", message: "The item could not be removed from your order because your order is already empty.", preferredStyle: .alert)
+                    let alertAction = UIAlertAction.init(title: "Okay", style: .default, handler: nil)
+                    alertController.addAction(alertAction)
+                    self.present(alertController, animated: false)
+                    
+//                    cellB.itemNumberLable.text = "\(num!)"
+                    print("There is nothing to subtract")
+                } else if num! == 0 {
+                    
+                    let alertController = UIAlertController.init(title: "Cannot Remove Item", message: "The item could not be removed from your order because your order does not have the item.", preferredStyle: .alert)
+                    let alertAction = UIAlertAction.init(title: "Okay", style: .default, handler: nil)
+                    alertController.addAction(alertAction)
+                    self.present(alertController, animated: false)
+                    
+                    cellB.itemNumberLable.text = "\(num!)"
                     print("There is nothing to subtract")
                 }
             }

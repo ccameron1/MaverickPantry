@@ -43,9 +43,9 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     var tab5Lables : [String] = ["0", "0", "0", "0", "0", "0"]
     
     var tabLables : [[String]] = []
+    
     @IBOutlet weak var totalItemsSelectedLabel: UILabel!
     @IBOutlet weak var collectionViewA: UICollectionView!
-    
     @IBOutlet weak var collectionViewB: UICollectionView!
     @IBOutlet weak var collectionViewC: UICollectionView!
     
@@ -228,6 +228,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
         
     }
     
+    
     @IBAction func sendRequestButton(_ sender: Any) {
         FirebaseManager.clearOldRequests { (success) in
             if success {
@@ -235,7 +236,6 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 //add order
                 FirebaseManager.addOrder(order: self.makeOrder(), completion: { (success) in
                     if success {
-                        
                         FirebaseManager.getOrders(completion: { (orders, error) in
                             if error == nil {
                                 FirebaseManager.globalOrders = orders
@@ -247,6 +247,20 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 
             }
         }
+        selectedItems = []
+        collectionViewA.reloadData()
+        totalItemsSelectedLabel.text = ""
+        tab1Lables = ["0", "0", "0", "0", "0",]
+        tab2Lables = ["0", "0", "0"]
+        tab3Lables = ["0", "0"]
+        tab4Lables = ["0", "0", "0", "0", "0", "0", "0"]
+        tab5Lables = ["0", "0", "0", "0", "0", "0"]
+        tabLables = [tab1Lables, tab2Lables, tab3Lables, tab4Lables, tab5Lables]
+        collectionViewB.reloadData()
+        let alertController = UIAlertController(title: "Order Submitted!", message: "Your order has been successfully recorded.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true)
     }
     
     func makeOrder() -> Order{

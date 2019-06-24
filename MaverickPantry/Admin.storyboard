@@ -219,6 +219,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Filled Order"/>
                                 <connections>
+                                    <action selector="fillOrderButton:" destination="FBT-XD-89L" eventType="touchUpInside" id="gui-tT-pC0"/>
+                                    <action selector="filledOrderButton:" destination="dpF-dG-smh" eventType="touchUpInside" id="OFO-EY-g5w"/>
                                     <segue destination="dpF-dG-smh" kind="unwind" unwindAction="unwindToRootViewControllerWithSegue:" id="miF-CE-D9v"/>
                                 </connections>
                             </button>

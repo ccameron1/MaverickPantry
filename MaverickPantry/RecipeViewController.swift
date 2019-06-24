@@ -8,8 +8,8 @@
 
 import UIKit
 
-class RecipeViewController: UIViewController {
-
+class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     var recipes = ["Cake", "Pie", "Cheese"]
     
     @IBOutlet weak var recipeTableView: UITableView!
@@ -20,8 +20,7 @@ class RecipeViewController: UIViewController {
         
     }
     
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
-    {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "cellID"
         
         var cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! UITableViewCell
@@ -34,6 +33,28 @@ class RecipeViewController: UIViewController {
         
         return cell
     }
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    
+//    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
+//    {
+//        let cellIdentifier = "cellID"
+//
+//        var cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! UITableViewCell
+//
+//        cell.textLabel!.text = self.recipes[indexPath.row]
+//
+//        var image : UIImage = UIImage(named: "foodpantrybanner")!
+//        print("The loaded image: \(image)")
+//        cell.imageView!.image = image
+//
+//        return cell
+//    }
     /*
     // MARK: - Navigation
 

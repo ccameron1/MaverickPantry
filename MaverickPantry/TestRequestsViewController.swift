@@ -194,7 +194,6 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             switch tabSelected {
             case 0:
                 globalFoodArr = proteins
-                
             case 1:
                 globalFoodArr = vegetables
             case 2:

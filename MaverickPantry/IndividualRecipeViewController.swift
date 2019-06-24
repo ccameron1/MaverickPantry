@@ -10,6 +10,8 @@ import UIKit
 
 class IndividualRecipeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var ingredients : [String] = ["Eggs", "Milk"]
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var foodNameLabel: UILabel!
@@ -20,16 +22,16 @@ class IndividualRecipeViewController: UIViewController, UITableViewDelegate, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //textView.isHidden = true
+        textView.isHidden = true
     }
     
     @IBAction func segmentedController(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
             tableView.isHidden = false
-        //    textView.isHidden = true
+            textView.isHidden = true
         case 1:
-        //    textView.isHidden = false
+            textView.isHidden = false
             tableView.isHidden = true
         default:
             return
@@ -37,16 +39,21 @@ class IndividualRecipeViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return ingredients.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID")
-        cell?.textLabel!.text = "eggs"
+        let list = ingredients[indexPath.row]
+        cell?.textLabel!.text = list
         return cell!
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ypA-hy-vBR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E0x-JQ-Pm2">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EUG-OO-Lhb">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ekB-pu-6qS">
                                     <size key="itemSize" width="414" height="257"/>
@@ -86,14 +86,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vIX-S3-UW5"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="WmA-8R-lth"/>
+                    <navigationItem key="navigationItem" id="aba-qF-l6E"/>
                     <connections>
                         <outlet property="collectionView" destination="EUG-OO-Lhb" id="cTE-pV-T1l"/>
+                        <segue destination="M9l-4t-NC1" kind="show" identifier="recipeSegue" id="iun-rI-ktX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ane-HV-UnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2689.8550724637685" y="1076.7857142857142"/>
+            <point key="canvasLocation" x="3600.0000000000005" y="1076.7857142857142"/>
         </scene>
         <!--Individual Recipe View Controller-->
         <scene sceneID="CWg-YQ-1vS">
@@ -104,7 +105,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kI1-1c-0Ux">
-                                <rect key="frame" x="0.0" y="44" width="414" height="956"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="912"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2c-af-Df4">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
@@ -188,7 +189,7 @@
                                                 <rect key="frame" x="34" y="561" width="346" height="137"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <string key="text">an oval or round object laid by a female bird, reptile, fish, or invertebrate, usually containing a developing embryo. The eggs of birds are enclosed in a chalky shell, while those of reptiles are in a leathery membrane.  an oval or round object laid by a female bird, reptile, fish, or invertebrate, usually containing a developing embryo. The eggs of birds are enclosed in a chalky shell, while those of reptiles are in a leathery membrane.  an oval or round object laid by a female bird, reptile, fish, or invertebrate, usually containing a developing embryo. The eggs of birds are enclosed in a chalky shell, while those of reptiles are in a leathery membrane. </string>
+                                                <string key="text">an oval or round object laid by a female bird, reptile, fish, or invertebrate, usually containing a developing embryo. The eggs of birds are enclosed in a chalky shell, while those of reptiles are in a leathery membrane.  </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -268,7 +269,26 @@ As eggs begin to set, GENTLY PULL the eggs across the pan with an inverted turne
                     <nil key="highlightedColor"/>
                 </label>
             </objects>
-            <point key="canvasLocation" x="3855" y="1090"/>
+            <point key="canvasLocation" x="4763.768115942029" y="1089.5089285714284"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Z1k-qd-UO8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E0x-JQ-Pm2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="WmA-8R-lth"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pa5-Z1-Ryw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ypA-hy-vBR" kind="relationship" relationship="rootViewController" id="3Re-c9-QzX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OA2-8d-oyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2689.8550724637685" y="1076.7857142857142"/>
         </scene>
     </scenes>
     <resources>

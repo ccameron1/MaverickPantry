@@ -14,6 +14,7 @@ class RecipeViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     var recipes : [String] = ["pasta", "pizza", "soup", "eggs", "sandwich"]
     var recipeName : [String] = ["Pasta", "Pizza", "Soup", "Eggs", "Sandwich"]
+    var indexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,5 +33,14 @@ class RecipeViewController: UIViewController, UICollectionViewDelegate, UICollec
         cell.foodLabel.text = name
         cell.imageView.addShadow()
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.indexPath = indexPath
+        performSegue(withIdentifier: "recipeSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as! IndividualRecipeViewController
     }
 }

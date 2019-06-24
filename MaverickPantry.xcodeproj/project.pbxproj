@@ -34,6 +34,7 @@
 		D5AFCE2B22BBC44900FD3CD4 /* Inventory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5AFCE2A22BBC44900FD3CD4 /* Inventory.storyboard */; };
 		D5AFCE2D22BBD04600FD3CD4 /* CurrentOrderRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFCE2C22BBD04600FD3CD4 /* CurrentOrderRequestViewController.swift */; };
 		D5AFCE2F22BBF03900FD3CD4 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFCE2E22BBF03900FD3CD4 /* AdminViewController.swift */; };
+		D5CE3A7B22C10B4900BF3613 /* IndividualRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CE3A7A22C10B4900BF3613 /* IndividualRecipeViewController.swift */; };
 		D6A9A1FE22BBE60F0071E389 /* StepperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A9A1FD22BBE60F0071E389 /* StepperTableViewCell.swift */; };
 		E0B3064A22BABCE2007A2E85 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3064922BABCE2007A2E85 /* AboutViewController.swift */; };
 		E0B3064C22BABD24007A2E85 /* RequestPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3064B22BABD24007A2E85 /* RequestPageViewController.swift */; };
@@ -72,6 +73,7 @@
 		D5AFCE2A22BBC44900FD3CD4 /* Inventory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Inventory.storyboard; sourceTree = "<group>"; };
 		D5AFCE2C22BBD04600FD3CD4 /* CurrentOrderRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentOrderRequestViewController.swift; sourceTree = "<group>"; };
 		D5AFCE2E22BBF03900FD3CD4 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
+		D5CE3A7A22C10B4900BF3613 /* IndividualRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualRecipeViewController.swift; sourceTree = "<group>"; };
 		D6A9A1FD22BBE60F0071E389 /* StepperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperTableViewCell.swift; sourceTree = "<group>"; };
 		DE81BE6CE415D4ED5A9F1981 /* Pods_MaverickPantry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaverickPantry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B3064922BABCE2007A2E85 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				7A55A72722BACCCE0075441B /* NewAccountViewController.swift */,
 				7A55A72522BACCB60075441B /* LoginViewController.swift */,
 				D58BE6C922BAB9A900324972 /* Recipe.storyboard */,
+				D5CE3A7A22C10B4900BF3613 /* IndividualRecipeViewController.swift */,
 				E0B3064F22BABDAD007A2E85 /* RecipeViewController.swift */,
 				D58BE6C722BAB99300324972 /* Volunteers.storyboard */,
 				E0B3064D22BABD67007A2E85 /* VolunteersViewController.swift */,
@@ -327,6 +330,7 @@
 				7A067DCB22BA98F700FDC2B2 /* AppDelegate.swift in Sources */,
 				73306A1A22BBD93300E5FB78 /* InventoryDetailViewController.swift in Sources */,
 				D5AFCE2922BBBE7C00FD3CD4 /* CurrentOrdersViewController.swift in Sources */,
+				D5CE3A7B22C10B4900BF3613 /* IndividualRecipeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

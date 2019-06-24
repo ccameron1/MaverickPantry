@@ -44,6 +44,7 @@ class InventoryViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellID") as! UITableViewCell
+        
         let food = foods[indexPath.row]
         cell.textLabel?.text = food.name
         cell.detailTextLabel?.text = "Left: \(food.amountLeft!)\nGiven Out: \(food.amountGiven!)"

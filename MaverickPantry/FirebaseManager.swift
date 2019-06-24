@@ -18,6 +18,7 @@ class FirebaseManager {
 	static var currentUser : User?
 	static var globalUser : Users!
 	static var globalOrders : [Order]? = []
+	static var globalInventory : [DummyFood]? = []
 	
 	static func Login(email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
 		
@@ -168,10 +169,8 @@ class FirebaseManager {
 		print("add order")
 	}
 	
-	static func addInventoryItem(item: DummyFood, completion: @escaping (Bool) -> Void) {
-		databaseRef.collection("Inventory").document("\(item.name!)").setData(["amountGivenAway": item.amountGiven, "currentAmount": item.amountLeft])
-		print("added inventory item")
-	}
+	
+	
 	
 	static func getOrders(completion: @escaping ([Order], Error?) -> Void ){
 		var orders = [Order]()
@@ -211,6 +210,39 @@ class FirebaseManager {
 			}
 		}
 		
+	}
+	
+	static func addInventoryItem(item: DummyFood, completion: @escaping (Bool) -> Void) {
+		databaseRef.collection("Inventory").document("\(item.name!)").setData(["amountGivenAway": item.amountGiven, "currentAmount": item.amountLeft, "name": item.name])
+		print("added inventory item")
+		completion(true)
+	}
+	
+	static func getInventory(completion: @escaping ([DummyFood], Error?) -> Void ){
+		var items = [DummyFood]()
+		
+		databaseRef.collection("Inventory").getDocuments() { (querySnapshot, err) in
+			if let err = err {
+				print("Error getting documents: \(err)")
+				completion([DummyFood](), err)
+			} else {
+				for document in querySnapshot!.documents {
+					//					let data = document.data()
+					
+					let name = document.get("name")! as! String
+					let amountLeft = document.get("amountLeft")!
+					let amountAvailable = document.get("amountGivenAway")!
+					
+					let item = DummyFood(name: name, amountLeft: amountLeft as! Int, amountGiven: amountAvailable as! Int)
+					
+					items.append(item)
+					if items.count == querySnapshot!.documents.count {
+						completion(items, nil)
+					}
+					print("Order: \(item.name)")
+				}
+			}
+		}
 	}
 }
 

@@ -178,6 +178,13 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
         
     }
     
+    @IBAction func sendRequestButton(_ sender: Any) {
+        FirebaseManager.clearOldRequests { (success) in
+            if success {
+                FirebaseManager.addRequestsToUser(requests: self.selectedItems)
+            }
+        }
+    }
     
     
     

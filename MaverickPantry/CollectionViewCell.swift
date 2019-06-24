@@ -55,12 +55,9 @@ class CollectionViewCell: UICollectionViewCell {
         // add a button
         addSubview(addButton)
         addSubview(subtractButton)
-        
-//        addButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-//        addButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+ 
         addButton.frame = CGRect(x: 350, y: 20, width: 30, height: 30)
         subtractButton.frame = CGRect(x: 290, y: 20, width: 30, height: 30)
-        // add the touchUpInside target
         addButton.addTarget(self, action: #selector(btnTapped), for: .touchUpInside)
         subtractButton.addTarget(self, action: #selector(subtBtnTapped), for: .touchUpInside)
 
@@ -69,13 +66,12 @@ class CollectionViewCell: UICollectionViewCell {
     @objc func btnTapped() {
         print("Tapped!")
         
-        // use our "call back" action to tell the controller the button was tapped
         btnTapAction?()
     }
     
     @objc func subtBtnTapped() {
         print("Subtract Tapped!")
-        // use our "call back" action to tell the controller the button was tapped
+ 
         subBtnTapAction?()
     }
 

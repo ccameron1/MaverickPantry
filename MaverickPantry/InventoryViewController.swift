@@ -70,8 +70,13 @@ class InventoryViewController: UIViewController, UITableViewDelegate, UITableVie
             let name = firstTextField.text!
             let amountLeft = Int(secondTextField.text!)
             let amountGiven = Int(thirdTextField.text!)
-            self.foods.append(DummyFood(name: name, amountLeft: amountLeft!, amountGiven: amountGiven!))
-            self.tableView.reloadData()
+            let itemToAdd = DummyFood(name: name, amountLeft: amountLeft!, amountGiven: amountGiven!)
+            FirebaseManager.addInventoryItem(item: itemToAdd, completion: { (success) in
+                if success {
+                    print ("SUCCESS")
+                    self.tableView.reloadData()
+                }
+            })
         })
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
             (action : UIAlertAction!) -> Void in })

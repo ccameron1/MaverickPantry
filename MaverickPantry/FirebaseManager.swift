@@ -164,11 +164,14 @@ class FirebaseManager {
 	
 	static func addOrder(order: Order, completion: @escaping (Bool) -> Void) {
 		databaseRef.collection("Orders").document("Order: \(order.initials!) \(order.yearOfBirth!)").setData(["requests": order.requests!,
-																											  "initials": order.initials!,
-																											  "yearOfBirth": order.yearOfBirth!])
+			"initials": order.initials!,"yearOfBirth": order.yearOfBirth!])
 		print("add order")
 	}
 	
+	static func addInventoryItem(item: DummyFood, completion: @escaping (Bool) -> Void) {
+		databaseRef.collection("Inventory").document("\(item.name!)").setData(["amountGivenAway": item.amountGiven, "currentAmount": item.amountLeft])
+		print("added inventory item")
+	}
 	
 	static func getOrders(completion: @escaping ([Order], Error?) -> Void ){
 		var orders = [Order]()
@@ -179,7 +182,7 @@ class FirebaseManager {
 				completion([Order](), err)
 			} else {
 				for document in querySnapshot!.documents {
-//					let data = document.data()
+					//					let data = document.data()
 					
 					let requests = document.get("requests")! as! [String]
 					let initials = document.get("initials")! as! String
@@ -207,7 +210,7 @@ class FirebaseManager {
 				completion(true)
 			}
 		}
-
+		
 	}
 }
 

@@ -21,7 +21,9 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Request Form"
-        nameLabel.text = "Order For: "
+        let initials = (selectedOrder!.initials as! String).uppercased()
+        
+        nameLabel.text = "Order For: \(initials)"
 
     }
 

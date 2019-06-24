@@ -59,7 +59,7 @@ class CurrentOrdersViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID")
         
-        cell?.textLabel!.text = FirebaseManager.globalOrders![indexPath.row].initials
+        cell?.textLabel!.text = FirebaseManager.globalOrders![indexPath.row].initials.uppercased()
         let yearOfBirthString = String(FirebaseManager.globalOrders![indexPath.row].yearOfBirth)
         cell?.detailTextLabel!.text = yearOfBirthString
         //        if currentOrder.count == 0 {

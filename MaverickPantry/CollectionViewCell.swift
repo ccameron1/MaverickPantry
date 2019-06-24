@@ -58,6 +58,7 @@ class CollectionViewCell: UICollectionViewCell {
  
         addButton.frame = CGRect(x: 350, y: 20, width: 30, height: 30)
         subtractButton.frame = CGRect(x: 290, y: 20, width: 30, height: 30)
+        
         addButton.addTarget(self, action: #selector(btnTapped), for: .touchUpInside)
         subtractButton.addTarget(self, action: #selector(subtBtnTapped), for: .touchUpInside)
 

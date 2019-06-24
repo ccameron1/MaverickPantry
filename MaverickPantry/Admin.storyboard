@@ -151,7 +151,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="FBT-XD-89L" kind="show" id="zJZ-hr-E07"/>
+                                            <segue destination="FBT-XD-89L" kind="show" identifier="toOrderDetailsSegue" id="zJZ-hr-E07"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -171,7 +171,7 @@
                         <viewLayoutGuide key="safeArea" id="ZGY-vg-CUI"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="0G2-J2-HXb" id="8ca-dK-bgV"/>
+                        <outlet property="tableView" destination="ied-n3-0t3" id="fYU-bY-4sr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ugn-JY-hd2" userLabel="First Responder" sceneMemberID="firstResponder"/>

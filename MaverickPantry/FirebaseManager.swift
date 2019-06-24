@@ -230,7 +230,7 @@ class FirebaseManager {
 					//					let data = document.data()
 					
 					let name = document.get("name")! as! String
-					let amountLeft = document.get("amountLeft")!
+					let amountLeft = document.get("currentAmount")!
 					let amountAvailable = document.get("amountGivenAway")!
 					
 					let item = DummyFood(name: name, amountLeft: amountLeft as! Int, amountGiven: amountAvailable as! Int)

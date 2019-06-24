@@ -8,61 +8,39 @@
 
 import UIKit
 
-class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RecipeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var recipes = ["Cake", "Pie", "Cheese"]
+    @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet weak var recipeTableView: UITableView!
+    var recipes : [String] = ["pasta", "pizza", "soup", "eggs", "sandwich"]
+    var recipeName : [String] = ["Pasta", "Pizza", "Soup", "Eggs", "Sandwich"]
+    var indexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "cellID"
-        
-        var cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! UITableViewCell
-        
-        cell.textLabel!.text = self.recipes[indexPath.row]
-        
-        var image : UIImage = UIImage(named: "foodpantrybanner")!
-        print("The loaded image: \(image)")
-        cell.imageView!.image = image
-        
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return recipes.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! RecipeCollectionViewCell
+        let list = recipes[indexPath.row]
+        let name = recipeName[indexPath.row]
+        cell.imageView.image = UIImage(named: list)
+        cell.foodLabel.text = name
+        cell.imageView.addShadow()
         return cell
     }
     
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.indexPath = indexPath
+        performSegue(withIdentifier: "recipeSegue", sender: self)
     }
     
-    
-//    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
-//    {
-//        let cellIdentifier = "cellID"
-//
-//        var cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! UITableViewCell
-//
-//        cell.textLabel!.text = self.recipes[indexPath.row]
-//
-//        var image : UIImage = UIImage(named: "foodpantrybanner")!
-//        print("The loaded image: \(image)")
-//        cell.imageView!.image = image
-//
-//        return cell
-//    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let dvc = segue.destination as! IndividualRecipeViewController
     }
-    */
-
 }

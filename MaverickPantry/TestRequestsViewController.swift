@@ -65,6 +65,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             
             cellA.myLabel.text = selectedItems[indexPath.item]
             cellA.imageView.setRounded()
+            cellA.imageView.layer.borderColor = UIColor.lightGray.cgColor
             cellA.imageView.image = selectedItemImages[indexPath.item]
             
             return cellA
@@ -82,7 +83,11 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             cellB.itemNumberLable.text = tabLables[tabSelected][indexPath.item]
             cellB.imageView.image = imageArray[tabSelected][indexPath.item]
             cellB.imageView.setRounded()
-            //cellB.imageView.image = imageArray.first
+            if cellB.itemNumberLable.text != "0" {
+                cellB.imageView.layer.borderColor = UIColor.red.cgColor
+            } else {
+                cellB.imageView.layer.borderColor = UIColor.lightGray.cgColor
+            }
             
             
             cellB.btnTapAction = {
@@ -130,7 +135,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 
                 
                 
-                if Int(cellB.itemNumberLable.text!)! == 0 {
+                if num! == 0 {
                     cellB.imageView.layer.borderColor = UIColor.lightGray.cgColor
                     
                 }
@@ -262,7 +267,8 @@ extension UIImageView {
         self.layer.masksToBounds = true
         
         self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.lightGray.cgColor
+
+        //self.layer.borderColor = UIColor.lightGray.cgColor
     }
     
 }

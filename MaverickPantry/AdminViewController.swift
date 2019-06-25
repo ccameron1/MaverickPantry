@@ -21,7 +21,7 @@ class AdminViewController: UIViewController {
         self.title = "Admin Options"
         inventoryButton.addShadow()
         pushNotifButton.addShadow()
-        foodEventButton.addShadow()
+        //foodEventButton.addShadow()
         currentOrdersButton.addShadow()
         
     }

@@ -200,7 +200,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Fgh-Mg-mo2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Requests" id="GJ0-oh-Icd"/>
+                    <tabBarItem key="tabBarItem" title="Requests" image="icons8-google-forms-50" id="GJ0-oh-Icd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionViewA" destination="TQH-B7-njT" id="Bjr-T1-r5X"/>
@@ -214,4 +214,7 @@
             <point key="canvasLocation" x="55.072463768115945" y="-602.00892857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-google-forms-50" width="50" height="50"/>
+    </resources>
 </document>

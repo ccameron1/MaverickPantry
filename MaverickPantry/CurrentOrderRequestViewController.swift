@@ -51,13 +51,21 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
         return 40
     }
     
-    @IBAction func filledButtonPressed(_ sender: UIButton) {
-        //clear from order array
-        
-        //segue back to other view controller
-    }
-    
     @IBAction func fillOrderButton(_ sender: UIButton) {
+        
+        FirebaseManager.getInventory(completion: { (inventory, error) in
+            if error == nil {
+                for request in self.selectedOrder!.requests{
+                    for item in inventory{
+                        if request == item.name{
+                            item.amountGiven = item.amountGiven + 1
+                            item.amountLeft = item.amountLeft - 1
+                            FirebaseManager.databaseRef.collection("Inventory").document(item.name).setData(["name" : item.name!, "amountGivenAway" : item.amountGiven!, "currentAmount" : item.amountLeft!])
+                        }
+                    }
+                }
+            }
+        })
         
         FirebaseManager.globalOrders?.remove(at: index!)
         

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--About View Controller-->
+        <!--Info-->
         <scene sceneID="nLZ-m2-t5B">
             <objects>
                 <viewController id="LMT-Uu-VPy" customClass="AboutViewController" customModule="MaverickPantry" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,7 +81,7 @@
                                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hep-sE-YV3">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hep-sE-YV3">
                                                 <rect key="frame" x="25" y="288" width="364" height="307"/>
                                                 <string key="text">      Food insecurity is becoming more evident on college campuses, and UNO is no exception. A growing concern about food insecurity among our fellow Mavs has promptedaction.                                                                                         .    UNO’s Maverick Food Pantry aims to contribute to UNO’s culture of caring by providing resources to those in immediate need and connecting them with additional resources in the greater Omaha area for long-term support. The Maverick Food Pantry offers food and personal hygiene products to UNO faculty, staff members, and currently-enrolled students by providing healthy, organic, and culturally sensitive items. Requests for food packages can be submitted through an easy online form twice a week.</string>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -428,12 +428,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cn7-f1-sdZ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="XQq-tx-B54"/>
+                    <tabBarItem key="tabBarItem" title="Info" image="icons8-info-50" id="XQq-tx-B54"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="96R-dz-yPv">
                         <barButtonItem key="leftBarButtonItem" title="Administrator" id="FMU-SP-2JD">
                             <color key="tintColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
+                                <action selector="adminButton:" destination="LMT-Uu-VPy" id="Ea8-Om-Mys"/>
                                 <segue destination="Bu6-Rr-I9j" kind="show" id="Eml-V0-Qpj"/>
                             </connections>
                         </barButtonItem>
@@ -447,6 +448,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="414" height="2500"/>
                     <connections>
+                        <outlet property="adminBarButton" destination="FMU-SP-2JD" id="hHp-5v-KN8"/>
                         <outlet property="loginButton" destination="tep-z7-Ngm" id="t5v-zH-tso"/>
                         <outlet property="textView" destination="Hep-sE-YV3" id="l5q-Av-ye5"/>
                     </connections>
@@ -496,6 +498,7 @@
         <image name="icon2" width="194" height="180"/>
         <image name="icon3" width="191" height="164"/>
         <image name="icon4" width="219" height="188"/>
+        <image name="icons8-info-50" width="25" height="25"/>
         <image name="kristinanew" width="299" height="363"/>
         <image name="tuxpi.com.1561086436" width="1024" height="512"/>
     </resources>

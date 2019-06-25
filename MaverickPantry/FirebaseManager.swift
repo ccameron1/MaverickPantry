@@ -32,17 +32,24 @@ class FirebaseManager {
 			} else {
 				currentUser = user?.user
 				currentUserId = (user?.user.uid)!
-				completion(true)
-				//we need to go into database and retrieve the info about the user and set them as the global here.
+								//we need to go into database and retrieve the info about the user and set them as the global here.
 				databaseRef.collection("Users").document(currentUserId).getDocument { (document, error) in
 					
 					let time = document?.get("timestamp1") as! Timestamp
 					let time2 = document?.get("timestamp2") as! Timestamp
+					let adminTest = document?.get("isAdmin")
+					let admin: Bool
 					//					time.dateValue()
+					if adminTest as! Int == 0 {
+						admin = false
+					} else {
+						admin = true
+					}
 					
-					globalUser = Users.init(isAdmin: ((document?.get("isAdmin")) != nil), email: document?.get("email") as! String, initials: document?.get("initials") as! String, yearOfBirth: document?.get("yearOfBirth") as! Int, NUID: document?.get("NUID") as! String, uid: document?.get("uid") as! String, request1: document?.get("request1") as! [String], request2: document?.get("request2") as! [String], timestamp1: time.dateValue() as NSDate, timestamp2: time2.dateValue() as NSDate)
 					
+					globalUser = Users.init(isAdmin: admin, email: document?.get("email") as! String, initials: document?.get("initials") as! String, yearOfBirth: document?.get("yearOfBirth") as! Int, NUID: document?.get("NUID") as! String, uid: document?.get("uid") as! String, request1: document?.get("request1") as! [String], request2: document?.get("request2") as! [String], timestamp1: time.dateValue() as NSDate, timestamp2: time2.dateValue() as NSDate)
 					
+					completion(true)
 					
 					
 				}

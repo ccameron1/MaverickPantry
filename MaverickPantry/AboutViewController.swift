@@ -22,17 +22,18 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
 
     @IBOutlet weak var loginButton: UIBarButtonItem!
     @IBOutlet weak var textView: UITextView!
-    
+    @IBOutlet weak var adminBarButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+     
+        // makes admin clear until login
+        adminBarButton.isEnabled = false
+        adminBarButton.tintColor = UIColor.clear
         
         if FirebaseManager.currentUserId.count > 0 {
             self.tabBarController?.tabBar.isHidden = false
-            
-        }
-            
-        else {
+        } else {
             self.tabBarController?.tabBar.isHidden = true
         }
         // Do any additional setup after loading the view.
@@ -58,11 +59,17 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
     @IBAction func unwindToAbout(segue:UIStoryboardSegue) {
         if FirebaseManager.currentUserId.count > 0 {
             self.tabBarController?.tabBar.isHidden = false
+            
+            //changes buttons
+            adminBarButton.isEnabled = true
+            adminBarButton.tintColor = UIColor.red
+            //red: 215, green: 25, blue: 32, alpha: 1.0
             loginButton.isEnabled = false
         }
             
         else {
             self.tabBarController?.tabBar.isHidden = true
+
         }
     }
     
@@ -79,6 +86,7 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
         }
     }
     
+
     @IBAction func onWellnessCenterButtonPressed(_ sender: UIButton) {
         if let link = URL(string: linkWellness) {
             let sfvc = SFSafariViewController(url: link)

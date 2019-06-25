@@ -130,16 +130,10 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 }
                 
                 if self.count <= 10 && !full {
-                    self.selectedItems.append(self.globalFoodArr[indexPath.row])
-                    self.totalFoodItemsSelectedLabel.text = "\(self.count)"
-                    self.totalItemsSelectedLabel.text = "\(self.selectedItems.count)"
-                    self.selectedItemImages.append(cellB.imageView.image!)
-                    //                    let lastItemIndex = self.collectionViewA.
-                    //                    collectionView?.scrollToItemAtIndexPath(lastItemIndex, atScrollPosition: .Bottom, animated: true)
-                }
-                if self.selectedItems.count < 10 {
+                   
                     self.selectedItems.insert(self.globalFoodArr[indexPath.row], at: 0)
                     self.totalItemsSelectedLabel.text = "\(self.selectedItems.count)"
+                    self.totalFoodItemsSelectedLabel.text = "\(self.count)"
                     self.selectedItemImages.insert(cellB.imageView.image!, at: 0)
                     self.collectionViewA.reloadData()
                     

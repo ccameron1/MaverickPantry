@@ -9,7 +9,7 @@
 import UIKit
 
 class NewAccountViewController: UIViewController {
-
+    
     let loginToAboutSegueIdentifier = "unwindToAbout2"
     
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -18,38 +18,86 @@ class NewAccountViewController: UIViewController {
     @IBOutlet weak var NUIDTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    
+    
+    @IBOutlet weak var emailErrorLabel: UILabel!
+    @IBOutlet weak var passwordErrorLabel: UILabel!
+    @IBOutlet weak var NUIDErrorLabel: UILabel!
+    @IBOutlet weak var initialsErrorLabel: UILabel!
+    @IBOutlet weak var yearErrorLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         let request1 = ["chicken", "cookief", "saladssssssss", "pizzazzzzzzz"]
-////        FirebaseManager.globalUser.request1 = []
+        ////        FirebaseManager.globalUser.request1 = []
         
         
         
-//
+        //
         self.tabBarController?.tabBar.isHidden = true
         backgroundImage.addShadow()
     }
     
     @IBAction func createAccountButton(_ sender: Any) {
-        FirebaseManager.CreateAccount(email: emailTextField.text!, password: passwordTextField.text!, initials: initialsTextField.text!, yearOfBirth: Int(yearOfBirthTextField.text!)!, isAdmin: false, NUID : NUIDTextField.text!) { (success) in
-            if success {
-                print("new acount homies")
-                self.performSegue(withIdentifier: self.loginToAboutSegueIdentifier, sender: nil)
+        clearErrors()
+        if !checkForError() {
+            
+            FirebaseManager.CreateAccount(email: emailTextField.text!, password: passwordTextField.text!, initials: initialsTextField.text!, yearOfBirth: Int(yearOfBirthTextField.text!)!, isAdmin: false, NUID : NUIDTextField.text!) { (success) in
+                if success {
+                    print("new acount homies")
+                    self.performSegue(withIdentifier: self.loginToAboutSegueIdentifier, sender: nil)
+                }
             }
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func checkForError() -> Bool {
+        var ret = false
+        if !(emailTextField.text?.contains("@unomaha.edu"))! {
+            emailErrorLabel.isHidden = false
+            ret = true
+        }
+        if (passwordTextField.text?.count)! < 6 {
+            passwordErrorLabel.isHidden = false
+            ret = true
+        }
+        if NUIDTextField.text!.count != 8 {
+            NUIDErrorLabel.isHidden = false
+            ret = true
+        }
+        if initialsTextField.text!.count < 2 {
+            initialsErrorLabel.isHidden = false
+            ret = true
+        }
+        if yearOfBirthTextField.text?.count != 4 {
+            yearErrorLabel.isHidden = false
+            ret = true
+        }
+        return ret
     }
-    */
+    
+    func clearErrors() {
+        emailErrorLabel.isHidden = true
+        passwordErrorLabel.isHidden = true
+        NUIDErrorLabel.isHidden = true
+        initialsErrorLabel.isHidden = true
+        yearErrorLabel.isHidden = true
 
+    }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     
 }

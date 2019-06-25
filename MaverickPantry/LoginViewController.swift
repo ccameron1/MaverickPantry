@@ -35,11 +35,21 @@ class LoginViewController: UIViewController {
         
         //        backgroundImage.clipsToBounds = true
         
-        FirebaseManager.Login(email: emailTextField.text!, password: passwordTextField.text!) { (success) in
+        FirebaseManager.Login(email: emailTextField.text!, password: passwordTextField.text!) { (success, err) in
             if success {
                 print("yay")
                 
                 self.performSegue(withIdentifier: self.loginToAboutSegueIdentifier, sender: nil)
+                
+            } else {
+                let alertController = UIAlertController(title: "Unable to Login", message: "\(err!.localizedDescription)", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
+                    //clear fields
+                    self.emailTextField.text = ""
+                    self.passwordTextField.text = ""
+                })
+                alertController.addAction(action)
+                self.present(alertController, animated: true, completion: nil)
                 
             }
         }

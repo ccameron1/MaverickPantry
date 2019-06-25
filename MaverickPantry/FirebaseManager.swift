@@ -20,13 +20,13 @@ class FirebaseManager {
 	static var globalOrders : [Order]? = []
 	static var globalInventory : [DummyFood]? = []
 	
-	static func Login(email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
+	static func Login(email: String, password: String, completion: @escaping (_ success: Bool, Error?) -> Void) {
 		
 		Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
 			if let error = error {
 				print(error.localizedDescription)
 				print(error.self)
-				completion(false)
+				completion(false, error as! Error)
 			} else if !email.contains("@unomaha.edu") {
 				print("bad email")
 			} else {
@@ -50,8 +50,7 @@ class FirebaseManager {
 					
 					globalUser = Users.init(isAdmin: admin, email: document?.get("email") as! String, initials: document?.get("initials") as! String, yearOfBirth: document?.get("yearOfBirth") as! Int, NUID: document?.get("NUID") as! String, uid: document?.get("uid") as! String, request1: document?.get("request1") as! [String], request2: document?.get("request2") as! [String], timestamp1: time.dateValue() as NSDate, timestamp2: time2.dateValue() as NSDate)
 					
-					completion(true)
-					
+					completion(true, nil)
 					
 				}
 			}
@@ -77,7 +76,7 @@ class FirebaseManager {
 				var date = NSCalendar(identifier: NSCalendar.Identifier.gregorian)?.date(from: c as DateComponents)
 				
 				addUser(isAdmin: false, email: email, initials: initials, yearOfBirth: yearOfBirth, NUID: NUID, request1: [], request2: [], timestamp1: date as! NSDate, timestamp2: date as! NSDate)
-				Login(email: email, password: password, completion: { (success) in
+				Login(email: email, password: password, completion: { (success, err)  in
 					if success {
 						print("Login successful after account creation.")
 						

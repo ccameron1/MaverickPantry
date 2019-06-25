@@ -234,7 +234,8 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             if success {
                 FirebaseManager.addRequestsToUser(requests: self.selectedItems)
                 //add order
-                FirebaseManager.addOrder(order: self.makeOrder(), completion: { (success) in
+                let order = self.makeOrder()
+                FirebaseManager.addOrder(order: order, completion: { (success) in
                     if success {
                         FirebaseManager.getOrders(completion: { (orders, error) in
                             if error == nil {

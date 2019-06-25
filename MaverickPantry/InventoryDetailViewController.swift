@@ -57,6 +57,7 @@ class InventoryDetailViewController: UIViewController {
             } else{
                 //                amountLeftLabel.text = "\(newAmount!)"
                 food.setAmountLeft(amountLeft: newAmount!)
+                FirebaseManager.databaseRef.collection("Inventory").document(food.name).setData(["currentAmount" : food.amountLeft!, "name": food.name!, "amountGivenAway" : food.amountGiven!])
                 updateBool = !updateBool
                 newAmountTextField.text = ""
                 newAmountTextField.isHidden = true
@@ -71,6 +72,8 @@ class InventoryDetailViewController: UIViewController {
     
     @IBAction func whenClearButtonPressed(_ sender: UIButton) {
         food.setAmountGiven(amountGiven: 0)
+        FirebaseManager.databaseRef.collection("Inventory").document(food.name).setData(["currentAmount" : food.amountLeft!, "name": food.name!, "amountGivenAway" : 0])
+        print ("Firebase Updated")
         givenOutLabel.text = "\(food.amountGiven!)"
         //        givenOutLabel.text = "0"
     }

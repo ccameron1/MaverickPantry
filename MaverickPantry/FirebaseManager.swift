@@ -32,7 +32,8 @@ class FirebaseManager {
 			} else {
 				currentUser = user?.user
 				currentUserId = (user?.user.uid)!
-								//we need to go into database and retrieve the info about the user and set them as the global here.
+				
+				//we need to go into database and retrieve the info about the user and set them as the global here.
 				databaseRef.collection("Users").document(currentUserId).getDocument { (document, error) in
 					
 					let time = document?.get("timestamp1") as! Timestamp

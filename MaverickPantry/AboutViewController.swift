@@ -64,8 +64,9 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
             if FirebaseManager.globalUser.isAdmin {
                 adminBarButton.isEnabled = true
                 adminBarButton.tintColor = UIColor.red
-                loginButton.isEnabled = false
             }
+            loginButton.isEnabled = false
+
         }
             
         else {

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Recipes-->
+        <!--Recipies-->
         <scene sceneID="n6g-Vy-gbJ">
             <objects>
                 <viewController id="ypA-hy-vBR" customClass="RecipeViewController" customModule="MaverickPantry" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EUG-OO-Lhb">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ekB-pu-6qS">
                                     <size key="itemSize" width="414" height="257"/>
@@ -86,7 +86,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vIX-S3-UW5"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Recipes" id="Ap0-MK-5Ps"/>
+                    <tabBarItem key="tabBarItem" title="Recipies" image="icons8-frying-pan-50" id="xkA-2e-XBB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="EUG-OO-Lhb" id="cTE-pV-T1l"/>
@@ -106,7 +106,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kI1-1c-0Ux">
-                                <rect key="frame" x="0.0" y="88" width="414" height="912"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="863"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2c-af-Df4">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
@@ -276,7 +276,6 @@ As eggs begin to set, GENTLY PULL the eggs across the pan with an inverted turne
         <scene sceneID="Z1k-qd-UO8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E0x-JQ-Pm2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="WmA-8R-lth"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pa5-Z1-Ryw">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -295,5 +294,6 @@ As eggs begin to set, GENTLY PULL the eggs across the pan with an inverted turne
     <resources>
         <image name="eggs" width="183" height="122"/>
         <image name="greyline" width="225" height="225"/>
+        <image name="icons8-frying-pan-50" width="25" height="25"/>
     </resources>
 </document>

@@ -118,10 +118,9 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 if self.selectedItems.count < 10 {
                     self.selectedItems.append(self.globalFoodArr[indexPath.row])
                     self.totalItemsSelectedLabel.text = "\(self.selectedItems.count)"
-                    self.selectedItemImages.append(cellB.imageView.image!)
-//                    let lastItemIndex = self.collectionViewA.
-//                    collectionView?.scrollToItemAtIndexPath(lastItemIndex, atScrollPosition: .Bottom, animated: true)
+                    self.selectedItemImages.insert(cellB.imageView.image!, at: 0)
                     self.collectionViewA.reloadData()
+                    
                 } else {
                     
                     let alertController = UIAlertController.init(title: "Max Items Reached", message: "You have reached the maximum number of items.  Please remove an item before adding more.", preferredStyle: .alert)
@@ -301,4 +300,17 @@ extension UIImageView {
     
 }
 
-
+extension UICollectionView {
+    
+    func scrollToLastIndexPath(position:UICollectionView.ScrollPosition, animated: Bool) {
+        self.layoutIfNeeded()
+        
+        for sectionIndex in (0..<self.numberOfSections).reversed() {
+            if self.numberOfItems(inSection: sectionIndex) > 0 {
+                self.scrollToItem(at: IndexPath.init(item: self.numberOfItems(inSection: sectionIndex)-1, section: sectionIndex), at: position, animated: animated)
+                break
+            }
+        }
+    }
+    
+}

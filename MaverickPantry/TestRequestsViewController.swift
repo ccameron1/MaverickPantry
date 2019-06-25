@@ -26,10 +26,10 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     var imageArray : [[UIImage]] = []
     var selectedItemImages : [UIImage] = []
     
-    var tab1Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!]
-    var tab2Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!]
-    var tab3Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!]
-    var tab4Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!]
+    var tab1Images : [UIImage] = [UIImage.init(named: "PeanutButter")!, UIImage.init(named: "Tuna")!, UIImage.init(named: "ChickenBreast")!, UIImage.init(named: "BlackBeans")!, UIImage.init(named: "GarbanzoBeans")!]
+    var tab2Images : [UIImage] = [UIImage.init(named: "SweetCorn")!, UIImage.init(named: "Tomatoes")!, UIImage.init(named: "GreenBeans")!]
+    var tab3Images : [UIImage] = [UIImage.init(named: "Peaches")!, UIImage.init(named: "Mandarins")!]
+    var tab4Images : [UIImage] = [UIImage.init(named: "Granola")!, UIImage.init(named: "ShellsAndCheese")!, UIImage.init(named: "Cheerios")!, UIImage.init(named: "Oatmeal")!, UIImage.init(named: "Spaghetti")!, UIImage.init(named: "BrownRice")!, UIImage.init(named: "WhiteRice")!]
     var tab5Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!]
     
     var selectedItems: [String] = []
@@ -43,9 +43,9 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     var tab5Lables : [String] = ["0", "0", "0", "0", "0", "0"]
     
     var tabLables : [[String]] = []
+    
     @IBOutlet weak var totalItemsSelectedLabel: UILabel!
     @IBOutlet weak var collectionViewA: UICollectionView!
-    
     @IBOutlet weak var collectionViewB: UICollectionView!
     @IBOutlet weak var collectionViewC: UICollectionView!
     
@@ -65,6 +65,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             
             cellA.myLabel.text = selectedItems[indexPath.item]
             cellA.imageView.setRounded()
+            cellA.imageView.layer.borderColor = UIColor.lightGray.cgColor
             cellA.imageView.image = selectedItemImages[indexPath.item]
             
             return cellA
@@ -82,7 +83,11 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             cellB.itemNumberLable.text = tabLables[tabSelected][indexPath.item]
             cellB.imageView.image = imageArray[tabSelected][indexPath.item]
             cellB.imageView.setRounded()
-            //cellB.imageView.image = imageArray.first
+            if cellB.itemNumberLable.text != "0" {
+                cellB.imageView.layer.borderColor = UIColor.red.cgColor
+            } else {
+                cellB.imageView.layer.borderColor = UIColor.lightGray.cgColor
+            }
             
             
             cellB.btnTapAction = {
@@ -223,6 +228,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
         
     }
     
+    
     @IBAction func sendRequestButton(_ sender: Any) {
         FirebaseManager.clearOldRequests { (success) in
             if success {
@@ -230,7 +236,6 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 //add order
                 FirebaseManager.addOrder(order: self.makeOrder(), completion: { (success) in
                     if success {
-                        
                         FirebaseManager.getOrders(completion: { (orders, error) in
                             if error == nil {
                                 FirebaseManager.globalOrders = orders
@@ -242,6 +247,20 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 
             }
         }
+        selectedItems = []
+        collectionViewA.reloadData()
+        totalItemsSelectedLabel.text = ""
+        tab1Lables = ["0", "0", "0", "0", "0",]
+        tab2Lables = ["0", "0", "0"]
+        tab3Lables = ["0", "0"]
+        tab4Lables = ["0", "0", "0", "0", "0", "0", "0"]
+        tab5Lables = ["0", "0", "0", "0", "0", "0"]
+        tabLables = [tab1Lables, tab2Lables, tab3Lables, tab4Lables, tab5Lables]
+        collectionViewB.reloadData()
+        let alertController = UIAlertController(title: "Order Submitted!", message: "Your order has been successfully recorded.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true)
     }
     
     func makeOrder() -> Order{
@@ -262,7 +281,8 @@ extension UIImageView {
         self.layer.masksToBounds = true
         
         self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.lightGray.cgColor
+
+        //self.layer.borderColor = UIColor.lightGray.cgColor
     }
     
 }

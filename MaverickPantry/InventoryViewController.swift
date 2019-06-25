@@ -34,20 +34,41 @@ class InventoryViewController: UIViewController, UITableViewDelegate, UITableVie
         foods = [applesauce,pizza,kale]
         
     }
+    
     override func viewWillAppear(_ animated: Bool) {
+        getCount { (count, success) in
+            if success {
+                self.tableView.reloadData()
+            }
+        }
         tableView.reloadData()
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foods.count
+        return FirebaseManager.globalInventory!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellID") as! UITableViewCell
-        let food = foods[indexPath.row]
+        let food = FirebaseManager.globalInventory![indexPath.row]
         cell.textLabel?.text = food.name
         cell.detailTextLabel?.text = "Left: \(food.amountLeft!)\nGiven Out: \(food.amountGiven!)"
         return cell
+    }
+    
+    
+    func getCount(completion: @escaping (Int, Bool) -> Void) {
+        var count: Int = 0
+        FirebaseManager.getInventory { (foods, err) in
+            if err == nil {
+                FirebaseManager.globalInventory = foods
+                count = foods.count
+                completion(count, true)
+            } else {
+                completion(count, false)
+            }
+        }
     }
     
     
@@ -70,8 +91,15 @@ class InventoryViewController: UIViewController, UITableViewDelegate, UITableVie
             let name = firstTextField.text!
             let amountLeft = Int(secondTextField.text!)
             let amountGiven = Int(thirdTextField.text!)
-            self.foods.append(DummyFood(name: name, amountLeft: amountLeft!, amountGiven: amountGiven!))
-            self.tableView.reloadData()
+            let itemToAdd = DummyFood(name: name, amountLeft: amountLeft!, amountGiven: amountGiven!)
+            FirebaseManager.addInventoryItem(item: itemToAdd, completion: { (success) in
+                if success {
+                    print ("SUCCESS")
+                    DispatchQueue.main.async {
+                        self.viewWillAppear(true)
+                    }
+                }
+            })
         })
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
             (action : UIAlertAction!) -> Void in })

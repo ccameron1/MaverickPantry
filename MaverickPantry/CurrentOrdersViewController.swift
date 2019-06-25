@@ -13,6 +13,7 @@ class CurrentOrdersViewController: UIViewController, UITableViewDataSource, UITa
     // var currentOrder : [] = []
     var fakeOrder = [""]
     var selectedOrder : Order?
+    var index: Int?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -34,6 +35,7 @@ class CurrentOrdersViewController: UIViewController, UITableViewDataSource, UITa
                 self.tableView.reloadData()
             }
         }
+        tableView.reloadData()
         
     }
     func getCount(completion: @escaping (Int, Bool) -> Void) {
@@ -59,7 +61,7 @@ class CurrentOrdersViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID")
         
-        cell?.textLabel!.text = FirebaseManager.globalOrders![indexPath.row].initials
+        cell?.textLabel!.text = FirebaseManager.globalOrders![indexPath.row].initials.uppercased()
         let yearOfBirthString = String(FirebaseManager.globalOrders![indexPath.row].yearOfBirth)
         cell?.detailTextLabel!.text = yearOfBirthString
         //        if currentOrder.count == 0 {
@@ -85,11 +87,13 @@ class CurrentOrdersViewController: UIViewController, UITableViewDataSource, UITa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toOrderDetailsSegue" {
             let orderDetailsVC = segue.destination as! CurrentOrderRequestViewController
-            let index = tableView.indexPathForSelectedRow?.row
+            index = tableView.indexPathForSelectedRow?.row
             selectedOrder = FirebaseManager.globalOrders![index!]
             orderDetailsVC.selectedOrder = selectedOrder
+            orderDetailsVC.index = index
         }
         
     }
+ 
     
 }

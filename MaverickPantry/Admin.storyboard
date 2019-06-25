@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="xnO-9z-jmu">
-                                <rect key="frame" x="100" y="265.5" width="214" height="365"/>
+                                <rect key="frame" x="100" y="320.5" width="214" height="255"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cT-iv-erw">
                                         <rect key="frame" x="0.0" y="0.0" width="214" height="35"/>
@@ -49,22 +49,8 @@
                                             <segue destination="b2J-cZ-eS4" kind="show" id="pFc-CS-ngQ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1l-lE-ein">
-                                        <rect key="frame" x="0.0" y="220" width="214" height="35"/>
-                                        <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="GkX-g1-H6l"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
-                                        <state key="normal" title="Food Event">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="iG5-gk-bOO" kind="show" id="ywc-4m-W2R"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAI-vv-PC9">
-                                        <rect key="frame" x="0.0" y="330" width="214" height="35"/>
+                                        <rect key="frame" x="0.0" y="220" width="214" height="35"/>
                                         <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="IUp-GY-5W3"/>
@@ -91,7 +77,6 @@
                     <navigationItem key="navigationItem" id="82n-6x-9zw"/>
                     <connections>
                         <outlet property="currentOrdersButton" destination="IAI-vv-PC9" id="6pN-Yq-43m"/>
-                        <outlet property="foodEventButton" destination="U1l-lE-ein" id="Zhc-sK-rGo"/>
                         <outlet property="inventoryButton" destination="6cT-iv-erw" id="k1Q-d5-hlL"/>
                         <outlet property="pushNotifButton" destination="U1L-Mt-nbF" id="2gb-b0-y5G"/>
                     </connections>
@@ -99,21 +84,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bmF-9Z-c8s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4589.8550724637689" y="-978.34821428571422"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="AEY-LQ-hoZ">
-            <objects>
-                <viewController id="iG5-gk-bOO" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CyS-ZD-Bm1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="gze-HM-7bp"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E9V-PI-53M" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5534.7826086956529" y="-547.09821428571422"/>
         </scene>
         <!--Current Orders View Controller-->
         <scene sceneID="Hsa-oy-RwA">
@@ -219,6 +189,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Filled Order"/>
                                 <connections>
+                                    <action selector="fillOrderButton:" destination="FBT-XD-89L" eventType="touchUpInside" id="gui-tT-pC0"/>
+                                    <action selector="filledOrderButton:" destination="dpF-dG-smh" eventType="touchUpInside" id="OFO-EY-g5w"/>
                                     <segue destination="dpF-dG-smh" kind="unwind" unwindAction="unwindToRootViewControllerWithSegue:" id="miF-CE-D9v"/>
                                 </connections>
                             </button>
@@ -275,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fP6-Tx-LXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5534.7826086956529" y="-1276.3392857142856"/>
+            <point key="canvasLocation" x="5600" y="-948"/>
         </scene>
     </scenes>
 </document>

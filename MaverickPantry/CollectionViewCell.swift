@@ -34,7 +34,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     let addButton: UIButton = {
         let button = UIButton(type: UIButton.ButtonType.system)
-        button.translatesAutoresizingMaskIntoConstraints = false
+        button.translatesAutoresizingMaskIntoConstraints = true
         button.backgroundColor = .lightGray
         button.setTitleColor(.black, for: .normal)
         button.setTitle("+", for: .normal)
@@ -43,7 +43,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     let subtractButton: UIButton = {
         let button = UIButton(type: UIButton.ButtonType.system)
-        button.translatesAutoresizingMaskIntoConstraints = false
+        button.translatesAutoresizingMaskIntoConstraints = true
         button.backgroundColor = .lightGray
         button.setTitleColor(.black, for: .normal)
         button.setTitle("-", for: .normal)
@@ -55,7 +55,7 @@ class CollectionViewCell: UICollectionViewCell {
         // add a button
         addSubview(addButton)
         addSubview(subtractButton)
- 
+        
         addButton.frame = CGRect(x: 350, y: 20, width: 30, height: 30)
         subtractButton.frame = CGRect(x: 290, y: 20, width: 30, height: 30)
         
@@ -72,7 +72,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     @objc func subtBtnTapped() {
         print("Subtract Tapped!")
- 
+        
         subBtnTapAction?()
     }
 

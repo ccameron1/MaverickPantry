@@ -18,6 +18,7 @@ class FirebaseManager {
 	static var currentUser : User?
 	static var globalUser : Users!
 	static var globalOrders : [Order]? = []
+	static var globalInventory : [DummyFood]? = []
 	
 	static func Login(email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
 		
@@ -163,11 +164,12 @@ class FirebaseManager {
 	}
 	
 	static func addOrder(order: Order, completion: @escaping (Bool) -> Void) {
-		databaseRef.collection("Orders").document().setData(["requests": order.requests,
-															 "initials": order.initials,
-															 "yearOfBirth": order.yearOfBirth])
+		databaseRef.collection("Orders").document("Order: \(order.initials!) \(order.yearOfBirth!)").setData(["requests": order.requests!,
+			"initials": order.initials!,"yearOfBirth": order.yearOfBirth!])
 		print("add order")
 	}
+	
+	
 	
 	
 	static func getOrders(completion: @escaping ([Order], Error?) -> Void ){
@@ -179,7 +181,7 @@ class FirebaseManager {
 				completion([Order](), err)
 			} else {
 				for document in querySnapshot!.documents {
-//					let data = document.data()
+					//					let data = document.data()
 					
 					let requests = document.get("requests")! as! [String]
 					let initials = document.get("initials")! as! String
@@ -192,6 +194,52 @@ class FirebaseManager {
 						completion(orders, nil)
 					}
 					print("Order: \(order.initials)")
+				}
+			}
+		}
+	}
+	static func deleteFromOrders(orderName: String, completion: @escaping (Bool) -> Void) {
+		print(orderName)
+		databaseRef.collection("Orders").document(orderName).delete() { err in
+			if let err = err {
+				print("Error removing document: \(err)")
+				completion(false)
+			} else {
+				print("Document successfully removed!")
+				completion(true)
+			}
+		}
+		
+	}
+	
+	static func addInventoryItem(item: DummyFood, completion: @escaping (Bool) -> Void) {
+		databaseRef.collection("Inventory").document("\(item.name!)").setData(["amountGivenAway": item.amountGiven, "currentAmount": item.amountLeft, "name": item.name])
+		print("added inventory item")
+		completion(true)
+	}
+	
+	static func getInventory(completion: @escaping ([DummyFood], Error?) -> Void ){
+		var items = [DummyFood]()
+		
+		databaseRef.collection("Inventory").getDocuments() { (querySnapshot, err) in
+			if let err = err {
+				print("Error getting documents: \(err)")
+				completion([DummyFood](), err)
+			} else {
+				for document in querySnapshot!.documents {
+					//					let data = document.data()
+					
+					let name = document.get("name")! as! String
+					let amountLeft = document.get("currentAmount")!
+					let amountAvailable = document.get("amountGivenAway")!
+					
+					let item = DummyFood(name: name, amountLeft: amountLeft as! Int, amountGiven: amountAvailable as! Int)
+					
+					items.append(item)
+					if items.count == querySnapshot!.documents.count {
+						completion(items, nil)
+					}
+					print("Order: \(item.name)")
 				}
 			}
 		}

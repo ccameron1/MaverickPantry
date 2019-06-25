@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Test Requests View Controller-->
+        <!--Requests-->
         <scene sceneID="5JZ-o4-OIC">
             <objects>
                 <viewController id="vbx-30-lFE" customClass="TestRequestsViewController" customModule="MaverickPantry" customModuleProvider="target" sceneMemberID="viewController">
@@ -200,6 +200,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Fgh-Mg-mo2"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Requests" id="GJ0-oh-Icd"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionViewA" destination="TQH-B7-njT" id="Bjr-T1-r5X"/>
                         <outlet property="collectionViewB" destination="dbE-IV-DyW" id="aSe-Hb-qRP"/>

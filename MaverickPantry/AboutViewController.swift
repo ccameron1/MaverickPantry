@@ -7,21 +7,25 @@
 //
 
 import UIKit
+import SafariServices
 
-class AboutViewController: UIViewController {
+class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
     
+    let linkCAPS = "https://www.unomaha.edu/student-life/wellness/counseling-and-psychological-services/index.php"
+    let linkWellness = "https://www.unomaha.edu/student-life/wellness/index.php"
+    let linkTutoring = "https://www.unomaha.edu/student-life/inclusion/military-and-veteran-services/student-support-services/student-success.php"
+    let linkCareer = "https://www.unomaha.edu/student-life/achievement/academic-and-career-development-center/career-development/index.php"
+    
+    let moneyDonations = "https://nufoundation.org/search?fundSearch=true&q=01130780"
+    
+    let foodDonations = "https://www.unomaha.edu/student-life/_img/civic-and-social/mfp-item-list.pdf"
+
     @IBOutlet weak var loginButton: UIBarButtonItem!
-    @IBOutlet weak var imageTest2: UIImageView!
-    @IBOutlet weak var imageTest4: UIImageView!
-    @IBOutlet weak var imageTest: UIImageView!
-    @IBOutlet weak var imageTest3: UIImageView!
+    @IBOutlet weak var textView: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        imageTest.addShadow()
-        imageTest2.addShadow()
-        imageTest3.addShadow()
-        imageTest4.addShadow()
         
         if FirebaseManager.currentUserId.count > 0 {
             self.tabBarController?.tabBar.isHidden = false
@@ -45,6 +49,11 @@ class AboutViewController: UIViewController {
 
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        textView.setContentOffset(CGPoint.zero, animated: false)
+    }
+    
     
     @IBAction func unwindToAbout(segue:UIStoryboardSegue) {
         if FirebaseManager.currentUserId.count > 0 {
@@ -56,6 +65,90 @@ class AboutViewController: UIViewController {
             self.tabBarController?.tabBar.isHidden = true
         }
     }
+    
+    
+    @IBAction func onCAPSButtonPressed(_ sender: UIButton) {
+        if let link = URL(string: linkCAPS) {
+            let sfvc = SFSafariViewController(url: link)
+            sfvc.delegate = (self as! SFSafariViewControllerDelegate)
+            sfvc.preferredControlTintColor = .red
+            //sfvc.preferredBarTintColor = .black
+            
+            present(sfvc, animated: true)
+            
+        }
+    }
+    
+    @IBAction func onWellnessCenterButtonPressed(_ sender: UIButton) {
+        if let link = URL(string: linkWellness) {
+            let sfvc = SFSafariViewController(url: link)
+            sfvc.delegate = (self as! SFSafariViewControllerDelegate)
+            sfvc.preferredControlTintColor = .red
+            //sfvc.preferredBarTintColor = .black
+            
+            present(sfvc, animated: true)
+            
+        }
+        print("wellness")
+    }
+    
+    @IBAction func onTutoringCenterPressed(_ sender: UIButton) {
+        if let link = URL(string: linkTutoring) {
+            let sfvc = SFSafariViewController(url: link)
+            sfvc.delegate = (self as! SFSafariViewControllerDelegate)
+            sfvc.preferredControlTintColor = .red
+            //sfvc.preferredBarTintColor = .black
+            
+            present(sfvc, animated: true)
+            
+        }
+        print("tutoring")
+    }
+    
+    @IBAction func onCareerServicesPressed(_ sender: UIButton) {
+        if let link = URL(string: linkCareer) {
+            let sfvc = SFSafariViewController(url: link)
+            sfvc.delegate = (self as! SFSafariViewControllerDelegate)
+            sfvc.preferredControlTintColor = .red
+            //sfvc.preferredBarTintColor = .black
+            
+            present(sfvc, animated: true)
+            
+        }
+        print("Career")
+    }
+    
+    @IBAction func onDonateMoneyPressed(_ sender: UIButton) {
+        if let link = URL(string: moneyDonations) {
+            let sfvc = SFSafariViewController(url: link)
+            sfvc.delegate = (self as! SFSafariViewControllerDelegate)
+            sfvc.preferredControlTintColor = .red
+            //sfvc.preferredBarTintColor = .black
+            
+            present(sfvc, animated: true)
+            
+        }
+    }
+    
+    @IBAction func onDonateFoodPressed(_ sender: UIButton) {
+        if let link = URL(string: foodDonations) {
+            let sfvc = SFSafariViewController(url: link)
+            sfvc.delegate = (self as! SFSafariViewControllerDelegate)
+            sfvc.preferredControlTintColor = .red
+            //sfvc.preferredBarTintColor = .black
+            
+            present(sfvc, animated: true)
+            
+        }
+    }
+    
+    
+    
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        dismiss(animated: true)
+    }
+    
     
     /*
     // MARK: - Navigation

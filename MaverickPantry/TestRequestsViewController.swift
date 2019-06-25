@@ -23,6 +23,15 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     
     var foodTypeNames = ["Protein", "Vegetable", "Fruit", "Grain", "Additional Food", "Miscellaneous", "Personal Hygiene"]
     
+    var imageArray : [[UIImage]] = []
+    var selectedItemImages : [UIImage] = []
+    
+    var tab1Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!]
+    var tab2Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!]
+    var tab3Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!]
+    var tab4Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!]
+    var tab5Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!]
+    
     var selectedItems: [String] = []
     var globalFoodArr: [String] = []
     var tabSelected = 0
@@ -34,9 +43,9 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     var tab5Lables : [String] = ["0", "0", "0", "0", "0", "0"]
     
     var tabLables : [[String]] = []
+    
     @IBOutlet weak var totalItemsSelectedLabel: UILabel!
     @IBOutlet weak var collectionViewA: UICollectionView!
-    
     @IBOutlet weak var collectionViewB: UICollectionView!
     @IBOutlet weak var collectionViewC: UICollectionView!
     
@@ -44,6 +53,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
         // Initialize the collection views, set the desired frames
         globalFoodArr = proteins
         tabLables = [tab1Lables, tab2Lables, tab3Lables, tab4Lables, tab5Lables]
+        imageArray = [tab1Images, tab2Images, tab3Images, tab4Images, tab5Images]
     }
     
     
@@ -55,6 +65,8 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             
             cellA.myLabel.text = selectedItems[indexPath.item]
             cellA.imageView.setRounded()
+            cellA.imageView.image = selectedItemImages[indexPath.item]
+            
             return cellA
             
         } else if collectionView == collectionViewB {
@@ -68,18 +80,22 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             }
             
             cellB.itemNumberLable.text = tabLables[tabSelected][indexPath.item]
+            cellB.imageView.image = imageArray[tabSelected][indexPath.item]
             cellB.imageView.setRounded()
+            //cellB.imageView.image = imageArray.first
             
             
             cellB.btnTapAction = {
                 () in
                 print("Edit tapped in cell", indexPath)
                 // update lable and add to correct lable array
-                var num = Int(cellB.itemNumberLable!.text!)
-                cellB.itemNumberLable.text = "\(num! + 1)"
+                 var num = Int(cellB.itemNumberLable!.text!)
+                if num! >= 0 && num! < 10 && self.selectedItems.count < 10 {
+                   
+                    cellB.itemNumberLable.text = "\(num! + 1)"
+                    self.tabLables[self.tabSelected][indexPath.row] = cellB.itemNumberLable.text!
                 
-                
-                self.tabLables[self.tabSelected][indexPath.row] = cellB.itemNumberLable.text!
+                }
                 
                 if Int(cellB.itemNumberLable.text!)! > 0 {
                     cellB.imageView.layer.borderColor = UIColor.red.cgColor
@@ -88,32 +104,62 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 if self.selectedItems.count < 10 {
                     self.selectedItems.append(self.globalFoodArr[indexPath.row])
                     self.totalItemsSelectedLabel.text = "\(self.selectedItems.count)"
+                    self.selectedItemImages.append(cellB.imageView.image!)
                     self.collectionViewA.reloadData()
                 } else {
+                    
+                    let alertController = UIAlertController.init(title: "Max Items Reached", message: "You have reached the maximum number of items.  Please remove an item before adding more.", preferredStyle: .alert)
+                    let alertAction = UIAlertAction.init(title: "Okay", style: .default, handler: nil)
+                    alertController.addAction(alertAction)
+                    self.present(alertController, animated: false)
+//                    cellB.itemNumberLable.text = "\(num!)"
                     print("Already have 10 items")
                 }
             }
             
             cellB.subBtnTapAction = {
                 () in
-                print("subract", indexPath)
+                print("subtract", indexPath)
                 var num = Int(cellB.itemNumberLable!.text!)
-                cellB.itemNumberLable.text = "\(num! - 1)"
+                if num! > 0 && num! <= 10 {
+                    
+                    cellB.itemNumberLable.text = "\(num! - 1)"
+                    self.tabLables[self.tabSelected][indexPath.row] = cellB.itemNumberLable.text!
+
+                }
                 
-                self.tabLables[self.tabSelected][indexPath.row] = cellB.itemNumberLable.text!
+                
                 
                 if Int(cellB.itemNumberLable.text!)! == 0 {
                     cellB.imageView.layer.borderColor = UIColor.lightGray.cgColor
                     
                 }
                 
-                if self.selectedItems.count > 0 {
+                if self.selectedItems.count > 0 && num! != 0 {
+                    
                     let index = self.selectedItems.firstIndex(of: "\(self.globalFoodArr[indexPath.row])")
                     self.selectedItems.remove(at: index!)
                     self.totalItemsSelectedLabel.text = "\(self.selectedItems.count)"
+                    self.selectedItemImages.remove(at: index!)
                     self.collectionViewA.reloadData()
                     
-                } else {
+                } else if self.selectedItems.count == 0 {
+                    
+                    let alertController = UIAlertController.init(title: "Cannot Remove Item", message: "The item could not be removed from your order because your order is already empty.", preferredStyle: .alert)
+                    let alertAction = UIAlertAction.init(title: "Okay", style: .default, handler: nil)
+                    alertController.addAction(alertAction)
+                    self.present(alertController, animated: false)
+                    
+//                    cellB.itemNumberLable.text = "\(num!)"
+                    print("There is nothing to subtract")
+                } else if num! == 0 {
+                    
+                    let alertController = UIAlertController.init(title: "Cannot Remove Item", message: "The item could not be removed from your order because your order does not have the item.", preferredStyle: .alert)
+                    let alertAction = UIAlertAction.init(title: "Okay", style: .default, handler: nil)
+                    alertController.addAction(alertAction)
+                    self.present(alertController, animated: false)
+                    
+                    cellB.itemNumberLable.text = "\(num!)"
                     print("There is nothing to subtract")
                 }
             }
@@ -160,7 +206,6 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             switch tabSelected {
             case 0:
                 globalFoodArr = proteins
-                
             case 1:
                 globalFoodArr = vegetables
             case 2:
@@ -178,6 +223,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
         
     }
     
+    
     @IBAction func sendRequestButton(_ sender: Any) {
         FirebaseManager.clearOldRequests { (success) in
             if success {
@@ -185,7 +231,6 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 //add order
                 FirebaseManager.addOrder(order: self.makeOrder(), completion: { (success) in
                     if success {
-                        
                         FirebaseManager.getOrders(completion: { (orders, error) in
                             if error == nil {
                                 FirebaseManager.globalOrders = orders
@@ -197,6 +242,20 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 
             }
         }
+        selectedItems = []
+        collectionViewA.reloadData()
+        totalItemsSelectedLabel.text = ""
+        tab1Lables = ["0", "0", "0", "0", "0",]
+        tab2Lables = ["0", "0", "0"]
+        tab3Lables = ["0", "0"]
+        tab4Lables = ["0", "0", "0", "0", "0", "0", "0"]
+        tab5Lables = ["0", "0", "0", "0", "0", "0"]
+        tabLables = [tab1Lables, tab2Lables, tab3Lables, tab4Lables, tab5Lables]
+        collectionViewB.reloadData()
+        let alertController = UIAlertController(title: "Order Submitted!", message: "Your order has been successfully recorded.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true)
     }
     
     func makeOrder() -> Order{

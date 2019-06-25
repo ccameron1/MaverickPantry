@@ -11,6 +11,7 @@ import UIKit
 class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var selectedOrder : Order?
+    var index: Int?
     
     var foodGroup : [String] = ["Protein", "Vegetables", "Fruits", "Grain", "Additional Food Products", "Miscellaneous Products", "Personal Hygiene Products"]
     
@@ -21,7 +22,9 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Request Form"
-        nameLabel.text = "Order For: "
+        let initials = (selectedOrder!.initials as! String).uppercased()
+        
+        nameLabel.text = "Order For: \(initials)"
 
     }
 
@@ -49,7 +52,23 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
     }
     
     @IBAction func filledButtonPressed(_ sender: UIButton) {
-        perform("")
+        //clear from order array
+        
+        //segue back to other view controller
+    }
+    
+    @IBAction func fillOrderButton(_ sender: UIButton) {
+        
+        FirebaseManager.globalOrders?.remove(at: index!)
+        
+        //clear from firebase
+        
+        FirebaseManager.deleteFromOrders(orderName: "Order: \(selectedOrder!.initials!) \(selectedOrder!.yearOfBirth!)") { (success) in
+            if success
+            {
+                print("yaa")
+            }
+        }
     }
     
     

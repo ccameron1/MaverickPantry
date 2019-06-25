@@ -116,7 +116,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 }
                 
                 if self.selectedItems.count < 10 {
-                    self.selectedItems.append(self.globalFoodArr[indexPath.row])
+                    self.selectedItems.insert(self.globalFoodArr[indexPath.row], at: 0)
                     self.totalItemsSelectedLabel.text = "\(self.selectedItems.count)"
                     self.selectedItemImages.insert(cellB.imageView.image!, at: 0)
                     self.collectionViewA.reloadData()

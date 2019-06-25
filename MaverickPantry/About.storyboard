@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--About View Controller-->
+        <!--Info-->
         <scene sceneID="nLZ-m2-t5B">
             <objects>
                 <viewController id="LMT-Uu-VPy" customClass="AboutViewController" customModule="MaverickPantry" customModuleProvider="target" sceneMemberID="viewController">
@@ -428,7 +428,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cn7-f1-sdZ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="XQq-tx-B54"/>
+                    <tabBarItem key="tabBarItem" title="Info" image="icons8-info-50" id="XQq-tx-B54"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="96R-dz-yPv">
                         <barButtonItem key="leftBarButtonItem" title="Administrator" id="FMU-SP-2JD">
@@ -498,6 +498,7 @@
         <image name="icon2" width="194" height="180"/>
         <image name="icon3" width="191" height="164"/>
         <image name="icon4" width="219" height="188"/>
+        <image name="icons8-info-50" width="50" height="50"/>
         <image name="kristinanew" width="299" height="363"/>
         <image name="tuxpi.com.1561086436" width="1024" height="512"/>
     </resources>

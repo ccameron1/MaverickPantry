@@ -190,7 +190,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.84313725490000002" green="0.098039215690000001" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <state key="normal" title="SUBMIT ORDER">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="sendRequestButton:" destination="vbx-30-lFE" eventType="touchUpInside" id="V0W-YR-RcF"/>
@@ -215,6 +215,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-google-forms-50" width="50" height="50"/>
+        <image name="icons8-google-forms-50" width="25" height="25"/>
     </resources>
 </document>

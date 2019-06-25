@@ -21,6 +21,10 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     
     var additional = ["Ground Black Pepper", "Organic Marinara Sauce", "Organic Alfredo Pasta Sauce", "Organic Tomato Soup", "Organic Lentil Soup", "Organic Chicken Noodle Soup"]
     
+    var miscellaneous = ["Toilet Paper", "Paper Towel"]
+    
+    var personalHygiene = ["Menstruation Tampons", "Menstruation Pads", "Soap Bar", "Shampoo", "Conditioner", "Toothpaste"]
+    
     var foodTypeNames = ["Protein", "Vegetable", "Fruit", "Grain", "Additional Food", "Miscellaneous", "Personal Hygiene"]
     
     var imageArray : [[UIImage]] = []
@@ -30,7 +34,9 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     var tab2Images : [UIImage] = [UIImage.init(named: "SweetCorn")!, UIImage.init(named: "Tomatoes")!, UIImage.init(named: "GreenBeans")!]
     var tab3Images : [UIImage] = [UIImage.init(named: "Peaches")!, UIImage.init(named: "Mandarins")!]
     var tab4Images : [UIImage] = [UIImage.init(named: "Granola")!, UIImage.init(named: "ShellsAndCheese")!, UIImage.init(named: "Cheerios")!, UIImage.init(named: "Oatmeal")!, UIImage.init(named: "Spaghetti")!, UIImage.init(named: "BrownRice")!, UIImage.init(named: "WhiteRice")!]
-    var tab5Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!]
+    var tab5Images : [UIImage] = [UIImage.init(named: "Peppercorns")!, UIImage.init(named: "Marinara")!, UIImage.init(named: "Alfredo")!, UIImage.init(named: "TomatoSoup")!, UIImage.init(named: "LentilSoup")!, UIImage.init(named: "ChickenNoodle")!]
+    var tab6Images : [UIImage] = [UIImage.init(named: "Peaches")!, UIImage.init(named: "Mandarins")!]
+    var tab7Images : [UIImage] = []
     
     var selectedItems: [String] = []
     var globalFoodArr: [String] = []
@@ -41,6 +47,8 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     var tab3Lables : [String] = ["0", "0"]
     var tab4Lables : [String] = ["0", "0", "0", "0", "0", "0", "0"]
     var tab5Lables : [String] = ["0", "0", "0", "0", "0", "0"]
+    var tab6Labels : [String] = ["0", "0"]
+    var tab7Labels : [String] = ["0", "0", "0", "0", "0", "0"]
     
     var tabLables : [[String]] = []
     

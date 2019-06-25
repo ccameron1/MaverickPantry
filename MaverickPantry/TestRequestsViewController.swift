@@ -26,10 +26,10 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     var imageArray : [[UIImage]] = []
     var selectedItemImages : [UIImage] = []
     
-    var tab1Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!]
-    var tab2Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!]
-    var tab3Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!]
-    var tab4Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!]
+    var tab1Images : [UIImage] = [UIImage.init(named: "PeanutButter")!, UIImage.init(named: "Tuna")!, UIImage.init(named: "ChickenBreast")!, UIImage.init(named: "BlackBeans")!, UIImage.init(named: "GarbanzoBeans")!]
+    var tab2Images : [UIImage] = [UIImage.init(named: "SweetCorn")!, UIImage.init(named: "Tomatoes")!, UIImage.init(named: "GreenBeans")!]
+    var tab3Images : [UIImage] = [UIImage.init(named: "Peaches")!, UIImage.init(named: "Mandarins")!]
+    var tab4Images : [UIImage] = [UIImage.init(named: "Granola")!, UIImage.init(named: "ShellsAndCheese")!, UIImage.init(named: "Cheerios")!, UIImage.init(named: "Oatmeal")!, UIImage.init(named: "Spaghetti")!, UIImage.init(named: "BrownRice")!, UIImage.init(named: "WhiteRice")!]
     var tab5Images : [UIImage] = [UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!, UIImage.init(named: "eggs")!, UIImage.init(named: "MisoEggplant")!]
     
     var selectedItems: [String] = []
@@ -135,7 +135,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 
                 
                 
-                if num! == 0 {
+                if Int(cellB.itemNumberLable.text!)! == 0 {
                     cellB.imageView.layer.borderColor = UIColor.lightGray.cgColor
                     
                 }

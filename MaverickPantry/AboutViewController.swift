@@ -22,17 +22,17 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
 
     @IBOutlet weak var loginButton: UIBarButtonItem!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var adminBarButton: UIBarButtonItem!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        adminBarButton.isEnabled = false
+        
         if FirebaseManager.currentUserId.count > 0 {
             self.tabBarController?.tabBar.isHidden = false
-            
-        }
-            
-        else {
+        } else {
             self.tabBarController?.tabBar.isHidden = true
         }
         // Do any additional setup after loading the view.
@@ -58,11 +58,13 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
     @IBAction func unwindToAbout(segue:UIStoryboardSegue) {
         if FirebaseManager.currentUserId.count > 0 {
             self.tabBarController?.tabBar.isHidden = false
+            adminBarButton.isEnabled = true
             loginButton.isEnabled = false
         }
             
         else {
             self.tabBarController?.tabBar.isHidden = true
+
         }
     }
     
@@ -79,6 +81,7 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
         }
     }
     
+
     @IBAction func onWellnessCenterButtonPressed(_ sender: UIButton) {
         if let link = URL(string: linkWellness) {
             let sfvc = SFSafariViewController(url: link)

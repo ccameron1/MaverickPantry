@@ -434,6 +434,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Administrator" id="FMU-SP-2JD">
                             <color key="tintColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
+                                <action selector="adminButton:" destination="LMT-Uu-VPy" id="Ea8-Om-Mys"/>
                                 <segue destination="Bu6-Rr-I9j" kind="show" id="Eml-V0-Qpj"/>
                             </connections>
                         </barButtonItem>
@@ -447,6 +448,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="414" height="2500"/>
                     <connections>
+                        <outlet property="adminBarButton" destination="FMU-SP-2JD" id="hHp-5v-KN8"/>
                         <outlet property="loginButton" destination="tep-z7-Ngm" id="t5v-zH-tso"/>
                         <outlet property="textView" destination="Hep-sE-YV3" id="l5q-Av-ye5"/>
                     </connections>

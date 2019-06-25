@@ -121,7 +121,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                     self.selectedItemImages.append(cellB.imageView.image!)
 //                    let lastItemIndex = self.collectionViewA.
 //                    collectionView?.scrollToItemAtIndexPath(lastItemIndex, atScrollPosition: .Bottom, animated: true)
-//                    self.collectionViewA.reloadData()
+                    self.collectionViewA.reloadData()
                 } else {
                     
                     let alertController = UIAlertController.init(title: "Max Items Reached", message: "You have reached the maximum number of items.  Please remove an item before adding more.", preferredStyle: .alert)

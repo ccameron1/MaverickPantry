@@ -31,7 +31,7 @@ class InventoryViewController: UIViewController, UITableViewDelegate, UITableVie
 //        let pizzaDict = ["Food": "Pizza", "amountLeft": 43, "amountGiven": 98] as [String : Any]
 //        let kaleDict = ["Food": "Kale", "amountLeft": 7, "amountGiven": 3] as [String : Any]
 //
-        foods = [applesauce,pizza,kale]
+        //foods = [applesauce,pizza,kale]
         
     }
     
@@ -118,7 +118,7 @@ class InventoryViewController: UIViewController, UITableViewDelegate, UITableVie
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let indexPath = tableView.indexPathForSelectedRow!
-        let food = foods[indexPath.row]
+        let food = FirebaseManager.globalInventory![indexPath.row]
         let dvc = segue.destination as! InventoryDetailViewController
         dvc.food = food
     }

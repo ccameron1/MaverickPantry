@@ -167,6 +167,7 @@ class FirebaseManager {
 		databaseRef.collection("Orders").document("Order: \(order.initials!) \(order.yearOfBirth!)").setData(["requests": order.requests!,
 			"initials": order.initials!,"yearOfBirth": order.yearOfBirth!])
 		print("add order")
+		completion(true)
 	}
 	
 	

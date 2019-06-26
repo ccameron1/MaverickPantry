@@ -118,9 +118,9 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 }
                 
                 if num! >= 0 && num! < 10 && self.count <= 10 && !full {
-                   
-                        cellB.itemNumberLable.text = "\(num! + 1)"
-                        self.tabLables[self.tabSelected][indexPath.row] = cellB.itemNumberLable.text!
+                    
+                    cellB.itemNumberLable.text = "\(num! + 1)"
+                    self.tabLables[self.tabSelected][indexPath.row] = cellB.itemNumberLable.text!
                     
                     
                 }
@@ -130,7 +130,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 }
                 
                 if self.count <= 10 && !full {
-                   
+                    
                     self.selectedItems.insert(self.globalFoodArr[indexPath.row], at: 0)
                     self.totalItemsSelectedLabel.text = "\(self.selectedItems.count)"
                     self.totalFoodItemsSelectedLabel.text = "\(self.count)"
@@ -273,21 +273,32 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     @IBAction func sendRequestButton(_ sender: Any) {
         FirebaseManager.clearOldRequests { (success) in
             if success {
-                FirebaseManager.addRequestsToUser(requests: self.selectedItems)
-                //add order
-                let order = self.makeOrder()
-                FirebaseManager.addOrder(order: order, completion: { (success) in
+                FirebaseManager.addRequestsToUser(requests: self.selectedItems, completion: { (success) in
                     if success {
-                        FirebaseManager.getOrders(completion: { (orders, error) in
-                            if error == nil {
-                                FirebaseManager.globalOrders = orders
-                                print(FirebaseManager.globalOrders?.count)
+                        let order = self.makeOrder()
+                        FirebaseManager.addOrder(order: order, completion: { (success) in
+                            if success {
+                                FirebaseManager.getOrders(completion: { (orders, error) in
+                                    if error == nil {
+                                        FirebaseManager.globalOrders = orders
+                                        print(FirebaseManager.globalOrders?.count)
+                                    }
+                                })
                             }
                         })
                     }
+                    else {
+                        let alertController = UIAlertController(title: "Invalid", message: "You have already submitted 2 requests this week. Please call 555-555-5555 if you need another request or this is incorrect.", preferredStyle: .alert)
+                        let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                        alertController.addAction(action)
+                        self.present(alertController, animated: true)
+                    }
+                    
                 })
-                
+                //add order
             }
+            
+            
         }
         count = 0
         selectedItems = []
@@ -304,6 +315,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(okAction)
         self.present(alertController, animated: true)
+        
     }
     
     func makeOrder() -> Order{

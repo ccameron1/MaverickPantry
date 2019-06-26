@@ -118,7 +118,7 @@ class FirebaseManager {
 	
 	
 	
-	static func addRequestsToUser(requests: [String]) {
+	static func addRequestsToUser(requests: [String], completion: @escaping (Bool) -> Void) {
 		
 		
 		//check globalUsers requests
@@ -144,8 +144,9 @@ class FirebaseManager {
 			databaseRef.collection("Users").document(globalUser.uid).setData([ "request2": requests ], merge: true)
 		} else {
 			print("Have 2 requests already")
-			print(globalUser.request2.count)
+			completion(false)
 		}
+//		completion(true)
 	}
 	
 	

@@ -3,6 +3,7 @@
 //  MaverickPantry
 //
 //  Created by Carly Cameron on 6/23/19.
+//  Additional modifications by Carly Cameron and Patrick Stacey-Vargas.
 //  Copyright © 2019 Carly Cameron. All rights reserved.
 //
 
@@ -35,8 +36,8 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     var tab3Images : [UIImage] = [UIImage.init(named: "Peaches")!, UIImage.init(named: "Mandarins")!]
     var tab4Images : [UIImage] = [UIImage.init(named: "Granola")!, UIImage.init(named: "ShellsAndCheese")!, UIImage.init(named: "Cheerios")!, UIImage.init(named: "Oatmeal")!, UIImage.init(named: "Spaghetti")!, UIImage.init(named: "BrownRice")!, UIImage.init(named: "WhiteRice")!]
     var tab5Images : [UIImage] = [UIImage.init(named: "Peppercorns")!, UIImage.init(named: "Marinara")!, UIImage.init(named: "Alfredo")!, UIImage.init(named: "TomatoSoup")!, UIImage.init(named: "LentilSoup")!, UIImage.init(named: "ChickenNoodle")!]
-    var tab6Images : [UIImage] = [UIImage.init(named: "Peaches")!, UIImage.init(named: "Mandarins")!]
-    var tab7Images : [UIImage] = []
+    var tab6Images : [UIImage] = [UIImage.init(named: "ToiletPaper")!, UIImage.init(named: "PaperTowels")!]
+    var tab7Images : [UIImage] = [UIImage.init(named: "Peppercorns")!, UIImage.init(named: "Marinara")!, UIImage.init(named: "Alfredo")!, UIImage.init(named: "TomatoSoup")!, UIImage.init(named: "LentilSoup")!, UIImage.init(named: "ChickenNoodle")!]
     
     var selectedItems: [String] = []
     var globalFoodArr: [String] = []
@@ -52,16 +53,19 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     
     var tabLables : [[String]] = []
     
+    var count = 0
+    
     @IBOutlet weak var totalItemsSelectedLabel: UILabel!
     @IBOutlet weak var collectionViewA: UICollectionView!
     @IBOutlet weak var collectionViewB: UICollectionView!
     @IBOutlet weak var collectionViewC: UICollectionView!
+    @IBOutlet weak var totalFoodItemsSelectedLabel: UILabel!
     
     override func viewDidLoad() {
         // Initialize the collection views, set the desired frames
         globalFoodArr = proteins
-        tabLables = [tab1Lables, tab2Lables, tab3Lables, tab4Lables, tab5Lables]
-        imageArray = [tab1Images, tab2Images, tab3Images, tab4Images, tab5Images]
+        tabLables = [tab1Lables, tab2Lables, tab3Lables, tab4Lables, tab5Lables, tab6Labels, tab7Labels]
+        imageArray = [tab1Images, tab2Images, tab3Images, tab4Images, tab5Images, tab6Images, tab7Images]
     }
     
     
@@ -102,30 +106,44 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 () in
                 print("Edit tapped in cell", indexPath)
                 // update lable and add to correct lable array
-                 var num = Int(cellB.itemNumberLable!.text!)
-                if num! >= 0 && num! < 10 && self.selectedItems.count < 10 {
-                   
-                    cellB.itemNumberLable.text = "\(num! + 1)"
-                    self.tabLables[self.tabSelected][indexPath.row] = cellB.itemNumberLable.text!
+                let num = Int(cellB.itemNumberLable!.text!)
+                var full = false
                 
+                if self.tabSelected != 6 {
+                    if self.count == 10 {
+                        full = true
+                    } else {
+                        self.count = self.count + 1
+                    }
+                }
+                
+                if num! >= 0 && num! < 10 && self.count <= 10 && !full {
+                   
+                        cellB.itemNumberLable.text = "\(num! + 1)"
+                        self.tabLables[self.tabSelected][indexPath.row] = cellB.itemNumberLable.text!
+                    
+                    
                 }
                 
                 if Int(cellB.itemNumberLable.text!)! > 0 {
                     cellB.imageView.layer.borderColor = UIColor.red.cgColor
                 }
                 
-                if self.selectedItems.count < 10 {
-                    self.selectedItems.append(self.globalFoodArr[indexPath.row])
+                if self.count <= 10 && !full {
+                   
+                    self.selectedItems.insert(self.globalFoodArr[indexPath.row], at: 0)
                     self.totalItemsSelectedLabel.text = "\(self.selectedItems.count)"
-                    self.selectedItemImages.append(cellB.imageView.image!)
+                    self.totalFoodItemsSelectedLabel.text = "\(self.count)"
+                    self.selectedItemImages.insert(cellB.imageView.image!, at: 0)
                     self.collectionViewA.reloadData()
+                    
                 } else {
                     
                     let alertController = UIAlertController.init(title: "Max Items Reached", message: "You have reached the maximum number of items.  Please remove an item before adding more.", preferredStyle: .alert)
                     let alertAction = UIAlertAction.init(title: "Okay", style: .default, handler: nil)
                     alertController.addAction(alertAction)
                     self.present(alertController, animated: false)
-//                    cellB.itemNumberLable.text = "\(num!)"
+                    //                    cellB.itemNumberLable.text = "\(num!)"
                     print("Already have 10 items")
                 }
             }
@@ -133,12 +151,22 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             cellB.subBtnTapAction = {
                 () in
                 print("subtract", indexPath)
-                var num = Int(cellB.itemNumberLable!.text!)
+                let num = Int(cellB.itemNumberLable!.text!)
+                var empty = false
+                if self.tabSelected != 6 {
+                    if self.count == 0 {
+                        empty = true
+                    } else {
+                        self.count = self.count - 1
+                    }
+                }
                 if num! > 0 && num! <= 10 {
                     
                     cellB.itemNumberLable.text = "\(num! - 1)"
                     self.tabLables[self.tabSelected][indexPath.row] = cellB.itemNumberLable.text!
-
+                    
+                    
+                    
                 }
                 
                 
@@ -148,11 +176,12 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                     
                 }
                 
-                if self.selectedItems.count > 0 && num! != 0 {
+                if self.count >= 0 && num! != 0 && !empty {
                     
                     let index = self.selectedItems.firstIndex(of: "\(self.globalFoodArr[indexPath.row])")
                     self.selectedItems.remove(at: index!)
                     self.totalItemsSelectedLabel.text = "\(self.selectedItems.count)"
+                    self.totalFoodItemsSelectedLabel.text = "\(self.count)"
                     self.selectedItemImages.remove(at: index!)
                     self.collectionViewA.reloadData()
                     
@@ -163,7 +192,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                     alertController.addAction(alertAction)
                     self.present(alertController, animated: false)
                     
-//                    cellB.itemNumberLable.text = "\(num!)"
+                    //                    cellB.itemNumberLable.text = "\(num!)"
                     print("There is nothing to subtract")
                 } else if num! == 0 {
                     
@@ -227,6 +256,10 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 globalFoodArr = grains
             case 4:
                 globalFoodArr = additional
+            case 5:
+                globalFoodArr = miscellaneous
+            case 6:
+                globalFoodArr = personalHygiene
             default:
                 print("not added yet")
             }
@@ -256,6 +289,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 
             }
         }
+        count = 0
         selectedItems = []
         collectionViewA.reloadData()
         totalItemsSelectedLabel.text = ""
@@ -291,10 +325,23 @@ extension UIImageView {
         self.layer.masksToBounds = true
         
         self.layer.borderWidth = 2
-
+        
         //self.layer.borderColor = UIColor.lightGray.cgColor
     }
     
 }
 
-
+extension UICollectionView {
+    
+    func scrollToLastIndexPath(position:UICollectionView.ScrollPosition, animated: Bool) {
+        self.layoutIfNeeded()
+        
+        for sectionIndex in (0..<self.numberOfSections).reversed() {
+            if self.numberOfItems(inSection: sectionIndex) > 0 {
+                self.scrollToItem(at: IndexPath.init(item: self.numberOfItems(inSection: sectionIndex)-1, section: sectionIndex), at: position, animated: animated)
+                break
+            }
+        }
+    }
+    
+}

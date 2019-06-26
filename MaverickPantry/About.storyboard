@@ -311,6 +311,9 @@
                                                     <constraint firstAttribute="width" constant="50" id="HLa-6V-HIX"/>
                                                 </constraints>
                                                 <state key="normal" image="twitter"/>
+                                                <connections>
+                                                    <action selector="onTwitterPressed:" destination="LMT-Uu-VPy" eventType="touchUpInside" id="SqP-PI-csz"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEg-9d-cLV">
                                                 <rect key="frame" x="183" y="2385" width="50" height="50"/>
@@ -320,6 +323,9 @@
                                                     <constraint firstAttribute="width" constant="50" id="W9b-Fe-sBH"/>
                                                 </constraints>
                                                 <state key="normal" image="facebook"/>
+                                                <connections>
+                                                    <action selector="onFacebookPressed:" destination="LMT-Uu-VPy" eventType="touchUpInside" id="wfE-PY-xxd"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dG-rg-TNI">
                                                 <rect key="frame" x="283" y="2385" width="50" height="50"/>
@@ -329,6 +335,9 @@
                                                     <constraint firstAttribute="width" constant="50" id="r0Q-O0-KqN"/>
                                                 </constraints>
                                                 <state key="normal" image="instagram"/>
+                                                <connections>
+                                                    <action selector="onInstaPressed:" destination="LMT-Uu-VPy" eventType="touchUpInside" id="oVS-Pm-uy0"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

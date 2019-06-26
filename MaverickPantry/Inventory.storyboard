@@ -211,8 +211,9 @@
                     </view>
                     <connections>
                         <outlet property="amountLeftLabel" destination="074-4m-UpR" id="iWQ-Qw-RyB"/>
+                        <outlet property="backImageView" destination="8mS-3r-M3V" id="SpC-J3-1Ej"/>
+                        <outlet property="frontImageView" destination="aUs-Wa-dja" id="XH3-I3-k7Y"/>
                         <outlet property="givenOutLabel" destination="caM-pF-rpK" id="Wzc-28-1lc"/>
-                        <outlet property="imageView2" destination="8mS-3r-M3V" id="Oob-Ze-0dQ"/>
                         <outlet property="newAmountTextField" destination="MR9-VV-8Cs" id="TGw-F5-Xse"/>
                         <outlet property="updateButton" destination="Iho-cu-xhF" id="cZq-1L-F4o"/>
                     </connections>

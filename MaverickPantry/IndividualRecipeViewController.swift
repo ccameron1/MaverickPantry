@@ -23,6 +23,7 @@ class IndividualRecipeViewController: UIViewController, UITableViewDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.isHidden = true
+        title = "Recipe"
     }
     
     @IBAction func segmentedController(_ sender: UISegmentedControl) {

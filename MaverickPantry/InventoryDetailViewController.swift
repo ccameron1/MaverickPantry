@@ -14,8 +14,10 @@ class InventoryDetailViewController: UIViewController {
     @IBOutlet weak var newAmountTextField: UITextField!
     @IBOutlet weak var givenOutLabel: UILabel!
     @IBOutlet weak var updateButton: UIButton!
+    @IBOutlet weak var frontImageView: UIImageView!
     
-
+    @IBOutlet weak var backImageView: UIImageView!
+    
     
     var updateBool = false
     var amountLeft = 0
@@ -32,6 +34,7 @@ class InventoryDetailViewController: UIViewController {
         amountLeftLabel.text = "\(food.amountLeft!)"
         givenOutLabel.text = "\(food.amountGiven!)"
         
+        frontImageView.addShadow()
     }
     
     
@@ -52,8 +55,9 @@ class InventoryDetailViewController: UIViewController {
                 alertController.addAction(action)
                 present(alertController, animated: true, completion: nil)
             } else{
-                //                amountLeftLabel.text = "\(newAmount!)"
+            
                 food.setAmountLeft(amountLeft: newAmount!)
+                FirebaseManager.databaseRef.collection("Inventory").document(food.name).setData(["currentAmount" : food.amountLeft!, "name": food.name!, "amountGivenAway" : food.amountGiven!])
                 updateBool = !updateBool
                 newAmountTextField.text = ""
                 newAmountTextField.isHidden = true
@@ -68,6 +72,8 @@ class InventoryDetailViewController: UIViewController {
     
     @IBAction func whenClearButtonPressed(_ sender: UIButton) {
         food.setAmountGiven(amountGiven: 0)
+        FirebaseManager.databaseRef.collection("Inventory").document(food.name).setData(["currentAmount" : food.amountLeft!, "name": food.name!, "amountGivenAway" : 0])
+        print ("Firebase Updated")
         givenOutLabel.text = "\(food.amountGiven!)"
         //        givenOutLabel.text = "0"
     }

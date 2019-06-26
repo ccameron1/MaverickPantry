@@ -1,0 +1,25 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+<<<<<<< HEAD
+      "filename" : "MisoEggplant_BlueApron_splash_feature.jpg",
+=======
+      "filename" : "MisoEggplant.png",
+>>>>>>> 385e686fa6abf1f795e05c204f90bd62b7d28e5a
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

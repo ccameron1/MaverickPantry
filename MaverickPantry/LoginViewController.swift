@@ -9,10 +9,10 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
-
+    
+    
     let loginToAboutSegueIdentifier = "unwindToAbout"
-
+    
     
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
@@ -26,35 +26,45 @@ class LoginViewController: UIViewController {
         
     }
     
-
     
-     
+    
+    
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-//        backgroundImage.addShadow()
+        //        backgroundImage.addShadow()
         
-//        backgroundImage.clipsToBounds = true
+        //        backgroundImage.clipsToBounds = true
         
-        FirebaseManager.Login(email: emailTextField.text!, password: passwordTextField.text!) { (success) in
+        FirebaseManager.Login(email: emailTextField.text!, password: passwordTextField.text!) { (success, err) in
             if success {
                 print("yay")
-            
+                
                 self.performSegue(withIdentifier: self.loginToAboutSegueIdentifier, sender: nil)
-
+                
+            } else {
+                let alertController = UIAlertController(title: "Unable to Login", message: "\(err!.localizedDescription)", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
+                    //clear fields
+                    self.emailTextField.text = ""
+                    self.passwordTextField.text = ""
+                })
+                alertController.addAction(action)
+                self.present(alertController, animated: true, completion: nil)
+                
             }
-            }
+        }
         
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 extension UIView {

@@ -19,34 +19,35 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
     let moneyDonations = "https://nufoundation.org/search?fundSearch=true&q=01130780"
     
     let foodDonations = "https://www.unomaha.edu/student-life/_img/civic-and-social/mfp-item-list.pdf"
-
+    
     @IBOutlet weak var loginButton: UIBarButtonItem!
     @IBOutlet weak var textView: UITextView!
-    
+    @IBOutlet weak var adminBarButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // makes admin clear until login
+        adminBarButton.isEnabled = false
+        adminBarButton.tintColor = UIColor.clear
+        
         if FirebaseManager.currentUserId.count > 0 {
             self.tabBarController?.tabBar.isHidden = false
-            
-        }
-            
-        else {
+        } else {
             self.tabBarController?.tabBar.isHidden = true
         }
         // Do any additional setup after loading the view.
-//        let request1 = ["hi", "bye"]
-//        let request2 = ["cheese", "fruit"]
-//        FirebaseManager.globalUser.setRequests(request1: request1, request2: request2)
-
-//        if loggedIn == false {
-//
-//            performSegue(withIdentifier: "loginToAbout", sender: nil)
-//            loggedIn = true
-//        }
-//        // Do any additional setup after loading the view.
-
+        //        let request1 = ["hi", "bye"]
+        //        let request2 = ["cheese", "fruit"]
+        //        FirebaseManager.globalUser.setRequests(request1: request1, request2: request2)
+        
+        //        if loggedIn == false {
+        //
+        //            performSegue(withIdentifier: "loginToAbout", sender: nil)
+        //            loggedIn = true
+        //        }
+        //        // Do any additional setup after loading the view.
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -58,11 +59,19 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
     @IBAction func unwindToAbout(segue:UIStoryboardSegue) {
         if FirebaseManager.currentUserId.count > 0 {
             self.tabBarController?.tabBar.isHidden = false
+            
+            //changes buttons
+            if FirebaseManager.globalUser.isAdmin {
+                adminBarButton.isEnabled = true
+                adminBarButton.tintColor = UIColor.red
+            }
             loginButton.isEnabled = false
+
         }
             
         else {
             self.tabBarController?.tabBar.isHidden = true
+            
         }
     }
     
@@ -78,6 +87,7 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
             
         }
     }
+    
     
     @IBAction func onWellnessCenterButtonPressed(_ sender: UIButton) {
         if let link = URL(string: linkWellness) {
@@ -151,13 +161,13 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

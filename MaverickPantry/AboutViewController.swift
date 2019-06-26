@@ -59,6 +59,8 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
         tutoringButton.addShadow()
         careerButton.addShadow()
         
+        textView.text = "      Food insecurity is becoming more evident on college campuses, and UNO is no exception. A growing concern about food insecurity among our fellow Mavs has promptedaction. \n\n      UNO’s Maverick Food Pantry aims to contribute to UNO’s culture of caring by providing resources to those in immediate need and connecting them with additional resources in the greater Omaha area for long-term support. The Maverick Food Pantry offers food and personal hygiene products to UNO faculty, staff members, and currently-enrolled students by providing healthy, organic, and culturally sensitive items. Requests for food packages can be submitted through an easy online form twice a week."
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

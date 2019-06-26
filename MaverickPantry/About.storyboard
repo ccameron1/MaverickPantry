@@ -31,7 +31,7 @@
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yNE-Yk-SUe">
-                                                <rect key="frame" x="0.0" y="223" width="427" height="439"/>
+                                                <rect key="frame" x="0.0" y="221" width="427" height="405"/>
                                                 <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;NO ONE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwA-Oa-ezd">
@@ -41,7 +41,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOULD BE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctM-F7-98f">
-                                                <rect key="frame" x="21" y="150" width="223.5" height="54"/>
+                                                <rect key="frame" x="21" y="150" width="223.5" height="52"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -82,14 +82,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hep-sE-YV3">
-                                                <rect key="frame" x="25" y="280" width="364" height="325"/>
-                                                <string key="text">      Food insecurity is becoming more evident on college campuses, and UNO is no exception. A growing concern about food insecurity among our fellow Mavs has promptedaction.                                                                                         .    UNO’s Maverick Food Pantry aims to contribute to UNO’s culture of caring by providing resources to those in immediate need and connecting them with additional resources in the greater Omaha area for long-term support. The Maverick Food Pantry offers food and personal hygiene products to UNO faculty, staff members, and currently-enrolled students by providing healthy, organic, and culturally sensitive items. Requests for food packages can be submitted through an easy online form twice a week.</string>
+                                                <rect key="frame" x="25" y="261" width="364" height="356"/>
+                                                <mutableString key="text">      Food insecurity is becoming more evident on college campuses, and UNO is no exception. A growing concern about food insecurity among our fellow Mavs has promptedaction.                          .                                                                                          UNO’s Maverick Food Pantry aims to contribute to UNO’s culture of caring by providing resources to those in immediate need and connecting them with additional resources in the greater Omaha area for long-term support. The Maverick Food Pantry offers food and personal hygiene products to UNO faculty, staff members, and currently-enrolled students by providing healthy, organic, and culturally sensitive items. Requests for food packages can be submitted through an easy online form twice a week.</mutableString>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1re-No-Yjx">
-                                                <rect key="frame" x="25" y="270" width="240" height="0.0"/>
+                                                <rect key="frame" x="25" y="250" width="240" height="8"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="240" id="B9x-wC-bla"/>
@@ -362,7 +362,7 @@
                                             <constraint firstItem="ZaQ-cJ-oAe" firstAttribute="centerX" secondItem="d9Y-1m-NgG" secondAttribute="centerX" id="BsY-ll-geM"/>
                                             <constraint firstItem="jPa-e6-Qh2" firstAttribute="leading" secondItem="ROB-5g-0x3" secondAttribute="leading" constant="21" id="C7C-Bf-3wg"/>
                                             <constraint firstAttribute="trailing" secondItem="T3A-JT-efg" secondAttribute="trailing" constant="44" id="CVN-bG-AKW"/>
-                                            <constraint firstItem="1re-No-Yjx" firstAttribute="top" secondItem="I16-kY-Cxp" secondAttribute="bottom" constant="17" id="CfU-N9-KD4"/>
+                                            <constraint firstItem="1re-No-Yjx" firstAttribute="top" secondItem="jPa-e6-Qh2" secondAttribute="bottom" constant="10" id="CfU-N9-KD4"/>
                                             <constraint firstItem="LZ0-Q2-Kbi" firstAttribute="centerX" secondItem="d9Y-1m-NgG" secondAttribute="centerX" id="DB2-U3-kXi"/>
                                             <constraint firstItem="T3A-JT-efg" firstAttribute="top" secondItem="ARo-GD-Ijw" secondAttribute="bottom" constant="8" id="Dzg-oc-CP3"/>
                                             <constraint firstItem="N4C-44-21x" firstAttribute="centerX" secondItem="d9Y-1m-NgG" secondAttribute="centerX" id="ESo-G8-sza"/>
@@ -377,15 +377,15 @@
                                             <constraint firstItem="N4C-44-21x" firstAttribute="centerX" secondItem="fxl-ul-rSh" secondAttribute="centerX" id="Lt3-DG-Ldn"/>
                                             <constraint firstItem="ARo-GD-Ijw" firstAttribute="leading" secondItem="q77-Ul-7IQ" secondAttribute="trailing" constant="20" id="MGr-Pt-mAp"/>
                                             <constraint firstItem="zwA-Oa-ezd" firstAttribute="leading" secondItem="ROB-5g-0x3" secondAttribute="leading" constant="21" id="MRT-9E-g9M"/>
-                                            <constraint firstItem="b2o-kU-UQQ" firstAttribute="top" secondItem="Hep-sE-YV3" secondAttribute="bottom" constant="20" id="N4y-aX-Owg"/>
+                                            <constraint firstItem="b2o-kU-UQQ" firstAttribute="top" secondItem="Hep-sE-YV3" secondAttribute="bottom" constant="8" id="N4y-aX-Owg"/>
                                             <constraint firstAttribute="trailing" secondItem="2dG-rg-TNI" secondAttribute="trailing" constant="90" id="O4w-24-QMq"/>
                                             <constraint firstItem="Q52-Kw-mvp" firstAttribute="centerX" secondItem="d9Y-1m-NgG" secondAttribute="centerX" id="OWL-3W-Jc8"/>
                                             <constraint firstItem="2dG-rg-TNI" firstAttribute="top" secondItem="YFp-va-Gd0" secondAttribute="bottom" constant="50" id="Oqi-4x-gTA"/>
                                             <constraint firstItem="v9C-33-Ftu" firstAttribute="centerX" secondItem="Hep-sE-YV3" secondAttribute="centerX" id="Pc8-F5-8r3"/>
-                                            <constraint firstItem="Ug4-iA-RnO" firstAttribute="top" secondItem="yNE-Yk-SUe" secondAttribute="bottom" constant="65" id="QBR-eN-VVK"/>
-                                            <constraint firstItem="yNE-Yk-SUe" firstAttribute="centerY" secondItem="Hep-sE-YV3" secondAttribute="centerY" id="QBW-0B-UGV"/>
+                                            <constraint firstItem="Ug4-iA-RnO" firstAttribute="top" secondItem="yNE-Yk-SUe" secondAttribute="bottom" constant="101" id="QBR-eN-VVK"/>
+                                            <constraint firstItem="yNE-Yk-SUe" firstAttribute="centerY" secondItem="Hep-sE-YV3" secondAttribute="centerY" constant="-15.5" id="QBW-0B-UGV"/>
                                             <constraint firstItem="3QU-Fu-FUk" firstAttribute="leading" secondItem="ROB-5g-0x3" secondAttribute="leading" constant="36" id="QPt-rU-g0M"/>
-                                            <constraint firstItem="Hep-sE-YV3" firstAttribute="top" secondItem="1re-No-Yjx" secondAttribute="bottom" constant="10" id="QbT-e4-91z"/>
+                                            <constraint firstItem="Hep-sE-YV3" firstAttribute="top" secondItem="1re-No-Yjx" secondAttribute="bottom" constant="3" id="QbT-e4-91z"/>
                                             <constraint firstItem="N4C-44-21x" firstAttribute="centerX" secondItem="Hep-sE-YV3" secondAttribute="centerX" id="QfA-0D-rAI"/>
                                             <constraint firstItem="ARo-GD-Ijw" firstAttribute="top" secondItem="x6y-kl-XrV" secondAttribute="bottom" constant="21" id="SMv-O0-nsC"/>
                                             <constraint firstItem="b2o-kU-UQQ" firstAttribute="leading" secondItem="yNE-Yk-SUe" secondAttribute="leading" id="TPl-uV-LsI"/>
@@ -412,7 +412,6 @@
                                             <constraint firstItem="N4C-44-21x" firstAttribute="top" secondItem="T3A-JT-efg" secondAttribute="bottom" constant="11" id="bPn-Lb-nJr"/>
                                             <constraint firstItem="gmC-mX-QXD" firstAttribute="leading" secondItem="ROB-5g-0x3" secondAttribute="leading" constant="18" id="bgy-fG-li2"/>
                                             <constraint firstItem="jPa-e6-Qh2" firstAttribute="top" secondItem="zwA-Oa-ezd" secondAttribute="bottom" constant="35" id="cXV-x5-SXO"/>
-                                            <constraint firstItem="T3A-JT-efg" firstAttribute="leading" secondItem="3QU-Fu-FUk" secondAttribute="trailing" constant="96" id="cbg-5w-wtL"/>
                                             <constraint firstAttribute="trailing" secondItem="ARo-GD-Ijw" secondAttribute="trailing" constant="16" id="dKa-d2-fyg"/>
                                             <constraint firstItem="Ug4-iA-RnO" firstAttribute="centerX" secondItem="d9Y-1m-NgG" secondAttribute="centerX" id="dMf-Du-B0w"/>
                                             <constraint firstItem="yss-ho-nON" firstAttribute="top" secondItem="v9C-33-Ftu" secondAttribute="bottom" id="dcR-kb-PAG"/>

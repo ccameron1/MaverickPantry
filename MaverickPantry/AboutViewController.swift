@@ -200,8 +200,14 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
             application.open(appURL)
         } else {
             // if twitter app is not installed, open URL inside Safari
-            let webURL = URL(string: "https://twitter.com/\(Username)")!
-            application.open(webURL)
+            if let link = URL(string: "https://twitter.com/\(Username)") {
+                let sfvc = SFSafariViewController(url: link)
+                sfvc.delegate = (self as! SFSafariViewControllerDelegate)
+                sfvc.preferredControlTintColor = .red
+                
+                present(sfvc, animated: true)
+                
+            }
         }
     }
     
@@ -214,8 +220,14 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
             application.open(appURL)
         } else {
             // if Instagram app is not installed, open URL inside Safari
-            let webURL = URL(string: "https://www.facebook.com/\(Username)/")!
-            application.open(webURL)
+            if let link = URL(string: "https://www.facebook.com/\(Username)/") {
+                let sfvc = SFSafariViewController(url: link)
+                sfvc.delegate = (self as! SFSafariViewControllerDelegate)
+                sfvc.preferredControlTintColor = .red
+                
+                present(sfvc, animated: true)
+                
+            }
         }
     }
     
@@ -228,8 +240,14 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
             application.open(appURL)
         } else {
             // if Instagram app is not installed, open URL inside Safari
-            let webURL = URL(string: "https://instagram.com/\(Username)")!
-            application.open(webURL)
+            if let link = URL(string: "https://instagram.com/\(Username)") {
+                let sfvc = SFSafariViewController(url: link)
+                sfvc.delegate = (self as! SFSafariViewControllerDelegate)
+                sfvc.preferredControlTintColor = .red
+                
+                present(sfvc, animated: true)
+                
+            }
         }
     }
     

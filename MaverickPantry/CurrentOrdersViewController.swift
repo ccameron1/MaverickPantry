@@ -64,6 +64,13 @@ class CurrentOrdersViewController: UIViewController, UITableViewDataSource, UITa
         cell?.textLabel!.text = FirebaseManager.globalOrders![indexPath.row].initials!.uppercased()
         let yearOfBirthString = String(FirebaseManager.globalOrders![indexPath.row].yearOfBirth!)
         cell?.detailTextLabel!.text = yearOfBirthString
+        
+        if FirebaseManager.globalOrders![indexPath.row].isReady == true{
+            cell?.backgroundColor = UIColor.green
+        } else{
+            cell?.backgroundColor = UIColor.red
+        }
+        
         //        if currentOrder.count == 0 {
         //              title = "No Current Orders"
         //        } else {

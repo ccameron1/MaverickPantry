@@ -122,6 +122,7 @@ class FirebaseManager {
 		
 		
 		//check globalUsers requests
+		var check = true
 		if globalUser.request1.count == 0 {
 			globalUser.request1 = requests
 			
@@ -144,9 +145,13 @@ class FirebaseManager {
 			databaseRef.collection("Users").document(globalUser.uid).setData([ "request2": requests ], merge: true)
 		} else {
 			print("Have 2 requests already")
+			check = false
 			completion(false)
 		}
-//		completion(true)
+		
+		if check {
+		completion(true)
+		}
 	}
 	
 	

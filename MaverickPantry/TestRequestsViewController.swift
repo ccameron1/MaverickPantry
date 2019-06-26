@@ -273,8 +273,8 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     @IBAction func sendRequestButton(_ sender: Any) {
         FirebaseManager.clearOldRequests { (success) in
             if success {
-                FirebaseManager.addRequestsToUser(requests: self.selectedItems, completion: { (success) in
-                    if success {
+                FirebaseManager.addRequestsToUser(requests: self.selectedItems, completion: { (canAddOrders) in
+                    if canAddOrders {
                         let order = self.makeOrder()
                         FirebaseManager.addOrder(order: order, completion: { (success) in
                             if success {

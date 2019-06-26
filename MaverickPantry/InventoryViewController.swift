@@ -116,12 +116,12 @@ class InventoryViewController: UIViewController, UITableViewDelegate, UITableVie
     // MARK: - Navigation
 
    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let indexPath = tableView.indexPathForSelectedRow!
-        let food = foods[indexPath.row]
-        let dvc = segue.destination as! InventoryDetailViewController
-        dvc.food = food
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let indexPath = tableView.indexPathForSelectedRow!
+//        let food = FirebaseManager.globalInventory![indexPath.row]
+//        let dvc = segue.destination as! InventoryDetailViewController
+//        dvc.food = food
+//    }
     
     
     

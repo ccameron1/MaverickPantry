@@ -15,8 +15,7 @@ class InventoryDetailViewController: UIViewController {
     @IBOutlet weak var givenOutLabel: UILabel!
     @IBOutlet weak var updateButton: UIButton!
     
-    @IBOutlet weak var imageView1: UIImageView!
-    @IBOutlet weak var imageView2: UIImageView!
+
     
     var updateBool = false
     var amountLeft = 0
@@ -33,8 +32,6 @@ class InventoryDetailViewController: UIViewController {
         amountLeftLabel.text = "\(food.amountLeft!)"
         givenOutLabel.text = "\(food.amountGiven!)"
         
-        imageView1.layer.borderWidth = 15
-        imageView2.layer.borderWidth = 15
     }
     
     

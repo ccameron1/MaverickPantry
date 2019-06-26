@@ -37,7 +37,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     var tab4Images : [UIImage] = [UIImage.init(named: "Granola")!, UIImage.init(named: "ShellsAndCheese")!, UIImage.init(named: "Cheerios")!, UIImage.init(named: "Oatmeal")!, UIImage.init(named: "Spaghetti")!, UIImage.init(named: "BrownRice")!, UIImage.init(named: "WhiteRice")!]
     var tab5Images : [UIImage] = [UIImage.init(named: "Peppercorns")!, UIImage.init(named: "Marinara")!, UIImage.init(named: "Alfredo")!, UIImage.init(named: "TomatoSoup")!, UIImage.init(named: "LentilSoup")!, UIImage.init(named: "ChickenNoodle")!]
     var tab6Images : [UIImage] = [UIImage.init(named: "ToiletPaper")!, UIImage.init(named: "PaperTowels")!]
-    var tab7Images : [UIImage] = [UIImage.init(named: "Peppercorns")!, UIImage.init(named: "Marinara")!, UIImage.init(named: "Alfredo")!, UIImage.init(named: "TomatoSoup")!, UIImage.init(named: "LentilSoup")!, UIImage.init(named: "ChickenNoodle")!]
+    var tab7Images : [UIImage] = [UIImage.init(named: "Tampon")!, UIImage.init(named: "Pads")!, UIImage.init(named: "Soap")!, UIImage.init(named: "Shampoo")!, UIImage.init(named: "Conditioner")!, UIImage.init(named: "Toothpaste")!]
     
     var selectedItems: [String] = []
     var globalFoodArr: [String] = []
@@ -139,7 +139,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                     
                 } else {
                     
-                    let alertController = UIAlertController.init(title: "Max Items Reached", message: "You have reached the maximum number of items.  Please remove an item before adding more.", preferredStyle: .alert)
+                    let alertController = UIAlertController.init(title: "Max Items Reached", message: "You have reached the maximum number of food items. Please remove a food item before adding more.", preferredStyle: .alert)
                     let alertAction = UIAlertAction.init(title: "Okay", style: .default, handler: nil)
                     alertController.addAction(alertAction)
                     self.present(alertController, animated: false)
@@ -196,7 +196,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                     print("There is nothing to subtract")
                 } else if num! == 0 {
                     
-                    let alertController = UIAlertController.init(title: "Cannot Remove Item", message: "The item could not be removed from your order because your order does not have the item.", preferredStyle: .alert)
+                    let alertController = UIAlertController.init(title: "Cannot Remove Item", message: "The item could not be removed from your order because your order does not contain the item.", preferredStyle: .alert)
                     let alertAction = UIAlertAction.init(title: "Okay", style: .default, handler: nil)
                     alertController.addAction(alertAction)
                     self.present(alertController, animated: false)

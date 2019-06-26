@@ -383,7 +383,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
         tab5Lables = ["0", "0", "0", "0", "0", "0"]
         tabLables = [tab1Lables, tab2Lables, tab3Lables, tab4Lables, tab5Lables]
         collectionViewB.reloadData()
-        let alertController = UIAlertController(title: "Order Submitted!", message: "Your order has been successfully recorded.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Order Submitted!", message: "Your order has been successfully recorded. You will recieve a notification when your order is ready for pickup.", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(okAction)
         self.present(alertController, animated: true)

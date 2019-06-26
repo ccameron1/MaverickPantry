@@ -68,6 +68,19 @@ class FirebaseManager {
 					print(error.localizedDescription)
 					return
 				}
+				
+				Auth.auth().currentUser?.sendEmailVerification { (error) in
+					if let error = error {
+						print(error.localizedDescription)
+					} else {
+						print("sent")
+					}
+					
+				}
+				
+				
+				
+				
 				var c = NSDateComponents()
 				c.year = 2000
 				c.month = 1
@@ -79,9 +92,11 @@ class FirebaseManager {
 				Login(email: email, password: password, completion: { (success, err)  in
 					if success {
 						print("Login successful after account creation.")
+						completion(true)
 						
 					} else {
 						print("Login not successful after account creation")
+						completion(false)
 					}
 				})
 			}
@@ -177,7 +192,7 @@ class FirebaseManager {
 	}
 	
 	static func addOrder(order: Order, completion: @escaping (Bool) -> Void) {
-		databaseRef.collection("Orders").document("Order: \(order.initials!) \(order.yearOfBirth!) \(order.timestamp)").setData(["requests": order.requests!,
+		databaseRef.collection("Orders").document("Order: \(order.initials!) \(order.yearOfBirth!) \(order.timestamp!)").setData(["requests": order.requests!,
 																																 "initials": order.initials!,"yearOfBirth": order.yearOfBirth!, "timestamp": order.timestamp!, "isReady": order.isReady!])
 		print("add order")
 		completion(true)

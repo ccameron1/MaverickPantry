@@ -33,8 +33,8 @@ class InventoryDetailViewController: UIViewController {
         amountLeftLabel.text = "\(food.amountLeft!)"
         givenOutLabel.text = "\(food.amountGiven!)"
         
-        imageView1.layer.borderWidth = 15
-        imageView2.layer.borderWidth = 15
+        imageView1.layer.borderWidth = 5
+        imageView2.layer.borderWidth = 5
     }
     
     

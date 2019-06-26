@@ -9,17 +9,17 @@
 import Foundation
 
 class Order {
-    var requests: [String]!
-    var initials: String!
-    var yearOfBirth: Int!
-    var timestamp : Double!
-    var isPickedUp: Bool!
+    var requests: [String]?
+    var initials: String?
+    var yearOfBirth: Int?
+    var timestamp : Double?
+    var isReady: Bool?
     
-    init(requests: [String], intitials: String, yearOfBirth: Int, timestamp: Double, isPickedUp: Bool) {
+    init(requests: [String], intitials: String, yearOfBirth: Int, timestamp: Double, isReady: Bool) {
         self.requests = requests
         self.initials = intitials
         self.yearOfBirth = yearOfBirth
         self.timestamp = timestamp
-        self.isPickedUp = isPickedUp
+        self.isReady = isReady
     }
 }

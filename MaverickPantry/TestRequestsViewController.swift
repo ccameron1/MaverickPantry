@@ -312,7 +312,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
         let yearOfBirth = FirebaseManager.globalUser.yearOfBirth
         let timeStamp = NSDate().timeIntervalSince1970
         
-        return Order(requests: requests, intitials: initials, yearOfBirth: yearOfBirth, timestamp: timeStamp, isPickedUp: false)
+        return Order(requests: requests, intitials: initials, yearOfBirth: yearOfBirth, timestamp: timeStamp, isReady: false)
     }
     
 }

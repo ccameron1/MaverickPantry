@@ -22,7 +22,7 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Request Form"
-        let initials = (selectedOrder!.initials as! String).uppercased()
+        let initials = (selectedOrder!.initials)!.uppercased()
         
         nameLabel.text = "Order For: \(initials)"
 
@@ -39,7 +39,7 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RcellID")
 //        let foodType = foodGroup[indexPath.row]
-        cell?.textLabel!.text = selectedOrder?.requests[indexPath.row]
+        cell?.textLabel!.text = selectedOrder?.requests![indexPath.row]
         return cell!
     }
     
@@ -55,7 +55,7 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
         
         FirebaseManager.getInventory(completion: { (inventory, error) in
             if error == nil {
-                for request in self.selectedOrder!.requests{
+                for request in self.selectedOrder!.requests!{
                     for item in inventory{
                         if request == item.name{
                             item.amountGiven = item.amountGiven + 1
@@ -71,12 +71,8 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
         
         //clear from firebase
         
-        FirebaseManager.deleteFromOrders(orderName: "Order: \(selectedOrder!.initials!) \(selectedOrder!.yearOfBirth!) \(selectedOrder!.timestamp)") { (success) in
-            if success
-            {
-                print("yaa")
-            }
-        }
+        FirebaseManager.databaseRef.collection("Orders").document("Order: \(selectedOrder!.initials!) \(selectedOrder!.yearOfBirth!) \(selectedOrder!.timestamp!)").setData(["requests": selectedOrder!.requests!, "initials": selectedOrder!.initials!, "isReady": true, "yearOfBirth": selectedOrder!.yearOfBirth!, "timestamp": selectedOrder!.timestamp])
+        
     }
     
     

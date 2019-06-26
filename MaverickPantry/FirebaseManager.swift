@@ -172,7 +172,7 @@ class FirebaseManager {
 	
 	static func addOrder(order: Order, completion: @escaping (Bool) -> Void) {
 		databaseRef.collection("Orders").document("Order: \(order.initials!) \(order.yearOfBirth!) \(order.timestamp)").setData(["requests": order.requests!,
-																																 "initials": order.initials!,"yearOfBirth": order.yearOfBirth!, "timestamp": order.timestamp!, "isPickedUp": order.isPickedUp!])
+																																 "initials": order.initials!,"yearOfBirth": order.yearOfBirth!, "timestamp": order.timestamp!, "isReady": order.isReady!])
 		print("add order")
 		completion(true)
 	}
@@ -195,9 +195,9 @@ class FirebaseManager {
 					let initials = document.get("initials")! as! String
 					let YOB = document.get("yearOfBirth")! as! Int
 					let timestamp = document.get("timestamp") as! Double
-					let isPickedUp = document.get("isPickedUp") as! Bool
+					let isReady = document.get("isReady") as! Bool
 					
-					let order = Order(requests: requests, intitials: initials, yearOfBirth: YOB, timestamp: timestamp, isPickedUp: isPickedUp)
+					let order = Order(requests: requests, intitials: initials, yearOfBirth: YOB, timestamp: timestamp, isReady: isReady)
 					
 					orders.append(order)
 					if orders.count == querySnapshot!.documents.count {

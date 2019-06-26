@@ -18,46 +18,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="xnO-9z-jmu">
-                                <rect key="frame" x="100" y="320.5" width="214" height="255"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="inventory" translatesAutoresizingMaskIntoConstraints="NO" id="aqr-ZJ-kxW">
+                                <rect key="frame" x="0.0" y="-25" width="414" height="921"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9rh-2z-p6v">
+                                <rect key="frame" x="50" y="186" width="314" height="524"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="129" translatesAutoresizingMaskIntoConstraints="NO" id="ByH-Ro-kjl">
+                                <rect key="frame" x="119" y="267" width="176" height="363"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cT-iv-erw">
-                                        <rect key="frame" x="0.0" y="0.0" width="214" height="35"/>
-                                        <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="176" height="35"/>
+                                        <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="4lM-bI-i2z"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="22"/>
                                         <state key="normal" title="Inventory">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <segue destination="ocI-lL-osp" kind="show" id="ZMe-Jo-cZV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1L-Mt-nbF">
-                                        <rect key="frame" x="0.0" y="110" width="214" height="35"/>
-                                        <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="164" width="176" height="35"/>
+                                        <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="6dU-wZ-ioq"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                         <state key="normal" title="Push Notifications">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <segue destination="b2J-cZ-eS4" kind="show" id="pFc-CS-ngQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAI-vv-PC9">
-                                        <rect key="frame" x="0.0" y="220" width="214" height="35"/>
-                                        <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="328" width="176" height="35"/>
+                                        <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="IUp-GY-5W3"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="22"/>
                                         <state key="normal" title="Current Orders">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <segue destination="LOn-yX-esV" kind="show" id="Tj7-kD-Tzc"/>
@@ -66,12 +77,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="sv7-cB-9SA" firstAttribute="trailing" secondItem="xnO-9z-jmu" secondAttribute="trailing" constant="100" id="KE7-fS-W48"/>
-                            <constraint firstItem="xnO-9z-jmu" firstAttribute="centerY" secondItem="d4d-MQ-Bud" secondAttribute="centerY" id="OKh-w3-5RV"/>
-                            <constraint firstItem="xnO-9z-jmu" firstAttribute="leading" secondItem="sv7-cB-9SA" secondAttribute="leading" constant="100" id="PvL-dC-adB"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sv7-cB-9SA"/>
                     </view>
                     <navigationItem key="navigationItem" id="82n-6x-9zw"/>
@@ -79,6 +85,7 @@
                         <outlet property="currentOrdersButton" destination="IAI-vv-PC9" id="6pN-Yq-43m"/>
                         <outlet property="inventoryButton" destination="6cT-iv-erw" id="k1Q-d5-hlL"/>
                         <outlet property="pushNotifButton" destination="U1L-Mt-nbF" id="2gb-b0-y5G"/>
+                        <outlet property="whiteImageView" destination="9rh-2z-p6v" id="vfy-IP-g23"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bmF-9Z-c8s" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -251,4 +258,7 @@
             <point key="canvasLocation" x="5600" y="-948"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="inventory" width="2888" height="3078"/>
+    </resources>
 </document>

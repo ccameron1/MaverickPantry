@@ -24,6 +24,12 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var adminBarButton: UIBarButtonItem!
     
+    @IBOutlet weak var capsButton: UIButton!
+    @IBOutlet weak var wellnessButton: UIButton!
+    @IBOutlet weak var tutoringButton: UIButton!
+    @IBOutlet weak var careerButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,6 +53,11 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
         //            loggedIn = true
         //        }
         //        // Do any additional setup after loading the view.
+        
+        capsButton.addShadow()
+        wellnessButton.addShadow()
+        tutoringButton.addShadow()
+        careerButton.addShadow()
         
     }
     

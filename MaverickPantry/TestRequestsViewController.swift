@@ -63,6 +63,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     
     override func viewDidLoad() {
         // Initialize the collection views, set the desired frames
+        
         globalFoodArr = proteins
         tabLables = [tab1Lables, tab2Lables, tab3Lables, tab4Lables, tab5Lables, tab6Labels, tab7Labels]
         imageArray = [tab1Images, tab2Images, tab3Images, tab4Images, tab5Images, tab6Images, tab7Images]

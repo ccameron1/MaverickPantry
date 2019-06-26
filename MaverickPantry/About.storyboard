@@ -305,36 +305,36 @@
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVr-03-21r">
                                                 <rect key="frame" x="83" y="2385" width="50" height="50"/>
-                                                <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="H2v-ND-GS4"/>
                                                     <constraint firstAttribute="width" constant="50" id="HLa-6V-HIX"/>
                                                 </constraints>
-                                                <state key="normal" image="twitter"/>
+                                                <color key="tintColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="twitter2"/>
                                                 <connections>
                                                     <action selector="onTwitterPressed:" destination="LMT-Uu-VPy" eventType="touchUpInside" id="SqP-PI-csz"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEg-9d-cLV">
                                                 <rect key="frame" x="183" y="2385" width="50" height="50"/>
-                                                <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="1L8-lA-XVj"/>
                                                     <constraint firstAttribute="width" constant="50" id="W9b-Fe-sBH"/>
                                                 </constraints>
-                                                <state key="normal" image="facebook"/>
+                                                <color key="tintColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="facebook2"/>
                                                 <connections>
                                                     <action selector="onFacebookPressed:" destination="LMT-Uu-VPy" eventType="touchUpInside" id="wfE-PY-xxd"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dG-rg-TNI">
                                                 <rect key="frame" x="283" y="2385" width="50" height="50"/>
-                                                <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="lEd-EW-2gk"/>
                                                     <constraint firstAttribute="width" constant="50" id="r0Q-O0-KqN"/>
                                                 </constraints>
-                                                <state key="normal" image="instagram"/>
+                                                <color key="tintColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="instagram2"/>
                                                 <connections>
                                                     <action selector="onInstaPressed:" destination="LMT-Uu-VPy" eventType="touchUpInside" id="oVS-Pm-uy0"/>
                                                 </connections>
@@ -548,15 +548,15 @@
     <resources>
         <image name="arrow" width="200" height="200"/>
         <image name="cec" width="630" height="420"/>
-        <image name="facebook" width="50" height="50"/>
+        <image name="facebook2" width="58" height="58"/>
         <image name="icon1" width="186" height="157"/>
         <image name="icon2" width="194" height="180"/>
         <image name="icon3" width="191" height="164"/>
         <image name="icon4" width="219" height="188"/>
         <image name="icons8-info-50" width="25" height="25"/>
-        <image name="instagram" width="50" height="50"/>
+        <image name="instagram2" width="371" height="371"/>
         <image name="kristinanew" width="299" height="363"/>
         <image name="tuxpi.com.1561086436" width="1024" height="512"/>
-        <image name="twitter" width="50" height="50"/>
+        <image name="twitter2" width="150" height="150"/>
     </resources>
 </document>

@@ -50,6 +50,20 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        adminBarButton.isEnabled = false
+        adminBarButton.tintColor = UIColor.clear
+        
+        
+        
+        if FirebaseManager.currentUserId.count > 0 {
+            self.tabBarController?.tabBar.isHidden = false
+        } else {
+            loginButton.isEnabled = true
+            self.tabBarController?.tabBar.isHidden = true
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         textView.setContentOffset(CGPoint.zero, animated: false)

@@ -71,42 +71,75 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
         tabLables = [tab1Lables, tab2Lables, tab3Lables, tab4Lables, tab5Lables, tab6Labels, tab7Labels]
         imageArray = [tab1Images, tab2Images, tab3Images, tab4Images, tab5Images, tab6Images, tab7Images]
         
-       
+        if !FirebaseManager.currentUser!.isEmailVerified {
+            throwAlertController()
+            
+        } else {
+            var instructionsAC = UIAlertController(title: "Welcome To The Requests Page", message: "To request an item, tap the + button.  To remove an item, tab the - button.  You can request up to ten (10) food or miscellaneous items and any amount of personal hygiene items.  Scroll through the categories of food and their items page to see available options.", preferredStyle: .alert)
+            var okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            instructionsAC.addAction(okayAction)
+            
+            present(instructionsAC, animated: true, completion: nil)
+        }
         
-       
-       
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
         if !FirebaseManager.currentUser!.isEmailVerified {
-            let alertController = UIAlertController(title: "Unable to Access Requests", message: "You have not yet verified your email address. Please verify your email in order to make a request.", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .cancel) { (okAction) in
-                self.performSegue(withIdentifier: "goBackToHomeSegue", sender: nil)
-            }
-            let resendAction = UIAlertAction(title: "Resend Email", style: .default) { (resendAction) in
-                Auth.auth().currentUser?.sendEmailVerification { (error) in
-                    if let error = error {
-                        print(error.localizedDescription)
-                    } else {
-                        print("sentt")
-                    }
-                }
-                self.performSegue(withIdentifier: "goBackToHomeSegue", sender: nil)
-            }
-            alertController.addAction(okAction)
-            alertController.addAction(resendAction)
-            self.present(alertController, animated: true)
-        }  else {
-    var instructionsAC = UIAlertController(title: "Welcome To The Requests Page", message: "To request an item, tap the + button.  To remove an item, tab the - button.  You can request up to ten (10) food or miscellaneous items and any amount of personal hygiene items.  Scroll through the categories of food and their items page to see available options.", preferredStyle: .alert)
-    var okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
-    instructionsAC.addAction(okayAction)
-    
-    present(instructionsAC, animated: true, completion: nil)
-    }
-            //segue back to home page
+            throwAlertController()
             
+            let firebaseAuth = Auth.auth()
+            do {
+                try firebaseAuth.signOut()
+                self.throwAlertController()
+            } catch let signOutError as NSError {
+                print ("Error signing out: %@", signOutError)
+            }
+            
+            Auth.auth().addStateDidChangeListener { auth, user in
+                if FirebaseManager.currentUser == user {
+                    print("User is signed in.")
+                } else {
+                    FirebaseManager.currentUser = user
+                    FirebaseManager.currentUserId = ""
+                    print("User is signed out.")
+                }
+            }
+        }
+        
     }
     
+    
+    
+    func throwAlertController() {
+       
+        
+        let alertController = UIAlertController(title: "Unable to Access Requests", message: "You have not yet verified your email address. Please verify your email and re-login in order to make a request.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .cancel) { (okAction) in
+            self.performSegue(withIdentifier: "goBackToHomeSegue", sender: nil)
+        }
+        let resendAction = UIAlertAction(title: "Resend Email", style: .default) { (resendAction) in
+            Auth.auth().currentUser?.sendEmailVerification { (error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    print("sentt")
+                }
+            }
+            do {
+                try Auth.auth().signOut()
+            } catch let signOutError as NSError {
+                print ("Error signing out: %@", signOutError)
+            }
+            self.performSegue(withIdentifier: "goBackToHomeSegue", sender: nil)
+        }
+        alertController.addAction(okAction)
+        alertController.addAction(resendAction)
+        self.present(alertController, animated: true)
+    }
     
     //collection view
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

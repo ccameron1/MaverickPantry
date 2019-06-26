@@ -394,13 +394,16 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
         count = 0
         selectedItems = []
         collectionViewA.reloadData()
-        totalItemsSelectedLabel.text = ""
+        totalItemsSelectedLabel.text = "0"
+        totalFoodItemsSelectedLabel.text = "0"
         tab1Lables = ["0", "0", "0", "0", "0",]
         tab2Lables = ["0", "0", "0"]
         tab3Lables = ["0", "0"]
         tab4Lables = ["0", "0", "0", "0", "0", "0", "0"]
         tab5Lables = ["0", "0", "0", "0", "0", "0"]
-        tabLables = [tab1Lables, tab2Lables, tab3Lables, tab4Lables, tab5Lables]
+        tab6Labels = ["0", "0"]
+        tab7Labels = ["0", "0", "0", "0", "0", "0"]
+        tabLables = [tab1Lables, tab2Lables, tab3Lables, tab4Lables, tab5Lables, tab6Labels, tab7Labels]
         collectionViewB.reloadData()
         let alertController = UIAlertController(title: "Order Submitted!", message: "Your order has been successfully recorded. You will recieve a notification when your order is ready for pickup.", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)

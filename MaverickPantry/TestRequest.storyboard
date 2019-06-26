@@ -222,9 +222,11 @@
                         <outlet property="collectionViewC" destination="1As-KL-GJ3" id="YMP-CI-vwT"/>
                         <outlet property="totalFoodItemsSelectedLabel" destination="3iJ-xB-cPV" id="0aA-GY-VIH"/>
                         <outlet property="totalItemsSelectedLabel" destination="JiY-xs-L6U" id="uQF-cC-aho"/>
+                        <segue destination="LEJ-eu-Mkj" kind="unwind" identifier="goBackToHomeSegue" unwindAction="unwindFromNotLoggedInSegue:" id="BcW-ca-BPN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tpE-UK-XAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="LEJ-eu-Mkj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="55.072463768115945" y="-602.00892857142856"/>
         </scene>

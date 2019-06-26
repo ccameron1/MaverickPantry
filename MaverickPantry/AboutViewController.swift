@@ -54,10 +54,15 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
         adminBarButton.isEnabled = false
         adminBarButton.tintColor = UIColor.clear
         
+       
         
         
         if FirebaseManager.currentUserId.count > 0 {
             self.tabBarController?.tabBar.isHidden = false
+            if FirebaseManager.globalUser.isAdmin {
+                adminBarButton.isEnabled = true
+                adminBarButton.tintColor = UIColor.red
+            }
         } else {
             loginButton.isEnabled = true
             self.tabBarController?.tabBar.isHidden = true

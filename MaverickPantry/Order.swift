@@ -12,10 +12,14 @@ class Order {
     var requests: [String]!
     var initials: String!
     var yearOfBirth: Int!
+    var timestamp : Double!
+    var isPickedUp: Bool!
     
-    init(requests: [String], intitials: String, yearOfBirth: Int) {
+    init(requests: [String], intitials: String, yearOfBirth: Int, timestamp: Double, isPickedUp: Bool) {
         self.requests = requests
         self.initials = intitials
         self.yearOfBirth = yearOfBirth
+        self.timestamp = timestamp
+        self.isPickedUp = isPickedUp
     }
 }

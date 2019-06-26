@@ -71,7 +71,7 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
         
         //clear from firebase
         
-        FirebaseManager.deleteFromOrders(orderName: "Order: \(selectedOrder!.initials!) \(selectedOrder!.yearOfBirth!)") { (success) in
+        FirebaseManager.deleteFromOrders(orderName: "Order: \(selectedOrder!.initials!) \(selectedOrder!.yearOfBirth!) \(selectedOrder!.timestamp)") { (success) in
             if success
             {
                 print("yaa")

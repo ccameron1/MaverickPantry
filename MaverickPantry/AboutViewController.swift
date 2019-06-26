@@ -24,6 +24,12 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var adminBarButton: UIBarButtonItem!
     
+    @IBOutlet weak var capsButton: UIButton!
+    @IBOutlet weak var wellnessButton: UIButton!
+    @IBOutlet weak var tutoringButton: UIButton!
+    @IBOutlet weak var careerButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,6 +54,32 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
         //        }
         //        // Do any additional setup after loading the view.
         
+        capsButton.addShadow()
+        wellnessButton.addShadow()
+        tutoringButton.addShadow()
+        careerButton.addShadow()
+        
+        textView.text = "      Food insecurity is becoming more evident on college campuses, and UNO is no exception. A growing concern about food insecurity among our fellow Mavs has promptedaction. \n      UNO’s Maverick Food Pantry aims to contribute to UNO’s culture of caring by providing resources to those in immediate need and connecting them with additional resources in the greater Omaha area for long-term support. The Maverick Food Pantry offers food and personal hygiene products to UNO faculty, staff members, and currently-enrolled students by providing healthy, organic, and culturally sensitive items. Requests for food packages can be submitted through an easy online form twice a week."
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        adminBarButton.isEnabled = false
+        adminBarButton.tintColor = UIColor.clear
+        
+       
+        
+        
+        if FirebaseManager.currentUserId.count > 0 {
+            self.tabBarController?.tabBar.isHidden = false
+            if FirebaseManager.globalUser.isAdmin {
+                adminBarButton.isEnabled = true
+                adminBarButton.tintColor = UIColor.red
+            }
+        } else {
+            loginButton.isEnabled = true
+            self.tabBarController?.tabBar.isHidden = true
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -157,6 +189,54 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
     
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         dismiss(animated: true)
+    }
+    
+    @IBAction func onTwitterPressed(_ sender: UIButton) {
+        let Username =  "MavFoodPantry" // twitter username
+        let appURL = URL(string: "twitter://user?screen_name=\(Username)")!
+        let application = UIApplication.shared
+        
+        if application.canOpenURL(appURL) {
+            application.open(appURL)
+        } else {
+            // if twitter app is not installed, open URL inside Safari
+            let webURL = URL(string: "https://twitter.com/\(Username)")!
+            application.open(webURL)
+        }
+    }
+    
+    @IBAction func onFacebookPressed(_ sender: UIButton) {
+        let Username =  "unomavfoodpantry" // Instagram Username
+        let appURL = URL(string: "fb://profile/\(Username)")!
+        let application = UIApplication.shared
+        
+        if application.canOpenURL(appURL) {
+            application.open(appURL)
+        } else {
+            // if Instagram app is not installed, open URL inside Safari
+            let webURL = URL(string: "https://www.facebook.com/\(Username)/")!
+            application.open(webURL)
+        }
+    }
+    
+    @IBAction func onInstaPressed(_ sender: UIButton) {
+        let Username =  "unomaverickfoodpantry" // Instagram Username
+        let appURL = URL(string: "instagram://user?username=\(Username)")!
+        let application = UIApplication.shared
+        
+        if application.canOpenURL(appURL) {
+            application.open(appURL)
+        } else {
+            // if Instagram app is not installed, open URL inside Safari
+            let webURL = URL(string: "https://instagram.com/\(Username)")!
+            application.open(webURL)
+        }
+    }
+    
+    
+    
+    @IBAction func unwindFromNotLoggedIn(segue:UIStoryboardSegue) {
+        
     }
     
     

@@ -14,9 +14,10 @@ class InventoryDetailViewController: UIViewController {
     @IBOutlet weak var newAmountTextField: UITextField!
     @IBOutlet weak var givenOutLabel: UILabel!
     @IBOutlet weak var updateButton: UIButton!
+    @IBOutlet weak var frontImageView: UIImageView!
     
-    @IBOutlet weak var imageView1: UIImageView!
-    @IBOutlet weak var imageView2: UIImageView!
+    @IBOutlet weak var backImageView: UIImageView!
+    
     
     var updateBool = false
     var amountLeft = 0
@@ -33,8 +34,7 @@ class InventoryDetailViewController: UIViewController {
         amountLeftLabel.text = "\(food.amountLeft!)"
         givenOutLabel.text = "\(food.amountGiven!)"
         
-        imageView1.layer.borderWidth = 15
-        imageView2.layer.borderWidth = 15
+        frontImageView.addShadow()
     }
     
     
@@ -55,7 +55,7 @@ class InventoryDetailViewController: UIViewController {
                 alertController.addAction(action)
                 present(alertController, animated: true, completion: nil)
             } else{
-                //                amountLeftLabel.text = "\(newAmount!)"
+            
                 food.setAmountLeft(amountLeft: newAmount!)
                 FirebaseManager.databaseRef.collection("Inventory").document(food.name).setData(["currentAmount" : food.amountLeft!, "name": food.name!, "amountGivenAway" : food.amountGiven!])
                 updateBool = !updateBool

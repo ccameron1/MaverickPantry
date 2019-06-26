@@ -19,13 +19,24 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var orderDetailButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Request Form"
-        let initials = (selectedOrder!.initials as! String).uppercased()
+        let initials = (selectedOrder!.initials)!.uppercased()
         
         nameLabel.text = "Order For: \(initials)"
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if selectedOrder?.isReady == true {
+            orderDetailButton.setTitle("Order Picked Up", for: .normal)
+        } else {
+            orderDetailButton.setTitle("Order Filled", for: .normal)
+        }
     }
 
 //tableView Functions
@@ -39,7 +50,7 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RcellID")
 //        let foodType = foodGroup[indexPath.row]
-        cell?.textLabel!.text = selectedOrder?.requests[indexPath.row]
+        cell?.textLabel!.text = selectedOrder?.requests![indexPath.row]
         return cell!
     }
     
@@ -53,31 +64,33 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
     
     @IBAction func fillOrderButton(_ sender: UIButton) {
         
-        FirebaseManager.getInventory(completion: { (inventory, error) in
-            if error == nil {
-                for request in self.selectedOrder!.requests{
-                    for item in inventory{
-                        if request == item.name{
-                            item.amountGiven = item.amountGiven + 1
-                            item.amountLeft = item.amountLeft - 1
-                            FirebaseManager.databaseRef.collection("Inventory").document(item.name).setData(["name" : item.name!, "amountGivenAway" : item.amountGiven!, "currentAmount" : item.amountLeft!])
+        if selectedOrder?.isReady == false{
+            
+            FirebaseManager.getInventory(completion: { (inventory, error) in
+                if error == nil {
+                    for request in self.selectedOrder!.requests!{
+                        for item in inventory{
+                            if request == item.name{
+                                item.amountGiven = item.amountGiven + 1
+                                item.amountLeft = item.amountLeft - 1
+                                FirebaseManager.databaseRef.collection("Inventory").document(item.name).setData(["name" : item.name!, "amountGivenAway" : item.amountGiven!, "currentAmount" : item.amountLeft!])
+                            }
                         }
                     }
                 }
-            }
-        })
-        
-        FirebaseManager.globalOrders?.remove(at: index!)
-        
-        //clear from firebase
-        
-        FirebaseManager.deleteFromOrders(orderName: "Order: \(selectedOrder!.initials!) \(selectedOrder!.yearOfBirth!)") { (success) in
-            if success
-            {
-                print("yaa")
-            }
+            })
+            //changes boolean in firebase
+            FirebaseManager.databaseRef.collection("Orders").document("Order: \(selectedOrder!.initials!) \(selectedOrder!.yearOfBirth!) \(selectedOrder!.timestamp!)").setData(["requests": selectedOrder!.requests!, "initials": selectedOrder!.initials!, "isReady": true, "yearOfBirth": selectedOrder!.yearOfBirth!, "timestamp": selectedOrder!.timestamp])
+            
+        } else {
+            //removes order once it is picked up
+            FirebaseManager.globalOrders?.remove(at: index!)
+            FirebaseManager.databaseRef.collection("Orders").document("Order: \(selectedOrder!.initials!) \(selectedOrder!.yearOfBirth!) \(selectedOrder!.timestamp!)").delete()
         }
+            
     }
+        
+        
     
     
 }

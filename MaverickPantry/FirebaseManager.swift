@@ -20,13 +20,13 @@ class FirebaseManager {
 	static var globalOrders : [Order]? = []
 	static var globalInventory : [DummyFood]? = []
 	
-	static func Login(email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
+	static func Login(email: String, password: String, completion: @escaping (_ success: Bool, Error?) -> Void) {
 		
 		Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
 			if let error = error {
 				print(error.localizedDescription)
 				print(error.self)
-				completion(false)
+				completion(false, error as! Error)
 			} else if !email.contains("@unomaha.edu") {
 				print("bad email")
 			} else {
@@ -50,8 +50,7 @@ class FirebaseManager {
 					
 					globalUser = Users.init(isAdmin: admin, email: document?.get("email") as! String, initials: document?.get("initials") as! String, yearOfBirth: document?.get("yearOfBirth") as! Int, NUID: document?.get("NUID") as! String, uid: document?.get("uid") as! String, request1: document?.get("request1") as! [String], request2: document?.get("request2") as! [String], timestamp1: time.dateValue() as NSDate, timestamp2: time2.dateValue() as NSDate)
 					
-					completion(true)
-					
+					completion(true, nil)
 					
 				}
 			}
@@ -69,6 +68,19 @@ class FirebaseManager {
 					print(error.localizedDescription)
 					return
 				}
+				
+				Auth.auth().currentUser?.sendEmailVerification { (error) in
+					if let error = error {
+						print(error.localizedDescription)
+					} else {
+						print("sent")
+					}
+					
+				}
+				
+				
+				
+				
 				var c = NSDateComponents()
 				c.year = 2000
 				c.month = 1
@@ -77,12 +89,14 @@ class FirebaseManager {
 				var date = NSCalendar(identifier: NSCalendar.Identifier.gregorian)?.date(from: c as DateComponents)
 				
 				addUser(isAdmin: false, email: email, initials: initials, yearOfBirth: yearOfBirth, NUID: NUID, request1: [], request2: [], timestamp1: date as! NSDate, timestamp2: date as! NSDate)
-				Login(email: email, password: password, completion: { (success) in
+				Login(email: email, password: password, completion: { (success, err)  in
 					if success {
 						print("Login successful after account creation.")
+						completion(true)
 						
 					} else {
 						print("Login not successful after account creation")
+						completion(false)
 					}
 				})
 			}
@@ -119,10 +133,11 @@ class FirebaseManager {
 	
 	
 	
-	static func addRequestsToUser(requests: [String]) {
+	static func addRequestsToUser(requests: [String], completion: @escaping (Bool) -> Void) {
 		
 		
 		//check globalUsers requests
+		var check = true
 		if globalUser.request1.count == 0 {
 			globalUser.request1 = requests
 			
@@ -145,7 +160,12 @@ class FirebaseManager {
 			databaseRef.collection("Users").document(globalUser.uid).setData([ "request2": requests ], merge: true)
 		} else {
 			print("Have 2 requests already")
-			print(globalUser.request2.count)
+			check = false
+			completion(false)
+		}
+		
+		if check {
+		completion(true)
 		}
 	}
 	
@@ -172,8 +192,8 @@ class FirebaseManager {
 	}
 	
 	static func addOrder(order: Order, completion: @escaping (Bool) -> Void) {
-		databaseRef.collection("Orders").document("Order: \(order.initials!) \(order.yearOfBirth!)").setData(["requests": order.requests!,
-			"initials": order.initials!,"yearOfBirth": order.yearOfBirth!])
+		databaseRef.collection("Orders").document("Order: \(order.initials!) \(order.yearOfBirth!) \(order.timestamp!)").setData(["requests": order.requests!,
+																																 "initials": order.initials!,"yearOfBirth": order.yearOfBirth!, "timestamp": order.timestamp!, "isReady": order.isReady!])
 		print("add order")
 		completion(true)
 	}
@@ -195,8 +215,10 @@ class FirebaseManager {
 					let requests = document.get("requests")! as! [String]
 					let initials = document.get("initials")! as! String
 					let YOB = document.get("yearOfBirth")! as! Int
+					let timestamp = document.get("timestamp") as! Double
+					let isReady = document.get("isReady") as! Bool
 					
-					let order = Order(requests: requests, intitials: initials, yearOfBirth: YOB)
+					let order = Order(requests: requests, intitials: initials, yearOfBirth: YOB, timestamp: timestamp, isReady: isReady)
 					
 					orders.append(order)
 					if orders.count == querySnapshot!.documents.count {

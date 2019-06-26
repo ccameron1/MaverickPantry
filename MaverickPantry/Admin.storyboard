@@ -18,16 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="xnO-9z-jmu">
-                                <rect key="frame" x="100" y="320.5" width="214" height="255"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="129" translatesAutoresizingMaskIntoConstraints="NO" id="ByH-Ro-kjl">
+                                <rect key="frame" x="110" y="267" width="194" height="363"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cT-iv-erw">
-                                        <rect key="frame" x="0.0" y="0.0" width="214" height="35"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="194" height="35"/>
                                         <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="4lM-bI-i2z"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="22"/>
                                         <state key="normal" title="Inventory">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -36,12 +37,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1L-Mt-nbF">
-                                        <rect key="frame" x="0.0" y="110" width="214" height="35"/>
+                                        <rect key="frame" x="0.0" y="164" width="194" height="35"/>
                                         <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="6dU-wZ-ioq"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="22"/>
                                         <state key="normal" title="Push Notifications">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -50,12 +51,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAI-vv-PC9">
-                                        <rect key="frame" x="0.0" y="220" width="214" height="35"/>
+                                        <rect key="frame" x="0.0" y="328" width="194" height="35"/>
                                         <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="IUp-GY-5W3"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="22"/>
                                         <state key="normal" title="Current Orders">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -67,11 +68,6 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="sv7-cB-9SA" firstAttribute="trailing" secondItem="xnO-9z-jmu" secondAttribute="trailing" constant="100" id="KE7-fS-W48"/>
-                            <constraint firstItem="xnO-9z-jmu" firstAttribute="centerY" secondItem="d4d-MQ-Bud" secondAttribute="centerY" id="OKh-w3-5RV"/>
-                            <constraint firstItem="xnO-9z-jmu" firstAttribute="leading" secondItem="sv7-cB-9SA" secondAttribute="leading" constant="100" id="PvL-dC-adB"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="sv7-cB-9SA"/>
                     </view>
                     <navigationItem key="navigationItem" id="82n-6x-9zw"/>

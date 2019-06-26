@@ -14,14 +14,16 @@ class AdminViewController: UIViewController {
     @IBOutlet weak var pushNotifButton: UIButton!
     @IBOutlet weak var foodEventButton: UIButton!
     @IBOutlet weak var currentOrdersButton: UIButton!
+    @IBOutlet weak var whiteImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "Admin Options"
-        inventoryButton.addShadow()
-        pushNotifButton.addShadow()
-        currentOrdersButton.addShadow()
+//        inventoryButton.addShadow()
+//        pushNotifButton.addShadow()
+//        currentOrdersButton.addShadow()
+        whiteImageView.addShadow()
         
     }
     

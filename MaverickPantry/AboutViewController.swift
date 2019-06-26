@@ -159,6 +159,10 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
         dismiss(animated: true)
     }
     
+    @IBAction func unwindFromNotLoggedIn(segue:UIStoryboardSegue) {
+        
+    }
+    
     
     /*
      // MARK: - Navigation

@@ -214,6 +214,7 @@
                     </view>
                     <connections>
                         <outlet property="nameLabel" destination="Qhq-Tb-jN1" id="sgb-E0-9Rg"/>
+                        <outlet property="orderDetailButton" destination="raq-nk-DSS" id="h1J-D1-Kvo"/>
                         <outlet property="tableView" destination="imL-yw-yan" id="ddJ-R7-x78"/>
                     </connections>
                 </viewController>

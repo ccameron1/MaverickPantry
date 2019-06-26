@@ -177,7 +177,7 @@ class FirebaseManager {
 	}
 	
 	static func addOrder(order: Order, completion: @escaping (Bool) -> Void) {
-		databaseRef.collection("Orders").document("Order: \(order.initials!) \(order.yearOfBirth!) \(order.timestamp)").setData(["requests": order.requests!,
+		databaseRef.collection("Orders").document("Order: \(order.initials!) \(order.yearOfBirth!) \(order.timestamp!)").setData(["requests": order.requests!,
 																																 "initials": order.initials!,"yearOfBirth": order.yearOfBirth!, "timestamp": order.timestamp!, "isReady": order.isReady!])
 		print("add order")
 		completion(true)

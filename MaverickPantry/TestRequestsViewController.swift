@@ -63,9 +63,17 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     
     override func viewDidLoad() {
         // Initialize the collection views, set the desired frames
+        // UNO Red = 0xD71920
+        
         globalFoodArr = proteins
         tabLables = [tab1Lables, tab2Lables, tab3Lables, tab4Lables, tab5Lables, tab6Labels, tab7Labels]
         imageArray = [tab1Images, tab2Images, tab3Images, tab4Images, tab5Images, tab6Images, tab7Images]
+        
+        var instructionsAC = UIAlertController(title: "Welcome To The Requests Page", message: "To request an item, tap the + button.  To remove an item, tab the - button.  You can request up to ten (10) food or miscellaneous items and any amount of personal hygiene items.  Scroll through the categories of food and their items page to see available options.", preferredStyle: .alert)
+        var okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        instructionsAC.addAction(okayAction)
+        
+        present(instructionsAC, animated: true, completion: nil)
     }
     
     

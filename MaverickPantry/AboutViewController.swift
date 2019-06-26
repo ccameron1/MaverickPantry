@@ -159,6 +159,50 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
         dismiss(animated: true)
     }
     
+    @IBAction func onTwitterPressed(_ sender: UIButton) {
+        let Username =  "MavFoodPantry" // twitter username
+        let appURL = URL(string: "twitter://user?screen_name=\(Username)")!
+        let application = UIApplication.shared
+        
+        if application.canOpenURL(appURL) {
+            application.open(appURL)
+        } else {
+            // if twitter app is not installed, open URL inside Safari
+            let webURL = URL(string: "https://twitter.com/\(Username)")!
+            application.open(webURL)
+        }
+    }
+    
+    @IBAction func onFacebookPressed(_ sender: UIButton) {
+        let Username =  "unomavfoodpantry" // Instagram Username
+        let appURL = URL(string: "fb://profile/\(Username)")!
+        let application = UIApplication.shared
+        
+        if application.canOpenURL(appURL) {
+            application.open(appURL)
+        } else {
+            // if Instagram app is not installed, open URL inside Safari
+            let webURL = URL(string: "https://www.facebook.com/\(Username)/")!
+            application.open(webURL)
+        }
+    }
+    
+    @IBAction func onInstaPressed(_ sender: UIButton) {
+        let Username =  "unomaverickfoodpantry" // Instagram Username
+        let appURL = URL(string: "instagram://user?username=\(Username)")!
+        let application = UIApplication.shared
+        
+        if application.canOpenURL(appURL) {
+            application.open(appURL)
+        } else {
+            // if Instagram app is not installed, open URL inside Safari
+            let webURL = URL(string: "https://instagram.com/\(Username)")!
+            application.open(webURL)
+        }
+    }
+    
+    
+    
     @IBAction func unwindFromNotLoggedIn(segue:UIStoryboardSegue) {
         
     }

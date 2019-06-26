@@ -48,7 +48,13 @@ class NewAccountViewController: UIViewController {
             FirebaseManager.CreateAccount(email: emailTextField.text!, password: passwordTextField.text!, initials: initialsTextField.text!, yearOfBirth: Int(yearOfBirthTextField.text!)!, isAdmin: false, NUID : NUIDTextField.text!) { (success) in
                 if success {
                     print("new acount homies")
-                    self.performSegue(withIdentifier: self.loginToAboutSegueIdentifier, sender: nil)
+                    let alertController = UIAlertController(title: "Verify Email Address", message: "An email has been sent to you in order to verify your email address. You will not have access to requests until the account is verified.", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
+                        self.performSegue(withIdentifier: self.loginToAboutSegueIdentifier, sender: nil)
+                    })
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true)
+                    
                 }
             }
         }
@@ -86,7 +92,7 @@ class NewAccountViewController: UIViewController {
         NUIDErrorLabel.isHidden = true
         initialsErrorLabel.isHidden = true
         yearErrorLabel.isHidden = true
-
+        
     }
     
     /*

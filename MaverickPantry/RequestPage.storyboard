@@ -18,16 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0H-JG-wol">
-                                <rect key="frame" x="183" y="749" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0H-JG-wol">
+                                <rect key="frame" x="183" y="695" width="49" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="KaU-74-gCI"/>
+                                    <constraint firstAttribute="height" constant="30" id="N1V-9g-f0e"/>
+                                </constraints>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submitButtonPressed:" destination="cnv-Oi-h7w" eventType="touchUpInside" id="aqO-AA-w9q"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fOH-AZ-dxG">
-                                <rect key="frame" x="0.0" y="44" width="414" height="697"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="643"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" rowHeight="75" id="fcs-uQ-GLh" customClass="StepperTableViewCell" customModule="MaverickPantry" customModuleProvider="target">
@@ -84,9 +87,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fOH-AZ-dxG" firstAttribute="leading" secondItem="xXT-Cq-iWH" secondAttribute="leading" id="Bne-NQ-alR"/>
-                            <constraint firstItem="xXT-Cq-iWH" firstAttribute="bottom" secondItem="fOH-AZ-dxG" secondAttribute="bottom" constant="121" id="FGX-dN-He8"/>
+                            <constraint firstItem="xXT-Cq-iWH" firstAttribute="bottom" secondItem="fOH-AZ-dxG" secondAttribute="bottom" constant="175" id="FGX-dN-He8"/>
+                            <constraint firstItem="q0H-JG-wol" firstAttribute="leading" secondItem="xXT-Cq-iWH" secondAttribute="leading" constant="183" id="G3m-ht-71X"/>
+                            <constraint firstItem="xXT-Cq-iWH" firstAttribute="trailing" secondItem="q0H-JG-wol" secondAttribute="trailing" constant="182" id="JBN-1d-xpK"/>
+                            <constraint firstItem="q0H-JG-wol" firstAttribute="top" secondItem="fOH-AZ-dxG" secondAttribute="bottom" constant="8" id="LBc-cG-X0T"/>
                             <constraint firstItem="fOH-AZ-dxG" firstAttribute="top" secondItem="xXT-Cq-iWH" secondAttribute="top" id="Thb-iq-rFv"/>
                             <constraint firstItem="xXT-Cq-iWH" firstAttribute="trailing" secondItem="fOH-AZ-dxG" secondAttribute="trailing" id="Wqt-Ok-oZQ"/>
+                            <constraint firstItem="fOH-AZ-dxG" firstAttribute="leading" secondItem="xXT-Cq-iWH" secondAttribute="leading" id="a97-dt-RHo"/>
+                            <constraint firstItem="fOH-AZ-dxG" firstAttribute="trailing" secondItem="xXT-Cq-iWH" secondAttribute="trailing" id="bDI-wd-mSt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xXT-Cq-iWH"/>
                     </view>

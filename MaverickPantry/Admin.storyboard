@@ -23,14 +23,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9rh-2z-p6v">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9rh-2z-p6v">
                                 <rect key="frame" x="50" y="186" width="314" height="524"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="524" id="1b5-ha-Qrf"/>
+                                    <constraint firstAttribute="width" constant="314" id="XTf-oC-NPw"/>
+                                </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="129" translatesAutoresizingMaskIntoConstraints="NO" id="ByH-Ro-kjl">
-                                <rect key="frame" x="119" y="267" width="176" height="363"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="129" translatesAutoresizingMaskIntoConstraints="NO" id="ByH-Ro-kjl">
+                                <rect key="frame" x="119" y="266.5" width="176" height="363"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cT-iv-erw">
                                         <rect key="frame" x="0.0" y="0.0" width="176" height="35"/>
@@ -78,6 +80,14 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ByH-Ro-kjl" firstAttribute="centerX" secondItem="d4d-MQ-Bud" secondAttribute="centerX" id="LPK-Yl-DnK"/>
+                            <constraint firstItem="9rh-2z-p6v" firstAttribute="leading" secondItem="sv7-cB-9SA" secondAttribute="leading" constant="50" id="Pp4-Yn-CTX"/>
+                            <constraint firstItem="sv7-cB-9SA" firstAttribute="trailing" secondItem="9rh-2z-p6v" secondAttribute="trailing" constant="50" id="dKx-w5-zc7"/>
+                            <constraint firstItem="9rh-2z-p6v" firstAttribute="centerY" secondItem="d4d-MQ-Bud" secondAttribute="centerY" id="nPc-NZ-N4z"/>
+                            <constraint firstItem="9rh-2z-p6v" firstAttribute="centerX" secondItem="d4d-MQ-Bud" secondAttribute="centerX" id="p7S-bf-JLY"/>
+                            <constraint firstItem="ByH-Ro-kjl" firstAttribute="centerY" secondItem="d4d-MQ-Bud" secondAttribute="centerY" id="yJk-eo-zTA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="sv7-cB-9SA"/>
                     </view>
                     <navigationItem key="navigationItem" id="82n-6x-9zw"/>

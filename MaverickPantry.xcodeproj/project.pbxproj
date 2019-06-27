@@ -58,6 +58,7 @@
 		7A067DDC22BA992900FDC2B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7A067DDE22BA9E0400FDC2B2 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; usesTabs = 1; };
 		7A067DE022BA9E2F00FDC2B2 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		7A3D6D5122C3F5EE003168FB /* MaverickPantry.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MaverickPantry.entitlements; sourceTree = "<group>"; };
 		7A55A72522BACCB60075441B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7A55A72722BACCCE0075441B /* NewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountViewController.swift; sourceTree = "<group>"; };
 		7A85569C22C02FE8009451B7 /* TestRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRequestsViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +128,7 @@
 		7A067DC922BA98F700FDC2B2 /* MaverickPantry */ = {
 			isa = PBXGroup;
 			children = (
+				7A3D6D5122C3F5EE003168FB /* MaverickPantry.entitlements */,
 				D58BE6CB22BAB9E500324972 /* Login.storyboard */,
 				7A8556A222C0FE1F009451B7 /* TestRequest.storyboard */,
 				7A85569E22C0326A009451B7 /* CollectionViewCell.swift */,
@@ -210,6 +212,11 @@
 				TargetAttributes = {
 					7A067DC622BA98F700FDC2B2 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -485,6 +492,7 @@
 			baseConfigurationReference = 1759176685074EB312FB6B83 /* Pods-MaverickPantry.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MaverickPantry/MaverickPantry.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XBJZSN94YA;
 				INFOPLIST_FILE = MaverickPantry/Info.plist;
@@ -504,6 +512,7 @@
 			baseConfigurationReference = CBD73E0B5AF308E47A83E05A /* Pods-MaverickPantry.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MaverickPantry/MaverickPantry.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XBJZSN94YA;
 				INFOPLIST_FILE = MaverickPantry/Info.plist;

@@ -24,11 +24,21 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         backgroundImage.addShadow()
         
+        setupGestureRecognizer()
+        
+        
     }
     
+    func setupGestureRecognizer() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        self.view.addGestureRecognizer(tap)
+        self.view.isUserInteractionEnabled = true
+    }
     
-    
-    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+    }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
         //        backgroundImage.addShadow()

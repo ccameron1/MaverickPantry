@@ -124,22 +124,22 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="greyline" translatesAutoresizingMaskIntoConstraints="NO" id="gBD-2W-zQz">
-                                                <rect key="frame" x="199" y="363" width="16" height="16"/>
+                                                <rect key="frame" x="94.5" y="363" width="225" height="47.5"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="197" translatesAutoresizingMaskIntoConstraints="NO" id="Pmk-Vz-ena">
-                                                <rect key="frame" x="34" y="399" width="346" height="83.5"/>
+                                                <rect key="frame" x="34" y="430.5" width="346" height="83.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="yGQ-cW-vWY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="83.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="83.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servings" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgT-vO-ZLu">
-                                                                <rect key="frame" x="0.0" y="0.0" width="66.5" height="20.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serving" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgT-vO-ZLu">
+                                                                <rect key="frame" x="0.0" y="0.0" width="58" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25pp" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCY-mZ-wIA">
-                                                                <rect key="frame" x="0.0" y="53.5" width="66.5" height="30"/>
+                                                                <rect key="frame" x="0.0" y="53.5" width="58" height="30"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -147,16 +147,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="FBR-xn-vhm">
-                                                        <rect key="frame" x="263.5" y="0.0" width="82.5" height="83.5"/>
+                                                        <rect key="frame" x="255" y="0.0" width="91" height="83.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cook Time" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCo-55-K2m">
-                                                                <rect key="frame" x="0.0" y="0.0" width="82.5" height="20.5"/>
+                                                                <rect key="frame" x="4.5" y="0.0" width="82.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60m" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ex-nD-nvG">
-                                                                <rect key="frame" x="15.5" y="53.5" width="51.5" height="30"/>
+                                                                <rect key="frame" x="20" y="53.5" width="51.5" height="30"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -166,13 +166,13 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfE-GL-6m9">
-                                                <rect key="frame" x="34" y="524" width="131" height="20.5"/>
+                                                <rect key="frame" x="34" y="555.5" width="131" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cql-tE-DjZ">
-                                                <rect key="frame" x="34" y="552.5" width="346" height="115"/>
+                                                <rect key="frame" x="34" y="584" width="346" height="115"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="115" id="ydq-Te-oGq"/>
@@ -211,8 +211,8 @@ As eggs begin to set, GENTLY PULL the eggs across the pan with an inverted turne
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="T1k-66-sCq">
-                                                <rect key="frame" x="8" y="675.5" width="398" height="39.5"/>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="T1k-66-sCq">
+                                                <rect key="frame" x="8" y="707" width="398" height="39.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <segments>
                                                     <segment title="Ingredients"/>
@@ -231,9 +231,9 @@ As eggs begin to set, GENTLY PULL the eggs across the pan with an inverted turne
                                             <constraint firstItem="ZfE-GL-6m9" firstAttribute="top" secondItem="Pmk-Vz-ena" secondAttribute="bottom" constant="41.5" id="4DE-WU-2bL"/>
                                             <constraint firstItem="cql-tE-DjZ" firstAttribute="top" secondItem="ZfE-GL-6m9" secondAttribute="bottom" constant="8" symbolic="YES" id="5So-0m-a4C"/>
                                             <constraint firstItem="SPg-zy-cbs" firstAttribute="top" secondItem="Y2c-af-Df4" secondAttribute="top" constant="305" id="8Xc-gI-vgL"/>
-                                            <constraint firstItem="tcN-1K-VSJ" firstAttribute="top" secondItem="T1k-66-sCq" secondAttribute="bottom" constant="56" id="BzS-n8-jAv"/>
+                                            <constraint firstItem="tcN-1K-VSJ" firstAttribute="top" secondItem="T1k-66-sCq" secondAttribute="bottom" constant="24.5" id="BzS-n8-jAv"/>
                                             <constraint firstItem="A3o-6r-Mca" firstAttribute="centerX" secondItem="tcN-1K-VSJ" secondAttribute="centerX" id="DLD-an-myM"/>
-                                            <constraint firstItem="A3o-6r-Mca" firstAttribute="top" secondItem="T1k-66-sCq" secondAttribute="bottom" constant="56" id="E3E-EU-prd"/>
+                                            <constraint firstItem="A3o-6r-Mca" firstAttribute="top" secondItem="T1k-66-sCq" secondAttribute="bottom" constant="24.5" id="E3E-EU-prd"/>
                                             <constraint firstItem="T1k-66-sCq" firstAttribute="leading" secondItem="Y2c-af-Df4" secondAttribute="leading" constant="8" id="EZB-qA-vLG"/>
                                             <constraint firstAttribute="trailing" secondItem="T1k-66-sCq" secondAttribute="trailing" constant="8" id="FGd-Va-IAf"/>
                                             <constraint firstAttribute="trailing" secondItem="ZfE-GL-6m9" secondAttribute="trailing" constant="249" id="FcV-Ss-jvw"/>
@@ -250,7 +250,7 @@ As eggs begin to set, GENTLY PULL the eggs across the pan with an inverted turne
                                             <constraint firstItem="ZfE-GL-6m9" firstAttribute="leading" secondItem="Y2c-af-Df4" secondAttribute="leading" constant="34" id="YAa-Ga-ltS"/>
                                             <constraint firstItem="A3o-6r-Mca" firstAttribute="centerX" secondItem="0Nj-C8-meK" secondAttribute="centerX" id="ZO9-2c-sga"/>
                                             <constraint firstItem="cql-tE-DjZ" firstAttribute="leading" secondItem="ZfE-GL-6m9" secondAttribute="leading" id="Zmd-fV-nVk"/>
-                                            <constraint firstItem="T1k-66-sCq" firstAttribute="top" secondItem="cql-tE-DjZ" secondAttribute="bottom" constant="8" symbolic="YES" id="cTQ-m5-amr"/>
+                                            <constraint firstItem="T1k-66-sCq" firstAttribute="top" secondItem="cql-tE-DjZ" secondAttribute="bottom" constant="18.5" id="cTQ-m5-amr"/>
                                             <constraint firstItem="gBD-2W-zQz" firstAttribute="top" secondItem="SPg-zy-cbs" secondAttribute="bottom" constant="8" id="gCu-49-7Hb"/>
                                             <constraint firstAttribute="bottom" secondItem="A3o-6r-Mca" secondAttribute="bottom" constant="71" id="jTe-5d-xHN"/>
                                             <constraint firstItem="ZfE-GL-6m9" firstAttribute="top" secondItem="Pmk-Vz-ena" secondAttribute="bottom" constant="41.5" id="kZG-Lm-joi"/>

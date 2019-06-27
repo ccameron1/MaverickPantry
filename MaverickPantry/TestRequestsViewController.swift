@@ -56,6 +56,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     var tabLables : [[String]] = []
     
     var count = 0
+    var personalItemCount = 0
     
     @IBOutlet weak var totalItemsSelectedLabel: UILabel!
     @IBOutlet weak var collectionViewA: UICollectionView!
@@ -75,8 +76,8 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             throwAlertController()
             
         } else {
-            var instructionsAC = UIAlertController(title: "Welcome To The Requests Page", message: "To request an item, tap the + button.  To remove an item, tab the - button.  You can request up to ten (10) food or miscellaneous items and any amount of personal hygiene items.  Scroll through the categories of food and their items page to see available options.", preferredStyle: .alert)
-            var okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            let instructionsAC = UIAlertController(title: "Welcome To The Requests Page", message: "To request an item, tap the + button.  To remove an item, tab the - button.  You can request up to ten (10) food or miscellaneous items and any amount of personal hygiene items.  Scroll through the categories of food and their items page to see available options.", preferredStyle: .alert)
+            let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
             instructionsAC.addAction(okayAction)
             
             present(instructionsAC, animated: true, completion: nil)
@@ -126,7 +127,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 if let error = error {
                     print(error.localizedDescription)
                 } else {
-                    print("sentt")
+                    print("sent")
                 }
             }
             do {
@@ -186,16 +187,35 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                         full = true
                     } else {
                         self.count = self.count + 1
+                        self.personalItemCount += self.personalItemCount
                     }
                 }
                 
-                if num! >= 0 && num! < 10 && self.count <= 10 && !full {
-                    
-                    cellB.itemNumberLable.text = "\(num! + 1)"
-                    self.tabLables[self.tabSelected][indexPath.row] = cellB.itemNumberLable.text!
-                    
-                    
+                
+                if self.tabSelected != 6 {
+                    if num! >= 0 && num! < 10 && self.count <= 10 && !full {
+                        
+                        cellB.itemNumberLable.text = "\(num! + 1)"
+                        self.tabLables[self.tabSelected][indexPath.row] = cellB.itemNumberLable.text!
+                        
+                    }
+                } else {
+                    if num! >= 0 && num! < 2 {
+                        cellB.itemNumberLable.text = "\(num! + 1)"
+                        self.tabLables[self.tabSelected][indexPath.row] = cellB.itemNumberLable.text!
+                        
+                    } else {
+                        print("more than 2")
+                        let alertController = UIAlertController.init(title: "Max Of This Item Reached", message: "You have reached the maximum number of this personal item. You can still add more of another personal item.", preferredStyle: .alert)
+                        let alertAction = UIAlertAction.init(title: "Okay", style: .default, handler: nil)
+                        alertController.addAction(alertAction)
+                        self.present(alertController, animated: false)
+                        //
+                        full = true
+                    }
                 }
+                
+                
                 
                 if Int(cellB.itemNumberLable.text!)! > 0 {
                     cellB.imageView.layer.borderColor = UIColor.red.cgColor
@@ -209,15 +229,17 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                     self.selectedItemImages.insert(cellB.imageView.image!, at: 0)
                     self.collectionViewA.reloadData()
                     
-                } else {
+                } else if full && self.count == 10 {
                     
-                    let alertController = UIAlertController.init(title: "Max Items Reached", message: "You have reached the maximum number of food items. Please remove a food item before adding more.", preferredStyle: .alert)
+                    let alertController = UIAlertController.init(title: "Max Food Items Reached", message: "You have reached the maximum number of food items. Please remove an item in its respective category before adding more.", preferredStyle: .alert)
                     let alertAction = UIAlertAction.init(title: "Okay", style: .default, handler: nil)
                     alertController.addAction(alertAction)
                     self.present(alertController, animated: false)
-                    //                    cellB.itemNumberLable.text = "\(num!)"
+                    //
                     print("Already have 10 items")
+                    
                 }
+                
             }
             
             cellB.subBtnTapAction = {

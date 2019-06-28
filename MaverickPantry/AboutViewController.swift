@@ -110,7 +110,6 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
             let sfvc = SFSafariViewController(url: link)
             sfvc.delegate = (self as! SFSafariViewControllerDelegate)
             sfvc.preferredControlTintColor = .red
-            //sfvc.preferredBarTintColor = .black
             
             present(sfvc, animated: true)
             
@@ -123,7 +122,6 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
             let sfvc = SFSafariViewController(url: link)
             sfvc.delegate = (self as! SFSafariViewControllerDelegate)
             sfvc.preferredControlTintColor = .red
-            //sfvc.preferredBarTintColor = .black
             
             present(sfvc, animated: true)
             
@@ -136,7 +134,6 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
             let sfvc = SFSafariViewController(url: link)
             sfvc.delegate = (self as! SFSafariViewControllerDelegate)
             sfvc.preferredControlTintColor = .red
-            //sfvc.preferredBarTintColor = .black
             
             present(sfvc, animated: true)
             
@@ -149,7 +146,6 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
             let sfvc = SFSafariViewController(url: link)
             sfvc.delegate = (self as! SFSafariViewControllerDelegate)
             sfvc.preferredControlTintColor = .red
-            //sfvc.preferredBarTintColor = .black
             
             present(sfvc, animated: true)
             
@@ -162,7 +158,6 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
             let sfvc = SFSafariViewController(url: link)
             sfvc.delegate = (self as! SFSafariViewControllerDelegate)
             sfvc.preferredControlTintColor = .red
-            //sfvc.preferredBarTintColor = .black
             
             present(sfvc, animated: true)
             
@@ -174,7 +169,6 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
             let sfvc = SFSafariViewController(url: link)
             sfvc.delegate = (self as! SFSafariViewControllerDelegate)
             sfvc.preferredControlTintColor = .red
-            //sfvc.preferredBarTintColor = .black
             
             present(sfvc, animated: true)
             

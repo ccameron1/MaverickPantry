@@ -11,27 +11,15 @@ import UIKit
 class InventoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
- 
-    
-    var amountLeft = 0
-    var amountGiven = 0
-    var foodName = "Applesauce"
-    
+
     var foods : [DummyFood] = []
         
-    
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let applesauce = DummyFood(name: "Applesauce", amountLeft: 42, amountGiven: 75)
-        let pizza = DummyFood(name: "Pizza", amountLeft: 87, amountGiven: 23)
-        let kale = DummyFood(name: "Kale", amountLeft: 100, amountGiven: 0)
-//        let applesauceDict = ["Food": "Applesauce", "amountLeft": 10, "amountGiven": 50] as [String : Any]
-//        let pizzaDict = ["Food": "Pizza", "amountLeft": 43, "amountGiven": 98] as [String : Any]
-//        let kaleDict = ["Food": "Kale", "amountLeft": 7, "amountGiven": 3] as [String : Any]
-//
-        //foods = [applesauce,pizza,kale]
+
+
         
     }
     

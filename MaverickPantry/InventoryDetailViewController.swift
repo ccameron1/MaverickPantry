@@ -75,7 +75,7 @@ class InventoryDetailViewController: UIViewController {
         FirebaseManager.databaseRef.collection("Inventory").document(food.name).setData(["currentAmount" : food.amountLeft!, "name": food.name!, "amountGivenAway" : 0])
         print ("Firebase Updated")
         givenOutLabel.text = "\(food.amountGiven!)"
-        //        givenOutLabel.text = "0"
+        
     }
     
 }

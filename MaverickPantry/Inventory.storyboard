@@ -179,10 +179,14 @@
                                             </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="caM-pF-rpK" firstAttribute="top" secondItem="x6i-eh-cSL" secondAttribute="bottom" constant="27" id="E9L-JF-v8k"/>
+                                            <constraint firstItem="x6i-eh-cSL" firstAttribute="top" secondItem="rGM-D2-BbT" secondAttribute="top" id="Fwg-At-znI"/>
                                             <constraint firstItem="x6i-eh-cSL" firstAttribute="leading" secondItem="rGM-D2-BbT" secondAttribute="leading" id="G0B-Y3-sZU"/>
                                             <constraint firstAttribute="trailing" secondItem="x6i-eh-cSL" secondAttribute="trailing" id="QDS-zO-ZEM"/>
                                             <constraint firstAttribute="trailing" secondItem="caM-pF-rpK" secondAttribute="trailing" id="etM-Zg-K02"/>
+                                            <constraint firstItem="x6i-eh-cSL" firstAttribute="leading" secondItem="rGM-D2-BbT" secondAttribute="leading" id="fLg-Ce-KPy"/>
                                             <constraint firstAttribute="width" constant="202" id="hf5-3N-cdm"/>
+                                            <constraint firstAttribute="trailing" secondItem="x6i-eh-cSL" secondAttribute="trailing" id="ikA-Lt-lzF"/>
                                             <constraint firstAttribute="height" constant="185" id="kwF-Wz-pEJ"/>
                                             <constraint firstItem="caM-pF-rpK" firstAttribute="leading" secondItem="rGM-D2-BbT" secondAttribute="leading" id="tuV-FK-Edo"/>
                                         </constraints>

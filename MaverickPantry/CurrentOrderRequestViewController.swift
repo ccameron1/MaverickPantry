@@ -59,7 +59,7 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        return 56
     }
     
     @IBAction func fillOrderButton(_ sender: UIButton) {

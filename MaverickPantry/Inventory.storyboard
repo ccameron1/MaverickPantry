@@ -103,25 +103,25 @@
                                     <constraint firstAttribute="height" constant="466" id="eWO-VU-TRD"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="AzK-pl-nXh">
-                                <rect key="frame" x="106" y="163" width="202" height="401"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="AzK-pl-nXh">
+                                <rect key="frame" x="83" y="163" width="250" height="422"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="9OR-a9-ZeO">
-                                        <rect key="frame" x="0.0" y="0.0" width="202" height="185"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="185"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Left:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dov-B8-UTh">
-                                                <rect key="frame" x="32.5" y="0.0" width="137" height="35"/>
+                                                <rect key="frame" x="56.5" y="0.0" width="137" height="35"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="22"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="074-4m-UpR">
-                                                <rect key="frame" x="76.5" y="50" width="49" height="35"/>
+                                                <rect key="frame" x="100.5" y="50" width="49" height="35"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                                                 <color key="textColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter New Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MR9-VV-8Cs">
-                                                <rect key="frame" x="18.5" y="100" width="165" height="35"/>
+                                                <rect key="frame" x="42.5" y="100" width="165" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="165" id="mmM-jQ-6ap"/>
                                                 </constraints>
@@ -130,7 +130,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iho-cu-xhF">
-                                                <rect key="frame" x="63.5" y="150" width="75" height="35"/>
+                                                <rect key="frame" x="87.5" y="150" width="75" height="35"/>
                                                 <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="75" id="ZOc-Rc-vYE"/>
@@ -145,26 +145,25 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="202" id="cQL-qK-SbY"/>
                                             <constraint firstAttribute="height" constant="185" id="uPF-1T-IIm"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="rGM-D2-BbT">
-                                        <rect key="frame" x="0.0" y="216" width="202" height="185"/>
+                                        <rect key="frame" x="0.0" y="237" width="250" height="185"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Given Out:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6i-eh-cSL">
-                                                <rect key="frame" x="0.0" y="0.0" width="202" height="43.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="43.5"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="22"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caM-pF-rpK">
-                                                <rect key="frame" x="0.0" y="70.5" width="202" height="44"/>
+                                                <rect key="frame" x="0.0" y="70.5" width="250" height="44"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                                                 <color key="textColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSO-P6-bQv">
-                                                <rect key="frame" x="68.5" y="141.5" width="65" height="43.5"/>
+                                                <rect key="frame" x="92.5" y="141.5" width="65" height="43.5"/>
                                                 <color key="backgroundColor" red="0.8323639035" green="0.22160029410000001" blue="0.18024101849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="jwb-gM-IOz"/>
@@ -186,7 +185,6 @@
                                             <constraint firstAttribute="trailing" secondItem="x6i-eh-cSL" secondAttribute="trailing" id="QDS-zO-ZEM"/>
                                             <constraint firstAttribute="trailing" secondItem="caM-pF-rpK" secondAttribute="trailing" id="etM-Zg-K02"/>
                                             <constraint firstItem="x6i-eh-cSL" firstAttribute="leading" secondItem="rGM-D2-BbT" secondAttribute="leading" id="fLg-Ce-KPy"/>
-                                            <constraint firstAttribute="width" constant="202" id="hf5-3N-cdm"/>
                                             <constraint firstAttribute="trailing" secondItem="x6i-eh-cSL" secondAttribute="trailing" id="ikA-Lt-lzF"/>
                                             <constraint firstAttribute="height" constant="185" id="kwF-Wz-pEJ"/>
                                             <constraint firstItem="caM-pF-rpK" firstAttribute="leading" secondItem="rGM-D2-BbT" secondAttribute="leading" id="tuV-FK-Edo"/>
@@ -194,20 +192,22 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="401" id="ESD-Hq-MYR"/>
-                                    <constraint firstAttribute="width" constant="202" id="v27-re-JA2"/>
+                                    <constraint firstAttribute="width" constant="250" id="QEt-rf-bcZ"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aUs-Wa-dja" firstAttribute="top" secondItem="1DW-tC-PGk" secondAttribute="top" constant="55" id="1b0-86-bNe"/>
+                            <constraint firstItem="1DW-tC-PGk" firstAttribute="trailing" secondItem="AzK-pl-nXh" secondAttribute="trailing" constant="81" id="4S5-NJ-ReD"/>
+                            <constraint firstItem="1DW-tC-PGk" firstAttribute="bottom" secondItem="AzK-pl-nXh" secondAttribute="bottom" constant="228" id="6GV-lA-CLM"/>
+                            <constraint firstItem="AzK-pl-nXh" firstAttribute="top" secondItem="1DW-tC-PGk" secondAttribute="top" constant="75" id="Cl1-Oa-wXF"/>
                             <constraint firstItem="1DW-tC-PGk" firstAttribute="bottom" secondItem="8mS-3r-M3V" secondAttribute="bottom" id="Cnl-ki-nBS"/>
+                            <constraint firstItem="AzK-pl-nXh" firstAttribute="top" secondItem="1DW-tC-PGk" secondAttribute="top" constant="75" id="Erh-oW-3lp"/>
                             <constraint firstItem="aUs-Wa-dja" firstAttribute="leading" secondItem="1DW-tC-PGk" secondAttribute="leading" constant="68" id="Fpa-6L-AbT"/>
-                            <constraint firstItem="AzK-pl-nXh" firstAttribute="top" secondItem="1DW-tC-PGk" secondAttribute="top" constant="75" id="Qjm-hj-7xZ"/>
-                            <constraint firstItem="AzK-pl-nXh" firstAttribute="leading" secondItem="1DW-tC-PGk" secondAttribute="leading" constant="106" id="QkI-C5-cRZ"/>
+                            <constraint firstItem="AzK-pl-nXh" firstAttribute="leading" secondItem="1DW-tC-PGk" secondAttribute="leading" constant="83" id="RND-to-Lib"/>
                             <constraint firstItem="1DW-tC-PGk" firstAttribute="trailing" secondItem="aUs-Wa-dja" secondAttribute="trailing" constant="68" id="V10-ON-fpH"/>
-                            <constraint firstItem="1DW-tC-PGk" firstAttribute="trailing" secondItem="AzK-pl-nXh" secondAttribute="trailing" constant="106" id="YIb-Yu-SlQ"/>
+                            <constraint firstItem="AzK-pl-nXh" firstAttribute="leading" secondItem="1DW-tC-PGk" secondAttribute="leading" constant="83" id="Vbp-IZ-yxK"/>
                             <constraint firstItem="8mS-3r-M3V" firstAttribute="leading" secondItem="1DW-tC-PGk" secondAttribute="leading" id="htb-iJ-9UE"/>
                             <constraint firstItem="8mS-3r-M3V" firstAttribute="top" secondItem="1DW-tC-PGk" secondAttribute="top" constant="177" id="sBV-fh-Ze8"/>
                             <constraint firstItem="1DW-tC-PGk" firstAttribute="trailing" secondItem="8mS-3r-M3V" secondAttribute="trailing" id="t2c-eF-9oD"/>

@@ -177,7 +177,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="115" id="ydq-Te-oGq"/>
                                                 </constraints>
-                                                <string key="text">an oval or round object laid by a female bird, reptile, fish, or invertebrate, usually containing a developing embryo. The eggs of birds are enclosed in a chalky shell, while those of reptiles are in a leathery membrane. </string>
+                                                <string key="text">Scrambled eggs is a dish made from eggs stirred or beaten together in a pan while being gently heated, typically with salt, butter and various other ingredients.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -205,9 +205,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="159" id="UEs-JV-uaD"/>
                                                 </constraints>
-                                                <string key="text">BEAT eggs, milk, salt and pepper in bowl until blended.
-HEAT butter in large nonstick skillet over medium heat until hot. POUR IN egg mixture.
-As eggs begin to set, GENTLY PULL the eggs across the pan with an inverted turner, forming large soft curds.</string>
+                                                <string key="text">Beat eggs, milk, salt and pepper in bowl until blended.
+Heat butter in large nonstick skillet over medium heat until hot. Pour in egg mixture.
+As eggs begin to set, gently pull the eggs across the pan with an inverted turner, forming large soft curds.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>

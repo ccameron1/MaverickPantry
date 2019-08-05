@@ -12,8 +12,9 @@ class RecipeViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var recipes : [String] = ["pasta", "pizza", "soup", "eggs", "sandwich"]
-    var recipeName : [String] = ["Pasta", "Pizza", "Soup", "Eggs", "Sandwich"]
+    var recipes : [String] = ["pasta", "pizza", "soup", "eggs"]
+    var recipeName : [String] = ["Tuna Patties", "Chicken Casserole", "Chili", "Seven Can Chicken Tortilla Soup"]
+    var time : [String] = ["1 hour and 15 minutes", "45 minutes", "50 minutes", "15 minutes"]
     var indexPath: IndexPath?
     
     override func viewDidLoad() {
@@ -27,10 +28,12 @@ class RecipeViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! RecipeCollectionViewCell
+        let time = self.time[indexPath.row]
         let list = recipes[indexPath.row]
         let name = recipeName[indexPath.row]
         cell.imageView.image = UIImage(named: list)
         cell.foodLabel.text = name
+        cell.timeLabel.text = time
         cell.imageView.addShadow()
         return cell
     }

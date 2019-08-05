@@ -68,6 +68,7 @@
                                         <connections>
                                             <outlet property="foodLabel" destination="GtI-R2-L11" id="NWU-ah-qXU"/>
                                             <outlet property="imageView" destination="7O2-W9-7gk" id="RzU-lY-rCg"/>
+                                            <outlet property="timeLabel" destination="UTR-yK-MPj" id="Hlo-Bs-dOg"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

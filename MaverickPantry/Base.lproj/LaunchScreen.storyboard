@@ -18,13 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="MavLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Xh8-0N-CmM">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MavLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Xh8-0N-CmM">
                                 <rect key="frame" x="0.0" y="35" width="414" height="827"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Xh8-0N-CmM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="64F-cv-x8B"/>
+                            <constraint firstItem="Xh8-0N-CmM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-9" id="64F-cv-x8B"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xh8-0N-CmM" secondAttribute="trailing" id="IwF-Iz-OeE"/>
                             <constraint firstItem="Xh8-0N-CmM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UXI-Ak-wwo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Xh8-0N-CmM" secondAttribute="bottom" id="b8Z-68-VxD"/>

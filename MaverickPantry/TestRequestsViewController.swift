@@ -307,6 +307,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             let cellC = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
             
             cellC.myLabel.text = foodTypeNames[indexPath.item]
+            print(foodTypeNames[indexPath.item])
             cellC.myLabel.textColor = .lightGray
             
             if indexPath.row == tabSelected {

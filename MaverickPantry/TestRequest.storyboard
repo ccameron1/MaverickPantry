@@ -312,12 +312,12 @@
                                 <rect key="frame" x="54" y="168" width="315" height="555"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">The Maverick Food Pantry offers currently enrolled students, faculty, and staff healthy, organic, and culturally sensitive items.
+                                <string key="text">The Maverick Food Pantry offers currently enrolled students, faculty, and staff healthy, organic, and culturally sensitive items.
                                                                After completing the food request form, please check your UNO Email for an approval message informing you when your food request is ready to be picked up. Your package may be picked up in the Weitz Community Engagement Center, room 130 (CEC 130), Monday through Friday, between the hours of 8am to 5pm.
 
 You may complete this request form TWICE a week.
 
-If you have any questions, please contact the Maverick Food Pantry by phone at 402.554.4083 or by email at unomavfoodpantry@unomaha.edu.</mutableString>
+If you have any questions, please contact the Maverick Food Pantry by phone at 402.554.4083 or by email at unomavfoodpantry@unomaha.edu.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -343,7 +343,7 @@ If you have any questions, please contact the Maverick Food Pantry by phone at 4
             <objects>
                 <viewController id="Vs7-eJ-eOd" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xz6-j3-4V3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVP-mG-Sjd">
@@ -480,6 +480,7 @@ If you have any questions, please contact the Maverick Food Pantry by phone at 4
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="pfL-Z8-LLJ"/>
                     </view>
+                    <size key="freeformSize" width="414" height="1500"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Sq-CI-eFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,4 +12,5 @@ class RecipeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var foodLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
 }

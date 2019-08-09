@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yQS-Em-5yG">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Resources View Controller-->
+        <scene sceneID="U1K-vA-isF">
+            <objects>
+                <viewController id="yQS-Em-5yG" customClass="ResourcesViewController" customModule="MaverickPantry" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d0e-ds-zXi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0nY-NS-69H">
+                                <rect key="frame" x="147" y="44" width="120" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="0zU-dr-Lgm"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="yQS-Em-5yG" eventType="valueChanged" id="r7g-Ba-fvN"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CVl-Is-6la">
+                                <rect key="frame" x="0.0" y="81" width="414" height="781"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" id="P9x-b1-b8A">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P9x-b1-b8A" id="sZs-LP-EVV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CVl-Is-6la" firstAttribute="top" secondItem="0nY-NS-69H" secondAttribute="bottom" constant="10" id="BEi-P9-BpH"/>
+                            <constraint firstItem="0nY-NS-69H" firstAttribute="centerX" secondItem="CVl-Is-6la" secondAttribute="centerX" id="L08-AY-Xjf"/>
+                            <constraint firstItem="0nY-NS-69H" firstAttribute="top" secondItem="GXe-GE-ikd" secondAttribute="top" id="LG3-1c-Ddy"/>
+                            <constraint firstItem="0nY-NS-69H" firstAttribute="leading" secondItem="GXe-GE-ikd" secondAttribute="leading" constant="147" id="Sri-ot-lld"/>
+                            <constraint firstItem="GXe-GE-ikd" firstAttribute="trailing" secondItem="CVl-Is-6la" secondAttribute="trailing" id="SuR-6K-glJ"/>
+                            <constraint firstItem="GXe-GE-ikd" firstAttribute="bottom" secondItem="CVl-Is-6la" secondAttribute="bottom" id="W68-fL-LmW"/>
+                            <constraint firstItem="CVl-Is-6la" firstAttribute="leading" secondItem="GXe-GE-ikd" secondAttribute="leading" id="rrH-tx-Skq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GXe-GE-ikd"/>
+                    </view>
+                    <connections>
+                        <outlet property="resourcesTableView" destination="CVl-Is-6la" id="hWS-dc-X9C"/>
+                        <outlet property="selectionController" destination="0nY-NS-69H" id="UNZ-3L-h0p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eze-8C-pUh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-651" y="13"/>
+        </scene>
+    </scenes>
+</document>

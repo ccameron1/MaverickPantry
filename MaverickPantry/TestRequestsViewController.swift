@@ -248,7 +248,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 let num = Int(cellB.itemNumberLable!.text!)
                 var empty = false
                 if self.tabSelected != 6 {
-                    if self.count == 0 {
+                    if num! == 0 {
                         empty = true
                     } else {
                         self.count = self.count - 1
@@ -307,6 +307,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             let cellC = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
             
             cellC.myLabel.text = foodTypeNames[indexPath.item]
+            print(foodTypeNames[indexPath.item])
             cellC.myLabel.textColor = .lightGray
             
             if indexPath.row == tabSelected {

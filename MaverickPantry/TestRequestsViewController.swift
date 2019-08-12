@@ -248,7 +248,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 let num = Int(cellB.itemNumberLable!.text!)
                 var empty = false
                 if self.tabSelected != 6 {
-                    if self.count == 0 {
+                    if num! == 0 {
                         empty = true
                     } else {
                         self.count = self.count - 1

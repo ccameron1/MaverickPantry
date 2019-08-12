@@ -229,6 +229,7 @@ class FirebaseManager {
 			}
 		}
 	}
+	
 	static func deleteFromOrders(orderName: String, completion: @escaping (Bool) -> Void) {
 		print(orderName)
 		databaseRef.collection("Orders").document(orderName).delete() { err in

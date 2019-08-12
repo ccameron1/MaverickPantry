@@ -57,6 +57,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     
     var count = 0
     var personalItemCount = 0
+    var foodItemCount = 0
     
     @IBOutlet weak var totalItemsSelectedLabel: UILabel!
     @IBOutlet weak var collectionViewA: UICollectionView!
@@ -186,21 +187,30 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                     if self.count == 10 {
                         full = true
                     } else {
-                        self.count = self.count + 1
-                        self.personalItemCount += self.personalItemCount
+                        if num! <= 1 {
+                            self.count = self.count + 1
+                            self.personalItemCount += self.personalItemCount
+                        }
                     }
                 }
                 
                 
                 if self.tabSelected != 6 {
-                    if num! >= 0 && num! < 10 && self.count <= 10 && !full {
+                    if num! >= 0 && num! < 2 && self.count <= 10 && !full {
                         
                         cellB.itemNumberLable.text = "\(num! + 1)"
                         self.tabLables[self.tabSelected][indexPath.row] = cellB.itemNumberLable.text!
                         
                     }
+                    else {
+                        print("more than 2")
+                        let alertController = UIAlertController.init(title: "Max Of This Item Reached", message: "You have reached the maximum number of this food item. You can still add more of another food item.", preferredStyle: .alert)
+                        let alertAction = UIAlertAction.init(title: "Okay", style: .default, handler: nil)
+                        alertController.addAction(alertAction)
+                        self.present(alertController, animated: false)
+                    }
                 } else {
-                    if num! >= 0 && num! < 2 {
+                    if num! >= 0 && num! < 1 {
                         cellB.itemNumberLable.text = "\(num! + 1)"
                         self.tabLables[self.tabSelected][indexPath.row] = cellB.itemNumberLable.text!
                         
@@ -221,24 +231,32 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                     cellB.imageView.layer.borderColor = UIColor.red.cgColor
                 }
                 
-                if self.count <= 10 && !full {
-                    
-                    self.selectedItems.insert(self.globalFoodArr[indexPath.row], at: 0)
-                    self.totalItemsSelectedLabel.text = "\(self.selectedItems.count)"
-                    self.totalFoodItemsSelectedLabel.text = "\(self.count)"
-                    self.selectedItemImages.insert(cellB.imageView.image!, at: 0)
-                    self.collectionViewA.reloadData()
-                    
-                } else if full && self.count == 10 {
-                    
+                if num! >= 2 {
                     let alertController = UIAlertController.init(title: "Max Food Items Reached", message: "You have reached the maximum number of food items. Please remove an item in its respective category before adding more.", preferredStyle: .alert)
                     let alertAction = UIAlertAction.init(title: "Okay", style: .default, handler: nil)
                     alertController.addAction(alertAction)
                     self.present(alertController, animated: false)
-                    //
-                    print("Already have 10 items")
-                    
+                } else {
+                    if self.count <= 10 && !full {
+                        
+                        self.selectedItems.insert(self.globalFoodArr[indexPath.row], at: 0)
+                        self.totalItemsSelectedLabel.text = "\(self.selectedItems.count)"
+                        self.totalFoodItemsSelectedLabel.text = "\(self.count)"
+                        self.selectedItemImages.insert(cellB.imageView.image!, at: 0)
+                        self.collectionViewA.reloadData()
+                        
+                    } else if full && self.count == 10 {
+                        
+                        let alertController = UIAlertController.init(title: "Max Food Items Reached", message: "You have reached the maximum number of food items. Please remove an item in its respective category before adding more.", preferredStyle: .alert)
+                        let alertAction = UIAlertAction.init(title: "Okay", style: .default, handler: nil)
+                        alertController.addAction(alertAction)
+                        self.present(alertController, animated: false)
+                        //
+                        print("Already have 10 items")
+                        
+                    }
                 }
+                
                 
             }
             
@@ -248,7 +266,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
                 let num = Int(cellB.itemNumberLable!.text!)
                 var empty = false
                 if self.tabSelected != 6 {
-                    if self.count == 0 {
+                    if num! == 0 {
                         empty = true
                     } else {
                         self.count = self.count - 1
@@ -307,6 +325,7 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
             let cellC = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
             
             cellC.myLabel.text = foodTypeNames[indexPath.item]
+            print(foodTypeNames[indexPath.item])
             cellC.myLabel.textColor = .lightGray
             
             if indexPath.row == tabSelected {

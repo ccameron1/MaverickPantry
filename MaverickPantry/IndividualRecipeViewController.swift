@@ -10,6 +10,8 @@ import UIKit
 
 class IndividualRecipeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var selectedRecipe : Recipe!
+    
     var ingredients : [String] = ["Eggs", "Milk"]
     var name : String = ""
     
@@ -40,32 +42,36 @@ class IndividualRecipeViewController: UIViewController, UITableViewDelegate, UIT
         print(row)
         textView.isHidden = true
         title = "Recipe"
-        foodNameLabel.text = name
-        if name == "Chili" {
-            servingsLabel.text = "4"
-            cookTimeLabel.text = "50m"
-            textView.text = chiliDirections
-        } else if name == "Seven Can Chicken Tortilla Soup" {
-            servingsLabel.text = "6"
-            cookTimeLabel.text = "15m"
-            textView.text = soupDirections
-        } else if name == "Peanut Butter Quinoa Balls" {
-            servingsLabel.text = "20 balls"
-            cookTimeLabel.text = "50m"
-            textView.text = peanutBallsDirections
-        } else if name == "Vegan Chickpea Meatballs" {
-            servingsLabel.text = "10 balls"
-            cookTimeLabel.text = "40m"
-            textView.text = chickPeaDirections
-        } else if name == "Black Bean Burgers" {
-            servingsLabel.text = "5"
-            cookTimeLabel.text = "40m"
-            textView.text = burgerDirections
-        } else if name == "Baked Tortilla Chips" {
-            servingsLabel.text = "??"
-            cookTimeLabel.text = "30m"
-            textView.text = peanutBallsDirections
-        }
+        foodNameLabel.text = selectedRecipe.recipeName
+        servingsLabel.text = selectedRecipe.recipeServing
+        cookTimeLabel.text = selectedRecipe.cookTime
+        textView.text = selectedRecipe.recipeDirections
+        detailTextView.text = selectedRecipe.recipeDescription
+//        if name == "Chili" {
+//            servingsLabel.text = "4"
+//            cookTimeLabel.text = "50m"
+//            textView.text = chiliDirections
+//        } else if name == "Seven Can Chicken Tortilla Soup" {
+//            servingsLabel.text = "6"
+//            cookTimeLabel.text = "15m"
+//            textView.text = soupDirections
+//        } else if name == "Peanut Butter Quinoa Balls" {
+//            servingsLabel.text = "20 balls"
+//            cookTimeLabel.text = "50m"
+//            textView.text = peanutBallsDirections
+//        } else if name == "Vegan Chickpea Meatballs" {
+//            servingsLabel.text = "10 balls"
+//            cookTimeLabel.text = "40m"
+//            textView.text = chickPeaDirections
+//        } else if name == "Black Bean Burgers" {
+//            servingsLabel.text = "5"
+//            cookTimeLabel.text = "40m"
+//            textView.text = burgerDirections
+//        } else if name == "Baked Tortilla Chips" {
+//            servingsLabel.text = "??"
+//            cookTimeLabel.text = "30m"
+//            textView.text = peanutBallsDirections
+//        }
     }
     
     @IBAction func segmentedController(_ sender: UISegmentedControl) {
@@ -82,47 +88,50 @@ class IndividualRecipeViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if row == 0 {
-            return chiliIngredients.count
-        } else if row == 1 {
-            return soupIngredients.count
-        } else if row == 2 {
-            return peanutBallsIngredients.count
-        } else if row == 3 {
-            return chickPeaIngredients.count
-        } else if row == 4 {
-            return burgerIngredients.count
-        } else if row == 5 {
-            return chipIngredients.count
-        } else {
-        return ingredients.count
-        }
+//        if row == 0 {
+//            return chiliIngredients.count
+//        } else if row == 1 {
+//            return soupIngredients.count
+//        } else if row == 2 {
+//            return peanutBallsIngredients.count
+//        } else if row == 3 {
+//            return chickPeaIngredients.count
+//        } else if row == 4 {
+//            return burgerIngredients.count
+//        } else if row == 5 {
+//            return chipIngredients.count
+//        } else {
+        return selectedRecipe.ingredients!.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID")
-        if row == 0 {
-            let list = chiliIngredients[indexPath.row]
-            cell?.textLabel!.text = list
-        } else if row == 1 {
-            let list = soupIngredients[indexPath.row]
-            cell?.textLabel!.text = list
-        } else if row == 2 {
-            let list = peanutBallsIngredients[indexPath.row]
-            cell?.textLabel!.text = list
-        }  else if row == 3 {
-            let list = chickPeaIngredients[indexPath.row]
-            cell?.textLabel!.text = list
-        } else if row == 4 {
-            let list = burgerIngredients[indexPath.row]
-            cell?.textLabel!.text = list
-        } else if row == 5 {
-            let list = chipIngredients[indexPath.row]
-            cell?.textLabel!.text = list
-        } else {
-            let list = ingredients[indexPath.row]
-            cell?.textLabel!.text = list
-        }
+//        if row == 0 {
+//            let list = chiliIngredients[indexPath.row]
+//            cell?.textLabel!.text = list
+//        } else if row == 1 {
+//            let list = soupIngredients[indexPath.row]
+//            cell?.textLabel!.text = list
+//        } else if row == 2 {
+//            let list = peanutBallsIngredients[indexPath.row]
+//            cell?.textLabel!.text = list
+//        }  else if row == 3 {
+//            let list = chickPeaIngredients[indexPath.row]
+//            cell?.textLabel!.text = list
+//        } else if row == 4 {
+//            let list = burgerIngredients[indexPath.row]
+//            cell?.textLabel!.text = list
+//        } else if row == 5 {
+//            let list = chipIngredients[indexPath.row]
+//            cell?.textLabel!.text = list
+//        } else {
+//            let list = ingredients[indexPath.row]
+//            cell?.textLabel!.text = list
+//        }
+        let selectedIngredients = selectedRecipe.ingredients
+        let list = selectedIngredients![indexPath.row]
+        cell?.textLabel!.text = list
         return cell!
     }
     

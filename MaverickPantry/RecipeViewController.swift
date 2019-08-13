@@ -21,28 +21,31 @@ class RecipeViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Recipes"
-        FirebaseManager.getRecipes { (recipes, err) in
-                if err == nil {
-                    self.recipes = recipes
-                } else {
-                    print("error")
-                }
-        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return recipes.count
+        return recipeName.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! RecipeCollectionViewCell
-        let time = recipes[indexPath.row].recipeTime
-//        let list = recipes[indexPath.row]
-        let name = recipes[indexPath.row].recipeName
-        cell.imageView.image = UIImage(named: "eggs")
-        cell.foodLabel.text = name
-        cell.timeLabel.text = time
-        cell.imageView.addShadow()
+        FirebaseManager.getRecipes { (recipes, err) in
+            if err == nil {
+                self.recipes = recipes
+                let time = recipes[indexPath.row].recipeTime
+                //        let list = recipes[indexPath.row]
+                let name = recipes[indexPath.row].recipeName
+                cell.imageView.image = UIImage(named: "eggs")
+                cell.foodLabel.text = name
+                cell.timeLabel.text = time
+                cell.imageView.addShadow()
+            } else {
+                print("error")
+            }
+        }
+        
+        
         return cell
     }
     
@@ -53,6 +56,7 @@ class RecipeViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dvc = segue.destination as! IndividualRecipeViewController
+        dvc.selectedRecipe = recipes[indexPath!.row]
         dvc.name = recipeName[(indexPath?.row)!]
         dvc.row = indexPath!.row
     }

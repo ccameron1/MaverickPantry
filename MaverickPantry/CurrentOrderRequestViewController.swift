@@ -80,12 +80,14 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
                 }
             })
             //changes boolean in firebase
-            FirebaseManager.databaseRef.collection("Orders").document("Order: \(selectedOrder!.initials!) \(selectedOrder!.yearOfBirth!) \(selectedOrder!.timestamp!)").setData(["requests": selectedOrder!.requests!, "initials": selectedOrder!.initials!, "isReady": true, "yearOfBirth": selectedOrder!.yearOfBirth!, "timestamp": selectedOrder!.timestamp])
+            FirebaseManager.databaseRef.collection("Orders").document("Order: \(selectedOrder!.initials!) \(selectedOrder!.monthOfBirth!): \(selectedOrder!.dayOfBirth!) \(selectedOrder!.timestamp!)").setData(["requests": selectedOrder!.requests!, "initials": selectedOrder!.initials!, "isReady": true, "monthOfBirth": selectedOrder!.monthOfBirth!, "dayOfBirth": selectedOrder!.dayOfBirth!, "timestamp": selectedOrder!.timestamp])
             
+            
+//            \(order.monthOfBirth!): \(order.dayOfBirth!)
         } else {
             //removes order once it is picked up
             FirebaseManager.globalOrders?.remove(at: index!)
-            FirebaseManager.databaseRef.collection("Orders").document("Order: \(selectedOrder!.initials!) \(selectedOrder!.yearOfBirth!) \(selectedOrder!.timestamp!)").delete()
+            FirebaseManager.databaseRef.collection("Orders").document("Order: \(selectedOrder!.initials!) \(selectedOrder!.monthOfBirth!): \(selectedOrder!.dayOfBirth) \(selectedOrder!.timestamp!)").delete()
         }
             
     }

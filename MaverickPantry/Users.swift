@@ -15,7 +15,8 @@ class Users {
     var isAdmin: Bool
     var email: String
     var initials: String
-    var yearOfBirth: Int
+    var monthOfBirth: Int
+    var dayOfBirth: Int
     var NUID : String
     var uid : String
     var request1 : [String]
@@ -24,11 +25,12 @@ class Users {
     var timestamp2: NSDate
     
     
-    init(isAdmin: Bool, email: String, initials: String, yearOfBirth: Int, NUID: String, uid : String, request1: [String], request2: [String], timestamp1: NSDate, timestamp2: NSDate) {
+    init(isAdmin: Bool, email: String, initials: String, monthOfBirth: Int, dayOfBirth: Int, NUID: String, uid : String, request1: [String], request2: [String], timestamp1: NSDate, timestamp2: NSDate) {
         self.isAdmin = isAdmin
         self.email = email
         self.initials = initials
-        self.yearOfBirth = yearOfBirth
+        self.monthOfBirth = monthOfBirth
+        self.dayOfBirth = dayOfBirth
         self.NUID = NUID
         self.uid = uid
         self.request1 = request1

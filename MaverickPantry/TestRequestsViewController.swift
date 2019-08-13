@@ -437,10 +437,12 @@ class TestRequestsViewController: UIViewController, UICollectionViewDelegate, UI
     func makeOrder() -> Order{
         let requests = selectedItems
         let initials = FirebaseManager.globalUser.initials
-        let yearOfBirth = FirebaseManager.globalUser.yearOfBirth
+//        let yearOfBirth = FirebaseManager.globalUser.yearOfBirth
+        let monthOfBirth = FirebaseManager.globalUser.monthOfBirth
+        let dayOfBirth = FirebaseManager.globalUser.dayOfBirth
         let timeStamp = NSDate().timeIntervalSince1970
         
-        return Order(requests: requests, intitials: initials, yearOfBirth: yearOfBirth, timestamp: timeStamp, isReady: false)
+        return Order(requests: requests, intitials: initials, timestamp: timeStamp, isReady: false, monthOfBirth: monthOfBirth, dayOfBirth: dayOfBirth)
     }
     
 }

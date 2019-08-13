@@ -13,9 +13,6 @@ class RecipeViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var collectionView: UICollectionView!
     
     var recipes : [Recipe] = []
-//    var recipes : [String] = ["pasta", "pizza", "soup", "eggs"]
-    var recipeName : [String] = ["Chili", "Seven Can Chicken Tortilla Soup", "Peanut Butter Quinoa Balls", "Vegan Chickpea Meatballs", "Black Bean Burgers", "Baked Tortilla Chips"]
-    var time : [String] = ["50 minutes", "15 minutes", "50 minutes", "40 minutes", "40 minutes", "30 minutes"]
     var indexPath: IndexPath?
     
     override func viewDidLoad() {
@@ -25,7 +22,7 @@ class RecipeViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return recipeName.count
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -44,8 +41,6 @@ class RecipeViewController: UIViewController, UICollectionViewDelegate, UICollec
                 print("error")
             }
         }
-        
-        
         return cell
     }
     
@@ -57,8 +52,6 @@ class RecipeViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dvc = segue.destination as! IndividualRecipeViewController
         dvc.selectedRecipe = recipes[indexPath!.row]
-        dvc.name = recipeName[(indexPath?.row)!]
-        dvc.row = indexPath!.row
     }
     
     

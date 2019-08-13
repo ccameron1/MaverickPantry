@@ -11,15 +11,17 @@ import Foundation
 class Order {
     var requests: [String]?
     var initials: String?
-    var yearOfBirth: Int?
     var timestamp : Double?
     var isReady: Bool?
+    var monthOfBirth: Int?
+    var dayOfBirth: Int?
     
-    init(requests: [String], intitials: String, yearOfBirth: Int, timestamp: Double, isReady: Bool) {
+    init(requests: [String], intitials: String, timestamp: Double, isReady: Bool, monthOfBirth: Int, dayOfBirth: Int) {
         self.requests = requests
         self.initials = intitials
-        self.yearOfBirth = yearOfBirth
         self.timestamp = timestamp
         self.isReady = isReady
+        self.dayOfBirth = dayOfBirth
+        self.monthOfBirth = monthOfBirth
     }
 }

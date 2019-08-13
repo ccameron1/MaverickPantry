@@ -18,6 +18,7 @@ class FirebaseManager {
 	static var currentUser : User?
 	static var globalUser : Users!
 	static var globalOrders : [Order]? = []
+	static var globalRecipes : [Recipe]? = []
 	static var globalInventory : [DummyFood]? = []
 	
 	static func Login(email: String, password: String, completion: @escaping (_ success: Bool, Error?) -> Void) {
@@ -299,6 +300,7 @@ class FirebaseManager {
 					let recipeServing = document.get("description") as! String
 					
 					let recipe = Recipe(recipeName: recipeName, ingredients: ingredients, recipeTime: recipeTime, cookTime: cookTime, image: image, recipeDescription: recipeDescription, recipeDirections: recipeDirections, recipeServing: recipeServing)
+					
 					recipes.append(recipe)
 					if recipes.count == querySnapshot!.documents.count {
 						completion(recipes, nil)

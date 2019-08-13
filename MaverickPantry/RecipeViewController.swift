@@ -12,7 +12,8 @@ class RecipeViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var recipes : [String] = ["pasta", "pizza", "soup", "eggs"]
+    var recipes : [Recipe] = []
+//    var recipes : [String] = ["pasta", "pizza", "soup", "eggs"]
     var recipeName : [String] = ["Chili", "Seven Can Chicken Tortilla Soup", "Peanut Butter Quinoa Balls", "Vegan Chickpea Meatballs", "Black Bean Burgers", "Baked Tortilla Chips"]
     var time : [String] = ["50 minutes", "15 minutes", "50 minutes", "40 minutes", "40 minutes", "30 minutes"]
     var indexPath: IndexPath?
@@ -20,17 +21,24 @@ class RecipeViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Recipes"
+        FirebaseManager.getRecipes { (recipes, err) in
+                if err == nil {
+                    self.recipes = recipes
+                } else {
+                    print("error")
+                }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return recipeName.count
+        return recipes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! RecipeCollectionViewCell
-        let time = self.time[indexPath.row]
+        let time = recipes[indexPath.row].recipeTime
 //        let list = recipes[indexPath.row]
-        let name = recipeName[indexPath.row]
+        let name = recipes[indexPath.row].recipeName
         cell.imageView.image = UIImage(named: "eggs")
         cell.foodLabel.text = name
         cell.timeLabel.text = time
@@ -48,4 +56,6 @@ class RecipeViewController: UIViewController, UICollectionViewDelegate, UICollec
         dvc.name = recipeName[(indexPath?.row)!]
         dvc.row = indexPath!.row
     }
+    
+    
 }

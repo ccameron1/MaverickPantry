@@ -13,18 +13,22 @@ class NewAccountViewController: UIViewController {
     let loginToAboutSegueIdentifier = "unwindToAbout2"
     
     @IBOutlet weak var backgroundImage: UIImageView!
-    @IBOutlet weak var yearOfBirthTextField: UITextField!
+   
     @IBOutlet weak var initialsTextField: UITextField!
     @IBOutlet weak var NUIDTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var monthTextField: UITextField!
+    @IBOutlet weak var dayTextField: UITextField!
     
     
     @IBOutlet weak var emailErrorLabel: UILabel!
     @IBOutlet weak var passwordErrorLabel: UILabel!
     @IBOutlet weak var NUIDErrorLabel: UILabel!
     @IBOutlet weak var initialsErrorLabel: UILabel!
-    @IBOutlet weak var yearErrorLabel: UILabel!
+    @IBOutlet weak var monthErrorLabel: UILabel!
+    @IBOutlet weak var dayErrorLabel: UILabel!
+    
     
     
     override func viewDidLoad() {
@@ -45,7 +49,7 @@ class NewAccountViewController: UIViewController {
         clearErrors()
         if !checkForError() {
             
-            FirebaseManager.CreateAccount(email: emailTextField.text!, password: passwordTextField.text!, initials: initialsTextField.text!, yearOfBirth: Int(yearOfBirthTextField.text!)!, isAdmin: false, NUID : NUIDTextField.text!) { (success) in
+            FirebaseManager.CreateAccount(email: emailTextField.text!, password: passwordTextField.text!, initials: initialsTextField.text!, monthOfBirth: Int(monthTextField.text!)!, dayOfBirth: Int(dayTextField.text!)!, isAdmin: false, NUID : NUIDTextField.text!) { (success) in
                 if success {
                     print("new acount homies")
                     let alertController = UIAlertController(title: "Verify Email Address", message: "An email has been sent to you in order to verify your email address. You will not have access to requests until the account is verified.", preferredStyle: .alert)
@@ -79,8 +83,12 @@ class NewAccountViewController: UIViewController {
             initialsErrorLabel.isHidden = false
             ret = true
         }
-        if yearOfBirthTextField.text?.count != 4 {
-            yearErrorLabel.isHidden = false
+        if monthTextField.text!.count <= 0 {
+            monthErrorLabel.isHidden = false
+            ret = true
+        }
+        if dayTextField.text!.count <= 0 {
+            dayErrorLabel.isHidden = false
             ret = true
         }
         return ret
@@ -91,7 +99,8 @@ class NewAccountViewController: UIViewController {
         passwordErrorLabel.isHidden = true
         NUIDErrorLabel.isHidden = true
         initialsErrorLabel.isHidden = true
-        yearErrorLabel.isHidden = true
+        monthErrorLabel.isHidden = true
+        dayErrorLabel.isHidden = true
         
     }
     

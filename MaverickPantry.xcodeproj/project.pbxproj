@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		05EDE73BE5AF15C83359F2E7 /* Pods_MaverickPantry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE81BE6CE415D4ED5A9F1981 /* Pods_MaverickPantry.framework */; };
+		1513F42B22FE04D800462956 /* QuestiionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1513F42A22FE04D800462956 /* QuestiionsViewController.swift */; };
 		73037C1522BD1E02004F4F18 /* DummyFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73037C1422BD1E02004F4F18 /* DummyFood.swift */; };
 		73306A1822BBCFC800E5FB78 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73306A1722BBCFC800E5FB78 /* InventoryViewController.swift */; };
 		73306A1A22BBD93300E5FB78 /* InventoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73306A1922BBD93300E5FB78 /* InventoryDetailViewController.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1513F42A22FE04D800462956 /* QuestiionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestiionsViewController.swift; sourceTree = "<group>"; };
 		1759176685074EB312FB6B83 /* Pods-MaverickPantry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaverickPantry.debug.xcconfig"; path = "Target Support Files/Pods-MaverickPantry/Pods-MaverickPantry.debug.xcconfig"; sourceTree = "<group>"; };
 		73037C1422BD1E02004F4F18 /* DummyFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyFood.swift; sourceTree = "<group>"; };
 		73306A1722BBCFC800E5FB78 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				D58BE6CB22BAB9E500324972 /* Login.storyboard */,
 				7A8556A222C0FE1F009451B7 /* TestRequest.storyboard */,
 				7A85569E22C0326A009451B7 /* CollectionViewCell.swift */,
+				1513F42A22FE04D800462956 /* QuestiionsViewController.swift */,
 				7A85569C22C02FE8009451B7 /* TestRequestsViewController.swift */,
 				7A55A72722BACCCE0075441B /* NewAccountViewController.swift */,
 				D58BE6C922BAB9A900324972 /* Recipe.storyboard */,
@@ -342,6 +345,7 @@
 				D5CE3A7F22C1340F00BF3613 /* RecipeCollectionViewCell.swift in Sources */,
 				73037C1522BD1E02004F4F18 /* DummyFood.swift in Sources */,
 				7A067DDF22BA9E0400FDC2B2 /* FirebaseManager.swift in Sources */,
+				1513F42B22FE04D800462956 /* QuestiionsViewController.swift in Sources */,
 				73306A1822BBCFC800E5FB78 /* InventoryViewController.swift in Sources */,
 				7A067DCD22BA98F700FDC2B2 /* ViewController.swift in Sources */,
 				7A55A72822BACCCE0075441B /* NewAccountViewController.swift in Sources */,

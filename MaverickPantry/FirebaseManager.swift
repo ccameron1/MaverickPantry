@@ -48,7 +48,7 @@ class FirebaseManager {
 					}
 					
 					
-					globalUser = Users.init(isAdmin: admin, email: document?.get("email") as! String, initials: document?.get("initials") as! String, yearOfBirth: document?.get("yearOfBirth") as! Int, NUID: document?.get("NUID") as! String, uid: document?.get("uid") as! String, request1: document?.get("request1") as! [String], request2: document?.get("request2") as! [String], timestamp1: time.dateValue() as NSDate, timestamp2: time2.dateValue() as NSDate)
+					globalUser = Users.init(isAdmin: admin, email: document?.get("email") as! String, initials: document?.get("initials") as! String, monthOfBirth: document?.get("monthOfBirth") as! Int, dayOfBirth: document?.get("dayOfBirth") as! Int, NUID: document?.get("NUID") as! String, uid: document?.get("uid") as! String, request1: document?.get("request1") as! [String], request2: document?.get("request2") as! [String], timestamp1: time.dateValue() as NSDate, timestamp2: time2.dateValue() as NSDate)
 					
 					completion(true, nil)
 					
@@ -57,7 +57,7 @@ class FirebaseManager {
 		}
 	}
 	
-	static func CreateAccount(email: String, password: String, initials: String, yearOfBirth: Int, isAdmin: Bool, NUID: String, completion: @escaping (_ result: Bool) -> Void) {
+	static func CreateAccount(email: String, password: String, initials: String, monthOfBirth: Int, dayOfBirth: Int, isAdmin: Bool, NUID: String, completion: @escaping (_ result: Bool) -> Void) {
 		if !email.contains("@unomaha.edu") {
 			print("bad email AAAAAAAAAAAAAAAAAAAAAA")
 		}
@@ -88,7 +88,7 @@ class FirebaseManager {
 				// Get NSDate given the above date components
 				var date = NSCalendar(identifier: NSCalendar.Identifier.gregorian)?.date(from: c as DateComponents)
 				
-				addUser(isAdmin: false, email: email, initials: initials, yearOfBirth: yearOfBirth, NUID: NUID, request1: [], request2: [], timestamp1: date as! NSDate, timestamp2: date as! NSDate)
+				addUser(isAdmin: false, email: email, initials: initials, monthOfBirth: monthOfBirth, dayOfBirth: dayOfBirth, NUID: NUID, request1: [], request2: [], timestamp1: date as! NSDate, timestamp2: date as! NSDate)
 				Login(email: email, password: password, completion: { (success, err)  in
 					if success {
 						print("Login successful after account creation.")
@@ -104,19 +104,20 @@ class FirebaseManager {
 	}
 	
 	
-	static func addUser(isAdmin: Bool, email: String, initials: String, yearOfBirth: Int, NUID: String, request1: [String], request2: [String], timestamp1: NSDate, timestamp2: NSDate) {
+	static func addUser(isAdmin: Bool, email: String, initials: String, monthOfBirth: Int, dayOfBirth: Int, NUID: String, request1: [String], request2: [String], timestamp1: NSDate, timestamp2: NSDate) {
 		let uid = Auth.auth().currentUser?.uid
 		if !email.contains("@unomaha.edu") {
 			print("bad email AAAAAAAAAAAAAAAAAAAAAA")
 		}
 		else
 		{
-			Users.init(isAdmin: isAdmin, email: email, initials: initials, yearOfBirth: yearOfBirth, NUID: NUID, uid: uid!, request1: request1, request2: request2, timestamp1: timestamp1, timestamp2: timestamp2)
+			Users.init(isAdmin: isAdmin, email: email, initials: initials, monthOfBirth: monthOfBirth, dayOfBirth: dayOfBirth, NUID: NUID, uid: uid!, request1: request1, request2: request2, timestamp1: timestamp1, timestamp2: timestamp2)
 			
 			//        databaseRef.child("users").child(uid!).setValue(post)
 			databaseRef.collection("Users").document(uid!).setData([
 				"initials": initials,
-				"yearOfBirth": yearOfBirth,
+				"monthOfBirth": monthOfBirth,
+				"dayOfBirth": dayOfBirth,
 				"email": email,
 				"isAdmin": isAdmin,
 				"NUID" : NUID,
@@ -192,8 +193,8 @@ class FirebaseManager {
 	}
 	
 	static func addOrder(order: Order, completion: @escaping (Bool) -> Void) {
-		databaseRef.collection("Orders").document("Order: \(order.initials!) \(order.yearOfBirth!) \(order.timestamp!)").setData(["requests": order.requests!,
-																																 "initials": order.initials!,"yearOfBirth": order.yearOfBirth!, "timestamp": order.timestamp!, "isReady": order.isReady!])
+		databaseRef.collection("Orders").document("Order: \(order.initials!) \(order.monthOfBirth!):\(order.dayOfBirth!) \(order.timestamp!)").setData(["requests": order.requests!,
+																																						"initials": order.initials!,"monthOfBirth": order.monthOfBirth!, "dayOfBirth": order.dayOfBirth!, "timestamp": order.timestamp!, "isReady": order.isReady!])
 		print("add order")
 		completion(true)
 	}
@@ -214,11 +215,13 @@ class FirebaseManager {
 					
 					let requests = document.get("requests")! as! [String]
 					let initials = document.get("initials")! as! String
-					let YOB = document.get("yearOfBirth")! as! Int
+//					let YOB = document.get("yearOfBirth")! as! Int
 					let timestamp = document.get("timestamp") as! Double
 					let isReady = document.get("isReady") as! Bool
+					let MOB = document.get("monthOfBirth") as! Int
+					let DOB = document.get("dayOfBirth") as! Int
 					
-					let order = Order(requests: requests, intitials: initials, yearOfBirth: YOB, timestamp: timestamp, isReady: isReady)
+					let order = Order(requests: requests, intitials: initials, timestamp: timestamp, isReady: isReady, monthOfBirth: MOB, dayOfBirth: DOB)
 					
 					orders.append(order)
 					if orders.count == querySnapshot!.documents.count {
@@ -229,6 +232,7 @@ class FirebaseManager {
 			}
 		}
 	}
+	
 	static func deleteFromOrders(orderName: String, completion: @escaping (Bool) -> Void) {
 		print(orderName)
 		databaseRef.collection("Orders").document(orderName).delete() { err in

@@ -62,8 +62,9 @@ class CurrentOrdersViewController: UIViewController, UITableViewDataSource, UITa
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID")
         
         cell?.textLabel!.text = FirebaseManager.globalOrders![indexPath.row].initials!.uppercased()
-        let yearOfBirthString = String(FirebaseManager.globalOrders![indexPath.row].yearOfBirth!)
-        cell?.detailTextLabel!.text = yearOfBirthString
+        let monthOfBirthString = String(FirebaseManager.globalOrders![indexPath.row].monthOfBirth!)
+        let dayOfBirthString = String(FirebaseManager.globalOrders![indexPath.row].dayOfBirth!)
+        cell?.detailTextLabel!.text = "\(monthOfBirthString) : \(dayOfBirthString)"
         
         if FirebaseManager.globalOrders![indexPath.row].isReady == true{
             cell?.backgroundColor = UIColor.green

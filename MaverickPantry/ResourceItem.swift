@@ -16,13 +16,15 @@ class ResourceItem{
     var image : UIImage?
     var link : String?
     var phoneNumber : String
+    var address : String
     
-    init(name : String, desc : String, image : UIImage, link : String, phoneNumber: String) {
+    init(name : String, desc : String, image : UIImage, link : String, phoneNumber: String, address: String) {
         self.name = name
         self.desc = desc
         self.image = image
         self.link = link
         self.phoneNumber = phoneNumber
+        self.address = address
     }
     
 }

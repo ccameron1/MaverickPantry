@@ -13,6 +13,7 @@ class IndividualRecipeViewController: UIViewController, UITableViewDelegate, UIT
     var selectedRecipe : Recipe!
     var row = -1
     var sentence = ""
+    var selectedImage = ""
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -28,6 +29,7 @@ class IndividualRecipeViewController: UIViewController, UITableViewDelegate, UIT
         print(row)
         textView.isHidden = true
         title = "Recipe"
+        imageView.image = UIImage(named: selectedImage)
         foodNameLabel.text = selectedRecipe.recipeName
         servingsLabel.text = selectedRecipe.recipeServing
         cookTimeLabel.text = selectedRecipe.cookTime

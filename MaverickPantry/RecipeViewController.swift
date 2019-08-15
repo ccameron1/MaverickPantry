@@ -14,6 +14,7 @@ class RecipeViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     var recipes : [Recipe] = []
     var indexPath: IndexPath?
+    var recipeImages : [String] = ["chili", "burger", "meatballs", "peanutbutterballs", "soup-1", "chips"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,8 @@ class RecipeViewController: UIViewController, UICollectionViewDelegate, UICollec
                 let time = recipes[indexPath.row].recipeTime
                 //        let list = recipes[indexPath.row]
                 let name = recipes[indexPath.row].recipeName
-                cell.imageView.image = UIImage(named: "eggs")
+                let recipeImage = self.recipeImages[indexPath.row]
+                cell.imageView.image = UIImage(named: recipeImage)
                 cell.foodLabel.text = name
                 cell.timeLabel.text = time
                 cell.imageView.addShadow()
@@ -52,6 +54,7 @@ class RecipeViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dvc = segue.destination as! IndividualRecipeViewController
         dvc.selectedRecipe = recipes[indexPath!.row]
+        dvc.selectedImage = recipeImages[(indexPath?.row)!]
     }
     
     

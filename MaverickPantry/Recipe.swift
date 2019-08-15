@@ -15,10 +15,10 @@ class Recipe {
     var cookTime : String?
     var image : String?
     var recipeDescription : String?
-    var recipeDirections : String?
+    var recipeDirections : [String]?
     var recipeServing : String?
     
-    init(recipeName: String, ingredients: [String], recipeTime: String, cookTime: String, image: String, recipeDescription: String, recipeDirections: String, recipeServing: String) {
+    init(recipeName: String, ingredients: [String], recipeTime: String, cookTime: String, image: String, recipeDescription: String, recipeDirections: [String], recipeServing: String) {
         self.recipeName = recipeName
         self.ingredients = ingredients
         self.recipeTime = recipeTime

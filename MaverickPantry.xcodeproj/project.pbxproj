@@ -26,6 +26,9 @@
 		7A8556A322C0FE1F009451B7 /* TestRequest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A8556A222C0FE1F009451B7 /* TestRequest.storyboard */; };
 		7A8556A522C10D27009451B7 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8556A422C10D27009451B7 /* Order.swift */; };
 		D56096F8230222E800D01B4E /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56096F7230222E800D01B4E /* Recipe.swift */; };
+		D5431D3822F9B69D00CEFC7E /* Resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5431D3722F9B69D00CEFC7E /* Resources.storyboard */; };
+		D54D5B4A22FCF166006C7A55 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D5B4922FCF166006C7A55 /* ResourcesViewController.swift */; };
+		D54D5B4C22FCF5D6006C7A55 /* ResourceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D5B4B22FCF5D6006C7A55 /* ResourceItem.swift */; };
 		D58BE6C422BAB95800324972 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6C322BAB95800324972 /* About.storyboard */; };
 		D58BE6C622BAB97A00324972 /* RequestPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6C522BAB97A00324972 /* RequestPage.storyboard */; };
 		D58BE6C822BAB99300324972 /* Volunteers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6C722BAB99300324972 /* Volunteers.storyboard */; };
@@ -70,6 +73,9 @@
 		7A8556A422C10D27009451B7 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		CBD73E0B5AF308E47A83E05A /* Pods-MaverickPantry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaverickPantry.release.xcconfig"; path = "Target Support Files/Pods-MaverickPantry/Pods-MaverickPantry.release.xcconfig"; sourceTree = "<group>"; };
 		D56096F7230222E800D01B4E /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		D5431D3722F9B69D00CEFC7E /* Resources.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Resources.storyboard; sourceTree = "<group>"; };
+		D54D5B4922FCF166006C7A55 /* ResourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
+		D54D5B4B22FCF5D6006C7A55 /* ResourceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceItem.swift; sourceTree = "<group>"; };
 		D58BE6C322BAB95800324972 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		D58BE6C522BAB97A00324972 /* RequestPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RequestPage.storyboard; sourceTree = "<group>"; };
 		D58BE6C722BAB99300324972 /* Volunteers.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Volunteers.storyboard; sourceTree = "<group>"; };
@@ -166,6 +172,9 @@
 				7A067DE022BA9E2F00FDC2B2 /* Users.swift */,
 				7A067DCC22BA98F700FDC2B2 /* ViewController.swift */,
 				7A067DCE22BA98F700FDC2B2 /* Main.storyboard */,
+				D5431D3722F9B69D00CEFC7E /* Resources.storyboard */,
+				D54D5B4B22FCF5D6006C7A55 /* ResourceItem.swift */,
+				D54D5B4922FCF166006C7A55 /* ResourcesViewController.swift */,
 				7A067DD322BA98FA00FDC2B2 /* LaunchScreen.storyboard */,
 				E0196C4722C25E9D00635BCE /* Assets.xcassets */,
 				7A067DD622BA98FA00FDC2B2 /* Info.plist */,
@@ -256,6 +265,7 @@
 				7A067DD022BA98F700FDC2B2 /* Main.storyboard in Resources */,
 				D5AFCE2B22BBC44900FD3CD4 /* Inventory.storyboard in Resources */,
 				7A067DDD22BA992900FDC2B2 /* GoogleService-Info.plist in Resources */,
+				D5431D3822F9B69D00CEFC7E /* Resources.storyboard in Resources */,
 				D58BE6C622BAB97A00324972 /* RequestPage.storyboard in Resources */,
 				D58BE6D022BABB8600324972 /* Admin.storyboard in Resources */,
 				D58BE6C822BAB99300324972 /* Volunteers.storyboard in Resources */,
@@ -334,6 +344,7 @@
 				D5AFCE2F22BBF03900FD3CD4 /* AdminViewController.swift in Sources */,
 				7A8556A522C10D27009451B7 /* Order.swift in Sources */,
 				E0B3064C22BABD24007A2E85 /* RequestPageViewController.swift in Sources */,
+				D54D5B4C22FCF5D6006C7A55 /* ResourceItem.swift in Sources */,
 				D5CE3A7F22C1340F00BF3613 /* RecipeCollectionViewCell.swift in Sources */,
 				73037C1522BD1E02004F4F18 /* DummyFood.swift in Sources */,
 				7A067DDF22BA9E0400FDC2B2 /* FirebaseManager.swift in Sources */,
@@ -349,6 +360,7 @@
 				E0B3064E22BABD67007A2E85 /* VolunteersViewController.swift in Sources */,
 				E0B3064A22BABCE2007A2E85 /* AboutViewController.swift in Sources */,
 				7A55A72622BACCB60075441B /* LoginViewController.swift in Sources */,
+				D54D5B4A22FCF166006C7A55 /* ResourcesViewController.swift in Sources */,
 				7A85569D22C02FE8009451B7 /* TestRequestsViewController.swift in Sources */,
 				7A067DCB22BA98F700FDC2B2 /* AppDelegate.swift in Sources */,
 				73306A1A22BBD93300E5FB78 /* InventoryDetailViewController.swift in Sources */,

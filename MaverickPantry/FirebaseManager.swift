@@ -298,7 +298,7 @@ class FirebaseManager {
 					let cookTime = document.get("cookTime")! as! String
 					let image = document.get("image") as! String
 					let recipeDescription = document.get("description") as! String
-					let recipeDirections = document.get("directions") as! String
+					let recipeDirections = document.get("directions") as! [String]
 					let recipeName = document.get("name") as! String
 					let recipeServing = document.get("serving") as! String
 					

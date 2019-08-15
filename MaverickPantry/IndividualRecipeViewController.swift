@@ -12,6 +12,8 @@ class IndividualRecipeViewController: UIViewController, UITableViewDelegate, UIT
     
     var selectedRecipe : Recipe!
     var row = -1
+    var sentence = ""
+    
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
@@ -29,8 +31,13 @@ class IndividualRecipeViewController: UIViewController, UITableViewDelegate, UIT
         foodNameLabel.text = selectedRecipe.recipeName
         servingsLabel.text = selectedRecipe.recipeServing
         cookTimeLabel.text = selectedRecipe.cookTime
-        textView.text = selectedRecipe.recipeDirections
         detailTextView.text = selectedRecipe.recipeDescription
+        let directions = selectedRecipe.recipeDirections
+        for direction in directions! {
+            sentence = sentence + direction + "\n"
+            print(sentence)
+        }
+        textView.text = sentence
     }
     
     @IBAction func segmentedController(_ sender: UISegmentedControl) {

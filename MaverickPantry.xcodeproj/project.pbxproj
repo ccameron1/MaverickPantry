@@ -28,6 +28,7 @@
 		D5431D3822F9B69D00CEFC7E /* Resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5431D3722F9B69D00CEFC7E /* Resources.storyboard */; };
 		D54D5B4A22FCF166006C7A55 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D5B4922FCF166006C7A55 /* ResourcesViewController.swift */; };
 		D54D5B4C22FCF5D6006C7A55 /* ResourceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D5B4B22FCF5D6006C7A55 /* ResourceItem.swift */; };
+		D54D5B4E2333FF3E006C7A55 /* ResourceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D5B4D2333FF3E006C7A55 /* ResourceDetailViewController.swift */; };
 		D58BE6C422BAB95800324972 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6C322BAB95800324972 /* About.storyboard */; };
 		D58BE6C622BAB97A00324972 /* RequestPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6C522BAB97A00324972 /* RequestPage.storyboard */; };
 		D58BE6C822BAB99300324972 /* Volunteers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58BE6C722BAB99300324972 /* Volunteers.storyboard */; };
@@ -74,6 +75,7 @@
 		D5431D3722F9B69D00CEFC7E /* Resources.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Resources.storyboard; sourceTree = "<group>"; };
 		D54D5B4922FCF166006C7A55 /* ResourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 		D54D5B4B22FCF5D6006C7A55 /* ResourceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceItem.swift; sourceTree = "<group>"; };
+		D54D5B4D2333FF3E006C7A55 /* ResourceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceDetailViewController.swift; sourceTree = "<group>"; };
 		D58BE6C322BAB95800324972 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		D58BE6C522BAB97A00324972 /* RequestPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RequestPage.storyboard; sourceTree = "<group>"; };
 		D58BE6C722BAB99300324972 /* Volunteers.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Volunteers.storyboard; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				7A067DCC22BA98F700FDC2B2 /* ViewController.swift */,
 				7A067DCE22BA98F700FDC2B2 /* Main.storyboard */,
 				D5431D3722F9B69D00CEFC7E /* Resources.storyboard */,
+				D54D5B4D2333FF3E006C7A55 /* ResourceDetailViewController.swift */,
 				D54D5B4B22FCF5D6006C7A55 /* ResourceItem.swift */,
 				D54D5B4922FCF166006C7A55 /* ResourcesViewController.swift */,
 				7A067DD322BA98FA00FDC2B2 /* LaunchScreen.storyboard */,
@@ -350,6 +353,7 @@
 				7A067DCD22BA98F700FDC2B2 /* ViewController.swift in Sources */,
 				7A55A72822BACCCE0075441B /* NewAccountViewController.swift in Sources */,
 				E0B3065022BABDAD007A2E85 /* RecipeViewController.swift in Sources */,
+				D54D5B4E2333FF3E006C7A55 /* ResourceDetailViewController.swift in Sources */,
 				D6A9A1FE22BBE60F0071E389 /* StepperTableViewCell.swift in Sources */,
 				7A85569F22C0326A009451B7 /* CollectionViewCell.swift in Sources */,
 				D5AFCE2D22BBD04600FD3CD4 /* CurrentOrderRequestViewController.swift in Sources */,

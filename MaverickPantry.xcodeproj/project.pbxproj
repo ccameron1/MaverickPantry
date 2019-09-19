@@ -25,6 +25,7 @@
 		7A85569F22C0326A009451B7 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A85569E22C0326A009451B7 /* CollectionViewCell.swift */; };
 		7A8556A322C0FE1F009451B7 /* TestRequest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A8556A222C0FE1F009451B7 /* TestRequest.storyboard */; };
 		7A8556A522C10D27009451B7 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8556A422C10D27009451B7 /* Order.swift */; };
+		D56096F8230222E800D01B4E /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56096F7230222E800D01B4E /* Recipe.swift */; };
 		D5431D3822F9B69D00CEFC7E /* Resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5431D3722F9B69D00CEFC7E /* Resources.storyboard */; };
 		D54D5B4A22FCF166006C7A55 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D5B4922FCF166006C7A55 /* ResourcesViewController.swift */; };
 		D54D5B4C22FCF5D6006C7A55 /* ResourceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D5B4B22FCF5D6006C7A55 /* ResourceItem.swift */; };
@@ -72,6 +73,7 @@
 		7A8556A222C0FE1F009451B7 /* TestRequest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TestRequest.storyboard; sourceTree = "<group>"; };
 		7A8556A422C10D27009451B7 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		CBD73E0B5AF308E47A83E05A /* Pods-MaverickPantry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaverickPantry.release.xcconfig"; path = "Target Support Files/Pods-MaverickPantry/Pods-MaverickPantry.release.xcconfig"; sourceTree = "<group>"; };
+		D56096F7230222E800D01B4E /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		D5431D3722F9B69D00CEFC7E /* Resources.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Resources.storyboard; sourceTree = "<group>"; };
 		D54D5B4922FCF166006C7A55 /* ResourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 		D54D5B4B22FCF5D6006C7A55 /* ResourceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceItem.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				D5AFCE2822BBBE7C00FD3CD4 /* CurrentOrdersViewController.swift */,
 				7A067DCA22BA98F700FDC2B2 /* AppDelegate.swift */,
 				7A067DDE22BA9E0400FDC2B2 /* FirebaseManager.swift */,
+				D56096F7230222E800D01B4E /* Recipe.swift */,
 				7A067DE022BA9E2F00FDC2B2 /* Users.swift */,
 				7A067DCC22BA98F700FDC2B2 /* ViewController.swift */,
 				7A067DCE22BA98F700FDC2B2 /* Main.storyboard */,
@@ -357,6 +360,7 @@
 				D6A9A1FE22BBE60F0071E389 /* StepperTableViewCell.swift in Sources */,
 				7A85569F22C0326A009451B7 /* CollectionViewCell.swift in Sources */,
 				D5AFCE2D22BBD04600FD3CD4 /* CurrentOrderRequestViewController.swift in Sources */,
+				D56096F8230222E800D01B4E /* Recipe.swift in Sources */,
 				E0B3064E22BABD67007A2E85 /* VolunteersViewController.swift in Sources */,
 				E0B3064A22BABCE2007A2E85 /* AboutViewController.swift in Sources */,
 				7A55A72622BACCB60075441B /* LoginViewController.swift in Sources */,

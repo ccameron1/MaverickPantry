@@ -9,11 +9,14 @@
 import UIKit
 
 class ResourceDetailViewController: UIViewController {
+    
+    var selectedResource : ResourceItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(selectedResource!.name)
 
-        // Do any additional setup after loading the view.
     }
     
 

@@ -74,9 +74,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="JAv-Q1-hfd" kind="show" identifier="toResourceDetailSegue" id="sPC-dY-zHY"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -98,6 +95,7 @@
                     <connections>
                         <outlet property="resourcesTableView" destination="CVl-Is-6la" id="hWS-dc-X9C"/>
                         <outlet property="selectionController" destination="0nY-NS-69H" id="UNZ-3L-h0p"/>
+                        <segue destination="JAv-Q1-hfd" kind="show" identifier="toResourceDetailSegue" id="81A-jJ-Rg2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eze-8C-pUh" userLabel="First Responder" sceneMemberID="firstResponder"/>

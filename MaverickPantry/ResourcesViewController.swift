@@ -14,11 +14,10 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var selectionController: UISegmentedControl!
     @IBOutlet weak var resourcesTableView: UITableView!
     
-    let onCampusDummyResources = ["CAPS", "Financial Services"]
-    let offCampusDummyResources = ["Stuff", "Things" , "MORE"]
-    
     var onCampusResources : [ResourceItem] = []
     var offCampusResources : [ResourceItem] = []
+    
+    var selectedResource : ResourceItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +69,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     func createAndAddResources(){
         
         //add code for on campus
-        let caps = ResourceItem(name: "CAPS", desc: "Counseling and Psychological Services", image: UIImage(named: "icon2")! , link: "https://www.unomaha.edu/student-life/wellness/counseling-and-psychological-services/index.php", phoneNumber: "(402)554-2409", address: "6323 Maverick Plaza, Omaha, NE 68182")
+        let caps = ResourceItem(name: "CAPS", desc: "Counseling and Psychological Services, otherwise known as CAPS, offers free services to all UNO students. They are located in room 102 of the H&K Building on UNO's Dodge Campus.", image: UIImage(named: "icon2")! , link: "https://www.unomaha.edu/student-life/wellness/counseling-and-psychological-services/index.php", phoneNumber: "(402)554-2409", address: "6323 Maverick Plaza, Omaha, NE 68182")
         onCampusResources.append(caps)
         
         //add code for off campus
@@ -84,8 +83,25 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         let mavRideBusPass = ResourceItem(name: "Mavride Bus Pass", desc: "This service provides free rides on the Metro Bus System to current faculty, staff, and students. Your MavCARD is activated with the bus pass. This can be used for any route.", image: UIImage(named: "icon2")!, link: "www.ometro.com", phoneNumber: "(402)341-0800", address: "address goes here")
         offCampusResources.append(mavRideBusPass)
         
-        let odm = ResourceItem(name: "Open Door Mission", desc: "This facility provides shelter beds, serves hot meals, and provides preventive measures to those in poverty.", image: UIImage(named: "icon2")!, link: "https://www.opendoormission.org/", phoneNumber: "(402)422-1111", address: "address goes here")
+        let odm = ResourceItem(name: "Open Door Mission", desc: "This facility provides shelter beds, serves hot meals, and provides preventive measures to those in poverty.", image: UIImage(named: "icon2")!, link: "https://www.opendoormission.org/", phoneNumber: "(402)422-1111", address: "2828 N 23rd St E, Omaha, NE 68110")
         offCampusResources.append(odm)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if selectionController.selectedSegmentIndex == 0 {
+            selectedResource = onCampusResources[indexPath.row]
+        } else {
+            selectedResource = offCampusResources[indexPath.row]
+        }
+        
+        performSegue(withIdentifier: "toResourceDetailSegue", sender: nil)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let RDVC = segue.destination as! ResourceDetailViewController
+        RDVC.selectedResource = selectedResource
     }
     
 }

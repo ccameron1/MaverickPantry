@@ -109,13 +109,47 @@
                     <view key="view" contentMode="scaleToFill" id="L7e-xx-NE4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Uin-1F-jmY">
+                                <rect key="frame" x="20" y="108" width="374" height="554"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XE0-44-t7w">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="319"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Organization Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ttz-ps-AW6">
+                                        <rect key="frame" x="39" y="397.5" width="296" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Organization Description Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8Rg-w2-fXM">
+                                        <rect key="frame" x="73" y="518.5" width="228.5" height="35.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" address="YES"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5gy-SZ-svE" firstAttribute="trailing" secondItem="Uin-1F-jmY" secondAttribute="trailing" constant="20" id="F0e-I7-GPK"/>
+                            <constraint firstItem="Uin-1F-jmY" firstAttribute="top" secondItem="5gy-SZ-svE" secondAttribute="top" constant="20" id="QXo-o2-lu1"/>
+                            <constraint firstItem="5gy-SZ-svE" firstAttribute="bottom" secondItem="Uin-1F-jmY" secondAttribute="bottom" constant="200" id="Ua8-Wp-4Qu"/>
+                            <constraint firstItem="Uin-1F-jmY" firstAttribute="leading" secondItem="5gy-SZ-svE" secondAttribute="leading" constant="20" id="mgg-mq-Mfs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5gy-SZ-svE"/>
                     </view>
+                    <connections>
+                        <outlet property="orgDescTextField" destination="8Rg-w2-fXM" id="YrB-dw-aQ2"/>
+                        <outlet property="orgImageView" destination="XE0-44-t7w" id="fY7-xR-TdD"/>
+                        <outlet property="orgNameLabel" destination="Ttz-ps-AW6" id="Le9-lh-rfP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8v5-Wy-j7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="143" y="16"/>
+            <point key="canvasLocation" x="140.57971014492756" y="15.401785714285714"/>
         </scene>
     </scenes>
 </document>

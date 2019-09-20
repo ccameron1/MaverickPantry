@@ -10,14 +10,20 @@ import UIKit
 
 class ResourceDetailViewController: UIViewController {
     
+    @IBOutlet weak var orgImageView: UIImageView!
+    @IBOutlet weak var orgNameLabel: UILabel!
+    @IBOutlet weak var orgDescTextField: UITextView!
+    
     var selectedResource : ResourceItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(selectedResource!.name)
+        orgImageView.image = selectedResource!.image
+        orgNameLabel.text = selectedResource!.name!
+        let descString = selectedResource!.desc! + "\n\nPhone Number: " + selectedResource!.phoneNumber + "\nAddress: " + selectedResource!.address
+        orgDescTextField.text = descString
 
     }
     
-
 }

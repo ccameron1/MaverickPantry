@@ -50,11 +50,11 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         switch selectionController.selectedSegmentIndex{
         case 0:
             cell?.textLabel?.text = onCampusResources[indexPath.row].name
-            cell?.detailTextLabel?.text = onCampusResources[indexPath.row].phoneNumber + "\n" + onCampusResources[indexPath.row].address
+            //cell?.detailTextLabel?.text = onCampusResources[indexPath.row].phoneNumber + "\n" + onCampusResources[indexPath.row].address
             cell?.imageView?.image = onCampusResources[indexPath.row].image
         case 1:
             cell?.textLabel?.text = offCampusResources[indexPath.row].name
-            cell?.detailTextLabel?.text = offCampusResources[indexPath.row].phoneNumber + "\n" + offCampusResources[indexPath.row].address
+            //cell?.detailTextLabel?.text = offCampusResources[indexPath.row].phoneNumber + "\n" + offCampusResources[indexPath.row].address
             cell?.imageView?.image = offCampusResources[indexPath.row].image
         default:
             break;
@@ -69,7 +69,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     func createAndAddResources(){
         
         //add code for on campus
-        let caps = ResourceItem(name: "CAPS", desc: "Counseling and Psychological Services, otherwise known as CAPS, offers free services to all UNO students. They are located in room 102 of the H&K Building on UNO's Dodge Campus.", image: UIImage(named: "icon2")! , link: "https://www.unomaha.edu/student-life/wellness/counseling-and-psychological-services/index.php", phoneNumber: "(402)554-2409", address: "6323 Maverick Plaza, Omaha, NE 68182")
+        let caps = ResourceItem(name: "CAPS", desc: "Counseling and Psychological Services, otherwise known as CAPS, offers free services to all UNO students. They are located in room 102 of the H&K Building on UNO's Dodge Campus.", image: UIImage(named: "UNOLogo")! , link: "https://www.unomaha.edu/student-life/wellness/counseling-and-psychological-services/index.php", phoneNumber: "(402)554-2409", address: "6323 Maverick Plaza, Omaha, NE 68182")
         onCampusResources.append(caps)
         
         //add code for off campus
@@ -80,10 +80,10 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         let FLfoodPantry = ResourceItem(name: "First Lutheran Church Food Pantry", desc: "This is a food pantry that provides both food and clothing. Please call to confirm the hours of operation and necessary form(s) of identification.", image: UIImage(named: "icon2")!, link: "https://sites.google.com/flcomaha.org/foodpantry", phoneNumber: "(402)345-7506", address: "address goes here")
         offCampusResources.append(FLfoodPantry)
         
-        let mavRideBusPass = ResourceItem(name: "Mavride Bus Pass", desc: "This service provides free rides on the Metro Bus System to current faculty, staff, and students. Your MavCARD is activated with the bus pass. This can be used for any route.", image: UIImage(named: "icon2")!, link: "www.ometro.com", phoneNumber: "(402)341-0800", address: "address goes here")
+        let mavRideBusPass = ResourceItem(name: "Mavride Bus Pass", desc: "This service provides free rides on the Metro Bus System to current faculty, staff, and students. Your MavCARD is activated with the bus pass. This can be used for any route.", image: UIImage(named: "metroLogo")!, link: "www.ometro.com", phoneNumber: "(402)341-0800", address: "address goes here")
         offCampusResources.append(mavRideBusPass)
         
-        let odm = ResourceItem(name: "Open Door Mission", desc: "This facility provides shelter beds, serves hot meals, and provides preventive measures to those in poverty.", image: UIImage(named: "icon2")!, link: "https://www.opendoormission.org/", phoneNumber: "(402)422-1111", address: "2828 N 23rd St E, Omaha, NE 68110")
+        let odm = ResourceItem(name: "Open Door Mission", desc: "This facility provides shelter beds, serves hot meals, and provides preventive measures to those in poverty.", image: UIImage(named: "ODMLogo")!, link: "https://www.opendoormission.org/", phoneNumber: "(402)422-1111", address: "2828 N 23rd St E, Omaha, NE 68110")
         offCampusResources.append(odm)
     }
     

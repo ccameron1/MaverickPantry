@@ -21,7 +21,7 @@ class ResourceDetailViewController: UIViewController {
         
         orgImageView.image = selectedResource!.image
         orgNameLabel.text = selectedResource!.name!
-        let descString = selectedResource!.desc! + "\n\nPhone Number: " + selectedResource!.phoneNumber + "\nAddress: " + selectedResource!.address
+        let descString = selectedResource!.desc! + "\n\n" + selectedResource!.phoneNumber + "\n" + selectedResource!.address
         orgDescTextField.text = descString
 
     }

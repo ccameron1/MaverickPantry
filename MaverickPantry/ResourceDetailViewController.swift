@@ -13,6 +13,7 @@ class ResourceDetailViewController: UIViewController {
     @IBOutlet weak var orgImageView: UIImageView!
     @IBOutlet weak var orgNameLabel: UILabel!
     @IBOutlet weak var orgDescTextField: UITextView!
+    @IBOutlet weak var contactInfoTextView: UITextView!
     
     var selectedResource : ResourceItem?
 
@@ -21,8 +22,14 @@ class ResourceDetailViewController: UIViewController {
         
         orgImageView.image = selectedResource!.image
         orgNameLabel.text = selectedResource!.name!
-        let descString = selectedResource!.desc! + "\n\n" + selectedResource!.phoneNumber + "\n" + selectedResource!.address
+        let descString = selectedResource!.desc!
         orgDescTextField.text = descString
+        let contactString = "Address: " + selectedResource!.address + "\nPhone Number: " + selectedResource!.phoneNumber
+        let webString = "\nWebsite: " + selectedResource!.link
+        contactInfoTextView.text = contactString + webString
+        
+        contactInfoTextView.linkTextAttributes = [.foregroundColor : UIColor.red]
+        
 
     }
     

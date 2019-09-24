@@ -50,11 +50,9 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         switch selectionController.selectedSegmentIndex{
         case 0:
             cell?.textLabel?.text = onCampusResources[indexPath.row].name
-            //cell?.detailTextLabel?.text = onCampusResources[indexPath.row].phoneNumber + "\n" + onCampusResources[indexPath.row].address
             cell?.imageView?.image = onCampusResources[indexPath.row].image
         case 1:
             cell?.textLabel?.text = offCampusResources[indexPath.row].name
-            //cell?.detailTextLabel?.text = offCampusResources[indexPath.row].phoneNumber + "\n" + offCampusResources[indexPath.row].address
             cell?.imageView?.image = offCampusResources[indexPath.row].image
         default:
             break;
@@ -69,7 +67,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     func createAndAddResources(){
         
         //add code for on campus
-        let caps = ResourceItem(name: "CAPS", desc: "Counseling and Psychological Services, otherwise known as CAPS, offers free services to all UNO students. They are located in room 102 of the H&K Building on UNO's Dodge Campus.", image: UIImage(named: "UNOLogo")! , link: "https://www.unomaha.edu/student-life/wellness/counseling-and-psychological-services/index.php", phoneNumber: "(402)554-2409", address: "6323 Maverick Plaza, Omaha, NE 68182")
+        let caps = ResourceItem(name: "CAPS", desc: "Counseling and Psychological Services, otherwise known as CAPS, offers free services to all UNO students. They are located in room 102 of the H&K Building on UNO's Dodge Campus.", image: UIImage(named: "UNOLogo")! , link: "https://www.unomaha.edu/student-life/wellness/counseling-and-psychological-services", phoneNumber: "(402)554-2409", address: "6323 Maverick Plaza, Omaha, NE 68182")
         onCampusResources.append(caps)
         
         //add code for off campus

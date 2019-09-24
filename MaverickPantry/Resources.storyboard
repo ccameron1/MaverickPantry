@@ -122,7 +122,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Organization Description Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8Rg-w2-fXM">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Organization Description Here" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Rg-w2-fXM">
                                                 <rect key="frame" x="71.5" y="548.5" width="271.5" height="40"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

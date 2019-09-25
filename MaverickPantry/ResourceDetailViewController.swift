@@ -24,12 +24,29 @@ class ResourceDetailViewController: UIViewController {
         orgNameLabel.text = selectedResource!.name!
         let descString = selectedResource!.desc!
         orgDescTextField.text = descString
-        let contactString = "Address: " + selectedResource!.address + "\nPhone Number: " + selectedResource!.phoneNumber
-        let webString = "\nWebsite: " + selectedResource!.link
-        contactInfoTextView.text = contactString + webString
+        let addressString = NSAttributedString(string : "Address: ", attributes: [.foregroundColor : UIColor.white])
+        let address = NSAttributedString(string: selectedResource!.address, attributes: [.foregroundColor : UIColor.red])
         
-        contactInfoTextView.linkTextAttributes = [.foregroundColor : UIColor.red]
+        let phoneString = NSAttributedString(string : "\nPhone Number: ", attributes: [.foregroundColor : UIColor.white])
+        let phoneNum = NSAttributedString(string: selectedResource!.phoneNumber, attributes: [.foregroundColor : UIColor.red])
         
+        let webString = NSAttributedString(string : "\nWebsite: ", attributes: [.foregroundColor : UIColor.white])
+        let link = NSAttributedString(string: selectedResource!.link, attributes: [.foregroundColor : UIColor.red])
+        
+        let stringToAdd = NSMutableAttributedString()
+        
+        stringToAdd.append(addressString)
+        stringToAdd.append(address)
+        stringToAdd.append(phoneString)
+        stringToAdd.append(phoneNum)
+        stringToAdd.append(webString)
+        stringToAdd.append(link)
+        
+        stringToAdd.addAttributes([.font : UIFont(name: "HelveticaNeue", size: 16.0)!], range: NSRange(location: 0, length: stringToAdd.length))
+        
+        contactInfoTextView.attributedText = stringToAdd
+        
+        //mostly working. still need to underline the hyperlinks and look into the weird image glitch.
 
     }
     

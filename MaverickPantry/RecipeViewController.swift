@@ -47,5 +47,7 @@ class RecipeViewController: UIViewController, UICollectionViewDelegate, UICollec
         let dvc = segue.destination as! IndividualRecipeViewController
         dvc.name = recipeName[(indexPath?.row)!]
         dvc.row = indexPath!.row
+        
+        
     }
 }

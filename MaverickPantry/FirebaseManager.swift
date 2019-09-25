@@ -78,15 +78,12 @@ class FirebaseManager {
 					
 				}
 				
-				
-				
-				
-				var c = NSDateComponents()
+				let c = NSDateComponents()
 				c.year = 2000
 				c.month = 1
 				c.day = 1
 				// Get NSDate given the above date components
-				var date = NSCalendar(identifier: NSCalendar.Identifier.gregorian)?.date(from: c as DateComponents)
+				let date = NSCalendar(identifier: NSCalendar.Identifier.gregorian)?.date(from: c as DateComponents)
 				
 				addUser(isAdmin: false, email: email, initials: initials, monthOfBirth: monthOfBirth, dayOfBirth: dayOfBirth, NUID: NUID, request1: [], request2: [], timestamp1: date as! NSDate, timestamp2: date as! NSDate)
 				Login(email: email, password: password, completion: { (success, err)  in
@@ -215,7 +212,6 @@ class FirebaseManager {
 					
 					let requests = document.get("requests")! as! [String]
 					let initials = document.get("initials")! as! String
-//					let YOB = document.get("yearOfBirth")! as! Int
 					let timestamp = document.get("timestamp") as! Double
 					let isReady = document.get("isReady") as! Bool
 					let MOB = document.get("monthOfBirth") as! Int
@@ -227,7 +223,7 @@ class FirebaseManager {
 					if orders.count == querySnapshot!.documents.count {
 						completion(orders, nil)
 					}
-					print("Order: \(order.initials)")
+					print("get orders** Order: \(order.initials)")
 				}
 			}
 		}

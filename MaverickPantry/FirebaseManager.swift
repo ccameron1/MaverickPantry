@@ -18,6 +18,7 @@ class FirebaseManager {
 	static var currentUser : User?
 	static var globalUser : Users!
 	static var globalOrders : [Order]? = []
+	static var globalRecipes : [Recipe]? = []
 	static var globalInventory : [DummyFood]? = []
 	
 	static func Login(email: String, password: String, completion: @escaping (_ success: Bool, Error?) -> Void) {
@@ -271,6 +272,39 @@ class FirebaseManager {
 						completion(items, nil)
 					}
 					print("Order: \(item.name)")
+				}
+			}
+		}
+	}
+	
+	
+	static func getRecipes(completion: @escaping ([Recipe], Error?) -> Void ){
+		var recipes = [Recipe]()
+		
+		databaseRef.collection("recipes").getDocuments() { (querySnapshot, err) in
+			if let err = err {
+				print("Error getting documents: \(err)")
+				completion([Recipe](), err)
+			} else {
+				for document in querySnapshot!.documents {
+					//					let data = document.data()
+					
+					let ingredients = document.get("ingredients")! as! [String]
+					let recipeTime = document.get("time")! as! String
+					let cookTime = document.get("cookTime")! as! String
+					let image = document.get("image") as! String
+					let recipeDescription = document.get("description") as! String
+					let recipeDirections = document.get("directions") as! [String]
+					let recipeName = document.get("name") as! String
+					let recipeServing = document.get("serving") as! String
+					
+					let recipe = Recipe(recipeName: recipeName, ingredients: ingredients, recipeTime: recipeTime, cookTime: cookTime, image: image, recipeDescription: recipeDescription, recipeDirections: recipeDirections, recipeServing: recipeServing)
+					
+					recipes.append(recipe)
+					if recipes.count == querySnapshot!.documents.count {
+						completion(recipes, nil)
+					}
+					print("Recipe: \(recipe.recipeName)")
 				}
 			}
 		}

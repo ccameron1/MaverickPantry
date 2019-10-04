@@ -15,7 +15,10 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var resourcesTableView: UITableView!
     
     var onCampusResources : [ResourceItem] = []
-    var offCampusResources : [ResourceItem] = []
+    var foodPantries : [ResourceItem] = []
+    var transportResources : [ResourceItem] = []
+    var financialResources : [ResourceItem] = []
+    var shelters : [ResourceItem] = []
     
     var selectedResource : ResourceItem?
     
@@ -37,13 +40,59 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
             print ("ON CAMPUS")
             rows = onCampusResources.count
         case 1:
-            //this is off campus
-            print ("OFF CAMPUS")
-            rows = offCampusResources.count
+            switch section {
+            case 0:
+                rows = foodPantries.count
+            case 1:
+                rows = financialResources.count
+            case 2:
+                rows = transportResources.count
+            case 3:
+                rows = shelters.count
+            default:
+                rows = 1
+            }
         default:
             break;
         }
         return rows
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        var title = ""
+        switch selectionController.selectedSegmentIndex {
+        case 0:
+            title = ""
+        case 1:
+            switch section {
+            case 0:
+                title = "Food Pantries"
+            case 1:
+                title = "Financial Wellness"
+            case 2:
+                title = "Transportation"
+            case 3:
+                title = "Homeless Shelters"
+            default:
+                break
+            }
+        default:
+            break
+        }
+        return title
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        var sections : Int?
+        switch selectionController.selectedSegmentIndex{
+        case 0:
+            sections = 1
+        case 1:
+            sections = 4
+        default:
+            break
+        }
+        return sections!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {            let cell = tableView.dequeueReusableCell(withIdentifier: "CellID")
@@ -52,8 +101,22 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
             cell?.textLabel?.text = onCampusResources[indexPath.row].name
             cell?.imageView?.image = onCampusResources[indexPath.row].image
         case 1:
-            cell?.textLabel?.text = offCampusResources[indexPath.row].name
-            cell?.imageView?.image = offCampusResources[indexPath.row].image
+            switch indexPath.section {
+            case 0:
+                cell?.textLabel!.text = foodPantries[indexPath.row].name
+                cell?.imageView?.image = foodPantries[indexPath.row].image
+            case 1:
+                cell?.textLabel!.text = financialResources[indexPath.row].name
+                cell?.imageView?.image = financialResources[indexPath.row].image
+            case 2:
+                cell?.textLabel!.text = transportResources[indexPath.row].name
+                cell?.imageView?.image = transportResources[indexPath.row].image
+            case 3:
+                cell?.textLabel!.text = shelters[indexPath.row].name
+                cell?.imageView?.image = shelters[indexPath.row].image
+            default:
+                break
+            }
         default:
             break;
         }
@@ -76,15 +139,15 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         //add code for off campus - Keegan
         let CCfoodPantry = ResourceItem(name: "Community Cupboard Church Food Pantry", desc: "This is a food pantry that provides free food by distributing it through a process that resembles a grocery store. Please call to confirm the hours of operation. ", image: UIImage(named: "icon2")!, link: "http://countrysideucc.org/serving-together/community-cupboard/", phoneNumber: "(402)391-0350", address: "13130 Faith Plaza, Omaha, NE 68114")
-        offCampusResources.append(CCfoodPantry)
+        foodPantries.append(CCfoodPantry)
         let togetherInc = ResourceItem(name: "Together Inc.", desc: "This food pantry provides multiple services including resources for food and transportation. Please call to confirm the hours of operation and necessary form(s) of identification.", image: UIImage(named: "icon2")!, link: "http://togetheromaha.org/", phoneNumber: "(402)345-8047", address: "812 S 24th St, Omaha, NE 68108")
-        offCampusResources.append(togetherInc)
+        foodPantries.append(togetherInc)
         let FLfoodPantry = ResourceItem(name: "First Lutheran Church Food Pantry", desc: "This is a food pantry that provides both food and clothing. Please call to confirm the hours of operation and necessary form(s) of identification.", image: UIImage(named: "icon2")!, link: "https://sites.google.com/flcomaha.org/foodpantry", phoneNumber: "(402)345-7506", address: "542 S 31st St, Omaha, NE 68105")
-        offCampusResources.append(FLfoodPantry)
+        foodPantries.append(FLfoodPantry)
         let mavRideBusPass = ResourceItem(name: "Mavride Bus Pass", desc: "This service provides free rides on the Metro Bus System to current faculty, staff, and students. Your MavCARD is activated with the bus pass. This can be used for any route.", image: UIImage(named: "metroLogo")!, link: "www.ometro.com", phoneNumber: "(402)341-0800", address: "2222 Cuming St, Omaha, NE 68102")
-        offCampusResources.append(mavRideBusPass)
+        transportResources.append(mavRideBusPass)
         let odm = ResourceItem(name: "Open Door Mission", desc: "This facility provides shelter beds, serves hot meals, and provides preventive measures to those in poverty.", image: UIImage(named: "ODMLogo")!, link: "https://www.opendoormission.org/", phoneNumber: "(402)422-1111", address: "2828 N 23rd St E, Omaha, NE 68110")
-        offCampusResources.append(odm)
+        shelters.append(odm)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -92,7 +155,18 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         if selectionController.selectedSegmentIndex == 0 {
             selectedResource = onCampusResources[indexPath.row]
         } else {
-            selectedResource = offCampusResources[indexPath.row]
+            switch indexPath.section {
+            case 0:
+                selectedResource = foodPantries[indexPath.row]
+            case 1:
+                selectedResource = financialResources[indexPath.row]
+            case 2:
+                selectedResource = transportResources[indexPath.row]
+            case 3:
+                selectedResource = shelters[indexPath.row]
+            default:
+                break
+            }
         }
         
         performSegue(withIdentifier: "toResourceDetailSegue", sender: nil)

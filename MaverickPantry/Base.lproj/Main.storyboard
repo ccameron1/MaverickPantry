@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3xn-e8-D49">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3xn-e8-D49">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -70,7 +68,7 @@
         <scene sceneID="eo4-37-gOh">
             <objects>
                 <viewControllerPlaceholder storyboardName="Resources" id="Efc-Z8-v8m" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="sEe-qf-dQM"/>
+                    <tabBarItem key="tabBarItem" title="Resources" image="icons8-frying-pan-50" id="sEe-qf-dQM"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ao-Lz-aX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,11 +88,14 @@
         <scene sceneID="8a4-gY-CWU">
             <objects>
                 <viewControllerPlaceholder storyboardName="Recipe" id="FTN-hh-zOU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="vDm-iD-cUd"/>
+                    <tabBarItem key="tabBarItem" title="Resource" image="icons8-frying-pan-50" id="vDm-iD-cUd"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Jq-S8-FQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2604" y="281"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-frying-pan-50" width="25" height="25"/>
+    </resources>
 </document>

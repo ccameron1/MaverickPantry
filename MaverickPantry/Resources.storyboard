@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fSr-Kd-c2X">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fSr-Kd-c2X">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +11,7 @@
         <!--Navigation Controller-->
         <scene sceneID="A5z-Ug-veu">
             <objects>
-                <navigationController id="fSr-Kd-c2X" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="fSr-Kd-c2X" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kub-Ez-o77">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -25,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-1525" y="13"/>
         </scene>
-        <!--Resources View Controller-->
+        <!--Resources-->
         <scene sceneID="U1K-vA-isF">
             <objects>
                 <viewController id="yQS-Em-5yG" customClass="ResourcesViewController" customModule="MaverickPantry" customModuleProvider="target" sceneMemberID="viewController">
@@ -47,11 +46,11 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CVl-Is-6la">
-                                <rect key="frame" x="0.0" y="138" width="414" height="724"/>
+                                <rect key="frame" x="0.0" y="138" width="414" height="626"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" textLabel="gjr-Fi-Awm" style="IBUITableViewCellStyleDefault" id="P9x-b1-b8A">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P9x-b1-b8A" id="sZs-LP-EVV">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -83,7 +82,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GXe-GE-ikd"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Resources" image="slowmo" catalog="system" selectedImage="slowmo" id="QI9-XG-VX0"/>
                     <navigationItem key="navigationItem" id="iPM-zU-FDs"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="resourcesTableView" destination="CVl-Is-6la" id="hWS-dc-X9C"/>
                         <outlet property="selectionController" destination="0nY-NS-69H" id="UNZ-3L-h0p"/>
@@ -103,10 +104,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="128" translatesAutoresizingMaskIntoConstraints="NO" id="gIF-7L-BX7">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="676"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Uin-1F-jmY">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="588.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="490.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XE0-44-t7w">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
@@ -116,13 +117,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organization Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ttz-ps-AW6">
-                                                <rect key="frame" x="59" y="378" width="296" height="43"/>
+                                                <rect key="frame" x="59" y="329" width="296" height="43"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Organization Description Here" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Rg-w2-fXM">
-                                                <rect key="frame" x="71.5" y="548.5" width="271.5" height="40"/>
+                                                <rect key="frame" x="71.5" y="450.5" width="271.5" height="40"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -136,7 +137,7 @@
                                         </constraints>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Organization Contact Info" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9be-WX-w9c">
-                                        <rect key="frame" x="0.0" y="738.5" width="414" height="35.5"/>
+                                        <rect key="frame" x="0.0" y="640.5" width="414" height="35.5"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -173,4 +174,7 @@
             <point key="canvasLocation" x="140.57971014492756" y="15.401785714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="slowmo" catalog="system" width="64" height="62"/>
+    </resources>
 </document>

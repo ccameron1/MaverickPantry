@@ -70,7 +70,7 @@
         <scene sceneID="eo4-37-gOh">
             <objects>
                 <viewControllerPlaceholder storyboardName="Resources" id="Efc-Z8-v8m" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="sEe-qf-dQM"/>
+                    <tabBarItem key="tabBarItem" title="Resources" image="imageedit_2_9948483433" id="sEe-qf-dQM"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ao-Lz-aX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,11 +90,15 @@
         <scene sceneID="8a4-gY-CWU">
             <objects>
                 <viewControllerPlaceholder storyboardName="Recipe" id="FTN-hh-zOU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="vDm-iD-cUd"/>
+                    <tabBarItem key="tabBarItem" title="Resource" image="icons8-frying-pan-50" id="vDm-iD-cUd"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Jq-S8-FQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2604" y="281"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-frying-pan-50" width="25" height="25"/>
+        <image name="imageedit_2_9948483433" width="25" height="25"/>
+    </resources>
 </document>

@@ -138,15 +138,15 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         onCampusResources.append(acdc)
         
         //food pantries
-        let CCfoodPantry = ResourceItem(name: "Community Cupboard Church Food Pantry", desc: "This is a food pantry that provides free food by distributing it through a process that resembles a grocery store. Please call to confirm the hours of operation. ", image: UIImage(named: "icon2")!, link: "http://countrysideucc.org/serving-together/community-cupboard/", phoneNumber: "(402)391-0350", address: "13130 Faith Plaza, Omaha, NE 68114")
+        let CCfoodPantry = ResourceItem(name: "Community Cupboard Church Food Pantry", desc: "This is a food pantry that provides free food by distributing it through a process that resembles a grocery store. Please call to confirm the hours of operation. ", image: UIImage(named: "ComCupboard")!, link: "http://countrysideucc.org/serving-together/community-cupboard/", phoneNumber: "(402)391-0350", address: "13130 Faith Plaza, Omaha, NE 68114")
         foodPantries.append(CCfoodPantry)
-        let togetherInc = ResourceItem(name: "Together Inc.", desc: "This food pantry provides multiple services including resources for food and transportation. Please call to confirm the hours of operation and necessary form(s) of identification.", image: UIImage(named: "icon2")!, link: "http://togetheromaha.org/", phoneNumber: "(402)345-8047", address: "812 S 24th St, Omaha, NE 68108")
+        let togetherInc = ResourceItem(name: "Together Inc.", desc: "This food pantry provides multiple services including resources for food and transportation. Please call to confirm the hours of operation and necessary form(s) of identification.", image: UIImage(named: "togetherIncLogo")!, link: "http://togetheromaha.org/", phoneNumber: "(402)345-8047", address: "812 S 24th St, Omaha, NE 68108")
         foodPantries.append(togetherInc)
-        let FLfoodPantry = ResourceItem(name: "First Lutheran Church Food Pantry", desc: "This is a food pantry that provides both food and clothing. Please call to confirm the hours of operation and necessary form(s) of identification.", image: UIImage(named: "icon2")!, link: "https://sites.google.com/flcomaha.org/foodpantry", phoneNumber: "(402)345-7506", address: "542 S 31st St, Omaha, NE 68105")
+        let FLfoodPantry = ResourceItem(name: "First Lutheran Church Food Pantry", desc: "This is a food pantry that provides both food and clothing. Please call to confirm the hours of operation and necessary form(s) of identification.", image: UIImage(named: "firstLutheran")!, link: "https://sites.google.com/flcomaha.org/foodpantry", phoneNumber: "(402)345-7506", address: "542 S 31st St, Omaha, NE 68105")
         foodPantries.append(FLfoodPantry)
         
         //financial resources
-        let dhhs = ResourceItem(name: "Nebraksa Health and Human Services", desc: "desc", image: UIImage(named: "icon2")!, link: "http://dhhs.ne.gov", phoneNumber: "(402)595-2850", address: "1313 Farnam Street Omaha, NE")
+        let dhhs = ResourceItem(name: "Nebraksa Health and Human Services", desc: "desc", image: UIImage(named: "HealthAndHuman")!, link: "http://dhhs.ne.gov", phoneNumber: "(402)595-2850", address: "1313 Farnam Street Omaha, NE")
         financialResources.append(dhhs)
         
         //transportation

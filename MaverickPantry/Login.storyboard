@@ -196,7 +196,7 @@
                                     <constraint firstAttribute="width" constant="314" id="piP-ty-z8F"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eL3-lz-U3R">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eL3-lz-U3R">
                                 <rect key="frame" x="199" y="528" width="104" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="USJ-3f-BpA"/>
@@ -246,10 +246,11 @@
                                 <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Month" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hH9-3m-VQD">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Month" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hH9-3m-VQD">
                                 <rect key="frame" x="78" y="528" width="103" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="kn1-k4-5eG"/>
+                                    <constraint firstAttribute="width" constant="103" id="uWS-tH-HHn"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="URWGrotesk-Lig" family="URW Grotesk" pointSize="17"/>
@@ -379,6 +380,7 @@
                             <constraint firstItem="eL3-lz-U3R" firstAttribute="top" secondItem="hH9-3m-VQD" secondAttribute="top" id="8oZ-jZ-D7I"/>
                             <constraint firstItem="cEM-M2-Ghf" firstAttribute="top" secondItem="hH9-3m-VQD" secondAttribute="bottom" constant="1" id="Asg-df-YzM"/>
                             <constraint firstItem="n1b-O1-ISB" firstAttribute="top" secondItem="8I7-ag-dpo" secondAttribute="bottom" constant="3" id="BCD-Km-trk"/>
+                            <constraint firstItem="Xin-y0-vbQ" firstAttribute="trailing" secondItem="eL3-lz-U3R" secondAttribute="trailing" constant="111" id="BEA-pW-DRD"/>
                             <constraint firstItem="8I7-ag-dpo" firstAttribute="leading" secondItem="cEM-M2-Ghf" secondAttribute="leading" id="Ca0-Be-z6H"/>
                             <constraint firstItem="Xin-y0-vbQ" firstAttribute="trailing" secondItem="VDJ-ZA-QLw" secondAttribute="trailing" constant="77" id="EDW-3N-6lI"/>
                             <constraint firstItem="y1o-JU-sT7" firstAttribute="top" secondItem="f8x-HR-ePG" secondAttribute="bottom" constant="15" id="ERn-lp-qad"/>
@@ -406,6 +408,7 @@
                             <constraint firstItem="Wsy-OX-T34" firstAttribute="leading" secondItem="Xin-y0-vbQ" secondAttribute="leading" constant="78" id="ljo-qB-bdj"/>
                             <constraint firstItem="Rif-9X-pUV" firstAttribute="centerX" secondItem="r6C-0n-7ND" secondAttribute="centerX" constant="46" id="lzL-S7-LQR"/>
                             <constraint firstItem="VDJ-ZA-QLw" firstAttribute="top" secondItem="Xin-y0-vbQ" secondAttribute="top" constant="15" id="nMv-dz-DxP"/>
+                            <constraint firstItem="eL3-lz-U3R" firstAttribute="leading" secondItem="hH9-3m-VQD" secondAttribute="trailing" constant="18" id="rNO-qC-wso"/>
                             <constraint firstItem="eL3-lz-U3R" firstAttribute="centerY" secondItem="hH9-3m-VQD" secondAttribute="centerY" id="tjB-5U-8tB"/>
                             <constraint firstItem="8I7-ag-dpo" firstAttribute="leading" secondItem="Xin-y0-vbQ" secondAttribute="leading" constant="81" id="uDd-Zb-2qd"/>
                             <constraint firstItem="Xin-y0-vbQ" firstAttribute="trailing" secondItem="f8x-HR-ePG" secondAttribute="trailing" constant="50" id="vDV-Bp-hqs"/>

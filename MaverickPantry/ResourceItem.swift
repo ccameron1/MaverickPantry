@@ -14,7 +14,7 @@ class ResourceItem{
     var name : String?
     var desc : String?
     var image : UIImage?
-    var link : String?
+    var link : String
     var phoneNumber : String
     var address : String
     

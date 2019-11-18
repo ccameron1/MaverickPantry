@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="URW++ - URWGrotesk-Reg.otf">
+            <string>URWGrotesk-Reg</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Info-->
         <scene sceneID="nLZ-m2-t5B">
@@ -31,39 +36,30 @@
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yNE-Yk-SUe">
-                                                <rect key="frame" x="0.0" y="207" width="414" height="403"/>
+                                                <rect key="frame" x="0.0" y="209" width="414" height="412"/>
                                                 <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CULTURE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwA-Oa-ezd">
-                                                <rect key="frame" x="21" y="40" width="169" height="52"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="52" id="Ey8-H3-U5b"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="NO ONE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwA-Oa-ezd">
+                                                <rect key="frame" x="21" y="107" width="165.5" height="67"/>
+                                                <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="40"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   OF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctM-F7-98f">
-                                                <rect key="frame" x="60" y="90" width="93.5" height="52"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="52" id="Q8s-VN-0R3"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOULD BE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctM-F7-98f">
+                                                <rect key="frame" x="21" y="160" width="208.5" height="40"/>
+                                                <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="40"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="CARING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPa-e6-Qh2">
-                                                <rect key="frame" x="120" y="145" width="162.5" height="52"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="52" id="ROm-3w-kzD"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="HUNGRY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPa-e6-Qh2">
+                                                <rect key="frame" x="21" y="197" width="158.5" height="40"/>
+                                                <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="40"/>
                                                 <color key="textColor" red="0.84313725490196079" green="0.098039215686274508" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVER&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVa-pZ-aUx">
-                                                <rect key="frame" x="290.5" y="127" width="113" height="52"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="EVER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVa-pZ-aUx">
+                                                <rect key="frame" x="187.5" y="197" width="105.5" height="40"/>
+                                                <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="40"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -92,24 +88,24 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxl-ul-rSh">
-                                                <rect key="frame" x="168.5" y="1158.5" width="77.5" height="22.5"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <rect key="frame" x="171" y="1172" width="72.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d9Y-1m-NgG">
-                                                <rect key="frame" x="-6" y="1198" width="426" height="706"/>
+                                                <rect key="frame" x="-6" y="1206" width="426" height="706"/>
                                                 <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="706" id="9T7-F2-Bhw"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHECK US OUT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2o-4B-oTn">
-                                                <rect key="frame" x="114" y="1235" width="186.5" height="40"/>
+                                                <rect key="frame" x="122.5" y="1246" width="169" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="dpq-aU-vg2"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -118,7 +114,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="YhM-Kn-XaD"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -132,7 +128,7 @@
                                                             <constraint firstAttribute="height" constant="35" id="3J4-hR-JgY"/>
                                                             <constraint firstAttribute="width" constant="245" id="qAm-7B-8zF"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="17"/>
                                                         <state key="normal" title="SUPPORT THE FOOD PANTRY">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -146,7 +142,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="UlY-45-b79"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="17"/>
                                                         <state key="normal" title="DONATE FOOD ITEMS">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -173,7 +169,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="VLc-En-2x1"/>
                                                     <constraint firstAttribute="width" constant="130" id="yWv-4c-TnS"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -200,7 +196,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="76p-6Z-OW9"/>
                                                     <constraint firstAttribute="width" constant="162" id="rEt-Xh-oeg"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -243,8 +239,8 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Resources" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nP7-nD-6DJ">
-                                                <rect key="frame" x="126" y="630.5" width="162" height="22.5"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <rect key="frame" x="129" y="644" width="156" height="17"/>
+                                                <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -263,9 +259,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="358" id="DvI-Xr-SF5"/>
                                                 </constraints>
-                                                <string key="text">      Food insecurity is becoming more evident on college campuses, and UNO is no exception. A growing concern about food insecurity among our fellow Mavs has prompted action.                          .                                                                                          UNO’s Maverick Food Pantry aims to contribute to UNO’s culture of caring by providing resources to those in immediate need and connecting them with additional resources in the greater Omaha area for long-term support. The Maverick Food Pantry offers food and personal hygiene products to UNO faculty, staff members, and currently-enrolled students by providing healthy, organic, and culturally sensitive items. Requests for food packages can be submitted through an easy online form twice a week.</string>
+                                                <mutableString key="text">      Food insecurity is becoming more evident on college campuses, and UNO is no exception. A growing concern about food insecurity among our fellow Mavs has promptedaction.                          .                                                                                              UNO’s Maverick Food Pantry aims to contribute to UNO’s culture of caring by providing resources to those in immediate need and connecting them with additional resources in the greater Omaha area for long-term support. The Maverick Food Pantry offers food and personal hygiene products to UNO faculty, staff members, and currently-enrolled students by providing healthy, organic, and culturally sensitive items. Requests for food packages can be submitted through an easy online form twice a week.</mutableString>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="URWGrotesk-Reg" family="URW Grotesk" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
@@ -283,7 +279,7 @@
                                             <constraint firstItem="WVr-03-21r" firstAttribute="leading" secondItem="ROB-5g-0x3" secondAttribute="leading" constant="90" id="9H9-9V-YFl"/>
                                             <constraint firstItem="Hep-sE-YV3" firstAttribute="leading" secondItem="ROB-5g-0x3" secondAttribute="leading" constant="20" id="9X0-2y-9vK"/>
                                             <constraint firstItem="v9C-33-Ftu" firstAttribute="centerY" secondItem="nP7-nD-6DJ" secondAttribute="centerY" id="Akc-kP-Tff"/>
-                                            <constraint firstItem="ctM-F7-98f" firstAttribute="top" secondItem="ROB-5g-0x3" secondAttribute="top" constant="90" id="B0x-Qt-hTv"/>
+                                            <constraint firstItem="ctM-F7-98f" firstAttribute="top" secondItem="ROB-5g-0x3" secondAttribute="top" constant="160" id="B0x-Qt-hTv"/>
                                             <constraint firstItem="v9C-33-Ftu" firstAttribute="centerX" secondItem="d9Y-1m-NgG" secondAttribute="centerX" id="BOA-XO-0he"/>
                                             <constraint firstItem="ZaQ-cJ-oAe" firstAttribute="centerX" secondItem="d9Y-1m-NgG" secondAttribute="centerX" id="BsY-ll-geM"/>
                                             <constraint firstItem="jPa-e6-Qh2" firstAttribute="leading" secondItem="ROB-5g-0x3" secondAttribute="leading" constant="120" id="C7C-Bf-3wg"/>
@@ -301,13 +297,14 @@
                                             <constraint firstItem="v9C-33-Ftu" firstAttribute="centerX" secondItem="nP7-nD-6DJ" secondAttribute="centerX" id="UAB-QC-zle"/>
                                             <constraint firstItem="ZaQ-cJ-oAe" firstAttribute="centerX" secondItem="ROB-5g-0x3" secondAttribute="centerX" id="VM3-wF-aFN"/>
                                             <constraint firstItem="V2o-4B-oTn" firstAttribute="centerX" secondItem="ROB-5g-0x3" secondAttribute="centerX" id="Wn5-4D-DSe"/>
-                                            <constraint firstItem="XVa-pZ-aUx" firstAttribute="top" secondItem="zwA-Oa-ezd" secondAttribute="bottom" constant="35" id="XVz-vw-n7m"/>
+                                            <constraint firstItem="XVa-pZ-aUx" firstAttribute="top" secondItem="zwA-Oa-ezd" secondAttribute="bottom" constant="23" id="XVz-vw-n7m"/>
                                             <constraint firstAttribute="trailing" secondItem="ceS-Vn-7mE" secondAttribute="trailing" constant="30" id="Xr4-5T-uCt"/>
                                             <constraint firstItem="v9C-33-Ftu" firstAttribute="top" secondItem="Hep-sE-YV3" secondAttribute="bottom" constant="22" id="YIi-6R-7ie"/>
                                             <constraint firstItem="N4C-44-21x" firstAttribute="centerY" secondItem="fxl-ul-rSh" secondAttribute="centerY" id="Yiv-rh-Vcr"/>
                                             <constraint firstItem="N4C-44-21x" firstAttribute="leading" secondItem="ROB-5g-0x3" secondAttribute="leading" id="ZRb-Pe-4bC"/>
                                             <constraint firstAttribute="height" constant="1920" id="aNr-4G-ifL"/>
-                                            <constraint firstItem="9EF-Tz-8bG" firstAttribute="top" secondItem="jPa-e6-Qh2" secondAttribute="bottom" constant="20" id="bv5-eX-98I"/>
+                                            <constraint firstItem="9EF-Tz-8bG" firstAttribute="top" secondItem="jPa-e6-Qh2" secondAttribute="bottom" constant="14" id="bv5-eX-98I"/>
+                                            <constraint firstItem="jPa-e6-Qh2" firstAttribute="top" secondItem="zwA-Oa-ezd" secondAttribute="bottom" constant="23" id="cXV-x5-SXO"/>
                                             <constraint firstItem="v9C-33-Ftu" firstAttribute="top" secondItem="yNE-Yk-SUe" secondAttribute="bottom" id="dHW-9d-1z4"/>
                                             <constraint firstItem="gmC-mX-QXD" firstAttribute="top" secondItem="ZaQ-cJ-oAe" secondAttribute="bottom" constant="8" id="f2V-d1-iCy"/>
                                             <constraint firstItem="ceS-Vn-7mE" firstAttribute="leading" secondItem="ROB-5g-0x3" secondAttribute="leading" constant="30" id="fFl-Rx-koD"/>
@@ -321,10 +318,11 @@
                                             <constraint firstItem="WVr-03-21r" firstAttribute="top" secondItem="YFp-va-Gd0" secondAttribute="bottom" constant="50" id="nZc-xS-lhP"/>
                                             <constraint firstItem="607-Yh-4ar" firstAttribute="centerX" secondItem="ROB-5g-0x3" secondAttribute="centerX" id="oE0-7F-o4M"/>
                                             <constraint firstItem="ZaQ-cJ-oAe" firstAttribute="top" secondItem="v9C-33-Ftu" secondAttribute="bottom" constant="8" id="oYS-uN-p8G"/>
-                                            <constraint firstItem="zwA-Oa-ezd" firstAttribute="top" secondItem="ROB-5g-0x3" secondAttribute="top" constant="40" id="oZi-YP-5D8"/>
+                                            <constraint firstItem="zwA-Oa-ezd" firstAttribute="top" secondItem="ROB-5g-0x3" secondAttribute="top" constant="107" id="oZi-YP-5D8"/>
                                             <constraint firstItem="S5o-es-cBy" firstAttribute="top" secondItem="V2o-4B-oTn" secondAttribute="bottom" constant="33" id="p8J-GP-axJ"/>
                                             <constraint firstItem="gmC-mX-QXD" firstAttribute="centerX" secondItem="ROB-5g-0x3" secondAttribute="centerX" id="pxd-vZ-5WB"/>
                                             <constraint firstItem="d9Y-1m-NgG" firstAttribute="leading" secondItem="ROB-5g-0x3" secondAttribute="leading" constant="-6" id="qYG-he-8UO"/>
+                                            <constraint firstItem="yNE-Yk-SUe" firstAttribute="top" secondItem="ctM-F7-98f" secondAttribute="bottom" constant="9" id="rPC-fV-chI"/>
                                             <constraint firstItem="I16-kY-Cxp" firstAttribute="leading" secondItem="ROB-5g-0x3" secondAttribute="leading" id="snb-Aa-k7h"/>
                                             <constraint firstItem="YFp-va-Gd0" firstAttribute="top" secondItem="ceS-Vn-7mE" secondAttribute="bottom" constant="20" id="t8I-0O-QQ7"/>
                                             <constraint firstItem="jPa-e6-Qh2" firstAttribute="top" secondItem="ctM-F7-98f" secondAttribute="bottom" constant="3" id="toa-vi-k49"/>

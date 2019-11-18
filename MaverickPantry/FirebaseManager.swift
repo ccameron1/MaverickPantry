@@ -18,6 +18,7 @@ class FirebaseManager {
 	static var currentUser : User?
 	static var globalUser : Users!
 	static var globalOrders : [Order]? = []
+	static var globalRecipes : [Recipe]? = []
 	static var globalInventory : [DummyFood]? = []
 	
 	static func Login(email: String, password: String, completion: @escaping (_ success: Bool, Error?) -> Void) {
@@ -78,15 +79,12 @@ class FirebaseManager {
 					
 				}
 				
-				
-				
-				
-				var c = NSDateComponents()
+				let c = NSDateComponents()
 				c.year = 2000
 				c.month = 1
 				c.day = 1
 				// Get NSDate given the above date components
-				var date = NSCalendar(identifier: NSCalendar.Identifier.gregorian)?.date(from: c as DateComponents)
+				let date = NSCalendar(identifier: NSCalendar.Identifier.gregorian)?.date(from: c as DateComponents)
 				
 				addUser(isAdmin: false, email: email, initials: initials, monthOfBirth: monthOfBirth, dayOfBirth: dayOfBirth, NUID: NUID, request1: [], request2: [], timestamp1: date as! NSDate, timestamp2: date as! NSDate)
 				Login(email: email, password: password, completion: { (success, err)  in
@@ -215,7 +213,6 @@ class FirebaseManager {
 					
 					let requests = document.get("requests")! as! [String]
 					let initials = document.get("initials")! as! String
-//					let YOB = document.get("yearOfBirth")! as! Int
 					let timestamp = document.get("timestamp") as! Double
 					let isReady = document.get("isReady") as! Bool
 					let MOB = document.get("monthOfBirth") as! Int
@@ -227,7 +224,7 @@ class FirebaseManager {
 					if orders.count == querySnapshot!.documents.count {
 						completion(orders, nil)
 					}
-					print("Order: \(order.initials)")
+					print("get orders** Order: \(order.initials)")
 				}
 			}
 		}
@@ -275,6 +272,39 @@ class FirebaseManager {
 						completion(items, nil)
 					}
 					print("Order: \(item.name)")
+				}
+			}
+		}
+	}
+	
+	
+	static func getRecipes(completion: @escaping ([Recipe], Error?) -> Void ){
+		var recipes = [Recipe]()
+		
+		databaseRef.collection("recipes").getDocuments() { (querySnapshot, err) in
+			if let err = err {
+				print("Error getting documents: \(err)")
+				completion([Recipe](), err)
+			} else {
+				for document in querySnapshot!.documents {
+					//					let data = document.data()
+					
+					let ingredients = document.get("ingredients")! as! [String]
+					let recipeTime = document.get("time")! as! String
+					let cookTime = document.get("cookTime")! as! String
+					let image = document.get("image") as! String
+					let recipeDescription = document.get("description") as! String
+					let recipeDirections = document.get("directions") as! [String]
+					let recipeName = document.get("name") as! String
+					let recipeServing = document.get("serving") as! String
+					
+					let recipe = Recipe(recipeName: recipeName, ingredients: ingredients, recipeTime: recipeTime, cookTime: cookTime, image: image, recipeDescription: recipeDescription, recipeDirections: recipeDirections, recipeServing: recipeServing)
+					
+					recipes.append(recipe)
+					if recipes.count == querySnapshot!.documents.count {
+						completion(recipes, nil)
+					}
+					print("Recipe: \(recipe.recipeName)")
 				}
 			}
 		}

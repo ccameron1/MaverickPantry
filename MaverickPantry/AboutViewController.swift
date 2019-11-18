@@ -130,7 +130,7 @@ class AboutViewController: UIViewController, SFSafariViewControllerDelegate {
     }
     
     @IBAction func onTutoringCenterPressed(_ sender: UIButton) {
-        if let link = URL(string: linkTutoring) {
+        if let link = URL(string: "https://www.opendoormission.org/") {
             let sfvc = SFSafariViewController(url: link)
             sfvc.delegate = (self as! SFSafariViewControllerDelegate)
             sfvc.preferredControlTintColor = .red

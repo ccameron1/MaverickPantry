@@ -242,7 +242,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hep-sE-YV3">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hep-sE-YV3">
                                                 <rect key="frame" x="20" y="240" width="364" height="370"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="370" id="DvI-Xr-SF5"/>

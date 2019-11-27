@@ -16,6 +16,7 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
     var foodGroup : [String] = ["Protein", "Vegetables", "Fruits", "Grain", "Additional Food Products", "Miscellaneous Products", "Personal Hygiene Products"]
     
     //var items : [] = []
+    @IBOutlet weak var deleteButton: UIButton!
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -62,9 +63,18 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
         return 56
     }
     
+    @IBAction func onDeleteButtonPressed(_ sender: Any) {
+        //removes order in firebase
+        FirebaseManager.globalOrders?.remove(at: index!)
+        FirebaseManager.databaseRef.collection("Orders").document("Order: \(selectedOrder!.initials!) \(selectedOrder!.monthOfBirth!):\(selectedOrder!.dayOfBirth!) \(selectedOrder!.timestamp!)").delete()
+    }
     @IBAction func fillOrderButton(_ sender: UIButton) {
         
         if selectedOrder?.isReady == false{
+            //changes boolean in firebase
+            FirebaseManager.databaseRef.collection("Orders").document("Order: \(selectedOrder!.initials!) \(selectedOrder!.monthOfBirth!):\(selectedOrder!.dayOfBirth!) \(selectedOrder!.timestamp!)").setData(["requests": selectedOrder!.requests!, "initials": selectedOrder!.initials!, "isReady": true, "monthOfBirth": selectedOrder!.monthOfBirth!, "dayOfBirth": selectedOrder!.dayOfBirth!, "timestamp": selectedOrder!.timestamp])
+//            \(order.monthOfBirth!): \(order.dayOfBirth!)
+        } else {
             
             FirebaseManager.getInventory(completion: { (inventory, error) in
                 if error == nil {
@@ -79,13 +89,8 @@ class CurrentOrderRequestViewController: UIViewController, UITableViewDataSource
                     }
                 }
             })
-            //changes boolean in firebase
-            FirebaseManager.databaseRef.collection("Orders").document("Order: \(selectedOrder!.initials!) \(selectedOrder!.monthOfBirth!):\(selectedOrder!.dayOfBirth!) \(selectedOrder!.timestamp!)").setData(["requests": selectedOrder!.requests!, "initials": selectedOrder!.initials!, "isReady": true, "monthOfBirth": selectedOrder!.monthOfBirth!, "dayOfBirth": selectedOrder!.dayOfBirth!, "timestamp": selectedOrder!.timestamp])
             
-            
-//            \(order.monthOfBirth!): \(order.dayOfBirth!)
-        } else {
-            //removes order once it is picked up
+            //removes order in firebase
             FirebaseManager.globalOrders?.remove(at: index!)
             FirebaseManager.databaseRef.collection("Orders").document("Order: \(selectedOrder!.initials!) \(selectedOrder!.monthOfBirth!):\(selectedOrder!.dayOfBirth!) \(selectedOrder!.timestamp!)").delete()
         }

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PBt-g5-V0i">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PBt-g5-V0i">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -107,15 +105,15 @@
             <objects>
                 <viewController id="LOn-yX-esV" customClass="CurrentOrdersViewController" customModule="MaverickPantry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0G2-J2-HXb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ied-n3-0t3">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" textLabel="mae-rD-7WQ" detailTextLabel="iRB-aZ-Ugo" style="IBUITableViewCellStyleValue1" id="eth-L1-JHi">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eth-L1-JHi" id="fDu-hU-o4E">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -157,6 +155,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZGY-vg-CUI"/>
                     </view>
+                    <navigationItem key="navigationItem" id="l4L-Rf-gcg"/>
                     <connections>
                         <outlet property="tableView" destination="ied-n3-0t3" id="fYU-bY-4sr"/>
                     </connections>
@@ -170,15 +169,15 @@
             <objects>
                 <viewController id="FBT-XD-89L" customClass="CurrentOrderRequestViewController" customModule="MaverickPantry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P6B-hV-WLL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="imL-yw-yan">
-                                <rect key="frame" x="0.0" y="129.5" width="414" height="568.5"/>
+                                <rect key="frame" x="0.0" y="85.5" width="414" height="558.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RcellID" textLabel="VwZ-hi-U03" style="IBUITableViewCellStyleDefault" id="mCe-UT-1lG">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mCe-UT-1lG" id="seO-Cp-053">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -202,7 +201,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raq-nk-DSS">
-                                <rect key="frame" x="0.0" y="732" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="678" width="414" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Filled Order"/>
                                 <connections>
@@ -212,11 +211,20 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhq-Tb-jN1">
-                                <rect key="frame" x="0.0" y="84" width="414" height="20.5"/>
+                                <rect key="frame" x="0.0" y="40" width="414" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHy-k1-JF6">
+                                <rect key="frame" x="0.0" y="753" width="414" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Delete Order"/>
+                                <connections>
+                                    <action selector="onDeleteButtonPressed:" destination="FBT-XD-89L" eventType="touchUpInside" id="SQJ-ze-noV"/>
+                                    <segue destination="LOn-yX-esV" kind="show" id="6A7-b2-Skh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -233,7 +241,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ovl-AH-Ndf"/>
                     </view>
+                    <navigationItem key="navigationItem" id="jUa-pU-c7Z"/>
                     <connections>
+                        <outlet property="deleteButton" destination="JHy-k1-JF6" id="6eq-46-5ok"/>
                         <outlet property="nameLabel" destination="Qhq-Tb-jN1" id="sgb-E0-9Rg"/>
                         <outlet property="orderDetailButton" destination="raq-nk-DSS" id="h1J-D1-Kvo"/>
                         <outlet property="tableView" destination="imL-yw-yan" id="ddJ-R7-x78"/>
@@ -257,7 +267,7 @@
             <objects>
                 <viewController id="b2J-cZ-eS4" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ejb-JH-3yb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kh6-dN-A0V"/>
@@ -271,4 +281,7 @@
     <resources>
         <image name="inventory" width="2888" height="3078"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="6A7-b2-Skh"/>
+    </inferredMetricsTieBreakers>
 </document>

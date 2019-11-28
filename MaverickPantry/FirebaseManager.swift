@@ -105,7 +105,7 @@ class FirebaseManager {
 	static func addUser(isAdmin: Bool, email: String, initials: String, monthOfBirth: Int, dayOfBirth: Int, NUID: String, request1: [String], request2: [String], timestamp1: NSDate, timestamp2: NSDate) {
 		let uid = Auth.auth().currentUser?.uid
 		if !email.contains("@unomaha.edu") {
-			print("bad email AAAAAAAAAAAAAAAAAAAAAA")
+			
 		}
 		else
 		{
@@ -309,6 +309,12 @@ class FirebaseManager {
 			}
 		}
 	}
+	static func addQuestionForm(item:QuestionForm, completion: @escaping (Bool) -> Void) {
+		databaseRef.collection("QuestionForm").document(item.NUID as! String).setData(["NUID": (item.NUID as! String),"firstIntial": item.firstInitial, "middleInitial": item.middleInitial, "lastInitial": item.lastInitial,"birthDate": item.birthDate, "allergies":item.allergies, "comments": item.comments,"affiliation":item.affiliation, "onOrOffCampus":item.onOrOffCampus,"householdSize":item.householdSize,"methodOfHearing":item.methodOfHearing,"canOpener":item.canOpenerBool,"bag":item.bagBool])
+		
+		completion(true)
+	}
+	
 }
 
 
